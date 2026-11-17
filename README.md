@@ -3,7 +3,7 @@ Give it the URL of an API. It writes the test cases, writes the automation, runs
 
 Built with [Claude Code](https://claude.com/claude-code), [Playwright](https://playwright.dev/) and TypeScript.
 
-> **Status:** under development. It is meant for practice APIs only for now (see [Safety](#safety-and-credentials)). Secrets handling is still in progress.
+> **Status:** It is meant for practice APIs only for now (see [Safety](#safety-and-credentials)). Secrets handling is still in progress.
 
 ## What it does
 
