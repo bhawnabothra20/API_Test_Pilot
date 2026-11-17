@@ -1,0 +1,195 @@
+# Autonomous API tests in CI: one matrix job per API, `scripts/api-test.ts --ci`.
+#
+# Exit codes of the run step (scripts/ci.ts): 0 no new failures | 4 new failures or new Critical
+# authorization findings (first run: Critical/High root causes) | 5 executed coverage < CI_MIN_COVERAGE |
+# 1/2/3 pipeline error / host not allowed / script error.
+#
+# Credentials: repository secrets with the SAME names as in .env (RESTFUL_BOOKER_USERNAME, REQRES_API_KEY,
+# ...). Nothing is committed; unset secrets simply mean "not configured" and those tests are skipped
+# (preflight lists them). Settings that are not secret come from repository variables (vars.*).
+# Run history (new/fixed vs previous run) is carried between runs in the Actions cache.
+name: api-test-pilot
+
+on:
+  workflow_dispatch:
+    inputs:
+      apis:
+        description: 'Comma-separated API names (jsonplaceholder, restful-booker, petstore, reqres) or "all"'
+        required: false
+        default: all
+  schedule:
+    - cron: '0 3 * * *' # daily 03:00 UTC
+  pull_request:
+    paths:
+      - 'scripts/**'
+      - 'shared/**'
+      - 'api/**'
+      - 'playwright.config.ts'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+      - '.github/workflows/api-test.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: api-test-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  # the agent's own logic (triage, contract calibration, spec-diff, consolidation): no network, ~5 s
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run typecheck
+      - run: npm run test:unit
+
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - id: matrix
+        env:
+          APIS: ${{ github.event.inputs.apis || 'all' }}
+        run: |
+          all='[
+            {"name":"jsonplaceholder","url":"https://jsonplaceholder.typicode.com/","prefix":"JSONPLACEHOLDER"},
+            {"name":"restful-booker","url":"https://restful-booker.herokuapp.com/","prefix":"RESTFUL_BOOKER"},
+            {"name":"petstore","url":"https://petstore.swagger.io/","prefix":"PETSTORE"},
+            {"name":"reqres","url":"https://reqres.in/","prefix":"REQRES"}
+          ]'
+          if [ "$APIS" = "all" ] || [ -z "$APIS" ]; then
+            selected="$all"
+          else
+            names=$(printf '%s' "$APIS" | jq -R -c 'split(",") | map(gsub("^\\s+|\\s+$"; "")) | map(select(length > 0))')
+            selected=$(jq -c --argjson names "$names" 'map(select(.name as $n | $names | index($n)))' <<< "$all")
+            unknown=$(jq -r --argjson sel "$selected" 'map(select(. as $n | ($sel | map(.name) | index($n)) | not)) | join(", ")' <<< "$names")
+            if [ -n "$unknown" ]; then echo "::error::Unknown API name(s): $unknown"; exit 2; fi
+          fi
+          echo "matrix=$(jq -c '{include: .}' <<< "$selected")" >> "$GITHUB_OUTPUT"
+
+  test:
+    needs: [unit, plan]
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+      pull-requests: write # PR comment with ci-summary.md
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    name: ${{ matrix.name }}
+    env:
+      ALLOWED_HOSTS: ${{ vars.ALLOWED_HOSTS || 'petstore.swagger.io,restful-booker.herokuapp.com,jsonplaceholder.typicode.com,reqres.in' }}
+      CI_MIN_COVERAGE: ${{ vars.CI_MIN_COVERAGE || '80' }}
+      RESPONSE_TIME_MS: ${{ vars.RESPONSE_TIME_MS || '2000' }}
+      POLITE_DELAY_MS: ${{ vars.POLITE_DELAY_MS || '150' }}
+      PW_WORKERS: ${{ vars.PW_WORKERS || '4' }}
+      PW_RETRIES: ${{ vars.PW_RETRIES || '1' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Restore run history
+        uses: actions/cache/restore@v4
+        with:
+          path: api/${{ matrix.name }}/reports/history
+          key: api-history-${{ matrix.name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: api-history-${{ matrix.name }}-
+
+      - name: Run API tests (--ci)
+        id: run
+        env:
+          API_NAME: ${{ matrix.name }}
+          API_URL: ${{ matrix.url }}
+          PREFIX: ${{ matrix.prefix }}
+          # secrets named exactly like the .env variables; exported under <PREFIX>_<SUFFIX> below
+          S_BASE_URL: ${{ secrets[format('{0}_BASE_URL', matrix.prefix)] }}
+          S_API_KEY: ${{ secrets[format('{0}_API_KEY', matrix.prefix)] }}
+          S_USERNAME: ${{ secrets[format('{0}_USERNAME', matrix.prefix)] }}
+          S_PASSWORD: ${{ secrets[format('{0}_PASSWORD', matrix.prefix)] }}
+          S_ADMIN_TOKEN: ${{ secrets[format('{0}_ADMIN_TOKEN', matrix.prefix)] }}
+          S_EXPIRED_TOKEN: ${{ secrets[format('{0}_EXPIRED_TOKEN', matrix.prefix)] }}
+        run: |
+          for suffix in BASE_URL API_KEY USERNAME PASSWORD ADMIN_TOKEN EXPIRED_TOKEN; do
+            src="S_${suffix}"
+            if [ -n "${!src}" ]; then export "${PREFIX}_${suffix}=${!src}"; fi
+            unset "$src"
+          done
+          set +e
+          npx tsx scripts/api-test.ts "$API_URL" --name "$API_NAME" --ci
+          code=$?
+          set -e
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          echo "API test exit code: $code"
+
+      - name: Save run history
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: api/${{ matrix.name }}/reports/history
+          key: api-history-${{ matrix.name }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Job summary
+        if: always()
+        run: |
+          f="api/${{ matrix.name }}/reports/ci-summary.md"
+          if [ -f "$f" ]; then cat "$f" >> "$GITHUB_STEP_SUMMARY"; else echo "No ci-summary.md for ${{ matrix.name }} (exit ${{ steps.run.outputs.code }}) - see run-log.txt in the artifact." >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-test-${{ matrix.name }}
+          path: |
+            api/${{ matrix.name }}/reports/
+            api/${{ matrix.name }}/test-cases/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Comment on PR
+        if: always() && github.event_name == 'pull_request'
+        # fork PRs get a read-only token; the job summary still has the result
+        continue-on-error: true
+        uses: actions/github-script@v7
+        env:
+          SUMMARY_FILE: api/${{ matrix.name }}/reports/ci-summary.md
+          MARKER: '<!-- api-test:${{ matrix.name }} -->'
+        with:
+          script: |
+            const fs = require('fs');
+            if (!fs.existsSync(process.env.SUMMARY_FILE)) return;
+            const body = fs.readFileSync(process.env.SUMMARY_FILE, 'utf8');
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number, per_page: 100 });
+            const mine = comments.find((c) => c.user?.type === 'Bot' && c.body?.startsWith(process.env.MARKER));
+            if (mine) await github.rest.issues.updateComment({ owner, repo, comment_id: mine.id, body });
+            else await github.rest.issues.createComment({ owner, repo, issue_number, body });
+
+      - name: Gate
+        if: always()
+        run: |
+          code="${{ steps.run.outputs.code }}"
+          case "$code" in
+            0) echo "No new failures." ;;
+            4) echo "::error::${{ matrix.name }}: new failures or new Critical authorization findings (exit 4)" ;;
+            5) echo "::error::${{ matrix.name }}: executed coverage below CI_MIN_COVERAGE (exit 5)" ;;
+            "") echo "::error::${{ matrix.name }}: the test step did not run"; code=1 ;;
+            *) echo "::error::${{ matrix.name }}: pipeline error (exit $code) - see run-log.txt in the artifact" ;;
+          esac
+          exit "$code"

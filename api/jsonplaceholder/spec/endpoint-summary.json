@@ -1,0 +1,2966 @@
+{
+  "apiName": "jsonplaceholder",
+  "envPrefix": "JSONPLACEHOLDER",
+  "title": "JSONPlaceholder - Free Fake REST API",
+  "sourceUrl": "https://jsonplaceholder.typicode.com/",
+  "baseUrl": "https://jsonplaceholder.typicode.com",
+  "specSource": "html-links",
+  "discoveredAt": "2026-11-11T16:51:20.410Z",
+  "auth": {
+    "type": "none",
+    "unauthenticatedStatus": 401,
+    "forbiddenStatus": 403,
+    "statusDocumented": false,
+    "roles": [],
+    "notes": []
+  },
+  "endpoints": [
+    {
+      "id": "posts_GET",
+      "group": "posts",
+      "method": "GET",
+      "path": "/posts",
+      "summary": "List posts",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "userId",
+            "id",
+            "title",
+            "body"
+          ]
+        }
+      }
+    },
+    {
+      "id": "posts_POST",
+      "group": "posts",
+      "method": "POST",
+      "path": "/posts",
+      "summary": "Create posts",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "userId",
+            "title",
+            "body"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title",
+          "body"
+        ]
+      }
+    },
+    {
+      "id": "posts_id_GET",
+      "group": "posts",
+      "method": "GET",
+      "path": "/posts/{id}",
+      "summary": "Get one posts",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title",
+          "body"
+        ]
+      }
+    },
+    {
+      "id": "posts_id_PUT",
+      "group": "posts",
+      "method": "PUT",
+      "path": "/posts/{id}",
+      "summary": "Replace posts",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "userId",
+            "title",
+            "body"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title",
+          "body"
+        ]
+      }
+    },
+    {
+      "id": "posts_id_PATCH",
+      "group": "posts",
+      "method": "PATCH",
+      "path": "/posts/{id}",
+      "summary": "Update part of posts",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "required": []
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title",
+          "body"
+        ]
+      }
+    },
+    {
+      "id": "posts_id_DELETE",
+      "group": "posts",
+      "method": "DELETE",
+      "path": "/posts/{id}",
+      "summary": "Delete posts",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true
+    },
+    {
+      "id": "comments_GET",
+      "group": "comments",
+      "method": "GET",
+      "path": "/comments",
+      "summary": "List comments",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "postId",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "example": "1"
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "postId": {
+              "type": "integer"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "postId",
+            "id",
+            "name",
+            "email",
+            "body"
+          ]
+        }
+      }
+    },
+    {
+      "id": "comments_POST",
+      "group": "comments",
+      "method": "POST",
+      "path": "/comments",
+      "summary": "Create comments",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "postId": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "postId",
+            "name",
+            "email",
+            "body"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "postId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "postId",
+          "id",
+          "name",
+          "email",
+          "body"
+        ]
+      }
+    },
+    {
+      "id": "comments_id_GET",
+      "group": "comments",
+      "method": "GET",
+      "path": "/comments/{id}",
+      "summary": "Get one comments",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "postId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "postId",
+          "id",
+          "name",
+          "email",
+          "body"
+        ]
+      }
+    },
+    {
+      "id": "comments_id_PUT",
+      "group": "comments",
+      "method": "PUT",
+      "path": "/comments/{id}",
+      "summary": "Replace comments",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "postId": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "postId",
+            "name",
+            "email",
+            "body"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "postId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "postId",
+          "id",
+          "name",
+          "email",
+          "body"
+        ]
+      }
+    },
+    {
+      "id": "comments_id_PATCH",
+      "group": "comments",
+      "method": "PATCH",
+      "path": "/comments/{id}",
+      "summary": "Update part of comments",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "postId": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "required": []
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "postId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "postId",
+          "id",
+          "name",
+          "email",
+          "body"
+        ]
+      }
+    },
+    {
+      "id": "comments_id_DELETE",
+      "group": "comments",
+      "method": "DELETE",
+      "path": "/comments/{id}",
+      "summary": "Delete comments",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true
+    },
+    {
+      "id": "albums_GET",
+      "group": "albums",
+      "method": "GET",
+      "path": "/albums",
+      "summary": "List albums",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "userId",
+            "id",
+            "title"
+          ]
+        }
+      }
+    },
+    {
+      "id": "albums_POST",
+      "group": "albums",
+      "method": "POST",
+      "path": "/albums",
+      "summary": "Create albums",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "userId",
+            "title"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title"
+        ]
+      }
+    },
+    {
+      "id": "albums_id_GET",
+      "group": "albums",
+      "method": "GET",
+      "path": "/albums/{id}",
+      "summary": "Get one albums",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title"
+        ]
+      }
+    },
+    {
+      "id": "albums_id_PUT",
+      "group": "albums",
+      "method": "PUT",
+      "path": "/albums/{id}",
+      "summary": "Replace albums",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "userId",
+            "title"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title"
+        ]
+      }
+    },
+    {
+      "id": "albums_id_PATCH",
+      "group": "albums",
+      "method": "PATCH",
+      "path": "/albums/{id}",
+      "summary": "Update part of albums",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": []
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title"
+        ]
+      }
+    },
+    {
+      "id": "albums_id_DELETE",
+      "group": "albums",
+      "method": "DELETE",
+      "path": "/albums/{id}",
+      "summary": "Delete albums",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true
+    },
+    {
+      "id": "photos_GET",
+      "group": "photos",
+      "method": "GET",
+      "path": "/photos",
+      "summary": "List photos",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "albumId": {
+              "type": "integer"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "thumbnailUrl": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": [
+            "albumId",
+            "id",
+            "title",
+            "url",
+            "thumbnailUrl"
+          ]
+        }
+      }
+    },
+    {
+      "id": "photos_POST",
+      "group": "photos",
+      "method": "POST",
+      "path": "/photos",
+      "summary": "Create photos",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "albumId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "thumbnailUrl": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": [
+            "albumId",
+            "title",
+            "url",
+            "thumbnailUrl"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "albumId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "albumId",
+          "id",
+          "title",
+          "url",
+          "thumbnailUrl"
+        ]
+      }
+    },
+    {
+      "id": "photos_id_GET",
+      "group": "photos",
+      "method": "GET",
+      "path": "/photos/{id}",
+      "summary": "Get one photos",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "albumId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "albumId",
+          "id",
+          "title",
+          "url",
+          "thumbnailUrl"
+        ]
+      }
+    },
+    {
+      "id": "photos_id_PUT",
+      "group": "photos",
+      "method": "PUT",
+      "path": "/photos/{id}",
+      "summary": "Replace photos",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "albumId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "thumbnailUrl": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": [
+            "albumId",
+            "title",
+            "url",
+            "thumbnailUrl"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "albumId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "albumId",
+          "id",
+          "title",
+          "url",
+          "thumbnailUrl"
+        ]
+      }
+    },
+    {
+      "id": "photos_id_PATCH",
+      "group": "photos",
+      "method": "PATCH",
+      "path": "/photos/{id}",
+      "summary": "Update part of photos",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "albumId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "thumbnailUrl": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "required": []
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "albumId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "albumId",
+          "id",
+          "title",
+          "url",
+          "thumbnailUrl"
+        ]
+      }
+    },
+    {
+      "id": "photos_id_DELETE",
+      "group": "photos",
+      "method": "DELETE",
+      "path": "/photos/{id}",
+      "summary": "Delete photos",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true
+    },
+    {
+      "id": "todos_GET",
+      "group": "todos",
+      "method": "GET",
+      "path": "/todos",
+      "summary": "List todos",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "completed": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "userId",
+            "id",
+            "title",
+            "completed"
+          ]
+        }
+      }
+    },
+    {
+      "id": "todos_POST",
+      "group": "todos",
+      "method": "POST",
+      "path": "/todos",
+      "summary": "Create todos",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "completed": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "userId",
+            "title",
+            "completed"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title",
+          "completed"
+        ]
+      }
+    },
+    {
+      "id": "todos_id_GET",
+      "group": "todos",
+      "method": "GET",
+      "path": "/todos/{id}",
+      "summary": "Get one todos",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title",
+          "completed"
+        ]
+      }
+    },
+    {
+      "id": "todos_id_PUT",
+      "group": "todos",
+      "method": "PUT",
+      "path": "/todos/{id}",
+      "summary": "Replace todos",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "completed": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "userId",
+            "title",
+            "completed"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title",
+          "completed"
+        ]
+      }
+    },
+    {
+      "id": "todos_id_PATCH",
+      "group": "todos",
+      "method": "PATCH",
+      "path": "/todos/{id}",
+      "summary": "Update part of todos",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "userId": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "completed": {
+              "type": "boolean"
+            }
+          },
+          "required": []
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title",
+          "completed"
+        ]
+      }
+    },
+    {
+      "id": "todos_id_DELETE",
+      "group": "todos",
+      "method": "DELETE",
+      "path": "/todos/{id}",
+      "summary": "Delete todos",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true
+    },
+    {
+      "id": "users_GET",
+      "group": "users",
+      "method": "GET",
+      "path": "/users",
+      "summary": "List users",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "username": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "street": {
+                  "type": "string"
+                },
+                "suite": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "zipcode": {
+                  "type": "string"
+                },
+                "geo": {
+                  "type": "object",
+                  "properties": {
+                    "lat": {
+                      "type": "string"
+                    },
+                    "lng": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "lat",
+                    "lng"
+                  ]
+                }
+              },
+              "required": [
+                "street",
+                "suite",
+                "city",
+                "zipcode",
+                "geo"
+              ]
+            },
+            "phone": {
+              "type": "string"
+            },
+            "website": {
+              "type": "string"
+            },
+            "company": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "catchPhrase": {
+                  "type": "string"
+                },
+                "bs": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "catchPhrase",
+                "bs"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "username",
+            "email",
+            "address",
+            "phone",
+            "website",
+            "company"
+          ]
+        }
+      }
+    },
+    {
+      "id": "users_POST",
+      "group": "users",
+      "method": "POST",
+      "path": "/users",
+      "summary": "Create users",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "username": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "street": {
+                  "type": "string"
+                },
+                "suite": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "zipcode": {
+                  "type": "string"
+                },
+                "geo": {
+                  "type": "object",
+                  "properties": {
+                    "lat": {
+                      "type": "string"
+                    },
+                    "lng": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "lat",
+                    "lng"
+                  ]
+                }
+              },
+              "required": [
+                "street",
+                "suite",
+                "city",
+                "zipcode",
+                "geo"
+              ]
+            },
+            "phone": {
+              "type": "string"
+            },
+            "website": {
+              "type": "string"
+            },
+            "company": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "catchPhrase": {
+                  "type": "string"
+                },
+                "bs": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "catchPhrase",
+                "bs"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "username",
+            "email",
+            "address",
+            "phone",
+            "website",
+            "company"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "street": {
+                "type": "string"
+              },
+              "suite": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "zipcode": {
+                "type": "string"
+              },
+              "geo": {
+                "type": "object",
+                "properties": {
+                  "lat": {
+                    "type": "string"
+                  },
+                  "lng": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "lat",
+                  "lng"
+                ]
+              }
+            },
+            "required": [
+              "street",
+              "suite",
+              "city",
+              "zipcode",
+              "geo"
+            ]
+          },
+          "phone": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "company": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "catchPhrase": {
+                "type": "string"
+              },
+              "bs": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "catchPhrase",
+              "bs"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "username",
+          "email",
+          "address",
+          "phone",
+          "website",
+          "company"
+        ]
+      }
+    },
+    {
+      "id": "users_id_GET",
+      "group": "users",
+      "method": "GET",
+      "path": "/users/{id}",
+      "summary": "Get one users",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "street": {
+                "type": "string"
+              },
+              "suite": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "zipcode": {
+                "type": "string"
+              },
+              "geo": {
+                "type": "object",
+                "properties": {
+                  "lat": {
+                    "type": "string"
+                  },
+                  "lng": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "lat",
+                  "lng"
+                ]
+              }
+            },
+            "required": [
+              "street",
+              "suite",
+              "city",
+              "zipcode",
+              "geo"
+            ]
+          },
+          "phone": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "company": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "catchPhrase": {
+                "type": "string"
+              },
+              "bs": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "catchPhrase",
+              "bs"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "username",
+          "email",
+          "address",
+          "phone",
+          "website",
+          "company"
+        ]
+      }
+    },
+    {
+      "id": "users_id_PUT",
+      "group": "users",
+      "method": "PUT",
+      "path": "/users/{id}",
+      "summary": "Replace users",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "username": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "street": {
+                  "type": "string"
+                },
+                "suite": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "zipcode": {
+                  "type": "string"
+                },
+                "geo": {
+                  "type": "object",
+                  "properties": {
+                    "lat": {
+                      "type": "string"
+                    },
+                    "lng": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "lat",
+                    "lng"
+                  ]
+                }
+              },
+              "required": [
+                "street",
+                "suite",
+                "city",
+                "zipcode",
+                "geo"
+              ]
+            },
+            "phone": {
+              "type": "string"
+            },
+            "website": {
+              "type": "string"
+            },
+            "company": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "catchPhrase": {
+                  "type": "string"
+                },
+                "bs": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "catchPhrase",
+                "bs"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "username",
+            "email",
+            "address",
+            "phone",
+            "website",
+            "company"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "street": {
+                "type": "string"
+              },
+              "suite": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "zipcode": {
+                "type": "string"
+              },
+              "geo": {
+                "type": "object",
+                "properties": {
+                  "lat": {
+                    "type": "string"
+                  },
+                  "lng": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "lat",
+                  "lng"
+                ]
+              }
+            },
+            "required": [
+              "street",
+              "suite",
+              "city",
+              "zipcode",
+              "geo"
+            ]
+          },
+          "phone": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "company": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "catchPhrase": {
+                "type": "string"
+              },
+              "bs": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "catchPhrase",
+              "bs"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "username",
+          "email",
+          "address",
+          "phone",
+          "website",
+          "company"
+        ]
+      }
+    },
+    {
+      "id": "users_id_PATCH",
+      "group": "users",
+      "method": "PATCH",
+      "path": "/users/{id}",
+      "summary": "Update part of users",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "username": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "street": {
+                  "type": "string"
+                },
+                "suite": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "zipcode": {
+                  "type": "string"
+                },
+                "geo": {
+                  "type": "object",
+                  "properties": {
+                    "lat": {
+                      "type": "string"
+                    },
+                    "lng": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "lat",
+                    "lng"
+                  ]
+                }
+              },
+              "required": [
+                "street",
+                "suite",
+                "city",
+                "zipcode",
+                "geo"
+              ]
+            },
+            "phone": {
+              "type": "string"
+            },
+            "website": {
+              "type": "string"
+            },
+            "company": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "catchPhrase": {
+                  "type": "string"
+                },
+                "bs": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "catchPhrase",
+                "bs"
+              ]
+            }
+          },
+          "required": []
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "street": {
+                "type": "string"
+              },
+              "suite": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "zipcode": {
+                "type": "string"
+              },
+              "geo": {
+                "type": "object",
+                "properties": {
+                  "lat": {
+                    "type": "string"
+                  },
+                  "lng": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "lat",
+                  "lng"
+                ]
+              }
+            },
+            "required": [
+              "street",
+              "suite",
+              "city",
+              "zipcode",
+              "geo"
+            ]
+          },
+          "phone": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "company": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "catchPhrase": {
+                "type": "string"
+              },
+              "bs": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "catchPhrase",
+              "bs"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "username",
+          "email",
+          "address",
+          "phone",
+          "website",
+          "company"
+        ]
+      }
+    },
+    {
+      "id": "users_id_DELETE",
+      "group": "users",
+      "method": "DELETE",
+      "path": "/users/{id}",
+      "summary": "Delete users",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true
+    },
+    {
+      "id": "posts_id_comments_GET",
+      "group": "posts",
+      "method": "GET",
+      "path": "/posts/{id}/comments",
+      "summary": "List comments of one posts",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": true,
+      "responseSchema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "postId": {
+              "type": "integer"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "postId",
+            "id",
+            "name",
+            "email",
+            "body"
+          ]
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "posts",
+      "collectionPath": "/posts",
+      "itemPath": "/posts/{id}",
+      "idParam": "id",
+      "idField": "id",
+      "createIdPath": "id",
+      "createEntityPath": "",
+      "sampleId": 1,
+      "persistsWrites": false,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title",
+          "body"
+        ]
+      }
+    },
+    {
+      "name": "comments",
+      "collectionPath": "/comments",
+      "itemPath": "/comments/{id}",
+      "idParam": "id",
+      "idField": "id",
+      "createIdPath": "id",
+      "createEntityPath": "",
+      "sampleId": 1,
+      "persistsWrites": false,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "postId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "postId",
+          "id",
+          "name",
+          "email",
+          "body"
+        ]
+      }
+    },
+    {
+      "name": "albums",
+      "collectionPath": "/albums",
+      "itemPath": "/albums/{id}",
+      "idParam": "id",
+      "idField": "id",
+      "createIdPath": "id",
+      "createEntityPath": "",
+      "sampleId": 1,
+      "persistsWrites": false,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title"
+        ]
+      }
+    },
+    {
+      "name": "photos",
+      "collectionPath": "/photos",
+      "itemPath": "/photos/{id}",
+      "idParam": "id",
+      "idField": "id",
+      "createIdPath": "id",
+      "createEntityPath": "",
+      "sampleId": 1,
+      "persistsWrites": false,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "albumId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "albumId",
+          "id",
+          "title",
+          "url",
+          "thumbnailUrl"
+        ]
+      }
+    },
+    {
+      "name": "todos",
+      "collectionPath": "/todos",
+      "itemPath": "/todos/{id}",
+      "idParam": "id",
+      "idField": "id",
+      "createIdPath": "id",
+      "createEntityPath": "",
+      "sampleId": 1,
+      "persistsWrites": false,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "type": "string"
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "userId",
+          "id",
+          "title",
+          "completed"
+        ]
+      }
+    },
+    {
+      "name": "users",
+      "collectionPath": "/users",
+      "itemPath": "/users/{id}",
+      "idParam": "id",
+      "idField": "id",
+      "createIdPath": "id",
+      "createEntityPath": "",
+      "sampleId": 1,
+      "persistsWrites": false,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "street": {
+                "type": "string"
+              },
+              "suite": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "zipcode": {
+                "type": "string"
+              },
+              "geo": {
+                "type": "object",
+                "properties": {
+                  "lat": {
+                    "type": "string"
+                  },
+                  "lng": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "lat",
+                  "lng"
+                ]
+              }
+            },
+            "required": [
+              "street",
+              "suite",
+              "city",
+              "zipcode",
+              "geo"
+            ]
+          },
+          "phone": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "company": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "catchPhrase": {
+                "type": "string"
+              },
+              "bs": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "catchPhrase",
+              "bs"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "username",
+          "email",
+          "address",
+          "phone",
+          "website",
+          "company"
+        ]
+      }
+    }
+  ],
+  "defaults": {
+    "responseTimeMs": 2000,
+    "stringMinLength": 1,
+    "stringMaxLength": 255,
+    "numberMin": 0,
+    "numberMax": 2147483647,
+    "arrayMaxItems": 100
+  },
+  "assumptions": [
+    "No machine-readable spec found; endpoints inferred from links on the documentation page and safe GET/OPTIONS probes.",
+    "/posts: schema inferred from 50 sample object(s); every observed field treated as required, \"id\" treated as server-generated id.",
+    "/comments: schema inferred from 50 sample object(s); every observed field treated as required, \"id\" treated as server-generated id.",
+    "/albums: schema inferred from 50 sample object(s); every observed field treated as required, \"id\" treated as server-generated id.",
+    "/photos: schema inferred from 50 sample object(s); every observed field treated as required, \"id\" treated as server-generated id.",
+    "/todos: schema inferred from 50 sample object(s); every observed field treated as required, \"id\" treated as server-generated id.",
+    "/users: schema inferred from 10 sample object(s); every observed field treated as required, \"id\" treated as server-generated id.",
+    "/posts/{id}/comments: nested route found in documentation links; tested read-only (GET).",
+    "No authentication scheme documented: all endpoints treated as public.",
+    "Documentation states writes are simulated (not persisted): mutation tests target existing ids; lifecycle tests still verify persistence and will surface it."
+  ]
+}

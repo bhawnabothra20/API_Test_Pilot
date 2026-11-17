@@ -1,0 +1,142 @@
+{
+  "apiName": "jsonplaceholder",
+  "generatedAt": "2026-11-11T16:53:27.126Z",
+  "runStartedAt": "2026-11-11T16:51:36.256Z",
+  "specSource": "html-links",
+  "patchable": false,
+  "totals": {
+    "items": 6,
+    "fixApi": 0,
+    "fixDocs": 6,
+    "patchOps": 0,
+    "withheld": 0
+  },
+  "items": [
+    {
+      "id": "D1",
+      "endpoint": "GET /posts/{id}",
+      "endpointId": "posts_id_GET",
+      "kind": "undocumented-status",
+      "documented": "Not documented",
+      "observed": "HTTP 404 - calibrated convention (unknownId): assumed 404/400, observed 404 consistently",
+      "evidence": [
+        "TC_JSONPLACEHOLDER_POSTS_ID_GET_004.1",
+        "TC_JSONPLACEHOLDER_POSTS_ID_GET_004.2",
+        "TC_JSONPLACEHOLDER_POSTS_ID_GET_006.1",
+        "TC_JSONPLACEHOLDER_POSTS_ID_GET_006.2",
+        "TC_JSONPLACEHOLDER_POSTS_ID_GET_006.3",
+        "TC_JSONPLACEHOLDER_POSTS_ID_GET_006.4"
+      ],
+      "checks": 6,
+      "confidence": "high",
+      "recommendation": "fix docs",
+      "rationale": "The documentation is silent and the API consistently answers 404: document it."
+    },
+    {
+      "id": "D2",
+      "endpoint": "GET /comments/{id}",
+      "endpointId": "comments_id_GET",
+      "kind": "undocumented-status",
+      "documented": "Not documented",
+      "observed": "HTTP 404 - calibrated convention (unknownId): assumed 404/400, observed 404 consistently",
+      "evidence": [
+        "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_004.1",
+        "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_004.2",
+        "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_006.1",
+        "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_006.2",
+        "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_006.3",
+        "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_006.4"
+      ],
+      "checks": 6,
+      "confidence": "high",
+      "recommendation": "fix docs",
+      "rationale": "The documentation is silent and the API consistently answers 404: document it."
+    },
+    {
+      "id": "D3",
+      "endpoint": "GET /albums/{id}",
+      "endpointId": "albums_id_GET",
+      "kind": "undocumented-status",
+      "documented": "Not documented",
+      "observed": "HTTP 404 - calibrated convention (unknownId): assumed 404/400, observed 404 consistently",
+      "evidence": [
+        "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_004.1",
+        "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_004.2",
+        "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_006.1",
+        "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_006.2",
+        "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_006.3",
+        "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_006.4"
+      ],
+      "checks": 6,
+      "confidence": "high",
+      "recommendation": "fix docs",
+      "rationale": "The documentation is silent and the API consistently answers 404: document it."
+    },
+    {
+      "id": "D4",
+      "endpoint": "GET /photos/{id}",
+      "endpointId": "photos_id_GET",
+      "kind": "undocumented-status",
+      "documented": "Not documented",
+      "observed": "HTTP 404 - calibrated convention (unknownId): assumed 404/400, observed 404 consistently",
+      "evidence": [
+        "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_004.1",
+        "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_004.2",
+        "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_006.1",
+        "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_006.2",
+        "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_006.3",
+        "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_006.4"
+      ],
+      "checks": 6,
+      "confidence": "high",
+      "recommendation": "fix docs",
+      "rationale": "The documentation is silent and the API consistently answers 404: document it."
+    },
+    {
+      "id": "D5",
+      "endpoint": "GET /todos/{id}",
+      "endpointId": "todos_id_GET",
+      "kind": "undocumented-status",
+      "documented": "Not documented",
+      "observed": "HTTP 404 - calibrated convention (unknownId): assumed 404/400, observed 404 consistently",
+      "evidence": [
+        "TC_JSONPLACEHOLDER_TODOS_ID_GET_004.1",
+        "TC_JSONPLACEHOLDER_TODOS_ID_GET_004.2",
+        "TC_JSONPLACEHOLDER_TODOS_ID_GET_006.1",
+        "TC_JSONPLACEHOLDER_TODOS_ID_GET_006.2",
+        "TC_JSONPLACEHOLDER_TODOS_ID_GET_006.3",
+        "TC_JSONPLACEHOLDER_TODOS_ID_GET_006.4"
+      ],
+      "checks": 6,
+      "confidence": "high",
+      "recommendation": "fix docs",
+      "rationale": "The documentation is silent and the API consistently answers 404: document it."
+    },
+    {
+      "id": "D6",
+      "endpoint": "GET /users/{id}",
+      "endpointId": "users_id_GET",
+      "kind": "undocumented-status",
+      "documented": "Not documented",
+      "observed": "HTTP 404 - calibrated convention (unknownId): assumed 404/400, observed 404 consistently",
+      "evidence": [
+        "TC_JSONPLACEHOLDER_USERS_ID_GET_004.1",
+        "TC_JSONPLACEHOLDER_USERS_ID_GET_004.2",
+        "TC_JSONPLACEHOLDER_USERS_ID_GET_006.1",
+        "TC_JSONPLACEHOLDER_USERS_ID_GET_006.2",
+        "TC_JSONPLACEHOLDER_USERS_ID_GET_006.3",
+        "TC_JSONPLACEHOLDER_USERS_ID_GET_006.4"
+      ],
+      "checks": 6,
+      "confidence": "high",
+      "recommendation": "fix docs",
+      "rationale": "The documentation is silent and the API consistently answers 404: document it."
+    }
+  ],
+  "withheld": [],
+  "confirmed": [],
+  "notes": [
+    "Spec source is html-links: no OpenAPI document to patch; drift items only.",
+    "Most of the documented model was inferred, so only calibrated conventions, server errors and simulated writes can be compared."
+  ]
+}

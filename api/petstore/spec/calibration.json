@@ -1,0 +1,36 @@
+{
+  "apiName": "petstore",
+  "updatedAt": "2026-11-10T15:10:28.329Z",
+  "conventions": [
+    {
+      "kind": "unknownId",
+      "endpointId": "store_order_orderId_GET",
+      "assumed": [
+        404
+      ],
+      "observed": 404,
+      "checks": [
+        "TC_PETSTORE_STORE_ORDER_ORDERID_GET_004.2",
+        "TC_PETSTORE_STORE_ORDER_ORDERID_GET_006.1",
+        "TC_PETSTORE_STORE_ORDER_ORDERID_GET_006.2",
+        "TC_PETSTORE_STORE_ORDER_ORDERID_GET_006.3",
+        "TC_PETSTORE_STORE_ORDER_ORDERID_GET_006.4"
+      ],
+      "learnedAt": "2026-11-10T15:10:28.328Z"
+    },
+    {
+      "kind": "unknownId",
+      "endpointId": "store_order_orderId_DELETE",
+      "assumed": [
+        404
+      ],
+      "observed": 404,
+      "checks": [
+        "TC_PETSTORE_STORE_ORDER_ORDERID_DELETE_004.2",
+        "TC_PETSTORE_STORE_ORDER_ORDERID_DELETE_005.1",
+        "TC_PETSTORE_STORE_ORDER_ORDERID_DELETE_005.2"
+      ],
+      "learnedAt": "2026-11-10T15:10:28.329Z"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# dependencies / build
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+
+# MCP server runtime data (job logs may contain API responses)
+mcp/jobs/
+mcp/logs/
+
+# per-run Playwright artefacts (reports are kept deliberately as examples)
+api/*/reports/results.json
+api/*/.cache/
+
+# unit-test scratch folders (tests/unit/fixtures.ts)
+.unit-test-tmp/
+
+# per-run archives (raw API responses) and regenerable caches - CI keeps history in the Actions cache
+api/*/reports/history/
+api/*/spec/design-cache.json
+
+# verbatim copies of downloaded specs (re-fetched by discovery; may contain documented demo credentials)
+api/*/spec/api_data.json
+api/*/spec/openapi.json

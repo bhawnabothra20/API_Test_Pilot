@@ -1,0 +1,22 @@
+{
+  "apiName": "restful-booker",
+  "updatedAt": "2026-11-10T15:44:54.571Z",
+  "conventions": [
+    {
+      "kind": "unauthenticated",
+      "assumed": [
+        401
+      ],
+      "observed": 403,
+      "checks": [
+        "TC_RESTFUL_BOOKER_BOOKING_POST_004.4",
+        "TC_RESTFUL_BOOKER_BOOKING_POST_004.5",
+        "TC_RESTFUL_BOOKER_BOOKING_POST_004.10",
+        "TC_RESTFUL_BOOKER_BOOKING_POST_004.11",
+        "TC_RESTFUL_BOOKER_BOOKING_POST_004.14",
+        "TC_RESTFUL_BOOKER_BOOKING_POST_004.15"
+      ],
+      "learnedAt": "2026-11-10T15:44:54.571Z"
+    }
+  ]
+}

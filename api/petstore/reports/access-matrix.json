@@ -1,0 +1,435 @@
+{
+  "apiName": "petstore",
+  "generatedAt": "2026-11-11T16:40:58.351Z",
+  "identities": [
+    "admin",
+    "none",
+    "invalid"
+  ],
+  "rows": [
+    {
+      "endpoint": "POST /pet",
+      "cells": {
+        "admin": {
+          "expected": [
+            201
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.1"
+          ],
+          "actual": 200
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.2"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.3"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /pet",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.4"
+          ],
+          "actual": 200
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.5"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.6"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        }
+      }
+    },
+    {
+      "endpoint": "GET /pet/findByStatus",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.7"
+          ],
+          "actual": 200
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.8"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.9"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        }
+      }
+    },
+    {
+      "endpoint": "GET /pet/findByTags",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.10"
+          ],
+          "actual": 200
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.11"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.12"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        }
+      }
+    },
+    {
+      "endpoint": "GET /pet/{petId}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.13"
+          ],
+          "actual": 200
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.14"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.15"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /pet/{petId}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.16"
+          ],
+          "actual": 200
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.17"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_PET_POST_004.18"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        }
+      }
+    },
+    {
+      "endpoint": "GET /store/inventory",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_PETSTORE_STORE_INVENTORY_GET_002.1"
+          ],
+          "actual": 200
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_STORE_INVENTORY_GET_002.2"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_STORE_INVENTORY_GET_002.3"
+          ],
+          "actual": 200,
+          "finding": "Auth bypass"
+        }
+      }
+    },
+    {
+      "endpoint": "POST /store/order",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_PETSTORE_STORE_INVENTORY_GET_002.4"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "GET /store/order/{orderId}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_PETSTORE_STORE_INVENTORY_GET_002.5"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /store/order/{orderId}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_PETSTORE_STORE_INVENTORY_GET_002.6"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "POST /user/createWithList",
+      "cells": {
+        "none": {
+          "expected": [
+            201
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_USER_CREATEWITHLIST_POST_003.1"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "GET /user/{username}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_PETSTORE_USER_CREATEWITHLIST_POST_003.2"
+          ],
+          "actual": 404
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /user/{username}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_PETSTORE_USER_CREATEWITHLIST_POST_003.3"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /user/{username}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_PETSTORE_USER_CREATEWITHLIST_POST_003.4"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "GET /user/login",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_USER_CREATEWITHLIST_POST_003.5"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "GET /user/logout",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_PETSTORE_USER_CREATEWITHLIST_POST_003.6"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "POST /user/createWithArray",
+      "cells": {
+        "none": {
+          "expected": [
+            201
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_USER_CREATEWITHLIST_POST_003.7"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "POST /user",
+      "cells": {
+        "none": {
+          "expected": [
+            201
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_PETSTORE_USER_CREATEWITHLIST_POST_003.8"
+          ],
+          "actual": 200
+        }
+      }
+    }
+  ]
+}

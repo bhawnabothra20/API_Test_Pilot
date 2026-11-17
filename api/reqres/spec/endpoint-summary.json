@@ -1,0 +1,4868 @@
+{
+  "apiName": "reqres",
+  "envPrefix": "REQRES",
+  "title": "ReqRes API",
+  "sourceUrl": "https://reqres.in",
+  "baseUrl": "https://reqres.in",
+  "specSource": "openapi3",
+  "specFile": "spec/openapi.json",
+  "discoveredAt": "2026-11-11T15:38:37.596Z",
+  "auth": {
+    "type": "apiKey",
+    "unauthenticatedStatus": 401,
+    "forbiddenStatus": 403,
+    "statusDocumented": true,
+    "roles": [],
+    "notes": [
+      "Primary security scheme \"ApiKeyAuth\" (apiKey)."
+    ],
+    "headerName": "x-api-key",
+    "declaredSchemes": {
+      "ApiKeyAuth": "apiKey",
+      "BearerAuth": "http"
+    },
+    "login": {
+      "method": "POST",
+      "path": "/api/login",
+      "usernameField": "email",
+      "passwordField": "password",
+      "tokenField": "token",
+      "endpointId": "api_login_POST"
+    }
+  },
+  "endpoints": [
+    {
+      "id": "api_projects_sandbox_POST",
+      "group": "api",
+      "method": "POST",
+      "path": "/api/projects/sandbox",
+      "summary": "Create a sandbox project (no signup)",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 429,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object"
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "project": {
+            "type": "object"
+          },
+          "keys": {
+            "type": "object",
+            "description": "manage (pro_*) and public (pub_*) keys"
+          },
+          "starter_collection": {
+            "type": "string",
+            "example": "products"
+          },
+          "base_url": {
+            "type": "string",
+            "example": "https://reqres.in"
+          },
+          "claim_url": {
+            "type": "string"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "limits": {
+            "type": "object"
+          },
+          "next_steps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "id": "api_users_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/users",
+      "summary": "List users (legacy)",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "per_page": {
+            "type": "integer"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "total_pages": {
+            "type": "integer"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "email": {
+                  "type": "string",
+                  "format": "email"
+                },
+                "first_name": {
+                  "type": "string"
+                },
+                "last_name": {
+                  "type": "string"
+                },
+                "avatar": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "email",
+                "first_name",
+                "last_name",
+                "avatar"
+              ]
+            }
+          },
+          "support": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "page",
+          "per_page",
+          "total",
+          "total_pages",
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_users_POST",
+      "group": "api",
+      "method": "POST",
+      "path": "/api/users",
+      "summary": "Create user (legacy)",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object"
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": []
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_users_id_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/users/{id}",
+      "summary": "Get user by id (legacy)",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
+              },
+              "first_name": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "avatar": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "email",
+              "first_name",
+              "last_name",
+              "avatar"
+            ]
+          },
+          "support": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_users_id_PUT",
+      "group": "api",
+      "method": "PUT",
+      "path": "/api/users/{id}",
+      "summary": "Update user (legacy)",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object"
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": []
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_users_id_PATCH",
+      "group": "api",
+      "method": "PATCH",
+      "path": "/api/users/{id}",
+      "summary": "Patch user (legacy)",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object"
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": []
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_users_id_DELETE",
+      "group": "api",
+      "method": "DELETE",
+      "path": "/api/users/{id}",
+      "summary": "Delete user (legacy)",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 204,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_unknown_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/unknown",
+      "summary": "List resources (legacy)",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer"
+          },
+          "per_page": {
+            "type": "integer"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "total_pages": {
+            "type": "integer"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "year": {
+                  "type": "integer"
+                },
+                "color": {
+                  "type": "string"
+                },
+                "pantone_value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "year",
+                "color",
+                "pantone_value"
+              ]
+            }
+          },
+          "support": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "page",
+          "per_page",
+          "total",
+          "total_pages",
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_unknown_id_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/unknown/{id}",
+      "summary": "Get resource by id (legacy)",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "year": {
+                "type": "integer"
+              },
+              "color": {
+                "type": "string"
+              },
+              "pantone_value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "year",
+              "color",
+              "pantone_value"
+            ]
+          },
+          "support": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_register_POST",
+      "group": "api",
+      "method": "POST",
+      "path": "/api/register",
+      "summary": "Register user",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "password": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "password"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "token"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_login_POST",
+      "group": "api",
+      "method": "POST",
+      "path": "/api/login",
+      "summary": "Login user",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": true,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "password": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "password"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "token"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_logout_POST",
+      "group": "api",
+      "method": "POST",
+      "path": "/api/logout",
+      "summary": "Logout user",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object"
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_collections_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/collections",
+      "summary": "List collections",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "project_id": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "string"
+                },
+                "schema": {
+                  "type": "object"
+                },
+                "visibility": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "slug"
+              ]
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_collections_POST",
+      "group": "api",
+      "method": "POST",
+      "path": "/api/collections",
+      "summary": "Create collection",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            },
+            "schema": {
+              "type": "object"
+            },
+            "project_id": {
+              "type": "string"
+            },
+            "visibility": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "user_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "schema": {
+                "type": "object"
+              },
+              "visibility": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "slug"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_collections_slug_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/collections/{slug}",
+      "summary": "Get collection",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "user_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "schema": {
+                "type": "object"
+              },
+              "visibility": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "slug"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_collections_slug_PUT",
+      "group": "api",
+      "method": "PUT",
+      "path": "/api/collections/{slug}",
+      "summary": "Update collection",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            },
+            "schema": {
+              "type": "object"
+            },
+            "visibility": {
+              "type": "string"
+            }
+          },
+          "required": []
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "user_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "schema": {
+                "type": "object"
+              },
+              "visibility": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "slug"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_collections_slug_DELETE",
+      "group": "api",
+      "method": "DELETE",
+      "path": "/api/collections/{slug}",
+      "summary": "Delete collection",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 204,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_collections_slug_records_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/collections/{slug}/records",
+      "summary": "List records",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "created_before",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        {
+          "name": "created_after",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        {
+          "name": "data_contains",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "asc",
+              "desc"
+            ]
+          }
+        },
+        {
+          "name": "include_deleted",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "collection_id": {
+                  "type": "string"
+                },
+                "project_id": {
+                  "type": "string"
+                },
+                "app_user_id": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "deleted_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "nullable": true
+                },
+                "data": {
+                  "type": "object"
+                }
+              },
+              "required": [
+                "id",
+                "data"
+              ]
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "page": {
+                "type": "integer"
+              },
+              "limit": {
+                "type": "integer"
+              },
+              "total": {
+                "type": "integer"
+              },
+              "pages": {
+                "type": "integer"
+              }
+            },
+            "required": []
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_collections_slug_records_POST",
+      "group": "api",
+      "method": "POST",
+      "path": "/api/collections/{slug}/records",
+      "summary": "Create record",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "data"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "collection_id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "app_user_id": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "deleted_at": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "data": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_collections_slug_records_recordId_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/collections/{slug}/records/{recordId}",
+      "summary": "Get record",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "recordId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "collection_id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "app_user_id": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "deleted_at": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "data": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_collections_slug_records_recordId_PUT",
+      "group": "api",
+      "method": "PUT",
+      "path": "/api/collections/{slug}/records/{recordId}",
+      "summary": "Update record",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "recordId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "data"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "collection_id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "app_user_id": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "deleted_at": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "data": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_collections_slug_records_recordId_PATCH",
+      "group": "api",
+      "method": "PATCH",
+      "path": "/api/collections/{slug}/records/{recordId}",
+      "summary": "Patch record",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "recordId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "data"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "collection_id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "app_user_id": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "deleted_at": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "data": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_collections_slug_records_recordId_DELETE",
+      "group": "api",
+      "method": "DELETE",
+      "path": "/api/collections/{slug}/records/{recordId}",
+      "summary": "Delete record",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "recordId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 204,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_appusers_login_POST",
+      "group": "api",
+      "method": "POST",
+      "path": "/api/app-users/login",
+      "summary": "App user login",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "project_id": {
+              "type": "string"
+            },
+            "metadata": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "email"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_appusers_verify_POST",
+      "group": "api",
+      "method": "POST",
+      "path": "/api/app-users/verify",
+      "summary": "Verify app user token",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "token"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      }
+    },
+    {
+      "id": "api_appusers_me_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/app-users/me",
+      "summary": "Current app user",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "BearerAuth"
+      ]
+    },
+    {
+      "id": "api_appusers_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/app-users",
+      "summary": "List app users",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 200
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "format": "email"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "last_login_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "metadata": {
+                  "type": "object"
+                }
+              },
+              "required": [
+                "id",
+                "email"
+              ]
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_appusers_POST",
+      "group": "api",
+      "method": "POST",
+      "path": "/api/app-users",
+      "summary": "Create app user",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "metadata": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "email"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
+              },
+              "status": {
+                "type": "string"
+              },
+              "last_login_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "metadata": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "email"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_appusers_id_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/app-users/{id}",
+      "summary": "Get app user",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
+              },
+              "status": {
+                "type": "string"
+              },
+              "last_login_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "metadata": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "email"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_appusers_id_PUT",
+      "group": "api",
+      "method": "PUT",
+      "path": "/api/app-users/{id}",
+      "summary": "Update app user",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "status": {
+              "type": "string"
+            },
+            "metadata": {
+              "type": "object"
+            }
+          },
+          "required": []
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
+              },
+              "status": {
+                "type": "string"
+              },
+              "last_login_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "metadata": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "email"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_appusers_id_DELETE",
+      "group": "api",
+      "method": "DELETE",
+      "path": "/api/app-users/{id}",
+      "summary": "Delete app user",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object"
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_appusers_id_sessions_simulate_POST",
+      "group": "api",
+      "method": "POST",
+      "path": "/api/app-users/{id}/sessions/simulate",
+      "summary": "Simulate app user session",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object"
+        }
+      },
+      "responseSchema": {
+        "type": "object"
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_projects_projectId_appusers_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/projects/{projectId}/app-users",
+      "summary": "List project app users",
+      "pathParams": [
+        {
+          "name": "projectId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "statuses",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "format": "email"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "last_login_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "metadata": {
+                  "type": "object"
+                }
+              },
+              "required": [
+                "id",
+                "email"
+              ]
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_projects_projectId_appusers_total_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/projects/{projectId}/app-users/total",
+      "summary": "App users total",
+      "pathParams": [
+        {
+          "name": "projectId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "total"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_custom_path_GET",
+      "group": "api",
+      "method": "GET",
+      "path": "/api/custom/{path}",
+      "summary": "Execute custom endpoint",
+      "pathParams": [
+        {
+          "name": "path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object"
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_custom_path_POST",
+      "group": "api",
+      "method": "POST",
+      "path": "/api/custom/{path}",
+      "summary": "Execute custom endpoint",
+      "pathParams": [
+        {
+          "name": "path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object"
+        }
+      },
+      "responseSchema": {
+        "type": "object"
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_custom_path_PUT",
+      "group": "api",
+      "method": "PUT",
+      "path": "/api/custom/{path}",
+      "summary": "Execute custom endpoint",
+      "pathParams": [
+        {
+          "name": "path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object"
+        }
+      },
+      "responseSchema": {
+        "type": "object"
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_custom_path_PATCH",
+      "group": "api",
+      "method": "PATCH",
+      "path": "/api/custom/{path}",
+      "summary": "Execute custom endpoint",
+      "pathParams": [
+        {
+          "name": "path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object"
+        }
+      },
+      "responseSchema": {
+        "type": "object"
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "api_custom_path_DELETE",
+      "group": "api",
+      "method": "DELETE",
+      "path": "/api/custom/{path}",
+      "summary": "Execute custom endpoint",
+      "pathParams": [
+        {
+          "name": "path",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object"
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "ApiKeyAuth"
+      ]
+    },
+    {
+      "id": "app_me_GET",
+      "group": "app",
+      "method": "GET",
+      "path": "/app/me",
+      "summary": "App user profile",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "BearerAuth"
+      ]
+    },
+    {
+      "id": "app_collections_GET",
+      "group": "app",
+      "method": "GET",
+      "path": "/app/collections",
+      "summary": "List collections (app user)",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "project_id": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "string"
+                },
+                "schema": {
+                  "type": "object"
+                },
+                "visibility": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "slug"
+              ]
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "BearerAuth"
+      ]
+    },
+    {
+      "id": "app_collections_slug_GET",
+      "group": "app",
+      "method": "GET",
+      "path": "/app/collections/{slug}",
+      "summary": "Get collection (app user)",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "user_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "schema": {
+                "type": "object"
+              },
+              "visibility": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "slug"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "BearerAuth"
+      ]
+    },
+    {
+      "id": "app_collections_slug_records_GET",
+      "group": "app",
+      "method": "GET",
+      "path": "/app/collections/{slug}/records",
+      "summary": "List records (app user)",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "collection_id": {
+                  "type": "string"
+                },
+                "project_id": {
+                  "type": "string"
+                },
+                "app_user_id": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "deleted_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "nullable": true
+                },
+                "data": {
+                  "type": "object"
+                }
+              },
+              "required": [
+                "id",
+                "data"
+              ]
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "page": {
+                "type": "integer"
+              },
+              "limit": {
+                "type": "integer"
+              },
+              "total": {
+                "type": "integer"
+              },
+              "pages": {
+                "type": "integer"
+              }
+            },
+            "required": []
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "BearerAuth"
+      ]
+    },
+    {
+      "id": "app_collections_slug_records_POST",
+      "group": "app",
+      "method": "POST",
+      "path": "/app/collections/{slug}/records",
+      "summary": "Create record (app user)",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "data"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "collection_id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "app_user_id": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "deleted_at": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "data": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "BearerAuth"
+      ]
+    },
+    {
+      "id": "app_collections_slug_records_recordId_GET",
+      "group": "app",
+      "method": "GET",
+      "path": "/app/collections/{slug}/records/{recordId}",
+      "summary": "Get record (app user)",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "recordId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "collection_id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "app_user_id": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "deleted_at": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "data": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "BearerAuth"
+      ]
+    },
+    {
+      "id": "app_collections_slug_records_recordId_PUT",
+      "group": "app",
+      "method": "PUT",
+      "path": "/app/collections/{slug}/records/{recordId}",
+      "summary": "Update record (app user)",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "recordId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "data"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "collection_id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "app_user_id": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "deleted_at": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "data": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "BearerAuth"
+      ]
+    },
+    {
+      "id": "app_collections_slug_records_recordId_PATCH",
+      "group": "app",
+      "method": "PATCH",
+      "path": "/app/collections/{slug}/records/{recordId}",
+      "summary": "Patch record (app user)",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "recordId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "data"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "collection_id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "app_user_id": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "deleted_at": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "data": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "BearerAuth"
+      ]
+    },
+    {
+      "id": "app_collections_slug_records_recordId_DELETE",
+      "group": "app",
+      "method": "DELETE",
+      "path": "/app/collections/{slug}/records/{recordId}",
+      "summary": "Delete record (app user)",
+      "pathParams": [
+        {
+          "name": "slug",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "recordId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 204,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "securitySchemes": [
+        "BearerAuth"
+      ]
+    },
+    {
+      "id": "agent_v1_health_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/health",
+      "summary": "Agent Sandbox health probe",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "healthy",
+                  "degraded",
+                  "maintenance"
+                ]
+              },
+              "version": {
+                "type": "string"
+              },
+              "uptime_seconds": {
+                "type": "integer"
+              },
+              "rate_limit_status": {
+                "type": "object",
+                "properties": {
+                  "tier": {
+                    "type": "string"
+                  },
+                  "remaining_today": {
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "limit_today": {
+                    "nullable": true,
+                    "type": "integer"
+                  },
+                  "reset_at": {
+                    "nullable": true,
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                },
+                "required": []
+              },
+              "deprecations": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              }
+            },
+            "required": [
+              "status",
+              "version",
+              "uptime_seconds",
+              "rate_limit_status",
+              "deprecations"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      }
+    },
+    {
+      "id": "agent_v1_users_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/users",
+      "summary": "List agent users (cursor pagination)",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "maximum": 100
+          }
+        },
+        {
+          "name": "fields",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "seed",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "format": "email"
+                },
+                "full_name": {
+                  "type": "string"
+                },
+                "locale": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "updated_at": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "timezone": {
+                  "type": "string"
+                },
+                "profile": {
+                  "type": "object",
+                  "properties": {
+                    "avatar_url": {
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "bio": {
+                      "nullable": true,
+                      "type": "string"
+                    },
+                    "company": {
+                      "nullable": true,
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "department": {
+                          "type": "string"
+                        },
+                        "employee_id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": []
+                    },
+                    "social": {
+                      "type": "object",
+                      "properties": {
+                        "twitter": {
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "github": {
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "linkedin": {
+                          "nullable": true,
+                          "type": "string"
+                        }
+                      },
+                      "required": []
+                    }
+                  },
+                  "required": []
+                },
+                "preferences": {
+                  "type": "object"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "active",
+                    "suspended"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "email",
+                "full_name",
+                "locale",
+                "created_at",
+                "updated_at",
+                "timezone",
+                "profile",
+                "preferences",
+                "status"
+              ]
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "limit": {
+                "type": "integer"
+              },
+              "returned": {
+                "type": "integer"
+              },
+              "next_cursor": {
+                "nullable": true,
+                "type": "string",
+                "description": "Opaque cursor or null if at end."
+              },
+              "prev_cursor": {
+                "nullable": true,
+                "type": "string",
+                "description": "Always null in v1 (forward-only pagination)."
+              },
+              "has_more": {
+                "type": "boolean"
+              },
+              "total_estimate": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "limit",
+              "returned",
+              "next_cursor",
+              "prev_cursor",
+              "has_more",
+              "total_estimate"
+            ]
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ]
+      }
+    },
+    {
+      "id": "agent_v1_users_id_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/users/{id}",
+      "summary": "Get a single agent user with optional expansion",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "expand",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
+              },
+              "full_name": {
+                "type": "string"
+              },
+              "locale": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "timezone": {
+                "type": "string"
+              },
+              "profile": {
+                "type": "object",
+                "properties": {
+                  "avatar_url": {
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "bio": {
+                    "nullable": true,
+                    "type": "string"
+                  },
+                  "company": {
+                    "nullable": true,
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "department": {
+                        "type": "string"
+                      },
+                      "employee_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": []
+                  },
+                  "social": {
+                    "type": "object",
+                    "properties": {
+                      "twitter": {
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "github": {
+                        "nullable": true,
+                        "type": "string"
+                      },
+                      "linkedin": {
+                        "nullable": true,
+                        "type": "string"
+                      }
+                    },
+                    "required": []
+                  }
+                },
+                "required": []
+              },
+              "preferences": {
+                "type": "object"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "active",
+                  "suspended"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "email",
+              "full_name",
+              "locale",
+              "created_at",
+              "updated_at",
+              "timezone",
+              "profile",
+              "preferences",
+              "status"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "errorSchema": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Machine-readable error code."
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable message."
+          },
+          "hint": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "error",
+          "message"
+        ]
+      }
+    },
+    {
+      "id": "agent_v1_auth_login_POST",
+      "group": "agent",
+      "method": "POST",
+      "path": "/agent/v1/auth/login",
+      "summary": "Agent auth login (with MFA branch)",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "password": {
+              "type": "string",
+              "minLength": 8
+            }
+          },
+          "required": [
+            "email",
+            "password"
+          ]
+        }
+      }
+    },
+    {
+      "id": "agent_v1_auth_mfa_verify_POST",
+      "group": "agent",
+      "method": "POST",
+      "path": "/agent/v1/auth/mfa/verify",
+      "summary": "Complete an MFA challenge",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 422,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "challenge_token": {
+              "type": "string",
+              "description": "From the login response (starts with agt_mfa)"
+            },
+            "code": {
+              "type": "string",
+              "example": "424242",
+              "description": "Fixed test code. Anything else is rejected."
+            }
+          },
+          "required": [
+            "challenge_token",
+            "code"
+          ]
+        }
+      }
+    },
+    {
+      "id": "agent_v1_orders_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/orders",
+      "summary": "List agent orders (relational data)",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "maximum": 100
+          }
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "paid",
+              "shipped",
+              "delivered",
+              "refunded",
+              "cancelled"
+            ]
+          }
+        },
+        {
+          "name": "seed",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "sim_payments_v1_GET",
+      "group": "sim",
+      "method": "GET",
+      "path": "/sim/payments/v1/",
+      "summary": "Payments Sandbox discovery (B1-B3)",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "agent_v1_chains_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/chains",
+      "summary": "List scenario chains (agent key required)",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "agent_v1_chains_POST",
+      "group": "agent",
+      "method": "POST",
+      "path": "/agent/v1/chains",
+      "summary": "Create or update a chain definition",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 422,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "steps": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "maxItems": 50,
+              "example": [
+                "ok",
+                "ok",
+                "rate-limited",
+                "timeout",
+                "ok"
+              ]
+            },
+            "loop": {
+              "type": "boolean"
+            },
+            "scope": {
+              "type": "string",
+              "enum": [
+                "per-run",
+                "per-key"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "steps"
+          ]
+        }
+      }
+    },
+    {
+      "id": "agent_v1_chains_name_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/chains/{name}",
+      "summary": "One chain definition",
+      "pathParams": [
+        {
+          "name": "name",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "agent_v1_chains_name_DELETE",
+      "group": "agent",
+      "method": "DELETE",
+      "path": "/agent/v1/chains/{name}",
+      "summary": "Delete an own chain definition",
+      "pathParams": [
+        {
+          "name": "name",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 422,
+      "inferred": false
+    },
+    {
+      "id": "agent_v1_chains_name_state_DELETE",
+      "group": "agent",
+      "method": "DELETE",
+      "path": "/agent/v1/chains/{name}/state",
+      "summary": "Reset chain position (A2.3)",
+      "pathParams": [
+        {
+          "name": "name",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "agent_v1_trajectories_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/trajectories",
+      "summary": "List trajectories (agent key required)",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "maximum": 50
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "agent_v1_trajectories_demo_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/trajectories/demo",
+      "summary": "Keyless sample trajectory (a real Claude Code benchmark run)",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "agent_v1_trajectories_run_id_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/trajectories/{run_id}",
+      "summary": "Full ordered call list for one trajectory",
+      "pathParams": [
+        {
+          "name": "run_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "agent_v1_trajectories_run_id_export_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/trajectories/{run_id}/export",
+      "summary": "Export a trajectory as JSONL",
+      "pathParams": [
+        {
+          "name": "run_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "agent_v1_trajectories_a_diff_b_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/trajectories/{a}/diff/{b}",
+      "summary": "Diff two trajectories",
+      "pathParams": [
+        {
+          "name": "a",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "b",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "agent_v1_scenarios_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/scenarios",
+      "summary": "List training scenarios",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "agent_v1_scenarios_scenario_GET",
+      "group": "agent",
+      "method": "GET",
+      "path": "/agent/v1/scenarios/{scenario}",
+      "summary": "Trigger a deliberate failure scenario",
+      "pathParams": [
+        {
+          "name": "scenario",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 409,
+      "inferred": false
+    }
+  ],
+  "resources": [
+    {
+      "name": "api",
+      "collectionPath": "/api/projects/sandbox",
+      "idField": "id",
+      "createIdPath": "id",
+      "createEntityPath": "",
+      "persistsWrites": true
+    },
+    {
+      "name": "app",
+      "collectionPath": "/app/collections/{slug}/records",
+      "itemPath": "/app/collections/{slug}/records/{recordId}",
+      "idParam": "recordId",
+      "idField": "id",
+      "createIdPath": "id",
+      "createEntityPath": "",
+      "persistsWrites": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "collection_id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "app_user_id": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "deleted_at": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "data": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "id",
+              "data"
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ]
+      }
+    },
+    {
+      "name": "agent",
+      "collectionPath": "/agent/v1/auth/login",
+      "idField": "id",
+      "createIdPath": "id",
+      "createEntityPath": "",
+      "persistsWrites": true
+    }
+  ],
+  "defaults": {
+    "responseTimeMs": 2000,
+    "stringMinLength": 1,
+    "stringMaxLength": 255,
+    "numberMin": 0,
+    "numberMax": 2147483647,
+    "arrayMaxItems": 100
+  },
+  "assumptions": [
+    "Spec found at https://reqres.in/openapi.json (openapi3)."
+  ]
+}

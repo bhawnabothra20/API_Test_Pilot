@@ -1,0 +1,176 @@
+{
+  "apiName": "restful-booker",
+  "generatedAt": "2026-11-12T06:55:04.839Z",
+  "identities": [
+    "admin",
+    "none",
+    "invalid"
+  ],
+  "rows": [
+    {
+      "endpoint": "POST /booking",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_BOOKING_POST_004.1"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /booking/{id}",
+      "cells": {
+        "admin": {
+          "expected": [
+            201
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_BOOKING_POST_004.2"
+          ],
+          "actual": 201
+        },
+        "none": {
+          "expected": [
+            403
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_BOOKING_POST_004.3"
+          ],
+          "actual": 403
+        },
+        "invalid": {
+          "expected": [
+            403
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_BOOKING_POST_004.4"
+          ],
+          "actual": 403
+        }
+      }
+    },
+    {
+      "endpoint": "GET /booking/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_BOOKING_POST_004.5"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "GET /booking",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_BOOKING_POST_004.6"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PATCH /booking/{id}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_BOOKING_POST_004.7"
+          ],
+          "actual": 200
+        },
+        "none": {
+          "expected": [
+            403
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_BOOKING_POST_004.8"
+          ],
+          "actual": 403
+        },
+        "invalid": {
+          "expected": [
+            403
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_BOOKING_POST_004.9"
+          ],
+          "actual": 403
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /booking/{id}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_BOOKING_POST_004.10"
+          ],
+          "actual": 200
+        },
+        "none": {
+          "expected": [
+            403
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_BOOKING_POST_004.11"
+          ],
+          "actual": 403
+        },
+        "invalid": {
+          "expected": [
+            403
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_BOOKING_POST_004.12"
+          ],
+          "actual": 403
+        }
+      }
+    },
+    {
+      "endpoint": "GET /ping",
+      "cells": {
+        "none": {
+          "expected": [
+            201
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_RESTFUL_BOOKER_PING_GET_002"
+          ],
+          "actual": 201
+        }
+      }
+    }
+  ]
+}

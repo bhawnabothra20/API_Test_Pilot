@@ -1,0 +1,21 @@
+{
+  "apiName": "reqres",
+  "generatedAt": "2026-11-11T15:38:42.984Z",
+  "authType": "apiKey",
+  "totalChecks": 476,
+  "runnableChecks": 476,
+  "credentials": [
+    {
+      "kind": "admin",
+      "neededBy": 280,
+      "configured": true,
+      "via": "REQRES_API_KEY",
+      "verified": "not-checked"
+    }
+  ],
+  "quota": {
+    "status": "ok",
+    "detail": "GET /api/users -> 200, 249/250 requests left."
+  },
+  "warnings": []
+}

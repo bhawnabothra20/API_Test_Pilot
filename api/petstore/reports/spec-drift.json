@@ -1,0 +1,256 @@
+{
+  "apiName": "petstore",
+  "generatedAt": "2026-11-11T16:40:58.055Z",
+  "runStartedAt": "2026-11-11T16:38:22.360Z",
+  "specSource": "swagger2",
+  "specFile": "spec/openapi.json",
+  "patchable": true,
+  "totals": {
+    "items": 14,
+    "fixApi": 14,
+    "fixDocs": 0,
+    "patchOps": 0,
+    "withheld": 0
+  },
+  "items": [
+    {
+      "id": "D1",
+      "endpoint": "POST /pet",
+      "endpointId": "pet_POST",
+      "kind": "validation-not-enforced",
+      "documented": "Invalid input is rejected with 405",
+      "observed": "Accepted with HTTP 200 in 6 checks (e.g. POST /pet without required field \"name\" is rejected with 405)",
+      "evidence": [
+        "TC_PETSTORE_PET_POST_002.1",
+        "TC_PETSTORE_PET_POST_002.2",
+        "TC_PETSTORE_PET_POST_002.3",
+        "TC_PETSTORE_PET_POST_002.6",
+        "TC_PETSTORE_PET_POST_002.9",
+        "TC_PETSTORE_PET_POST_002.10"
+      ],
+      "checks": 6,
+      "confidence": "high",
+      "recommendation": "fix API",
+      "rationale": "The documented validation rule is not enforced. Documented rules are never relaxed to match the API."
+    },
+    {
+      "id": "D2",
+      "endpoint": "PUT /pet",
+      "endpointId": "pet_PUT",
+      "kind": "validation-not-enforced",
+      "documented": "Invalid input is rejected with 400",
+      "observed": "Accepted with HTTP 200 in 6 checks (e.g. PUT /pet without required field \"name\" is rejected with 400)",
+      "evidence": [
+        "TC_PETSTORE_PET_PUT_002.1",
+        "TC_PETSTORE_PET_PUT_002.2",
+        "TC_PETSTORE_PET_PUT_002.3",
+        "TC_PETSTORE_PET_PUT_002.6",
+        "TC_PETSTORE_PET_PUT_002.9",
+        "TC_PETSTORE_PET_PUT_002.10"
+      ],
+      "checks": 6,
+      "confidence": "high",
+      "recommendation": "fix API",
+      "rationale": "The documented validation rule is not enforced. Documented rules are never relaxed to match the API."
+    },
+    {
+      "id": "D3",
+      "endpoint": "POST /user",
+      "endpointId": "user_POST",
+      "kind": "validation-not-enforced",
+      "documented": "Invalid input is rejected with 400",
+      "observed": "Accepted with HTTP 200 in 6 checks (e.g. POST /user with wrong type for \"username\" (number instead of string) is rejected with 400)",
+      "evidence": [
+        "TC_PETSTORE_USER_POST_002.2",
+        "TC_PETSTORE_USER_POST_002.3",
+        "TC_PETSTORE_USER_POST_002.4",
+        "TC_PETSTORE_USER_POST_002.5",
+        "TC_PETSTORE_USER_POST_002.6",
+        "TC_PETSTORE_USER_POST_002.7"
+      ],
+      "checks": 6,
+      "confidence": "high",
+      "recommendation": "fix API",
+      "rationale": "The documented validation rule is not enforced. Documented rules are never relaxed to match the API."
+    },
+    {
+      "id": "D4",
+      "endpoint": "PUT /user/{username}",
+      "endpointId": "user_username_PUT",
+      "kind": "validation-not-enforced",
+      "documented": "Invalid input is rejected with 400",
+      "observed": "Accepted with HTTP 200 in 6 checks (e.g. PUT /user/{username} with wrong type for \"username\" (number instead of string) is rejected with 400)",
+      "evidence": [
+        "TC_PETSTORE_USER_USERNAME_PUT_002.3",
+        "TC_PETSTORE_USER_USERNAME_PUT_002.4",
+        "TC_PETSTORE_USER_USERNAME_PUT_002.5",
+        "TC_PETSTORE_USER_USERNAME_PUT_002.6",
+        "TC_PETSTORE_USER_USERNAME_PUT_002.7",
+        "TC_PETSTORE_USER_USERNAME_PUT_002.8"
+      ],
+      "checks": 6,
+      "confidence": "high",
+      "recommendation": "fix API",
+      "rationale": "The documented validation rule is not enforced. Documented rules are never relaxed to match the API."
+    },
+    {
+      "id": "D5",
+      "endpoint": "POST /store/order",
+      "endpointId": "store_order_POST",
+      "kind": "server-error",
+      "documented": "No 5xx response documented for client input",
+      "observed": "HTTP 500 in 5 responses",
+      "evidence": [
+        "TC_PETSTORE_STORE_ORDER_POST_002"
+      ],
+      "checks": 5,
+      "confidence": "high",
+      "recommendation": "fix API",
+      "rationale": "A server error is never a contract to document: the API must handle this input (400/422 for invalid input, success for valid input)."
+    },
+    {
+      "id": "D6",
+      "endpoint": "POST /pet",
+      "endpointId": "pet_POST",
+      "kind": "server-error",
+      "documented": "No 5xx response documented for client input",
+      "observed": "HTTP 500 in 4 responses",
+      "evidence": [
+        "TC_PETSTORE_PET_POST_002"
+      ],
+      "checks": 4,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "A server error is never a contract to document: the API must handle this input (400/422 for invalid input, success for valid input)."
+    },
+    {
+      "id": "D7",
+      "endpoint": "PUT /pet",
+      "endpointId": "pet_PUT",
+      "kind": "server-error",
+      "documented": "No 5xx response documented for client input",
+      "observed": "HTTP 500 in 4 responses",
+      "evidence": [
+        "TC_PETSTORE_PET_PUT_002"
+      ],
+      "checks": 4,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "A server error is never a contract to document: the API must handle this input (400/422 for invalid input, success for valid input)."
+    },
+    {
+      "id": "D8",
+      "endpoint": "POST /store/order",
+      "endpointId": "store_order_POST",
+      "kind": "validation-not-enforced",
+      "documented": "Invalid input is rejected with 400",
+      "observed": "Accepted with HTTP 200 in 3 checks (e.g. POST /store/order with wrong type for \"shipDate\" (number instead of string) is rejected with 400)",
+      "evidence": [
+        "TC_PETSTORE_STORE_ORDER_POST_002.4",
+        "TC_PETSTORE_STORE_ORDER_POST_002.5",
+        "TC_PETSTORE_STORE_ORDER_POST_002.7"
+      ],
+      "checks": 3,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "The documented validation rule is not enforced. Documented rules are never relaxed to match the API."
+    },
+    {
+      "id": "D9",
+      "endpoint": "POST /user",
+      "endpointId": "user_POST",
+      "kind": "server-error",
+      "documented": "No 5xx response documented for client input",
+      "observed": "HTTP 500 in 2 responses",
+      "evidence": [
+        "TC_PETSTORE_USER_POST_002"
+      ],
+      "checks": 2,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "A server error is never a contract to document: the API must handle this input (400/422 for invalid input, success for valid input)."
+    },
+    {
+      "id": "D10",
+      "endpoint": "PUT /user/{username}",
+      "endpointId": "user_username_PUT",
+      "kind": "server-error",
+      "documented": "No 5xx response documented for client input",
+      "observed": "HTTP 500 in 2 responses",
+      "evidence": [
+        "TC_PETSTORE_USER_USERNAME_PUT_002"
+      ],
+      "checks": 2,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "A server error is never a contract to document: the API must handle this input (400/422 for invalid input, success for valid input)."
+    },
+    {
+      "id": "D11",
+      "endpoint": "GET /user/login",
+      "endpointId": "user_login_GET",
+      "kind": "validation-not-enforced",
+      "documented": "Invalid input is rejected with 400",
+      "observed": "Accepted with HTTP 200 in 2 checks (e.g. GET /user/login without required query parameter \"username\" is rejected with 400)",
+      "evidence": [
+        "TC_PETSTORE_USER_LOGIN_GET_002.1",
+        "TC_PETSTORE_USER_LOGIN_GET_002.3"
+      ],
+      "checks": 2,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "The documented validation rule is not enforced. Documented rules are never relaxed to match the API."
+    },
+    {
+      "id": "D12",
+      "endpoint": "GET /user/login",
+      "endpointId": "user_login_GET",
+      "kind": "type-mismatch",
+      "documented": "\"<body>\" is string",
+      "observed": "object in all 2 successful responses",
+      "evidence": [
+        "TC_PETSTORE_USER_LOGIN_GET_001"
+      ],
+      "checks": 2,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "The documented type is contradicted. Documented types are never changed to match the API automatically."
+    },
+    {
+      "id": "D13",
+      "endpoint": "GET /pet/findByStatus",
+      "endpointId": "pet_findByStatus_GET",
+      "kind": "validation-not-enforced",
+      "documented": "Invalid input is rejected with 400",
+      "observed": "Accepted with HTTP 200 in 1 check (e.g. GET /pet/findByStatus without required query parameter \"status\" is rejected with 400)",
+      "evidence": [
+        "TC_PETSTORE_PET_FINDBYSTATUS_GET_002.1"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documented validation rule is not enforced. Documented rules are never relaxed to match the API."
+    },
+    {
+      "id": "D14",
+      "endpoint": "GET /pet/findByTags",
+      "endpointId": "pet_findByTags_GET",
+      "kind": "validation-not-enforced",
+      "documented": "Invalid input is rejected with 400",
+      "observed": "Accepted with HTTP 200 in 1 check (e.g. GET /pet/findByTags without required query parameter \"tags\" is rejected with 400)",
+      "evidence": [
+        "TC_PETSTORE_PET_FINDBYTAGS_GET_002.1"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documented validation rule is not enforced. Documented rules are never relaxed to match the API."
+    }
+  ],
+  "withheld": [],
+  "confirmed": [
+    "GET /store/order/{orderId}: 404 is documented and observed",
+    "DELETE /store/order/{orderId}: 404 is documented and observed"
+  ],
+  "notes": []
+}

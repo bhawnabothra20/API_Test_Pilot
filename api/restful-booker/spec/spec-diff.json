@@ -1,0 +1,28 @@
+{
+  "apiName": "restful-booker",
+  "generatedAt": "2026-11-12T06:45:58.269Z",
+  "previousDesignAt": "2026-11-11T16:08:33.279Z",
+  "mode": "incremental",
+  "reason": "only groups whose endpoints or resource changed are regenerated",
+  "endpoints": {
+    "added": [],
+    "removed": [],
+    "changed": [],
+    "unchanged": 8
+  },
+  "groups": {
+    "regenerated": [],
+    "unchanged": [
+      "auth",
+      "booking",
+      "ping"
+    ],
+    "removed": []
+  },
+  "checks": {
+    "added": [],
+    "removed": [],
+    "changed": [],
+    "kept": 206
+  }
+}

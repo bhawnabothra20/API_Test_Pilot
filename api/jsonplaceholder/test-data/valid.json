@@ -1,0 +1,1130 @@
+{
+  "TC_JSONPLACEHOLDER_POSTS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "userId": 1,
+      "title": "Debeo varietas ago assumenda.",
+      "body": "Condico eaque correptius caecus certe denego. Voluptate conforto aedificium doloremque cattus tres ceno id."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_POST_001.2": {
+    "note": "schema validation",
+    "body": {
+      "userId": 1,
+      "title": "Aegre calco tenetur sollicito.",
+      "body": "Provident minima volva veritatis somniculosus. Vesco fuga tabula vir brevis magnam debilito magnam totus tubineus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_POST_001.3": {
+    "note": "echo exactness",
+    "body": {
+      "userId": 1,
+      "title": "Aegre calco tenetur sollicito.",
+      "body": "Provident minima volva veritatis somniculosus. Vesco fuga tabula vir brevis magnam debilito magnam totus tubineus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_001.1": {
+    "note": "valid request",
+    "body": {
+      "userId": 1,
+      "title": "Deporto audio facere amaritudo.",
+      "body": "Virga eveniet angulus tergiversatio vinco. Corporis alioqui cunctatio quis aegre peccatus thymum peior administratio summisse."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_001.2": {
+    "note": "schema validation",
+    "body": {
+      "userId": 1,
+      "title": "Temperantia comitatus deorsum conqueror.",
+      "body": "Curis textor somniculosus curia decimus doloribus vomer. Peccatus adulescens argumentum cubitum somnus suppellex statim tego triumphus deserunt."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_001.3": {
+    "note": "echo exactness",
+    "body": {
+      "userId": 1,
+      "title": "Temperantia comitatus deorsum conqueror.",
+      "body": "Curis textor somniculosus curia decimus doloribus vomer. Peccatus adulescens argumentum cubitum somnus suppellex statim tego triumphus deserunt."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_001.4": {
+    "note": "valid request",
+    "body": {
+      "title": "Congregatio suasoria templum succurro."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_001.5": {
+    "note": "schema validation",
+    "body": {
+      "title": "Vox ubi vesper suffoco."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_001.6": {
+    "note": "echo exactness",
+    "body": {
+      "title": "Vox ubi vesper suffoco."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_POST_003": {
+    "note": "lifecycle",
+    "body": {
+      "userId": 1,
+      "title": "Degusto quis tres utor.",
+      "body": "Summa adamo patria vigilo vigor. Qui utpote cui vorax aperte ver supellex."
+    },
+    "updateBody": {
+      "userId": 1,
+      "title": "Animi deludo ventosus compono.",
+      "body": "Varius tres peccatus summa demens vapulus. Charisma aperio administratio aut cruciamentum."
+    },
+    "patchBody": {
+      "title": "Deporto ultra adfero tersus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_GET_002.1": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_GET_002.2": {
+    "note": "public endpoint, no token",
+    "body": {
+      "userId": 1,
+      "title": "Commemoro civitas audacia acer.",
+      "body": "Mollitia consequuntur argentum conspergo. Aveho utor sustineo."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_GET_002.3": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_GET_002.4": {
+    "note": "public endpoint, no token",
+    "body": {
+      "userId": 1,
+      "title": "Undique aestivus amiculum angustus.",
+      "body": "Cibo adimpleo corpus vere deduco voluptate claudeo. Temeritas tantillus sto vallum vitium bestia demitto."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_GET_002.5": {
+    "note": "public endpoint, no token",
+    "body": {
+      "title": "Tenetur trucido terra appositus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_GET_002.6": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_GET_002.7": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_GET_002.8": {
+    "note": "excessive data exposure"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_GET_002.9": {
+    "note": "excessive data exposure"
+  },
+  "TC_JSONPLACEHOLDER_POSTS_GET_002.10": {
+    "note": "excessive data exposure"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_001.2": {
+    "note": "filter",
+    "query": {
+      "postId": 1
+    },
+    "filterField": "postId"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_001.3": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_001.4": {
+    "note": "format/enum/range validation"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "postId": 1,
+      "name": "Merle Kulas",
+      "email": "ervin26@example.com",
+      "body": "Censura adversus desolo usus. Thermae vesco appello ancilla repellendus acervus defessus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_001.2": {
+    "note": "schema validation",
+    "body": {
+      "postId": 1,
+      "name": "Elta Runte",
+      "email": "wilford27@example.com",
+      "body": "Uter carpo temperantia communis dedecor ipsam demitto conculco arbustum. Ut aeger bonus abbas solium."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_001.3": {
+    "note": "format/enum/range validation",
+    "body": {
+      "postId": 1,
+      "name": "Elta Runte",
+      "email": "wilford27@example.com",
+      "body": "Uter carpo temperantia communis dedecor ipsam demitto conculco arbustum. Ut aeger bonus abbas solium."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_001.4": {
+    "note": "echo exactness",
+    "body": {
+      "postId": 1,
+      "name": "Elta Runte",
+      "email": "wilford27@example.com",
+      "body": "Uter carpo temperantia communis dedecor ipsam demitto conculco arbustum. Ut aeger bonus abbas solium."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_001.1": {
+    "note": "valid request",
+    "body": {
+      "postId": 1,
+      "name": "Estell Rippin",
+      "email": "kathryn_gleason@example.com",
+      "body": "Ustulo vitae artificiose quasi sapiente. Degero aliquam stultus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_001.2": {
+    "note": "schema validation",
+    "body": {
+      "postId": 1,
+      "name": "Olga Farrell",
+      "email": "herminia43@example.com",
+      "body": "Spero paens circumvenio decens asperiores cuppedia astrum eligendi adstringo. Eaque terreo cohibeo damno odio."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_001.3": {
+    "note": "format/enum/range validation",
+    "body": {
+      "postId": 1,
+      "name": "Olga Farrell",
+      "email": "herminia43@example.com",
+      "body": "Spero paens circumvenio decens asperiores cuppedia astrum eligendi adstringo. Eaque terreo cohibeo damno odio."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_001.4": {
+    "note": "echo exactness",
+    "body": {
+      "postId": 1,
+      "name": "Olga Farrell",
+      "email": "herminia43@example.com",
+      "body": "Spero paens circumvenio decens asperiores cuppedia astrum eligendi adstringo. Eaque terreo cohibeo damno odio."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_001.5": {
+    "note": "valid request",
+    "body": {
+      "name": "Zetta Baumbach"
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_001.6": {
+    "note": "schema validation",
+    "body": {
+      "name": "Kathryne Leuschke"
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_001.7": {
+    "note": "format/enum/range validation",
+    "body": {
+      "name": "Kathryne Leuschke"
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_001.8": {
+    "note": "echo exactness",
+    "body": {
+      "name": "Kathryne Leuschke"
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_DELETE_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_004": {
+    "note": "lifecycle",
+    "body": {
+      "postId": 1,
+      "name": "Princess Kohler",
+      "email": "aurelia1@example.com",
+      "body": "Cotidie vorago coniuratio sopor speciosus deduco curriculum volubilis. Volutabrum tolero absque delectatio accommodo cognomen non damnatio."
+    },
+    "updateBody": {
+      "postId": 1,
+      "name": "Greg Nolan",
+      "email": "linnea.wehner@example.com",
+      "body": "Alveus adamo temperantia sum ante tenax soluta pecto cariosus usque. Defluo sequi nesciunt terreo ascit angelus."
+    },
+    "patchBody": {
+      "name": "Dallas Feest"
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_003.1": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_003.2": {
+    "note": "public endpoint, no token",
+    "body": {
+      "postId": 1,
+      "name": "Lowell Upton",
+      "email": "elmore.watsica@example.com",
+      "body": "Summa tollo curto agnosco. Charisma depraedor caecus porro calcar commemoro."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_003.3": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_003.4": {
+    "note": "public endpoint, no token",
+    "body": {
+      "postId": 1,
+      "name": "Horace Yost",
+      "email": "lana97@example.com",
+      "body": "Thesaurus tandem confugo corrupti cohibeo viscus considero temporibus statim tandem. Cupiditate vesica damnatio cresco currus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_003.5": {
+    "note": "public endpoint, no token",
+    "body": {
+      "name": "Jerald Heaney"
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_003.6": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_003.7": {
+    "note": "excessive data exposure"
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_003.8": {
+    "note": "excessive data exposure"
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "userId": 1,
+      "title": "Amplexus certus vinco creo."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_POST_001.2": {
+    "note": "schema validation",
+    "body": {
+      "userId": 1,
+      "title": "Vinitor temeritas colo conduco."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_POST_001.3": {
+    "note": "echo exactness",
+    "body": {
+      "userId": 1,
+      "title": "Vinitor temeritas colo conduco."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_001.1": {
+    "note": "valid request",
+    "body": {
+      "userId": 1,
+      "title": "Atavus bestia pectus quibusdam."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_001.2": {
+    "note": "schema validation",
+    "body": {
+      "userId": 1,
+      "title": "Alter acies vindico urbanus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_001.3": {
+    "note": "echo exactness",
+    "body": {
+      "userId": 1,
+      "title": "Alter acies vindico urbanus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_001.4": {
+    "note": "valid request",
+    "body": {
+      "title": "Candidus adulatio amaritudo usus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_001.5": {
+    "note": "schema validation",
+    "body": {
+      "title": "Autus caste brevis alias."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_001.6": {
+    "note": "echo exactness",
+    "body": {
+      "title": "Autus caste brevis alias."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_DELETE_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_POST_003": {
+    "note": "lifecycle",
+    "body": {
+      "userId": 1,
+      "title": "Cena laboriosam soluta asperiores."
+    },
+    "updateBody": {
+      "userId": 1,
+      "title": "Strues vinculum arca conturbo."
+    },
+    "patchBody": {
+      "title": "Amiculum teres tenuis eius."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_GET_002.1": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_GET_002.2": {
+    "note": "public endpoint, no token",
+    "body": {
+      "userId": 1,
+      "title": "Ustilo cubicularis cervus volva."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_GET_002.3": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_GET_002.4": {
+    "note": "public endpoint, no token",
+    "body": {
+      "userId": 1,
+      "title": "Tepesco peccatus cum corroboro."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_GET_002.5": {
+    "note": "public endpoint, no token",
+    "body": {
+      "title": "Debeo ullus aliquid trepide."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_GET_002.6": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_GET_002.7": {
+    "note": "excessive data exposure"
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_GET_002.8": {
+    "note": "excessive data exposure"
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "albumId": 1,
+      "title": "Volo abstergo at ater.",
+      "url": "https://example.com/oezntqup",
+      "thumbnailUrl": "https://example.com/kpozusbd"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_001.2": {
+    "note": "schema validation",
+    "body": {
+      "albumId": 1,
+      "title": "Ustulo quasi vix auctus.",
+      "url": "https://example.com/qttd94wr",
+      "thumbnailUrl": "https://example.com/hmt8jk8o"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_001.3": {
+    "note": "format/enum/range validation",
+    "body": {
+      "albumId": 1,
+      "title": "Ustulo quasi vix auctus.",
+      "url": "https://example.com/qttd94wr",
+      "thumbnailUrl": "https://example.com/hmt8jk8o"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_001.4": {
+    "note": "echo exactness",
+    "body": {
+      "albumId": 1,
+      "title": "Ustulo quasi vix auctus.",
+      "url": "https://example.com/qttd94wr",
+      "thumbnailUrl": "https://example.com/hmt8jk8o"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_001.1": {
+    "note": "valid request",
+    "body": {
+      "albumId": 1,
+      "title": "Adhuc aeger synagoga supplanto.",
+      "url": "https://example.com/ksuyfgmr",
+      "thumbnailUrl": "https://example.com/qvybxnjs"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_001.2": {
+    "note": "schema validation",
+    "body": {
+      "albumId": 1,
+      "title": "Summa articulus curto amita.",
+      "url": "https://example.com/5ffvzphc",
+      "thumbnailUrl": "https://example.com/65091u89"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_001.3": {
+    "note": "format/enum/range validation",
+    "body": {
+      "albumId": 1,
+      "title": "Summa articulus curto amita.",
+      "url": "https://example.com/5ffvzphc",
+      "thumbnailUrl": "https://example.com/65091u89"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_001.4": {
+    "note": "echo exactness",
+    "body": {
+      "albumId": 1,
+      "title": "Summa articulus curto amita.",
+      "url": "https://example.com/5ffvzphc",
+      "thumbnailUrl": "https://example.com/65091u89"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_001.5": {
+    "note": "valid request",
+    "body": {
+      "title": "Arx thalassinus aperiam caput."
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_001.6": {
+    "note": "schema validation",
+    "body": {
+      "title": "Coruscus saepe cruentus combibo."
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_001.7": {
+    "note": "format/enum/range validation",
+    "body": {
+      "title": "Coruscus saepe cruentus combibo."
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_001.8": {
+    "note": "echo exactness",
+    "body": {
+      "title": "Coruscus saepe cruentus combibo."
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_DELETE_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_003": {
+    "note": "lifecycle",
+    "body": {
+      "albumId": 1,
+      "title": "Similique cum antepono ager.",
+      "url": "https://example.com/il1jljo2",
+      "thumbnailUrl": "https://example.com/i22zoonn"
+    },
+    "updateBody": {
+      "albumId": 1,
+      "title": "Decet decumbo theca cupiditas.",
+      "url": "https://example.com/u7xm1fbm",
+      "thumbnailUrl": "https://example.com/ppejjnri"
+    },
+    "patchBody": {
+      "title": "Tricesimus similique autem aliquam."
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_GET_002.1": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_GET_002.2": {
+    "note": "public endpoint, no token",
+    "body": {
+      "albumId": 1,
+      "title": "Autem abscido commodi tum.",
+      "url": "https://example.com/6oulwubl",
+      "thumbnailUrl": "https://example.com/l3tsxaet"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_GET_002.3": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_GET_002.4": {
+    "note": "public endpoint, no token",
+    "body": {
+      "albumId": 1,
+      "title": "Adamo eligendi conitor advoco.",
+      "url": "https://example.com/ywupf3ho",
+      "thumbnailUrl": "https://example.com/7nwdahuj"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_GET_002.5": {
+    "note": "public endpoint, no token",
+    "body": {
+      "title": "Confero adopto catena fugiat."
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_GET_002.6": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_GET_002.7": {
+    "note": "excessive data exposure"
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_GET_002.8": {
+    "note": "excessive data exposure"
+  },
+  "TC_JSONPLACEHOLDER_TODOS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_TODOS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_TODOS_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "userId": 1,
+      "title": "Crinis vulgo adipiscor tutamen.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_POST_001.2": {
+    "note": "schema validation",
+    "body": {
+      "userId": 1,
+      "title": "Tenax tametsi infit inflammatio.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_POST_001.3": {
+    "note": "echo exactness",
+    "body": {
+      "userId": 1,
+      "title": "Tenax tametsi infit inflammatio.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_001.1": {
+    "note": "valid request",
+    "body": {
+      "userId": 1,
+      "title": "Sed paulatim trucido viscus.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_001.2": {
+    "note": "schema validation",
+    "body": {
+      "userId": 1,
+      "title": "Contigo vilicus apto consequatur.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_001.3": {
+    "note": "echo exactness",
+    "body": {
+      "userId": 1,
+      "title": "Contigo vilicus apto consequatur.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_001.4": {
+    "note": "valid request",
+    "body": {
+      "title": "Caveo depraedor cauda tamen."
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_001.5": {
+    "note": "schema validation",
+    "body": {
+      "title": "Quod in nam ante."
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_001.6": {
+    "note": "echo exactness",
+    "body": {
+      "title": "Quod in nam ante."
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_DELETE_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_TODOS_POST_003": {
+    "note": "lifecycle",
+    "body": {
+      "userId": 1,
+      "title": "Attero molestias dolore veniam.",
+      "completed": true
+    },
+    "updateBody": {
+      "userId": 1,
+      "title": "Titulus adipisci patrocinor sulum.",
+      "completed": true
+    },
+    "patchBody": {
+      "title": "Communis volo ciminatio surculus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_GET_002.1": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_TODOS_GET_002.2": {
+    "note": "public endpoint, no token",
+    "body": {
+      "userId": 1,
+      "title": "Conqueror demoror tero est.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_GET_002.3": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_TODOS_GET_002.4": {
+    "note": "public endpoint, no token",
+    "body": {
+      "userId": 1,
+      "title": "Curto cognomen acceptus desipio.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_GET_002.5": {
+    "note": "public endpoint, no token",
+    "body": {
+      "title": "Testimonium contego supra exercitationem."
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_GET_002.6": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_TODOS_GET_002.7": {
+    "note": "excessive data exposure"
+  },
+  "TC_JSONPLACEHOLDER_TODOS_GET_002.8": {
+    "note": "excessive data exposure"
+  },
+  "TC_JSONPLACEHOLDER_USERS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_USERS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_USERS_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "name": "Mrs. Estell Thompson",
+      "username": "Dallin65",
+      "email": "evert.schaden27@example.com",
+      "address": {
+        "street": "Market Square",
+        "suite": "Suite 100",
+        "city": "Toms River",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Miller Hahn",
+        "catchPhrase": "Profit-focused incremental forecast",
+        "bs": "Upgradable clear-thinking leverage"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_001.2": {
+    "note": "schema validation",
+    "body": {
+      "name": "Michaela Davis",
+      "username": "Marlene93",
+      "email": "aubrey_stoltenberg@example.com",
+      "address": {
+        "street": "W 6th Avenue",
+        "suite": "Suite 100",
+        "city": "Fort Herminia",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Alphonso Mann",
+        "catchPhrase": "Organized dedicated policy",
+        "bs": "Monitored zero administration intranet"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_001.3": {
+    "note": "format/enum/range validation",
+    "body": {
+      "name": "Michaela Davis",
+      "username": "Marlene93",
+      "email": "aubrey_stoltenberg@example.com",
+      "address": {
+        "street": "W 6th Avenue",
+        "suite": "Suite 100",
+        "city": "Fort Herminia",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Alphonso Mann",
+        "catchPhrase": "Organized dedicated policy",
+        "bs": "Monitored zero administration intranet"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_001.4": {
+    "note": "echo exactness",
+    "body": {
+      "name": "Michaela Davis",
+      "username": "Marlene93",
+      "email": "aubrey_stoltenberg@example.com",
+      "address": {
+        "street": "W 6th Avenue",
+        "suite": "Suite 100",
+        "city": "Fort Herminia",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Alphonso Mann",
+        "catchPhrase": "Organized dedicated policy",
+        "bs": "Monitored zero administration intranet"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_001.1": {
+    "note": "valid request",
+    "body": {
+      "name": "Marjory Pouros",
+      "username": "Kyla_Powlowski65",
+      "email": "kiera97@example.com",
+      "address": {
+        "street": "Lexie Brooks",
+        "suite": "Suite 100",
+        "city": "East Letitia",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Consuelo Corwin PhD",
+        "catchPhrase": "Open-architected radical generative AI",
+        "bs": "Open-source scalable protocol"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_001.2": {
+    "note": "schema validation",
+    "body": {
+      "name": "Alda Dooley",
+      "username": "TheoHeaney3",
+      "email": "kameron4@example.com",
+      "address": {
+        "street": "Medhurst Camp",
+        "suite": "Suite 100",
+        "city": "Santa Rosa",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Orion Jaskolski",
+        "catchPhrase": "Team-oriented zero tolerance solution",
+        "bs": "Future-proofed AI-powered migration"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_001.3": {
+    "note": "format/enum/range validation",
+    "body": {
+      "name": "Alda Dooley",
+      "username": "TheoHeaney3",
+      "email": "kameron4@example.com",
+      "address": {
+        "street": "Medhurst Camp",
+        "suite": "Suite 100",
+        "city": "Santa Rosa",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Orion Jaskolski",
+        "catchPhrase": "Team-oriented zero tolerance solution",
+        "bs": "Future-proofed AI-powered migration"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_001.4": {
+    "note": "echo exactness",
+    "body": {
+      "name": "Alda Dooley",
+      "username": "TheoHeaney3",
+      "email": "kameron4@example.com",
+      "address": {
+        "street": "Medhurst Camp",
+        "suite": "Suite 100",
+        "city": "Santa Rosa",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Orion Jaskolski",
+        "catchPhrase": "Team-oriented zero tolerance solution",
+        "bs": "Future-proofed AI-powered migration"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_001.5": {
+    "note": "valid request",
+    "body": {
+      "name": "Mrs. Susana Shanahan"
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_001.6": {
+    "note": "schema validation",
+    "body": {
+      "name": "Mrs. Camryn Donnelly"
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_001.7": {
+    "note": "format/enum/range validation",
+    "body": {
+      "name": "Mrs. Camryn Donnelly"
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_001.8": {
+    "note": "echo exactness",
+    "body": {
+      "name": "Mrs. Camryn Donnelly"
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_DELETE_001.1": {
+    "note": "valid request"
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_004": {
+    "note": "lifecycle",
+    "body": {
+      "name": "Maryann Murazik",
+      "username": "Lydia_Dickens",
+      "email": "jayne.kessler@example.com",
+      "address": {
+        "street": "Vandervort Cliffs",
+        "suite": "Suite 100",
+        "city": "Bretberg",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Josianne Schimmel",
+        "catchPhrase": "Extended local interface",
+        "bs": "Immersive tertiary archive"
+      }
+    },
+    "updateBody": {
+      "name": "Maryse Koss",
+      "username": "RickieKuphal9",
+      "email": "lauriane.kshlerin52@example.com",
+      "address": {
+        "street": "S Elm Street",
+        "suite": "Suite 100",
+        "city": "Lake Josephine",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Una Turcotte",
+        "catchPhrase": "Streamlined interactive customer loyalty",
+        "bs": "Total directional capability"
+      }
+    },
+    "patchBody": {
+      "name": "Leta O'Conner"
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_GET_002.1": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_USERS_GET_002.2": {
+    "note": "public endpoint, no token",
+    "body": {
+      "name": "Lelia Pfannerstill",
+      "username": "Cade95",
+      "email": "flo.leffler@example.com",
+      "address": {
+        "street": "Russel Point",
+        "suite": "Suite 100",
+        "city": "Fredericside",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Giovanny Reilly",
+        "catchPhrase": "Integrated neutral conglomeration",
+        "bs": "Face to face global pricing structure"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_GET_002.3": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_USERS_GET_002.4": {
+    "note": "public endpoint, no token",
+    "body": {
+      "name": "Anastasia Funk-Kutch",
+      "username": "Favian71",
+      "email": "shaun.mccullough95@example.com",
+      "address": {
+        "street": "Demetrius Rest",
+        "suite": "Suite 100",
+        "city": "West Cyril",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Dr. Sylvan Hane",
+        "catchPhrase": "Realigned sustainable conglomeration",
+        "bs": "Secured client-server productivity"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_GET_002.5": {
+    "note": "public endpoint, no token",
+    "body": {
+      "name": "Caden Witting"
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_GET_002.6": {
+    "note": "public endpoint, no token"
+  },
+  "TC_JSONPLACEHOLDER_USERS_GET_002.7": {
+    "note": "excessive data exposure"
+  },
+  "TC_JSONPLACEHOLDER_USERS_GET_002.8": {
+    "note": "excessive data exposure"
+  }
+}

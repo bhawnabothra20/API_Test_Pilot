@@ -1,0 +1,48 @@
+[
+  {
+    "op": "add",
+    "path": "/components/schemas/LegacyUnknownListResponse/properties/_meta",
+    "value": {
+      "type": "object",
+      "properties": {
+        "powered_by": {
+          "type": "string"
+        },
+        "docs_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "upgrade_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "example_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "variant": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "cta": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        },
+        "context": {
+          "type": "string"
+        }
+      },
+      "description": "Observed in API responses (suggested by api-test-pilot spec drift - please verify)."
+    }
+  }
+]

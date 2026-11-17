@@ -1,0 +1,697 @@
+{
+  "apiName": "restful-booker",
+  "envPrefix": "RESTFUL_BOOKER",
+  "title": "restful-booker.herokuapp.com (apiDoc)",
+  "sourceUrl": "https://restful-booker.herokuapp.com/",
+  "baseUrl": "https://restful-booker.herokuapp.com",
+  "specSource": "apidoc",
+  "specFile": "spec/api_data.json",
+  "discoveredAt": "2026-11-12T06:45:01.310Z",
+  "auth": {
+    "type": "cookie",
+    "unauthenticatedStatus": 401,
+    "forbiddenStatus": 403,
+    "statusDocumented": false,
+    "roles": [],
+    "notes": [
+      "Protected endpoints also accept \"Authorization: Basic <base64 user:pass>\"."
+    ],
+    "cookieName": "token",
+    "alternative": "basic",
+    "login": {
+      "method": "POST",
+      "path": "/auth",
+      "usernameField": "username",
+      "passwordField": "password",
+      "tokenField": "token",
+      "endpointId": "auth_POST"
+    }
+  },
+  "endpoints": [
+    {
+      "id": "auth_POST",
+      "group": "auth",
+      "method": "POST",
+      "path": "/auth",
+      "summary": "CreateToken",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": true,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "username": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "username",
+            "password"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "token"
+        ]
+      }
+    },
+    {
+      "id": "booking_POST",
+      "group": "booking",
+      "method": "POST",
+      "path": "/booking",
+      "summary": "CreateBooking",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {
+        "Accept": "application/json"
+      },
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "firstname": {
+              "type": "string"
+            },
+            "lastname": {
+              "type": "string"
+            },
+            "totalprice": {
+              "type": "number"
+            },
+            "depositpaid": {
+              "type": "boolean"
+            },
+            "bookingdates": {
+              "type": "object",
+              "properties": {
+                "checkin": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "checkout": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "checkin",
+                "checkout"
+              ]
+            },
+            "additionalneeds": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "firstname",
+            "lastname",
+            "totalprice",
+            "depositpaid",
+            "bookingdates",
+            "additionalneeds"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "bookingid": {
+            "type": "number"
+          },
+          "booking": {
+            "type": "object",
+            "properties": {
+              "firstname": {
+                "type": "string"
+              },
+              "lastname": {
+                "type": "string"
+              },
+              "totalprice": {
+                "type": "number"
+              },
+              "depositpaid": {
+                "type": "boolean"
+              },
+              "bookingdates": {
+                "type": "object",
+                "properties": {
+                  "checkin": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "checkout": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "checkin",
+                  "checkout"
+                ]
+              },
+              "additionalneeds": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "firstname",
+              "lastname",
+              "totalprice",
+              "depositpaid",
+              "bookingdates",
+              "additionalneeds"
+            ]
+          }
+        },
+        "required": [
+          "bookingid",
+          "booking"
+        ]
+      }
+    },
+    {
+      "id": "booking_id_DELETE",
+      "group": "booking",
+      "method": "DELETE",
+      "path": "/booking/{id}",
+      "summary": "DeleteBooking",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "text/plain",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "booking_id_GET",
+      "group": "booking",
+      "method": "GET",
+      "path": "/booking/{id}",
+      "summary": "GetBooking",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {
+        "Accept": "application/json"
+      },
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "totalprice": {
+            "type": "number"
+          },
+          "depositpaid": {
+            "type": "boolean"
+          },
+          "bookingdates": {
+            "type": "object",
+            "properties": {
+              "checkin": {
+                "type": "string",
+                "format": "date"
+              },
+              "checkout": {
+                "type": "string",
+                "format": "date"
+              }
+            },
+            "required": [
+              "checkin",
+              "checkout"
+            ]
+          },
+          "additionalneeds": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "firstname",
+          "lastname",
+          "totalprice",
+          "depositpaid",
+          "bookingdates",
+          "additionalneeds"
+        ]
+      }
+    },
+    {
+      "id": "booking_GET",
+      "group": "booking",
+      "method": "GET",
+      "path": "/booking",
+      "summary": "GetBookingIds",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "firstname",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "lastname",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "checkin",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        {
+          "name": "checkout",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "bookingid": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "bookingid"
+          ]
+        }
+      }
+    },
+    {
+      "id": "booking_id_PATCH",
+      "group": "booking",
+      "method": "PATCH",
+      "path": "/booking/{id}",
+      "summary": "PartialUpdateBooking",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {
+        "Accept": "application/json"
+      },
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "firstname": {
+              "type": "string"
+            },
+            "lastname": {
+              "type": "string"
+            },
+            "totalprice": {
+              "type": "number"
+            },
+            "depositpaid": {
+              "type": "boolean"
+            },
+            "bookingdates": {
+              "type": "object",
+              "properties": {
+                "checkin": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "checkout": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": []
+            },
+            "additionalneeds": {
+              "type": "string"
+            }
+          },
+          "required": []
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "totalprice": {
+            "type": "number"
+          },
+          "depositpaid": {
+            "type": "boolean"
+          },
+          "bookingdates": {
+            "type": "object",
+            "properties": {
+              "checkin": {
+                "type": "string",
+                "format": "date"
+              },
+              "checkout": {
+                "type": "string",
+                "format": "date"
+              }
+            },
+            "required": [
+              "checkin",
+              "checkout"
+            ]
+          },
+          "additionalneeds": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "firstname",
+          "lastname",
+          "totalprice",
+          "depositpaid",
+          "bookingdates",
+          "additionalneeds"
+        ]
+      }
+    },
+    {
+      "id": "booking_id_PUT",
+      "group": "booking",
+      "method": "PUT",
+      "path": "/booking/{id}",
+      "summary": "UpdateBooking",
+      "pathParams": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {
+        "Accept": "application/json"
+      },
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "firstname": {
+              "type": "string"
+            },
+            "lastname": {
+              "type": "string"
+            },
+            "totalprice": {
+              "type": "number"
+            },
+            "depositpaid": {
+              "type": "boolean"
+            },
+            "bookingdates": {
+              "type": "object",
+              "properties": {
+                "checkin": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "checkout": {
+                  "type": "string",
+                  "format": "date"
+                }
+              },
+              "required": [
+                "checkin",
+                "checkout"
+              ]
+            },
+            "additionalneeds": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "firstname",
+            "lastname",
+            "totalprice",
+            "depositpaid",
+            "bookingdates",
+            "additionalneeds"
+          ]
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "totalprice": {
+            "type": "number"
+          },
+          "depositpaid": {
+            "type": "boolean"
+          },
+          "bookingdates": {
+            "type": "object",
+            "properties": {
+              "checkin": {
+                "type": "string",
+                "format": "date"
+              },
+              "checkout": {
+                "type": "string",
+                "format": "date"
+              }
+            },
+            "required": [
+              "checkin",
+              "checkout"
+            ]
+          },
+          "additionalneeds": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "firstname",
+          "lastname",
+          "totalprice",
+          "depositpaid",
+          "bookingdates",
+          "additionalneeds"
+        ]
+      }
+    },
+    {
+      "id": "ping_GET",
+      "group": "ping",
+      "method": "GET",
+      "path": "/ping",
+      "summary": "HealthCheck",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "text/plain",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    }
+  ],
+  "resources": [
+    {
+      "name": "booking",
+      "collectionPath": "/booking",
+      "itemPath": "/booking/{id}",
+      "idParam": "id",
+      "idField": "bookingid",
+      "createIdPath": "bookingid",
+      "createEntityPath": "booking",
+      "sampleId": 1,
+      "persistsWrites": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "totalprice": {
+            "type": "number"
+          },
+          "depositpaid": {
+            "type": "boolean"
+          },
+          "bookingdates": {
+            "type": "object",
+            "properties": {
+              "checkin": {
+                "type": "string",
+                "format": "date"
+              },
+              "checkout": {
+                "type": "string",
+                "format": "date"
+              }
+            },
+            "required": [
+              "checkin",
+              "checkout"
+            ]
+          },
+          "additionalneeds": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "firstname",
+          "lastname",
+          "totalprice",
+          "depositpaid",
+          "bookingdates",
+          "additionalneeds"
+        ]
+      }
+    }
+  ],
+  "defaults": {
+    "responseTimeMs": 2000,
+    "stringMinLength": 1,
+    "stringMaxLength": 255,
+    "numberMin": 0,
+    "numberMax": 2147483647,
+    "arrayMaxItems": 100
+  },
+  "assumptions": [
+    "Spec found at https://restful-booker.herokuapp.com/apidoc/api_data.json (apidoc).",
+    "apiDoc does not document error status codes: expecting 401 for missing/invalid credentials, 404 for unknown ids, 400 for invalid input.",
+    "No security schemes are declared by apiDoc: auth is the documented cookie 'token=<value>' obtained from POST /auth, with Basic auth noted as an alternative.",
+    "PATCH /booking/{id} body fields are all treated as optional (partial update).",
+    "Writes are assumed to persist (the docs do not describe simulated writes)."
+  ]
+}

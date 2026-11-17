@@ -1,0 +1,1752 @@
+{
+  "apiName": "reqres",
+  "generatedAt": "2026-11-11T15:43:04.399Z",
+  "identities": [
+    "admin",
+    "none",
+    "invalid"
+  ],
+  "rows": [
+    {
+      "endpoint": "POST /api/projects/sandbox",
+      "cells": {
+        "none": {
+          "expected": [
+            201
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.1"
+          ],
+          "actual": 429
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/users",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.2"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.3"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.4"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /api/users",
+      "cells": {
+        "admin": {
+          "expected": [
+            201
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.5"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.6"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.7"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/users/{id}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.8"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.9"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.10"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /api/users/{id}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.11"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.12"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.13"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "PATCH /api/users/{id}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.14"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.15"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.16"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /api/users/{id}",
+      "cells": {
+        "admin": {
+          "expected": [
+            204
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.17"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.18"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.19"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/unknown",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.20"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.21"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.22"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/unknown/{id}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.23"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.24"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.25"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /api/register",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.26"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.27"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.28"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /api/logout",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.29"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.30"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.31"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/collections",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.32"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.33"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.34"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /api/collections",
+      "cells": {
+        "admin": {
+          "expected": [
+            201
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.35"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.36"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.37"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/collections/{slug}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.38"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.39"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.40"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /api/collections/{slug}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.41"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.42"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.43"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /api/collections/{slug}",
+      "cells": {
+        "admin": {
+          "expected": [
+            204
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.44"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.45"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.46"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/collections/{slug}/records",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.47"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.48"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.49"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /api/collections/{slug}/records",
+      "cells": {
+        "admin": {
+          "expected": [
+            201
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.50"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.51"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.52"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/collections/{slug}/records/{recordId}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.53"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.54"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.55"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /api/collections/{slug}/records/{recordId}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.56"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.57"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.58"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "PATCH /api/collections/{slug}/records/{recordId}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.59"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.60"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.61"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /api/collections/{slug}/records/{recordId}",
+      "cells": {
+        "admin": {
+          "expected": [
+            204
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.62"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.63"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.64"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /api/app-users/login",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.65"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.66"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.67"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /api/app-users/verify",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.68"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/app-users/me",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.69"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.70"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.71"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/app-users",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.72"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.73"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.74"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /api/app-users",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.75"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.76"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.77"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/app-users/{id}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.78"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.79"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.80"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /api/app-users/{id}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.81"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.82"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.83"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /api/app-users/{id}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.84"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.85"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.86"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /api/app-users/{id}/sessions/simulate",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.87"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.88"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.89"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/projects/{projectId}/app-users",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.90"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.91"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.92"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/projects/{projectId}/app-users/total",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.93"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.94"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.95"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /api/custom/{path}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.96"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.97"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.98"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /api/custom/{path}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.99"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.100"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.101"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /api/custom/{path}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.102"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.103"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.104"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "PATCH /api/custom/{path}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.105"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.106"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.107"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /api/custom/{path}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.108"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.109"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.110"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /app/me",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.1"
+          ],
+          "actual": 401
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.2"
+          ],
+          "actual": 401
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.3"
+          ],
+          "actual": 401
+        }
+      }
+    },
+    {
+      "endpoint": "GET /app/collections",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.4"
+          ],
+          "actual": 401
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.5"
+          ],
+          "actual": 401
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.6"
+          ],
+          "actual": 401
+        }
+      }
+    },
+    {
+      "endpoint": "GET /app/collections/{slug}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.7"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.8"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.9"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /app/collections/{slug}/records",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.10"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.11"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.12"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /app/collections/{slug}/records",
+      "cells": {
+        "admin": {
+          "expected": [
+            201
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.13"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.14"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.15"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /app/collections/{slug}/records/{recordId}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.16"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.17"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.18"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /app/collections/{slug}/records/{recordId}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.19"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.20"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.21"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "PATCH /app/collections/{slug}/records/{recordId}",
+      "cells": {
+        "admin": {
+          "expected": [
+            200
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.22"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.23"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.24"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /app/collections/{slug}/records/{recordId}",
+      "cells": {
+        "admin": {
+          "expected": [
+            204
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.25"
+          ]
+        },
+        "none": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.26"
+          ]
+        },
+        "invalid": {
+          "expected": [
+            401
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_REQRES_APP_ME_GET_002.27"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/health",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.1"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/users",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.2"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/users/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.3"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /agent/v1/auth/login",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.4"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /agent/v1/auth/mfa/verify",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.5"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/orders",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.6"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/chains",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.7"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "POST /agent/v1/chains",
+      "cells": {
+        "none": {
+          "expected": [
+            201
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.8"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/chains/{name}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.9"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /agent/v1/chains/{name}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.10"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /agent/v1/chains/{name}/state",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.11"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/trajectories",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.12"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/trajectories/demo",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.13"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/trajectories/{run_id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.14"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/trajectories/{run_id}/export",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.15"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/trajectories/{a}/diff/{b}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.16"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/scenarios",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.17"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /agent/v1/scenarios/{scenario}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_AGENT_V1_HEALTH_GET_002.18"
+          ]
+        }
+      }
+    },
+    {
+      "endpoint": "GET /sim/payments/v1/",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "skipped",
+          "checks": [
+            "TC_REQRES_SIM_PAYMENTS_V1_GET_002.1"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jsonplaceholder API test summary</title>
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--fg:#1d1d1b;--muted:#6b6b66;--line:#e3e2dc;--ok:#1f7a4d;--bad:#b42318;--skip:#9a9a92;--accent:#2f5bd3;--warn:#b26b00}
+@media (prefers-color-scheme:dark){:root{--bg:#161615;--card:#1f1f1d;--fg:#ecebe6;--muted:#a3a29b;--line:#34332f;--ok:#4cc38a;--bad:#ff6b5e;--skip:#77766f;--accent:#7d9bff;--warn:#e0a640}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:1280px;margin:0 auto;padding:24px 16px 64px}h1{font-size:24px;margin:0 0 4px}h2{font-size:17px;margin:32px 0 10px}
+a{color:var(--accent)}.muted{color:var(--muted)}.small{font-size:12px}.mono{font-family:ui-monospace,Consolas,monospace;font-size:12px;word-break:break-all}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}.card .v{font-size:26px;font-weight:650}.card .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.ok{color:var(--ok)}.bad{color:var(--bad)}.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.links a{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 10px;text-decoration:none}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:12px;color:var(--muted);font-weight:600;white-space:nowrap}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.barcell{min-width:140px}
+.bar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--line)}.bar .p{background:var(--ok)}.bar .f{background:var(--bad)}.bar .s{background:var(--skip)}
+.tag{display:inline-block;border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600;border:1px solid currentColor;white-space:nowrap}
+.cls-RealAPIdefect{color:var(--bad)}.cls-ContractSpecmismatch{color:var(--warn)}.cls-Testdataissue{color:var(--accent)}.cls-FlakyEnvironmentissue,.flaky{color:var(--skip)}
+pre{white-space:pre-wrap;word-break:break-word;max-height:320px;overflow:auto;background:var(--bg);padding:8px;border-radius:6px;font-size:11px}
+details summary{cursor:pointer;color:var(--accent)}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+input,select{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font:inherit}
+ul.assume li{margin:4px 0}
+table.matrix td.mx{font-size:11px;text-align:center;white-space:nowrap;min-width:72px}
+td.mx.pass{background:color-mix(in srgb,var(--ok) 14%,transparent)}td.mx.fail{background:color-mix(in srgb,var(--bad) 14%,transparent)}
+td.mx.skipped,td.mx.not-run,td.mx.none{color:var(--muted)}
+td.mx.finding{background:color-mix(in srgb,var(--bad) 32%,transparent);font-weight:700;outline:2px solid var(--bad);outline-offset:-2px}
+.tag.finding{color:var(--bad);margin-top:3px}.tag.owasp{color:var(--accent)}
+.banner{margin-top:16px;padding:12px 14px;border-radius:10px;border:1px solid var(--warn);background:color-mix(in srgb,var(--warn) 12%,transparent)}.banner ul{margin:6px 0 0;padding-left:18px}
+.sev-Critical{color:var(--bad);font-weight:700}.sev-High{color:var(--bad)}.sev-Medium{color:var(--warn)}.sev-Low{color:var(--muted)}
+</style>
+</head>
+<body><main>
+<h1>JSONPlaceholder - Free Fake REST API</h1>
+<div class="muted">API <b>jsonplaceholder</b> &middot; input <a href="https://jsonplaceholder.typicode.com/">https://jsonplaceholder.typicode.com/</a> &middot; base URL <span class="mono">https://jsonplaceholder.typicode.com</span> &middot; spec source html-links &middot; auth none</div>
+<div class="muted">Run 2026-11-11 16:51:36 UTC &middot; duration 110 s &middot; 37 endpoints &middot; 59 test cases</div>
+<div class="links"><a href="html/index.html">Playwright HTML report</a><a href="../test-cases/jsonplaceholder_qtest_import.xlsx">qTest Excel import file</a><a href="triage.json">triage.json</a><a href="run-log.txt">run-log.txt</a></div>
+
+
+<div class="cards">
+<div class="card"><div class="k">Total</div><div class="v">59</div></div>
+<div class="card"><div class="k">Executed</div><div class="v ">100%</div><div class="small muted">59 of 59</div></div>
+<div class="card"><div class="k">Pass rate</div><div class="v">100%</div><div class="small muted">of executed tests</div></div>
+<div class="card"><div class="k">Passed</div><div class="v ok">52</div></div>
+<div class="card"><div class="k">Failed</div><div class="v bad">0</div></div>
+<div class="card"><div class="k">Skipped</div><div class="v muted">0</div></div>
+<div class="card"><div class="k">Flaky</div><div class="v">7</div></div>
+<div class="card"><div class="k">Root causes</div><div class="v">1</div><div class="small muted">0 real defects</div></div>
+</div>
+<p class="small">Compared with the previous full run (2026-11-10 15:34 UTC): <b>0</b> new failure(s), <b>0</b> fixed (ran and passed).</p>
+
+<h2>Root causes (1 behind 7 failing tests)</h2>
+<div class="tablewrap"><table><thead><tr><th>ID</th><th>Severity</th><th>Class</th><th>Root cause</th><th>Failed checks</th><th>Example</th></tr></thead><tbody><tr><td class="mono">RC1</td><td><span class="tag sev-Low">Low</span></td>
+<td><span class="tag cls-FlakyEnvironmentissue">Flaky/Environment issue</span></td>
+<td><b>Failed once, passed on retry</b><div class="small muted">Intermittent; re-run to confirm.</div>
+<details><summary>7 endpoint(s), 7 test(s)</summary><div class="small mono">DELETE /posts/{id}<br>GET /comments<br>GET /photos<br>GET /posts/{id}/comments<br>POST /comments<br>POST /photos<br>PUT /comments/{id}</div><div class="small mono" style="margin-top:6px">TC_JSONPLACEHOLDER_COMMENTS_GET_001, TC_JSONPLACEHOLDER_COMMENTS_POST_002, TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002, TC_JSONPLACEHOLDER_PHOTOS_POST_002, TC_JSONPLACEHOLDER_PHOTOS_GET_002, TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001, TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001</div></details></td>
+<td class="n">7</td><td class="small"><span class="mono">TC_JSONPLACEHOLDER_COMMENTS_GET_001</span><br><b>Expected:</b> &lt;= 2000 ms<br><b>Actual:</b> 10534 ms</td></tr></tbody></table></div>
+<p class="small muted">Failed checks with the same underlying problem are grouped, whatever endpoint they hit. Fix a root cause and all its checks should pass.</p>
+
+<h2>Spec drift (6)</h2>
+<p class="small">Documented behaviour (spec source: html-links) compared with what the API did in this run. <b>0</b> fix API, <b>6</b> fix docs &middot; <a href="spec-drift.json">spec-drift.json</a>.
+Where the documentation is silent, consistent behaviour is suggested for the docs; where it is explicit, the API must comply.</p><div class="tablewrap"><table><thead><tr><th>ID</th><th>Fix</th><th>Kind</th><th>Endpoint</th><th>Documented</th><th>Observed</th><th>Confidence (checks)</th><th>Evidence</th></tr></thead><tbody><tr><td class="mono">D1</td><td><span class="tag sev-Low">fix docs</span></td><td class="small">undocumented-status</td><td class="mono small">GET /posts/{id}</td>
+<td class="small">Not documented</td><td class="small">HTTP 404 - calibrated convention (unknownId): assumed 404/400, observed 404 consistently</td><td class="small">high (6)</td><td class="mono small">TC_JSONPLACEHOLDER_POSTS_ID_GET_004.1, TC_JSONPLACEHOLDER_POSTS_ID_GET_004.2, TC_JSONPLACEHOLDER_POSTS_ID_GET_006.1 +3</td></tr><tr><td class="mono">D2</td><td><span class="tag sev-Low">fix docs</span></td><td class="small">undocumented-status</td><td class="mono small">GET /comments/{id}</td>
+<td class="small">Not documented</td><td class="small">HTTP 404 - calibrated convention (unknownId): assumed 404/400, observed 404 consistently</td><td class="small">high (6)</td><td class="mono small">TC_JSONPLACEHOLDER_COMMENTS_ID_GET_004.1, TC_JSONPLACEHOLDER_COMMENTS_ID_GET_004.2, TC_JSONPLACEHOLDER_COMMENTS_ID_GET_006.1 +3</td></tr><tr><td class="mono">D3</td><td><span class="tag sev-Low">fix docs</span></td><td class="small">undocumented-status</td><td class="mono small">GET /albums/{id}</td>
+<td class="small">Not documented</td><td class="small">HTTP 404 - calibrated convention (unknownId): assumed 404/400, observed 404 consistently</td><td class="small">high (6)</td><td class="mono small">TC_JSONPLACEHOLDER_ALBUMS_ID_GET_004.1, TC_JSONPLACEHOLDER_ALBUMS_ID_GET_004.2, TC_JSONPLACEHOLDER_ALBUMS_ID_GET_006.1 +3</td></tr><tr><td class="mono">D4</td><td><span class="tag sev-Low">fix docs</span></td><td class="small">undocumented-status</td><td class="mono small">GET /photos/{id}</td>
+<td class="small">Not documented</td><td class="small">HTTP 404 - calibrated convention (unknownId): assumed 404/400, observed 404 consistently</td><td class="small">high (6)</td><td class="mono small">TC_JSONPLACEHOLDER_PHOTOS_ID_GET_004.1, TC_JSONPLACEHOLDER_PHOTOS_ID_GET_004.2, TC_JSONPLACEHOLDER_PHOTOS_ID_GET_006.1 +3</td></tr><tr><td class="mono">D5</td><td><span class="tag sev-Low">fix docs</span></td><td class="small">undocumented-status</td><td class="mono small">GET /todos/{id}</td>
+<td class="small">Not documented</td><td class="small">HTTP 404 - calibrated convention (unknownId): assumed 404/400, observed 404 consistently</td><td class="small">high (6)</td><td class="mono small">TC_JSONPLACEHOLDER_TODOS_ID_GET_004.1, TC_JSONPLACEHOLDER_TODOS_ID_GET_004.2, TC_JSONPLACEHOLDER_TODOS_ID_GET_006.1 +3</td></tr><tr><td class="mono">D6</td><td><span class="tag sev-Low">fix docs</span></td><td class="small">undocumented-status</td><td class="mono small">GET /users/{id}</td>
+<td class="small">Not documented</td><td class="small">HTTP 404 - calibrated convention (unknownId): assumed 404/400, observed 404 consistently</td><td class="small">high (6)</td><td class="mono small">TC_JSONPLACEHOLDER_USERS_ID_GET_004.1, TC_JSONPLACEHOLDER_USERS_ID_GET_004.2, TC_JSONPLACEHOLDER_USERS_ID_GET_006.1 +3</td></tr></tbody></table></div>
+
+<h2>Pre-run checks</h2>
+<div class="tablewrap"><table><thead><tr><th>Identity</th><th>Status</th><th>Checks needing it</th><th>Provided by (.env names)</th><th>Action</th></tr></thead><tbody><tr><td colspan="5" class="muted">No credentials needed.</td></tr></tbody></table></div>
+<p class="small">Quota: <b>ok</b> - GET /posts -&gt; 200, 3599999/3600000 requests left. &middot; Expected before the run: 332 of 332 checks executable.</p>
+
+<h2>Results by category</h2>
+<div class="tablewrap"><table><thead><tr><th>Category</th><th>Total</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Executed</th><th>Pass rate</th><th></th></tr></thead><tbody>
+<tr><td>Positive-Functional</td><td class="n">37</td><td class="n ok">37</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="34 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>Negative</td><td class="n">16</td><td class="n ok">16</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="13 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>Authorization</td><td class="n">6</td><td class="n ok">6</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="5 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+</tbody></table></div>
+
+<h2>Results by endpoint</h2>
+<div class="tablewrap"><table><thead><tr><th>Endpoint</th><th>Total</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Executed</th><th>Pass rate</th><th></th></tr></thead><tbody>
+<tr><td>GET /albums</td><td class="n">2</td><td class="n ok">2</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="2 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /albums/{id}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>POST /albums</td><td class="n">3</td><td class="n ok">3</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="3 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>PUT /albums/{id}</td><td class="n">2</td><td class="n ok">2</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="2 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>DELETE /albums/{id}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /comments</td><td class="n">3</td><td class="n ok">3</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="2 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /comments/{id}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>POST /comments</td><td class="n">4</td><td class="n ok">4</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="3 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>PUT /comments/{id}</td><td class="n">2</td><td class="n ok">2</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>DELETE /comments/{id}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /photos</td><td class="n">2</td><td class="n ok">2</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /photos/{id}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>POST /photos</td><td class="n">3</td><td class="n ok">3</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="2 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>PUT /photos/{id}</td><td class="n">2</td><td class="n ok">2</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="2 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>DELETE /photos/{id}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /posts</td><td class="n">2</td><td class="n ok">2</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="2 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /posts/{id}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>POST /posts</td><td class="n">3</td><td class="n ok">3</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="3 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>PUT /posts/{id}</td><td class="n">2</td><td class="n ok">2</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="2 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>DELETE /posts/{id}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="0 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /posts/{id}/comments</td><td class="n">2</td><td class="n ok">2</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /todos</td><td class="n">2</td><td class="n ok">2</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="2 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /todos/{id}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>POST /todos</td><td class="n">3</td><td class="n ok">3</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="3 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>PUT /todos/{id}</td><td class="n">2</td><td class="n ok">2</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="2 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>DELETE /todos/{id}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /users</td><td class="n">2</td><td class="n ok">2</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="2 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /users/{id}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>POST /users</td><td class="n">4</td><td class="n ok">4</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="4 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>PUT /users/{id}</td><td class="n">2</td><td class="n ok">2</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="2 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>DELETE /users/{id}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+</tbody></table></div>
+
+<h2>Access matrix</h2>
+<div class="tablewrap"><table class="matrix"><thead><tr><th>Endpoint</th><th>none</th></tr></thead><tbody><tr><td class="mono">GET /posts</td><td class="mx pass" title="TC_JSONPLACEHOLDER_POSTS_GET_002.1">exp 200<br>act 200</td></tr>
+<tr><td class="mono">POST /posts</td><td class="mx pass" title="TC_JSONPLACEHOLDER_POSTS_GET_002.2">exp 201<br>act 201</td></tr>
+<tr><td class="mono">GET /posts/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_POSTS_GET_002.3">exp 200<br>act 200</td></tr>
+<tr><td class="mono">PUT /posts/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_POSTS_GET_002.4">exp 200<br>act 200</td></tr>
+<tr><td class="mono">PATCH /posts/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_POSTS_GET_002.5">exp 200<br>act 200</td></tr>
+<tr><td class="mono">DELETE /posts/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_POSTS_GET_002.6">exp 200/204<br>act 200</td></tr>
+<tr><td class="mono">GET /posts/{id}/comments</td><td class="mx pass" title="TC_JSONPLACEHOLDER_POSTS_GET_002.7">exp 200<br>act 200</td></tr>
+<tr><td class="mono">GET /comments</td><td class="mx pass" title="TC_JSONPLACEHOLDER_COMMENTS_GET_003.1">exp 200<br>act 200</td></tr>
+<tr><td class="mono">POST /comments</td><td class="mx pass" title="TC_JSONPLACEHOLDER_COMMENTS_GET_003.2">exp 201<br>act 201</td></tr>
+<tr><td class="mono">GET /comments/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_COMMENTS_GET_003.3">exp 200<br>act 200</td></tr>
+<tr><td class="mono">PUT /comments/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_COMMENTS_GET_003.4">exp 200<br>act 200</td></tr>
+<tr><td class="mono">PATCH /comments/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_COMMENTS_GET_003.5">exp 200<br>act 200</td></tr>
+<tr><td class="mono">DELETE /comments/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_COMMENTS_GET_003.6">exp 200/204<br>act 200</td></tr>
+<tr><td class="mono">GET /albums</td><td class="mx pass" title="TC_JSONPLACEHOLDER_ALBUMS_GET_002.1">exp 200<br>act 200</td></tr>
+<tr><td class="mono">POST /albums</td><td class="mx pass" title="TC_JSONPLACEHOLDER_ALBUMS_GET_002.2">exp 201<br>act 201</td></tr>
+<tr><td class="mono">GET /albums/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_ALBUMS_GET_002.3">exp 200<br>act 200</td></tr>
+<tr><td class="mono">PUT /albums/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_ALBUMS_GET_002.4">exp 200<br>act 200</td></tr>
+<tr><td class="mono">PATCH /albums/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_ALBUMS_GET_002.5">exp 200<br>act 200</td></tr>
+<tr><td class="mono">DELETE /albums/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_ALBUMS_GET_002.6">exp 200/204<br>act 200</td></tr>
+<tr><td class="mono">GET /photos</td><td class="mx fail" title="TC_JSONPLACEHOLDER_PHOTOS_GET_002.1">exp 200<br>act 200</td></tr>
+<tr><td class="mono">POST /photos</td><td class="mx pass" title="TC_JSONPLACEHOLDER_PHOTOS_GET_002.2">exp 201<br>act 201</td></tr>
+<tr><td class="mono">GET /photos/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_PHOTOS_GET_002.3">exp 200<br>act 200</td></tr>
+<tr><td class="mono">PUT /photos/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_PHOTOS_GET_002.4">exp 200<br>act 200</td></tr>
+<tr><td class="mono">PATCH /photos/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_PHOTOS_GET_002.5">exp 200<br>act 200</td></tr>
+<tr><td class="mono">DELETE /photos/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_PHOTOS_GET_002.6">exp 200/204<br>act 200</td></tr>
+<tr><td class="mono">GET /todos</td><td class="mx pass" title="TC_JSONPLACEHOLDER_TODOS_GET_002.1">exp 200<br>act 200</td></tr>
+<tr><td class="mono">POST /todos</td><td class="mx pass" title="TC_JSONPLACEHOLDER_TODOS_GET_002.2">exp 201<br>act 201</td></tr>
+<tr><td class="mono">GET /todos/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_TODOS_GET_002.3">exp 200<br>act 200</td></tr>
+<tr><td class="mono">PUT /todos/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_TODOS_GET_002.4">exp 200<br>act 200</td></tr>
+<tr><td class="mono">PATCH /todos/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_TODOS_GET_002.5">exp 200<br>act 200</td></tr>
+<tr><td class="mono">DELETE /todos/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_TODOS_GET_002.6">exp 200/204<br>act 200</td></tr>
+<tr><td class="mono">GET /users</td><td class="mx pass" title="TC_JSONPLACEHOLDER_USERS_GET_002.1">exp 200<br>act 200</td></tr>
+<tr><td class="mono">POST /users</td><td class="mx pass" title="TC_JSONPLACEHOLDER_USERS_GET_002.2">exp 201<br>act 201</td></tr>
+<tr><td class="mono">GET /users/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_USERS_GET_002.3">exp 200<br>act 200</td></tr>
+<tr><td class="mono">PUT /users/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_USERS_GET_002.4">exp 200<br>act 200</td></tr>
+<tr><td class="mono">PATCH /users/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_USERS_GET_002.5">exp 200<br>act 200</td></tr>
+<tr><td class="mono">DELETE /users/{id}</td><td class="mx pass" title="TC_JSONPLACEHOLDER_USERS_GET_002.6">exp 200/204<br>act 200</td></tr></tbody></table></div>
+<p class="small muted">Cell: expected vs actual status of the request under test. Green pass, red fail, grey skipped (credentials not configured).
+Highlighted cells are authorization bypasses (2xx where access must be denied) with their OWASP API Top 10 id. No token values are stored.</p>
+
+<h2>Authorization findings (0)</h2>
+<p class="muted">No authorization defects found in the checks that ran (see the access matrix for skipped identities).</p>
+
+<h2>Failures (7)</h2>
+<div class="filters"><input id="q" type="search" placeholder="Filter by id, title, endpoint..." aria-label="Filter failures">
+<select id="cls" aria-label="Triage class"><option value="">All triage classes</option><option>Real API defect</option><option>Contract/Spec mismatch</option><option>Test data issue</option><option>Flaky/Environment issue</option></select>
+<select id="cat" aria-label="Category"><option value="">All categories</option><option>Positive-Functional</option><option>Positive-DataValidation</option><option>Negative</option><option>Boundary</option><option>Auth</option><option>Authorization</option></select></div>
+<div class="tablewrap"><table id="fail"><thead><tr><th>Test ID</th><th>Test</th><th>Triage</th><th>Expected vs actual</th><th>Evidence</th></tr></thead><tbody>
+<tr data-class="Flaky/Environment issue" data-cat="Positive-Functional">
+  <td class="mono">TC_JSONPLACEHOLDER_COMMENTS_GET_001 <span class="tag flaky">flaky</span></td>
+  <td>Browse comments and filter them by their attributes<div class="muted small">Positive-Functional &middot; GET /comments</div></td>
+  <td><span class="tag cls-FlakyEnvironmentissue">Flaky/Environment issue</span> <span class="tag sev-Low">Low</span><div class="small">Failed first, passed on retry.</div></td>
+  <td class="small"><b>Expected:</b> &lt;= 2000 ms<br><b>Actual:</b> 10534 ms</td>
+  <td class="small"><details><summary>GET https://jsonplaceholder.typicode.com/comments &rarr; 200 (623 ms)</summary><pre>Request headers: {}
+Request body: (none)
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:51:58 GMT&quot;,&quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-credentials&quot;:&quot;true&quot;,&quot;cache-control&quot;:&quot;max-age=43200&quot;,&quot;content-encoding&quot;:&quot;gzip&quot;,&quot;etag&quot;:&quot;W/\&quot;26831-8L/dCHuriTuxj+1OR5biYTSa5Yo\&quot;&quot;,&quot;expires&quot;:&quot;-1&quot;,&quot;pragma&quot;:&quot;no-cache&quot;,&quot;vary&quot;:&quot;Origin, Accept-Encoding&quot;,&quot;x-content-type-options&quot;:&quot;nosniff&quot;,&quot;x-powered-by&quot;:&quot;Express&quot;,&quot;x-ratelimit-limit&quot;:&quot;3600000&quot;,&quot;x-ratelimit-remaining&quot;:&quot;3599999&quot;,&quot;x-ratelimit-reset&quot;:&quot;1790812826&quot;,&quot;age&quot;:&quot;5330&quot;,&quot;cf-cache-status&quot;:&quot;HIT&quot;,&quot;nel&quot;:&quot;{\&quot;report_to\&quot;:\&quot;cf-nel\&quot;,\&quot;success_fraction\&quot;:0.0,\&quot;max_age\&quot;:604800}&quot;,&quot;report-to&quot;:&quot;{\&quot;group\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800,\&quot;endpoints\&quot;:[{\&quot;url\&quot;:\&quot;https://a.nel.cloudflare.com/report/v4?s=NZUEduaoSWX4j81I8j%2B70QFCedWL3Xz9qZUgOqaiPwYsBSNWdoEFNZGMYR5Gukba8DRvVEbm%2BoBwXSSw4V6eFJPdIQ%2Brp5pl1YxHmJkOIcfKVM7hr4s9I8ZyuFGpMvO9Ln2pm66g3G3M9tHv3bjOTLvTHzcWDKOKgOFs\&quot;}]}&quot;,&quot;server&quot;:&quot;cloudflare&quot;,&quot;cf-ray&quot;:&quot;a58ece0039992e92-CDG&quot;,&quot;alt-svc&quot;:&quot;h3=\&quot;:443\&quot;; ma=86400&quot;}
+Response body: [
+  {
+    &quot;postId&quot;: 1,
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;id labore ex et quam laborum&quot;,
+    &quot;email&quot;: &quot;Eliseo@gardner.biz&quot;,
+    &quot;body&quot;: &quot;laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium&quot;
+  },
+  {
+    &quot;postId&quot;: 1,
+    &quot;id&quot;: 2,
+    &quot;name&quot;: &quot;quo vero reiciendis velit similique earum&quot;,
+    &quot;email&quot;: &quot;Jayne_Kuhic@sydney.com&quot;,
+    &quot;body&quot;: &quot;est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et&quot;
+  },
+  {
+    &quot;postId&quot;: 1,
+    &quot;id&quot;: 3,
+    &quot;name&quot;: &quot;odio adipisci rerum aut animi&quot;,
+    &quot;email&quot;: &quot;Nikita@garfield.biz&quot;,
+    &quot;body&quot;: &quot;quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione&quot;
+  },
+  {
+    &quot;postId&quot;: 1,
+    &quot;id&quot;: 4,
+    &quot;name&quot;: &quot;alias odio sit&quot;,
+    &quot;email&quot;: &quot;Lew@alysha.tv&quot;,
+    &quot;body&quot;: &quot;non et atque\noccaecati deserunt quas accusantium unde odit nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net qui rerum deleniti ut occaecati&quot;
+  },
+  {
+    &quot;postId&quot;: 1,
+    &quot;id&quot;: 5,
+    &quot;name&quot;: &quot;vero eaque aliquid doloribus et culpa&quot;,
+    &quot;email&quot;: &quot;Hayden@althea.biz&quot;,
+    &quot;body&quot;: &quot;harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et&quot;
+  },
+  {
+    &quot;postId&quot;: 2,
+    &quot;id&quot;: 6,
+    &quot;name&quot;: &quot;et fugit eligendi deleniti quidem qui sint nihil autem&quot;,
+    &quot;email&quot;: &quot;Presley.Mueller@myrl.com&quot;,
+    &quot;body&quot;: &quot;doloribus at sed quis culpa deserunt consectetur qui praesentium\naccusamus fugiat dicta\nvoluptatem rerum ut voluptate autem\nvoluptatem repellendus aspernatur dolorem in&quot;
+  },
+  {
+    &quot;postId&quot;: 2,
+    &quot;id&quot;: 7,
+    &quot;name&quot;: &quot;repellat consequatur praesentium vel minus molestias voluptatum&quot;,
+    &quot;email&quot;: &quot;Dallas@ole.me&quot;,
+    &quot;body&quot;: &quot;maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor&quot;
+  },
+  {
+    &quot;postId&quot;: 2,
+    &quot;id&quot;: 8,
+    &quot;name&quot;: &quot;et omnis dolorem&quot;,
+    &quot;email&quot;: &quot;Mallory_Kunze@marie.org&quot;,
+    &quot;body&quot;: &quot;ut voluptatem corrupti velit\nad voluptatem maiores\net nisi velit vero accusamus maiores\nvoluptates quia aliquid ullam eaque&quot;
+  },
+  {
+    &quot;postId&quot;: 2,
+    &quot;id&quot;: 9,
+    &quot;name&quot;: &quot;provident id voluptas&quot;,
+    &quot;email&quot;: &quot;Meghan_Littel@rene.us&quot;,
+    &quot;body&quot;: &quot;sapiente assumenda molestiae atque\nadipisci laborum distinctio aperiam et ab ut omnis\net occaecati aspernatur odit sit rem expedita\nquas enim ipsam minus&quot;
+  },
+  {
+    &quot;postId&quot;: 2,
+    &quot;id&quot;: 10,
+    &quot;name&quot;: &quot;eaque et deleniti atque tenetur ut quo ut&quot;,
+    &quot;email&quot;: &quot;Carmen_Keeling@caroline.name&quot;,
+    &quot;body&quot;: &quot;voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis&quot;
+  },
+  {
+    &quot;postId&quot;: 3,
+    &quot;id&quot;: 11,
+    &quot;name&quot;: &quot;fugit labore quia mollitia quas deserunt nostrum sunt&quot;,
+    &quot;email&quot;: &quot;Veronica_Goodwin@timmothy.net&quot;,
+    &quot;body&quot;: &quot;ut dolorum nostrum id quia aut est\nfuga est inventore vel eligendi explicabo quis consectetur\naut occaecati repellat id natus quo est\nut blanditiis quia ut vel ut maiores ea&quot;
+  },
+  {
+    &quot;postId&quot;: 3,
+    &quot;id&quot;: 12,
+    &quot;name&quot;: &quot;modi ut eos dolores illum nam dolor&quot;,
+    &quot;email&quot;: &quot;Oswald.Vandervort@leanne.org&quot;,
+    &quot;body&quot;: &quot;expedita maiores dignissimos facilis\nipsum est rem est fugit velit sequi\neum odio dolores dolor totam\noccaecati ratione eius rem velit&quot;
+  },
+  {
+    &quot;postId&quot;: 3,
+    &quot;id&quot;: 13,
+    &quot;name&quot;: &quot;aut inventore non pariatur sit vitae voluptatem sapiente&quot;,
+    &quot;email&quot;: &quot;Kariane@jadyn.tv&quot;,
+    &quot;body&quot;: &quot;fuga eos qui dolor rerum\ninventore corporis exercitationem\ncorporis cupiditate et deserunt recusandae est sed quis culpa\neum maiores corporis et&quot;
+  },
+  {
+    &quot;postId&quot;:...[truncated 157745 chars]</pre></details><details><summary>error</summary><pre>Error: 2 of 4 checks failed:
+• [TC_JSONPLACEHOLDER_COMMENTS_GET_001.1] GET /comments with a valid request returns 200 and the required fields: Response took 10534 ms (limit 2000 ms)
+• [TC_JSONPLACEHOLDER_COMMENTS_GET_001.3] GET /comments response matches the schema for every field of every array item (type, format, presence): Response took 3489 ms (limit 2000 ms)
+
+expect(received).toBe(expected) // Object.is equality
+</pre></details></td>
+</tr>
+<tr data-class="Flaky/Environment issue" data-cat="Negative">
+  <td class="mono">TC_JSONPLACEHOLDER_COMMENTS_POST_002 <span class="tag flaky">flaky</span></td>
+  <td>Creating a comment with missing or invalid details is handled safely (validation rules are not documented)<div class="muted small">Negative &middot; POST /comments</div></td>
+  <td><span class="tag cls-FlakyEnvironmentissue">Flaky/Environment issue</span> <span class="tag sev-Low">Low</span><div class="small">Failed first, passed on retry.</div></td>
+  <td class="small"><b>Expected:</b> &lt;= 2000 ms<br><b>Actual:</b> 4892 ms</td>
+  <td class="small"><details><summary>POST https://jsonplaceholder.typicode.com/comments &rarr; 201 (1349 ms)</summary><pre>Request headers: {&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;postId&quot;:1,&quot;name&quot;:&quot;Dr. Barry Kuvalis&quot;,&quot;email&quot;:&quot;not-an-email&quot;,&quot;body&quot;:&quot;Decens via voluntarius subseco coruscus. Apparatus carus sint canonicus.&quot;}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:52:29 GMT&quot;,&quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,&quot;content-length&quot;:&quot;174&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-credentials&quot;:&quot;true&quot;,&quot;access-control-expose-headers&quot;:&quot;Location&quot;,&quot;cache-control&quot;:&quot;no-cache&quot;,&quot;etag&quot;:&quot;W/\&quot;ae-UBQ9OzlDeiRFbPnyVAFmmySRb/8\&quot;&quot;,&quot;expires&quot;:&quot;-1&quot;,&quot;location&quot;:&quot;https://jsonplaceholder.typicode.com/comments/501&quot;,&quot;pragma&quot;:&quot;no-cache&quot;,&quot;vary&quot;:&quot;Origin, X-HTTP-Method-Override, Accept-Encoding&quot;,&quot;x-content-type-options&quot;:&quot;nosniff&quot;,&quot;x-powered-by&quot;:&quot;Express&quot;,&quot;x-ratelimit-limit&quot;:&quot;3600000&quot;,&quot;x-ratelimit-remaining&quot;:&quot;3599796&quot;,&quot;x-ratelimit-reset&quot;:&quot;1794416419&quot;,&quot;cf-cache-status&quot;:&quot;DYNAMIC&quot;,&quot;nel&quot;:&quot;{\&quot;report_to\&quot;:\&quot;cf-nel\&quot;,\&quot;success_fraction\&quot;:0.0,\&quot;max_age\&quot;:604800}&quot;,&quot;report-to&quot;:&quot;{\&quot;group\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800,\&quot;endpoints\&quot;:[{\&quot;url\&quot;:\&quot;https://a.nel.cloudflare.com/report/v4?s=mNfraldiGXe7MlquQirEqehz3uK48BBOqhJqEfEQw9%2FgfEmBgaavgxolrE11lhbVldWk0hhiFr4U%2FIX%2BlPCY6ZQVlt3zhug%2FwLApLrRr4jAcr6hKmt71XeJi6qBzDaZbKrieyeRY8p5y2jxd5mclzyUAQ9Vea2xdMgSW\&quot;}]}&quot;,&quot;server&quot;:&quot;cloudflare&quot;,&quot;cf-ray&quot;:&quot;a58ecec0ed57697d-CDG&quot;,&quot;alt-svc&quot;:&quot;h3=\&quot;:443\&quot;; ma=86400&quot;}
+Response body: {
+  &quot;postId&quot;: 1,
+  &quot;name&quot;: &quot;Dr. Barry Kuvalis&quot;,
+  &quot;email&quot;: &quot;not-an-email&quot;,
+  &quot;body&quot;: &quot;Decens via voluntarius subseco coruscus. Apparatus carus sint canonicus.&quot;,
+  &quot;id&quot;: 501
+}</pre></details><details><summary>error</summary><pre>Error: 2 of 10 checks failed:
+• [TC_JSONPLACEHOLDER_COMMENTS_POST_002.1] POST /comments without required field &quot;postId&quot; is rejected or stored exactly (rule undocumented), never a 5xx: Response took 4892 ms (limit 2000 ms)
+• [TC_JSONPLACEHOLDER_COMMENTS_POST_002.8] POST /comments with wrong type for &quot;email&quot; (number instead of string) is rejected or stored exactly (rule undocumented), never a 5xx: Response took 2092 ms (limit 2000 ms)
+
+expect(received).toBe(expected) // Object.is equality
+</pre></details></td>
+</tr>
+<tr data-class="Flaky/Environment issue" data-cat="Negative">
+  <td class="mono">TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002 <span class="tag flaky">flaky</span></td>
+  <td>Updating a comment with invalid details, or a comment that does not exist, is handled safely (validation rules are not documented)<div class="muted small">Negative &middot; PUT /comments/{id}</div></td>
+  <td><span class="tag cls-FlakyEnvironmentissue">Flaky/Environment issue</span> <span class="tag sev-Low">Low</span><div class="small">Failed first, passed on retry.</div></td>
+  <td class="small"><b>Expected:</b> &lt;= 2000 ms<br><b>Actual:</b> 5078 ms</td>
+  <td class="small"><details><summary>PATCH https://jsonplaceholder.typicode.com/comments/1 &rarr; 200 (345 ms)</summary><pre>Request headers: {&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;postId&quot;:1,&quot;name&quot;:&quot;Chelsie Windler&quot;,&quot;email&quot;:&quot;not-an-email&quot;,&quot;body&quot;:&quot;Vitium cinis qui copia basium aegrotatio temptatio conor utique ipsa. Pecco adflicto eligendi ut despecto talis laudantium dedecor laudantium textus.&quot;}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:52:54 GMT&quot;,&quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-credentials&quot;:&quot;true&quot;,&quot;cache-control&quot;:&quot;no-cache&quot;,&quot;etag&quot;:&quot;W/\&quot;f7-BZRRC4pLWEK3nW2gacEfqcTty0M\&quot;&quot;,&quot;expires&quot;:&quot;-1&quot;,&quot;pragma&quot;:&quot;no-cache&quot;,&quot;vary&quot;:&quot;Origin, Accept-Encoding&quot;,&quot;x-content-type-options&quot;:&quot;nosniff&quot;,&quot;x-powered-by&quot;:&quot;Express&quot;,&quot;x-ratelimit-limit&quot;:&quot;3600000&quot;,&quot;x-ratelimit-remaining&quot;:&quot;3599723&quot;,&quot;x-ratelimit-reset&quot;:&quot;1794416419&quot;,&quot;cf-cache-status&quot;:&quot;DYNAMIC&quot;,&quot;nel&quot;:&quot;{\&quot;report_to\&quot;:\&quot;cf-nel\&quot;,\&quot;success_fraction\&quot;:0.0,\&quot;max_age\&quot;:604800}&quot;,&quot;report-to&quot;:&quot;{\&quot;group\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800,\&quot;endpoints\&quot;:[{\&quot;url\&quot;:\&quot;https://a.nel.cloudflare.com/report/v4?s=N9l337tZlKllmrL3sF5mTbLzJ%2BE6nAYbOpn%2F9uvVyQu%2FTkED1r7FVKjEDRk4fdle%2FH2bU5guUGnyq6dOOOa%2FpW5qh1uJw%2FirnWSzUf9JaVtsnfWceQKMeYVgwNhHTmkmuW3ir5czqkwKT3erl9hvlfWuc53t%2BvST6k2O\&quot;}]}&quot;,&quot;content-encoding&quot;:&quot;br&quot;,&quot;server&quot;:&quot;cloudflare&quot;,&quot;cf-ray&quot;:&quot;a58ecf60fc14cdbb-MRS&quot;,&quot;alt-svc&quot;:&quot;h3=\&quot;:443\&quot;; ma=86400&quot;}
+Response body: {
+  &quot;postId&quot;: 1,
+  &quot;id&quot;: 1,
+  &quot;name&quot;: &quot;Chelsie Windler&quot;,
+  &quot;email&quot;: &quot;not-an-email&quot;,
+  &quot;body&quot;: &quot;Vitium cinis qui copia basium aegrotatio temptatio conor utique ipsa. Pecco adflicto eligendi ut despecto talis laudantium dedecor laudantium textus.&quot;
+}</pre></details><details><summary>error</summary><pre>Error: 1 of 17 checks failed:
+• [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.13] PATCH /comments/{id} with wrong type for &quot;postId&quot; (string instead of integer) is rejected or stored exactly (rule undocumented), never a 5xx: Response took 5078 ms (limit 2000 ms)
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0</pre></details></td>
+</tr>
+<tr data-class="Flaky/Environment issue" data-cat="Negative">
+  <td class="mono">TC_JSONPLACEHOLDER_PHOTOS_POST_002 <span class="tag flaky">flaky</span></td>
+  <td>Creating a photo with missing or invalid details is handled safely (validation rules are not documented)<div class="muted small">Negative &middot; POST /photos</div></td>
+  <td><span class="tag cls-FlakyEnvironmentissue">Flaky/Environment issue</span> <span class="tag sev-Low">Low</span><div class="small">Failed first, passed on retry.</div></td>
+  <td class="small"><b>Expected:</b> &lt;= 2000 ms<br><b>Actual:</b> 2702 ms</td>
+  <td class="small"><details><summary>POST https://jsonplaceholder.typicode.com/photos &rarr; 201 (433 ms)</summary><pre>Request headers: {&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;albumId&quot;:1,&quot;title&quot;:&quot;Sopor utique balbus dedico.&quot;,&quot;url&quot;:&quot;https://example.com/ee99aw1q&quot;,&quot;thumbnailUrl&quot;:&quot;ht!tp://not a url&quot;}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:52:09 GMT&quot;,&quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,&quot;content-length&quot;:&quot;154&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-credentials&quot;:&quot;true&quot;,&quot;access-control-expose-headers&quot;:&quot;Location&quot;,&quot;cache-control&quot;:&quot;no-cache&quot;,&quot;etag&quot;:&quot;W/\&quot;9a-vCOz0rLZoy2GRc+FmkAg0m1MTUM\&quot;&quot;,&quot;expires&quot;:&quot;-1&quot;,&quot;location&quot;:&quot;https://jsonplaceholder.typicode.com/photos/5001&quot;,&quot;pragma&quot;:&quot;no-cache&quot;,&quot;vary&quot;:&quot;Origin, X-HTTP-Method-Override, Accept-Encoding&quot;,&quot;x-content-type-options&quot;:&quot;nosniff&quot;,&quot;x-powered-by&quot;:&quot;Express&quot;,&quot;x-ratelimit-limit&quot;:&quot;3600000&quot;,&quot;x-ratelimit-remaining&quot;:&quot;3599893&quot;,&quot;x-ratelimit-reset&quot;:&quot;1794416419&quot;,&quot;cf-cache-status&quot;:&quot;DYNAMIC&quot;,&quot;nel&quot;:&quot;{\&quot;report_to\&quot;:\&quot;cf-nel\&quot;,\&quot;success_fraction\&quot;:0.0,\&quot;max_age\&quot;:604800}&quot;,&quot;report-to&quot;:&quot;{\&quot;group\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800,\&quot;endpoints\&quot;:[{\&quot;url\&quot;:\&quot;https://a.nel.cloudflare.com/report/v4?s=0rt7JFjc8k%2BMwYLcJgIXnl3Jup65N59MDXhpCT%2Bu8L4lJXDg0bx8gWF1utYUz9%2FVVReVdxHEI1N4KSOliwzgfGBhaHsNfm5qypsI%2Fqkr1riTkemijx%2BPc%2BX6%2FcEBItQARNjFvvdpCa3MeB%2BsRiFXmc2l8BnqXAX8fv7U\&quot;}]}&quot;,&quot;server&quot;:&quot;cloudflare&quot;,&quot;cf-ray&quot;:&quot;a58ece48c99e0354-CDG&quot;,&quot;alt-svc&quot;:&quot;h3=\&quot;:443\&quot;; ma=86400&quot;}
+Response body: {
+  &quot;albumId&quot;: 1,
+  &quot;title&quot;: &quot;Sopor utique balbus dedico.&quot;,
+  &quot;url&quot;: &quot;https://example.com/ee99aw1q&quot;,
+  &quot;thumbnailUrl&quot;: &quot;ht!tp://not a url&quot;,
+  &quot;id&quot;: 5001
+}</pre></details><details><summary>error</summary><pre>Error: 1 of 11 checks failed:
+• [TC_JSONPLACEHOLDER_PHOTOS_POST_002.1] POST /photos without required field &quot;albumId&quot; is rejected or stored exactly (rule undocumented), never a 5xx: Response took 2702 ms (limit 2000 ms)
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0</pre></details></td>
+</tr>
+<tr data-class="Flaky/Environment issue" data-cat="Authorization">
+  <td class="mono">TC_JSONPLACEHOLDER_PHOTOS_GET_002 <span class="tag flaky">flaky</span></td>
+  <td>Photos can be used without logging in (public API); responses expose no sensitive data<div class="muted small">Authorization &middot; GET /photos</div></td>
+  <td><span class="tag cls-FlakyEnvironmentissue">Flaky/Environment issue</span> <span class="tag sev-Low">Low</span><div class="small">Failed first, passed on retry.</div></td>
+  <td class="small"><b>Expected:</b> &lt;= 2000 ms<br><b>Actual:</b> 3168 ms</td>
+  <td class="small"><details><summary>GET https://jsonplaceholder.typicode.com/photos/1 &rarr; 200 (368 ms)</summary><pre>Request headers: {}
+Request body: (none)
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:52:37 GMT&quot;,&quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-credentials&quot;:&quot;true&quot;,&quot;cache-control&quot;:&quot;max-age=43200&quot;,&quot;etag&quot;:&quot;W/\&quot;c1-NAKoh4GEtfzEmCwEMWk/FnWzLEg\&quot;&quot;,&quot;expires&quot;:&quot;-1&quot;,&quot;pragma&quot;:&quot;no-cache&quot;,&quot;vary&quot;:&quot;Origin, Accept-Encoding&quot;,&quot;x-content-type-options&quot;:&quot;nosniff&quot;,&quot;x-powered-by&quot;:&quot;Express&quot;,&quot;x-ratelimit-limit&quot;:&quot;3600000&quot;,&quot;x-ratelimit-remaining&quot;:&quot;3599997&quot;,&quot;x-ratelimit-reset&quot;:&quot;1790812826&quot;,&quot;age&quot;:&quot;19352&quot;,&quot;report-to&quot;:&quot;{\&quot;group\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800,\&quot;endpoints\&quot;:[{\&quot;url\&quot;:\&quot;https://a.nel.cloudflare.com/report/v4?s=L8GnmERhyUjRFGysVRtM7tEAYKRFZK9f20Gxf1X1e6PCV0IBb6InidCGpISVCJtrgo0u54tRJWVaAtl4dmSTXDOOFrxXqhsEgfoepo8MAs4u13IEVg%2FUFLLa7aYh0WpMnJLTInhua3wXTvfL01zI%2Bw9xgTOkqfTcbBEP\&quot;}]}&quot;,&quot;cf-cache-status&quot;:&quot;HIT&quot;,&quot;nel&quot;:&quot;{\&quot;report_to\&quot;:\&quot;cf-nel\&quot;,\&quot;success_fraction\&quot;:0.0,\&quot;max_age\&quot;:604800}&quot;,&quot;content-encoding&quot;:&quot;br&quot;,&quot;server&quot;:&quot;cloudflare&quot;,&quot;cf-ray&quot;:&quot;a58ecef38bbb698d-CDG&quot;,&quot;alt-svc&quot;:&quot;h3=\&quot;:443\&quot;; ma=86400&quot;}
+Response body: {
+  &quot;albumId&quot;: 1,
+  &quot;id&quot;: 1,
+  &quot;title&quot;: &quot;accusamus beatae ad facilis cum similique qui sunt&quot;,
+  &quot;url&quot;: &quot;https://picsum.photos/seed/1/600&quot;,
+  &quot;thumbnailUrl&quot;: &quot;https://picsum.photos/seed/1/150&quot;
+}</pre></details><details><summary>error</summary><pre>Error: 1 of 8 checks failed:
+• [TC_JSONPLACEHOLDER_PHOTOS_GET_002.1] Public GET /photos works without any token: Response took 3168 ms (limit 2000 ms)
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0</pre></details></td>
+</tr>
+<tr data-class="Flaky/Environment issue" data-cat="Positive-Functional">
+  <td class="mono">TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001 <span class="tag flaky">flaky</span></td>
+  <td>Delete a post; deleting a post that does not exist is rejected<div class="muted small">Positive-Functional &middot; DELETE /posts/{id}</div></td>
+  <td><span class="tag cls-FlakyEnvironmentissue">Flaky/Environment issue</span> <span class="tag sev-Low">Low</span><div class="small">Failed first, passed on retry.</div></td>
+  <td class="small"><b>Expected:</b> &lt;= 2000 ms<br><b>Actual:</b> 2299 ms</td>
+  <td class="small"><details><summary>DELETE https://jsonplaceholder.typicode.com/posts/999999999 &rarr; 200 (415 ms)</summary><pre>Request headers: {}
+Request body: (none)
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:51:56 GMT&quot;,&quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,&quot;content-length&quot;:&quot;2&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-credentials&quot;:&quot;true&quot;,&quot;cache-control&quot;:&quot;no-cache&quot;,&quot;etag&quot;:&quot;W/\&quot;2-vyGp6PvFo4RvsFtPoIWeCReyIC8\&quot;&quot;,&quot;expires&quot;:&quot;-1&quot;,&quot;pragma&quot;:&quot;no-cache&quot;,&quot;vary&quot;:&quot;Origin, Accept-Encoding&quot;,&quot;x-content-type-options&quot;:&quot;nosniff&quot;,&quot;x-powered-by&quot;:&quot;Express&quot;,&quot;x-ratelimit-limit&quot;:&quot;3600000&quot;,&quot;x-ratelimit-remaining&quot;:&quot;3599944&quot;,&quot;x-ratelimit-reset&quot;:&quot;1794416419&quot;,&quot;cf-cache-status&quot;:&quot;DYNAMIC&quot;,&quot;nel&quot;:&quot;{\&quot;report_to\&quot;:\&quot;cf-nel\&quot;,\&quot;success_fraction\&quot;:0.0,\&quot;max_age\&quot;:604800}&quot;,&quot;report-to&quot;:&quot;{\&quot;group\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800,\&quot;endpoints\&quot;:[{\&quot;url\&quot;:\&quot;https://a.nel.cloudflare.com/report/v4?s=Pm4D%2BHKGCUW8pg%2BCPn%2BxlRuDjwp5NKZJbE2ZQ1K8oaZaAbuMO0PgK6wZOaYP1StAv6zKLvfUoEwcg8gSnBcFq1IhuDeX%2BlaR9Qbl%2B1VdDOZyPKfFDYlLjHwenGy%2BYeeXENcRD9UeNVlw0lfIQ53HxifdxNBZB4FJ9a5c\&quot;}]}&quot;,&quot;server&quot;:&quot;cloudflare&quot;,&quot;cf-ray&quot;:&quot;a58ecdf26fcba105-CDG&quot;,&quot;alt-svc&quot;:&quot;h3=\&quot;:443\&quot;; ma=86400&quot;}
+Response body: {}</pre></details><details><summary>error</summary><pre>Error: 1 of 2 checks failed:
+• [TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001.1] DELETE /posts/{id} with a valid request returns 200/204 and the required fields: Response took 2299 ms (limit 2000 ms)
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0</pre></details></td>
+</tr>
+<tr data-class="Flaky/Environment issue" data-cat="Positive-Functional">
+  <td class="mono">TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001 <span class="tag flaky">flaky</span></td>
+  <td>List comments of one posts<div class="muted small">Positive-Functional &middot; GET /posts/{id}/comments</div></td>
+  <td><span class="tag cls-FlakyEnvironmentissue">Flaky/Environment issue</span> <span class="tag sev-Low">Low</span><div class="small">Failed first, passed on retry.</div></td>
+  <td class="small"><b>Expected:</b> &lt;= 2000 ms<br><b>Actual:</b> 4094 ms</td>
+  <td class="small"><details><summary>GET https://jsonplaceholder.typicode.com/posts/1/comments &rarr; 200 (357 ms)</summary><pre>Request headers: {}
+Request body: (none)
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:52:08 GMT&quot;,&quot;content-type&quot;:&quot;application/json; charset=utf-8&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-credentials&quot;:&quot;true&quot;,&quot;cache-control&quot;:&quot;max-age=43200&quot;,&quot;content-encoding&quot;:&quot;gzip&quot;,&quot;etag&quot;:&quot;W/\&quot;5e6-4bSPS5tq8F8ZDeFJULWh6upjp7U\&quot;&quot;,&quot;expires&quot;:&quot;-1&quot;,&quot;pragma&quot;:&quot;no-cache&quot;,&quot;vary&quot;:&quot;Origin, Accept-Encoding&quot;,&quot;x-content-type-options&quot;:&quot;nosniff&quot;,&quot;x-powered-by&quot;:&quot;Express&quot;,&quot;x-ratelimit-limit&quot;:&quot;3600000&quot;,&quot;x-ratelimit-remaining&quot;:&quot;3599999&quot;,&quot;x-ratelimit-reset&quot;:&quot;1790812826&quot;,&quot;age&quot;:&quot;6361&quot;,&quot;cf-cache-status&quot;:&quot;HIT&quot;,&quot;nel&quot;:&quot;{\&quot;report_to\&quot;:\&quot;cf-nel\&quot;,\&quot;success_fraction\&quot;:0.0,\&quot;max_age\&quot;:604800}&quot;,&quot;report-to&quot;:&quot;{\&quot;group\&quot;:\&quot;cf-nel\&quot;,\&quot;max_age\&quot;:604800,\&quot;endpoints\&quot;:[{\&quot;url\&quot;:\&quot;https://a.nel.cloudflare.com/report/v4?s=qYIDz4GpYovcGda%2BFkfpBNXvSzouys%2BuY%2FFp30qtszsHbscNEJGO9zKFE40Bg3mBrPHh7%2Fwim%2BEAYn1nKZ3SaQWX5bZXeKfllqP35eLY%2Fdisu9lDesqsDWCct9qfKsct7lrq96H3SSkoQ7J0z%2F8yhJ1tge0N78hZeDKb\&quot;}]}&quot;,&quot;server&quot;:&quot;cloudflare&quot;,&quot;cf-ray&quot;:&quot;a58ece41fea101c9-CDG&quot;,&quot;alt-svc&quot;:&quot;h3=\&quot;:443\&quot;; ma=86400&quot;}
+Response body: [
+  {
+    &quot;postId&quot;: 1,
+    &quot;id&quot;: 1,
+    &quot;name&quot;: &quot;id labore ex et quam laborum&quot;,
+    &quot;email&quot;: &quot;Eliseo@gardner.biz&quot;,
+    &quot;body&quot;: &quot;laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium&quot;
+  },
+  {
+    &quot;postId&quot;: 1,
+    &quot;id&quot;: 2,
+    &quot;name&quot;: &quot;quo vero reiciendis velit similique earum&quot;,
+    &quot;email&quot;: &quot;Jayne_Kuhic@sydney.com&quot;,
+    &quot;body&quot;: &quot;est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et&quot;
+  },
+  {
+    &quot;postId&quot;: 1,
+    &quot;id&quot;: 3,
+    &quot;name&quot;: &quot;odio adipisci rerum aut animi&quot;,
+    &quot;email&quot;: &quot;Nikita@garfield.biz&quot;,
+    &quot;body&quot;: &quot;quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione&quot;
+  },
+  {
+    &quot;postId&quot;: 1,
+    &quot;id&quot;: 4,
+    &quot;name&quot;: &quot;alias odio sit&quot;,
+    &quot;email&quot;: &quot;Lew@alysha.tv&quot;,
+    &quot;body&quot;: &quot;non et atque\noccaecati deserunt quas accusantium unde odit nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net qui rerum deleniti ut occaecati&quot;
+  },
+  {
+    &quot;postId&quot;: 1,
+    &quot;id&quot;: 5,
+    &quot;name&quot;: &quot;vero eaque aliquid doloribus et culpa&quot;,
+    &quot;email&quot;: &quot;Hayden@althea.biz&quot;,
+    &quot;body&quot;: &quot;harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et&quot;
+  }
+]</pre></details><details><summary>error</summary><pre>Error: 1 of 3 checks failed:
+• [TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001.1] GET /posts/{id}/comments with a valid request returns 200 and the required fields: Response took 4094 ms (limit 2000 ms)
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0</pre></details></td>
+</tr>
+</tbody></table></div>
+
+<h2>Skipped (0)</h2>
+<div class="tablewrap"><table><thead><tr><th>Test ID</th><th>Test</th><th>Reason</th></tr></thead><tbody>
+<tr><td colspan="3" class="muted">Nothing skipped.</td></tr>
+</tbody></table></div>
+
+<h2>Run history</h2>
+<div class="tablewrap"><table><thead><tr><th>Run (UTC)</th><th>Tests</th><th>Executed</th><th>Pass rate</th><th>Failed</th><th>Root causes</th><th>By class</th><th></th></tr></thead><tbody><tr><td class="small">2026-11-11 16:51</td><td class="n">59</td><td class="n">100%</td><td class="n">100%</td><td class="n">0</td><td class="n">1</td><td class="small"></td><td class="small"><i>this run</i></td></tr><tr><td class="small">2026-11-10 15:34</td><td class="n">59</td><td class="n">100%</td><td class="n">100%</td><td class="n">0</td><td class="n">0</td><td class="small"></td><td class="small"><a href="history/20261110-153426Z/summary.html">report</a></td></tr><tr><td class="small">2026-11-10 14:06</td><td class="n">334</td><td class="n">100%</td><td class="n">95%</td><td class="n">18</td><td class="n">3</td><td class="small">Real API defect: 17, Flaky/Environment issue: 1</td><td class="small"><a href="history/20261110-140612Z/summary.html">report</a></td></tr><tr><td class="small">2026-11-10 14:00</td><td class="n">334</td><td class="n">100%</td><td class="n">94%</td><td class="n">19</td><td class="n">3</td><td class="small">Real API defect: 18, Flaky/Environment issue: 1</td><td class="small"><a href="history/20261110-140037Z/summary.html">report</a></td></tr></tbody></table></div>
+
+<h2>Assumptions</h2>
+<ul class="assume"><li>No machine-readable spec found; endpoints inferred from links on the documentation page and safe GET/OPTIONS probes.</li><li>/posts: schema inferred from 50 sample object(s); every observed field treated as required, &quot;id&quot; treated as server-generated id.</li><li>/comments: schema inferred from 50 sample object(s); every observed field treated as required, &quot;id&quot; treated as server-generated id.</li><li>/albums: schema inferred from 50 sample object(s); every observed field treated as required, &quot;id&quot; treated as server-generated id.</li><li>/photos: schema inferred from 50 sample object(s); every observed field treated as required, &quot;id&quot; treated as server-generated id.</li><li>/todos: schema inferred from 50 sample object(s); every observed field treated as required, &quot;id&quot; treated as server-generated id.</li><li>/users: schema inferred from 10 sample object(s); every observed field treated as required, &quot;id&quot; treated as server-generated id.</li><li>/posts/{id}/comments: nested route found in documentation links; tested read-only (GET).</li><li>No authentication scheme documented: all endpoints treated as public.</li><li>Documentation states writes are simulated (not persisted): mutation tests target existing ids; lifecycle tests still verify persistence and will surface it.</li><li>Response-time threshold: 2000 ms (RESPONSE_TIME_MS).</li><li>Where limits are undocumented: strings 1..255 chars, numbers 0..2147483647, arrays up to 100 items.</li><li>Negative tests without a documented error schema assert a leak-free error body rather than a specific JSON structure.</li><li>480 checks target validation rules/limits that are not documented; they run as robustness checks (4xx, or 2xx storing values exactly; never 5xx).</li><li>6 lifecycle checks verify the documented simulated-write contract instead of persistence.</li><li>Calibrated convention (unknownId, posts_id_GET): 404 instead of assumed 404/400 - consistent across 6 checks.</li><li>Calibrated convention (unknownId, comments_id_GET): 404 instead of assumed 404/400 - consistent across 6 checks.</li><li>Calibrated convention (unknownId, albums_id_GET): 404 instead of assumed 404/400 - consistent across 6 checks.</li><li>Calibrated convention (unknownId, photos_id_GET): 404 instead of assumed 404/400 - consistent across 6 checks.</li><li>Calibrated convention (unknownId, todos_id_GET): 404 instead of assumed 404/400 - consistent across 6 checks.</li><li>Calibrated convention (unknownId, users_id_GET): 404 instead of assumed 404/400 - consistent across 6 checks.</li><li>Business-level test cases: 574 low-value technical checks were left out (idempotency repeats, malformed/empty bodies, injection strings, exotic boundaries, expired/malformed/wrong-scheme tokens, token-hygiene tricks). Run with --level high for every check.</li></ul>
+<h2>Not applicable to this API</h2>
+<ul class="assume"><li>GET /posts: pagination/sorting - no pagination or sort parameters documented.</li><li>POST /posts: &quot;optional fields omitted&quot; - every documented field is required.</li><li>POST /posts: duplicate creation - no uniqueness constraint documented or implied.</li><li>PUT /posts/{id}: &quot;optional fields omitted&quot; - every documented field is required.</li><li>GET /comments: pagination/sorting - no pagination or sort parameters documented.</li><li>POST /comments: &quot;optional fields omitted&quot; - every documented field is required.</li><li>PUT /comments/{id}: &quot;optional fields omitted&quot; - every documented field is required.</li><li>GET /albums: pagination/sorting - no pagination or sort parameters documented.</li><li>POST /albums: &quot;optional fields omitted&quot; - every documented field is required.</li><li>POST /albums: duplicate creation - no uniqueness constraint documented or implied.</li><li>PUT /albums/{id}: &quot;optional fields omitted&quot; - every documented field is required.</li><li>GET /photos: pagination/sorting - no pagination or sort parameters documented.</li><li>POST /photos: &quot;optional fields omitted&quot; - every documented field is required.</li><li>POST /photos: duplicate creation - no uniqueness constraint documented or implied.</li><li>PUT /photos/{id}: &quot;optional fields omitted&quot; - every documented field is required.</li><li>GET /todos: pagination/sorting - no pagination or sort parameters documented.</li><li>POST /todos: &quot;optional fields omitted&quot; - every documented field is required.</li><li>POST /todos: duplicate creation - no uniqueness constraint documented or implied.</li><li>PUT /todos/{id}: &quot;optional fields omitted&quot; - every documented field is required.</li><li>GET /users: pagination/sorting - no pagination or sort parameters documented.</li><li>POST /users: &quot;optional fields omitted&quot; - every documented field is required.</li><li>PUT /users/{id}: &quot;optional fields omitted&quot; - every documented field is required.</li><li>GET /posts/{id}/comments: pagination/sorting - no pagination or sort parameters documented.</li><li>POST /posts: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>PUT /posts/{id}: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>PATCH /posts/{id}: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>POST /comments: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>PUT /comments/{id}: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>PATCH /comments/{id}: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>POST /albums: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>PUT /albums/{id}: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>PATCH /albums/{id}: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>POST /photos: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>PUT /photos/{id}: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>PATCH /photos/{id}: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>POST /todos: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>PUT /todos/{id}: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>PATCH /todos/{id}: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>POST /users: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>PUT /users/{id}: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>PATCH /users/{id}: mass assignment - writes are simulated, so the stored resource cannot be re-read.</li><li>BOLA, BFLA and OAuth2 scope checks - not generated: the agent tests with one identity (admin) and does not run OAuth flows.</li><li>Token hygiene - no protected endpoint / no token-based authentication.</li><li>Token/role authorization matrix - the API documents no authentication; public-endpoint checks are generated instead.</li></ul>
+</main>
+<script>
+(function(){var q=document.getElementById('q'),c=document.getElementById('cls'),k=document.getElementById('cat');
+function f(){var t=q.value.toLowerCase();document.querySelectorAll('#fail tbody tr[data-class]').forEach(function(r){
+var ok=(!t||r.textContent.toLowerCase().indexOf(t)>=0)&&(!c.value||r.dataset.class===c.value)&&(!k.value||r.dataset.cat===k.value);r.style.display=ok?'':'none';});}
+[q,c,k].forEach(function(el){el.addEventListener('input',f);});})();
+</script>
+</body></html>

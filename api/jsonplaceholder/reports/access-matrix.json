@@ -1,0 +1,570 @@
+{
+  "apiName": "jsonplaceholder",
+  "generatedAt": "2026-11-11T16:53:27.452Z",
+  "identities": [
+    "none"
+  ],
+  "rows": [
+    {
+      "endpoint": "GET /posts",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_POSTS_GET_002.1"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "POST /posts",
+      "cells": {
+        "none": {
+          "expected": [
+            201
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_POSTS_GET_002.2"
+          ],
+          "actual": 201
+        }
+      }
+    },
+    {
+      "endpoint": "GET /posts/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_POSTS_GET_002.3"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /posts/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_POSTS_GET_002.4"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PATCH /posts/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_POSTS_GET_002.5"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /posts/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200,
+            204
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_POSTS_GET_002.6"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "GET /posts/{id}/comments",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_POSTS_GET_002.7"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "GET /comments",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_COMMENTS_GET_003.1"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "POST /comments",
+      "cells": {
+        "none": {
+          "expected": [
+            201
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_COMMENTS_GET_003.2"
+          ],
+          "actual": 201
+        }
+      }
+    },
+    {
+      "endpoint": "GET /comments/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_COMMENTS_GET_003.3"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /comments/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_COMMENTS_GET_003.4"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PATCH /comments/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_COMMENTS_GET_003.5"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /comments/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200,
+            204
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_COMMENTS_GET_003.6"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "GET /albums",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_ALBUMS_GET_002.1"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "POST /albums",
+      "cells": {
+        "none": {
+          "expected": [
+            201
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_ALBUMS_GET_002.2"
+          ],
+          "actual": 201
+        }
+      }
+    },
+    {
+      "endpoint": "GET /albums/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_ALBUMS_GET_002.3"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /albums/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_ALBUMS_GET_002.4"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PATCH /albums/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_ALBUMS_GET_002.5"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /albums/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200,
+            204
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_ALBUMS_GET_002.6"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "GET /photos",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "fail",
+          "checks": [
+            "TC_JSONPLACEHOLDER_PHOTOS_GET_002.1"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "POST /photos",
+      "cells": {
+        "none": {
+          "expected": [
+            201
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_PHOTOS_GET_002.2"
+          ],
+          "actual": 201
+        }
+      }
+    },
+    {
+      "endpoint": "GET /photos/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_PHOTOS_GET_002.3"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /photos/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_PHOTOS_GET_002.4"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PATCH /photos/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_PHOTOS_GET_002.5"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /photos/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200,
+            204
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_PHOTOS_GET_002.6"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "GET /todos",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_TODOS_GET_002.1"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "POST /todos",
+      "cells": {
+        "none": {
+          "expected": [
+            201
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_TODOS_GET_002.2"
+          ],
+          "actual": 201
+        }
+      }
+    },
+    {
+      "endpoint": "GET /todos/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_TODOS_GET_002.3"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /todos/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_TODOS_GET_002.4"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PATCH /todos/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_TODOS_GET_002.5"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /todos/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200,
+            204
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_TODOS_GET_002.6"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "GET /users",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_USERS_GET_002.1"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "POST /users",
+      "cells": {
+        "none": {
+          "expected": [
+            201
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_USERS_GET_002.2"
+          ],
+          "actual": 201
+        }
+      }
+    },
+    {
+      "endpoint": "GET /users/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_USERS_GET_002.3"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PUT /users/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_USERS_GET_002.4"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "PATCH /users/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_USERS_GET_002.5"
+          ],
+          "actual": 200
+        }
+      }
+    },
+    {
+      "endpoint": "DELETE /users/{id}",
+      "cells": {
+        "none": {
+          "expected": [
+            200,
+            204
+          ],
+          "outcome": "pass",
+          "checks": [
+            "TC_JSONPLACEHOLDER_USERS_GET_002.6"
+          ],
+          "actual": 200
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(npm install*)",
+      "Bash(npm run *)",
+      "Bash(npm ls*)",
+      "Bash(npx tsc*)",
+      "Bash(npx tsx *)",
+      "Bash(npx playwright *)",
+      "Bash(node *)",
+      "PowerShell(npm install*)",
+      "PowerShell(npm run *)",
+      "PowerShell(npm ls*)",
+      "PowerShell(npx tsc*)",
+      "PowerShell(npx tsx *)",
+      "PowerShell(npx playwright *)",
+      "PowerShell(node *)",
+      "Read(./**)",
+      "Edit(./api/**)",
+      "Edit(./shared/**)",
+      "Edit(./scripts/**)",
+      "Write(./api/**)",
+      "Write(./shared/**)",
+      "Write(./scripts/**)",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch(domain:petstore.swagger.io)",
+      "WebFetch(domain:restful-booker.herokuapp.com)",
+      "WebFetch(domain:jsonplaceholder.typicode.com)",
+      "WebFetch(domain:reqres.in)",
+      "WebFetch(domain:docs.tricentis.com)",
+      "WebFetch(domain:documentation.tricentis.com)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Edit(./.env)",
+      "Write(./.env)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(rm -rf *)",
+      "Bash(git push*)",
+      "PowerShell(Invoke-WebRequest*)",
+      "PowerShell(Invoke-RestMethod*)",
+      "PowerShell(Remove-Item -Recurse*)",
+      "PowerShell(git push*)"
+    ]
+  }
+}

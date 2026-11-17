@@ -1,0 +1,21 @@
+{
+  "apiName": "restful-booker",
+  "generatedAt": "2026-11-12T06:49:42.416Z",
+  "authType": "cookie",
+  "totalChecks": 92,
+  "runnableChecks": 92,
+  "credentials": [
+    {
+      "kind": "admin",
+      "neededBy": 51,
+      "configured": true,
+      "via": "login POST /auth with RESTFUL_BOOKER_USERNAME/RESTFUL_BOOKER_PASSWORD",
+      "verified": "ok"
+    }
+  ],
+  "quota": {
+    "status": "ok",
+    "detail": "GET /booking -> 200."
+  },
+  "warnings": []
+}

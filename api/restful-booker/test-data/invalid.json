@@ -1,0 +1,1046 @@
+{
+  "TC_RESTFUL_BOOKER_AUTH_POST_001.2": {
+    "note": "wrong password",
+    "body": {
+      "username": "${env:USERNAME}",
+      "password": "definitely-wrong-password-123"
+    }
+  },
+  "TC_RESTFUL_BOOKER_AUTH_POST_001.3": {
+    "note": "missing username",
+    "body": {
+      "password": "some-password"
+    }
+  },
+  "TC_RESTFUL_BOOKER_AUTH_POST_001.4": {
+    "note": "missing password",
+    "body": {
+      "username": "${env:USERNAME}"
+    }
+  },
+  "TC_RESTFUL_BOOKER_AUTH_POST_001.5": {
+    "note": "empty body",
+    "body": {}
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_GET_002": {
+    "note": "wrong query type",
+    "query": {
+      "checkin": "not-a-date"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_GET_001.4": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.1": {
+    "note": "missing firstname",
+    "body": {
+      "lastname": "Gutmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.2": {
+    "note": "missing lastname",
+    "body": {
+      "firstname": "Mose",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.3": {
+    "note": "missing totalprice",
+    "body": {
+      "firstname": "Mose",
+      "lastname": "Gutmann",
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.4": {
+    "note": "missing depositpaid",
+    "body": {
+      "firstname": "Mose",
+      "lastname": "Gutmann",
+      "totalprice": 111,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.5": {
+    "note": "missing bookingdates.checkin",
+    "body": {
+      "firstname": "Mose",
+      "lastname": "Gutmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.6": {
+    "note": "missing bookingdates.checkout",
+    "body": {
+      "firstname": "Mose",
+      "lastname": "Gutmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.7": {
+    "note": "missing additionalneeds",
+    "body": {
+      "firstname": "Mose",
+      "lastname": "Gutmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      }
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.8": {
+    "note": "empty firstname",
+    "body": {
+      "firstname": "",
+      "lastname": "Gutmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.9": {
+    "note": "wrong type firstname",
+    "body": {
+      "firstname": 12345,
+      "lastname": "Gutmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.10": {
+    "note": "wrong type lastname",
+    "body": {
+      "firstname": "Mose",
+      "lastname": 12345,
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.11": {
+    "note": "wrong type totalprice",
+    "body": {
+      "firstname": "Mose",
+      "lastname": "Gutmann",
+      "totalprice": "not-a-number",
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.12": {
+    "note": "wrong type depositpaid",
+    "body": {
+      "firstname": "Mose",
+      "lastname": "Gutmann",
+      "totalprice": 111,
+      "depositpaid": "not-a-boolean",
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.13": {
+    "note": "wrong type bookingdates",
+    "body": {
+      "firstname": "Mose",
+      "lastname": "Gutmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": [
+        "array-instead-of-object"
+      ],
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.14": {
+    "note": "wrong type additionalneeds",
+    "body": {
+      "firstname": "Mose",
+      "lastname": "Gutmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": 12345
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.15": {
+    "note": "invalid format bookingdates.checkin",
+    "body": {
+      "firstname": "Mose",
+      "lastname": "Gutmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2024-13-45",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_002.16": {
+    "note": "invalid format bookingdates.checkout",
+    "body": {
+      "firstname": "Mose",
+      "lastname": "Gutmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2024-13-45"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "firstname": "Terry"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.2": {
+    "note": "wrong type firstname",
+    "body": {
+      "firstname": 12345
+    },
+    "setupBody": {
+      "firstname": "Rey",
+      "lastname": "Nitzsche",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.3": {
+    "note": "wrong type lastname",
+    "body": {
+      "firstname": "Kennedy",
+      "lastname": 12345
+    },
+    "setupBody": {
+      "firstname": "Carolyn",
+      "lastname": "Mills",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.4": {
+    "note": "wrong type totalprice",
+    "body": {
+      "firstname": "Kennedy",
+      "totalprice": "not-a-number"
+    },
+    "setupBody": {
+      "firstname": "Alek",
+      "lastname": "Graham",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.5": {
+    "note": "wrong type depositpaid",
+    "body": {
+      "firstname": "Kennedy",
+      "depositpaid": "not-a-boolean"
+    },
+    "setupBody": {
+      "firstname": "Marge",
+      "lastname": "Kertzmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.6": {
+    "note": "wrong type bookingdates",
+    "body": {
+      "firstname": "Kennedy",
+      "bookingdates": [
+        "array-instead-of-object"
+      ]
+    },
+    "setupBody": {
+      "firstname": "Mohammad",
+      "lastname": "Reynolds",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.7": {
+    "note": "wrong type additionalneeds",
+    "body": {
+      "firstname": "Kennedy",
+      "additionalneeds": 12345
+    },
+    "setupBody": {
+      "firstname": "Alfred",
+      "lastname": "Blanda",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.8": {
+    "note": "invalid format bookingdates.checkin",
+    "body": {
+      "firstname": "Markus",
+      "lastname": "Kunde",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2024-13-45",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Kylee",
+      "lastname": "Hills",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.9": {
+    "note": "invalid format bookingdates.checkout",
+    "body": {
+      "firstname": "Markus",
+      "lastname": "Kunde",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2024-13-45"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Wilbert",
+      "lastname": "Roob",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.10": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "firstname": "Alexandro",
+      "lastname": "Cassin",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.11": {
+    "note": "missing firstname",
+    "body": {
+      "lastname": "Hartmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Elta",
+      "lastname": "Kerluke",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.12": {
+    "note": "missing lastname",
+    "body": {
+      "firstname": "Dallas",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Wilford",
+      "lastname": "Jenkins-Feest",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.13": {
+    "note": "missing totalprice",
+    "body": {
+      "firstname": "Dallas",
+      "lastname": "Hartmann",
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Troy",
+      "lastname": "Franey",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.14": {
+    "note": "missing depositpaid",
+    "body": {
+      "firstname": "Dallas",
+      "lastname": "Hartmann",
+      "totalprice": 111,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Hillard",
+      "lastname": "Harvey",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.15": {
+    "note": "missing bookingdates.checkin",
+    "body": {
+      "firstname": "Dallas",
+      "lastname": "Hartmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Savanah",
+      "lastname": "Abernathy",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.16": {
+    "note": "missing bookingdates.checkout",
+    "body": {
+      "firstname": "Dallas",
+      "lastname": "Hartmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Fermin",
+      "lastname": "Fritsch-Gorczany",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.17": {
+    "note": "missing additionalneeds",
+    "body": {
+      "firstname": "Dallas",
+      "lastname": "Hartmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      }
+    },
+    "setupBody": {
+      "firstname": "Tyrell",
+      "lastname": "Schaden",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.18": {
+    "note": "empty firstname",
+    "body": {
+      "firstname": "",
+      "lastname": "Hartmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Jefferey",
+      "lastname": "Hegmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.19": {
+    "note": "wrong type firstname",
+    "body": {
+      "firstname": 12345,
+      "lastname": "Hartmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Karina",
+      "lastname": "Hoppe",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.20": {
+    "note": "wrong type lastname",
+    "body": {
+      "firstname": "Dallas",
+      "lastname": 12345,
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Laurianne",
+      "lastname": "Hermiston",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.21": {
+    "note": "wrong type totalprice",
+    "body": {
+      "firstname": "Dallas",
+      "lastname": "Hartmann",
+      "totalprice": "not-a-number",
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Delores",
+      "lastname": "Ward",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.22": {
+    "note": "wrong type depositpaid",
+    "body": {
+      "firstname": "Dallas",
+      "lastname": "Hartmann",
+      "totalprice": 111,
+      "depositpaid": "not-a-boolean",
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Lynette",
+      "lastname": "King",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.23": {
+    "note": "wrong type bookingdates",
+    "body": {
+      "firstname": "Dallas",
+      "lastname": "Hartmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": [
+        "array-instead-of-object"
+      ],
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Myles",
+      "lastname": "King",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.24": {
+    "note": "wrong type additionalneeds",
+    "body": {
+      "firstname": "Dallas",
+      "lastname": "Hartmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": 12345
+    },
+    "setupBody": {
+      "firstname": "Berry",
+      "lastname": "Frami",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.25": {
+    "note": "invalid format bookingdates.checkin",
+    "body": {
+      "firstname": "Dallas",
+      "lastname": "Hartmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2024-13-45",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Hank",
+      "lastname": "Gorczany",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.26": {
+    "note": "invalid format bookingdates.checkout",
+    "body": {
+      "firstname": "Dallas",
+      "lastname": "Hartmann",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2024-13-45"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Lora",
+      "lastname": "Fay",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_ID_DELETE_001.2": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_004.3": {
+    "note": "without a token",
+    "setupBody": {
+      "firstname": "Paolo",
+      "lastname": "Hoppe",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_004.4": {
+    "note": "with an invalid random token",
+    "setupBody": {
+      "firstname": "Adell",
+      "lastname": "Pollich",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_004.8": {
+    "note": "without a token",
+    "body": {
+      "firstname": "Bob"
+    },
+    "setupBody": {
+      "firstname": "Dameon",
+      "lastname": "Skiles",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_004.9": {
+    "note": "with an invalid random token",
+    "body": {
+      "firstname": "Bob"
+    },
+    "setupBody": {
+      "firstname": "William",
+      "lastname": "Sauer",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_004.11": {
+    "note": "without a token",
+    "body": {
+      "firstname": "Carlee",
+      "lastname": "Mills",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Libby",
+      "lastname": "Doyle",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_004.12": {
+    "note": "with an invalid random token",
+    "body": {
+      "firstname": "Carlee",
+      "lastname": "Mills",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    },
+    "setupBody": {
+      "firstname": "Judy",
+      "lastname": "Hessel",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_004.13": {
+    "note": "mass assignment",
+    "body": {
+      "firstname": "Rusty",
+      "lastname": "Wilderman",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast",
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "privilegedFields": {
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_004.16": {
+    "note": "mass assignment",
+    "body": {
+      "firstname": "Liliane",
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "privilegedFields": {
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "setupBody": {
+      "firstname": "Brando",
+      "lastname": "Emmerich",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  },
+  "TC_RESTFUL_BOOKER_BOOKING_POST_004.17": {
+    "note": "mass assignment",
+    "body": {
+      "firstname": "Dean",
+      "lastname": "Price",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast",
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "privilegedFields": {
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "setupBody": {
+      "firstname": "Alicia",
+      "lastname": "Langworth",
+      "totalprice": 111,
+      "depositpaid": true,
+      "bookingdates": {
+        "checkin": "2026-01-01",
+        "checkout": "2026-01-05"
+      },
+      "additionalneeds": "Breakfast"
+    }
+  }
+}

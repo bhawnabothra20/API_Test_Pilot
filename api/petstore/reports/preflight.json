@@ -1,0 +1,21 @@
+{
+  "apiName": "petstore",
+  "generatedAt": "2026-11-11T16:38:20.464Z",
+  "authType": "apiKey",
+  "totalChecks": 156,
+  "runnableChecks": 156,
+  "credentials": [
+    {
+      "kind": "admin",
+      "neededBy": 59,
+      "configured": true,
+      "via": "PETSTORE_API_KEY",
+      "verified": "not-checked"
+    }
+  ],
+  "quota": {
+    "status": "ok",
+    "detail": "GET /store/inventory -> 200."
+  },
+  "warnings": []
+}

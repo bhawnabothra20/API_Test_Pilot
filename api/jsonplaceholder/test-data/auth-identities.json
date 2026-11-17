@@ -1,0 +1,40 @@
+{
+  "scheme": "none",
+  "note": "Values are NEVER stored here. They are read from .env at runtime by shared/global-setup.ts.",
+  "identities": {
+    "admin": {
+      "source": [
+        "JSONPLACEHOLDER_ADMIN_TOKEN",
+        "JSONPLACEHOLDER_API_KEY",
+        "JSONPLACEHOLDER_USERNAME + JSONPLACEHOLDER_PASSWORD (login once)"
+      ],
+      "whenMissing": "tests needing it are skipped with a reason"
+    },
+    "expired": {
+      "source": [
+        "JSONPLACEHOLDER_EXPIRED_TOKEN",
+        "synthetic expired JWT (exp in the past)"
+      ]
+    },
+    "invalid": {
+      "source": [
+        "random 40-char hex token generated per request"
+      ]
+    },
+    "malformed": {
+      "source": [
+        "valid-looking token in a broken header/cookie"
+      ]
+    },
+    "wrongScheme": {
+      "source": [
+        "token presented with the wrong scheme"
+      ]
+    },
+    "none": {
+      "source": [
+        "no credentials"
+      ]
+    }
+  }
+}

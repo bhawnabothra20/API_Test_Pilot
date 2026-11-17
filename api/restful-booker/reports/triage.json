@@ -1,0 +1,364 @@
+{
+  "apiName": "restful-booker",
+  "generatedAt": "2026-11-12T06:53:47.543Z",
+  "runStartedAt": "2026-11-12T06:50:02.396Z",
+  "items": [
+    {
+      "severity": "Low",
+      "testId": "TC_RESTFUL_BOOKER_AUTH_POST_001",
+      "title": "Log in with valid credentials; wrong or missing credentials are rejected without a token",
+      "category": "Auth",
+      "endpoint": "POST /auth",
+      "classification": "Contract/Spec mismatch",
+      "reason": "4 of 5 checks failed (Contract/Spec mismatch: 4). Most severe: Failed login answered with 200 (no token issued); the failure status is not documented.",
+      "expected": "HTTP 400 or 401 or 403 or 422",
+      "actual": "HTTP 200",
+      "error": "Error: 4 of 5 checks failed:\n• [TC_RESTFUL_BOOKER_AUTH_POST_001.2] POST /auth with a wrong password is rejected without a token: Expected status 400 or 401 or 403 or 422 but got 200. POST https://restful-booker.herokuapp.com/auth -> 200 body={\"reason\":\"Bad credentials\"}\n• [TC_RESTFUL_BOOKER_AUTH_POST_001.3] POST /auth without \"username\" is rejected: Expected status 400 or 401 or 403 or 422 but got 200. POST https://restful-booker.herokuapp.com/auth -> 200 body={\"reason\":\"Bad credentials\"}\n• [TC_RESTFUL_BOOKER_AUTH_POST_001.4] POST /auth without \"password\" is rejected: Expected status 400 or 401 or 403 or 422 but got 200. POST https://restful-booker.herokuapp.com/auth -> 200 body={\"reason\":\"Bad credentials\"}\n• [TC_RESTFUL_BOOKER_AUTH_POST_001.5] POST /auth with an empty body is rejected: Expected status 400 or 401 or 403 or 422 but got 200. POST https://restful-booker.herokuapp.com/auth -> 200 body={\"reason\":\"Bad credentials\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 4",
+      "evidence": {
+        "method": "POST",
+        "url": "https://restful-booker.herokuapp.com/auth",
+        "requestHeaders": {
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{}",
+        "status": 200,
+        "responseHeaders": {
+          "content-length": "28",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Thu, 12 Nov 2026 06:50:13 GMT",
+          "etag": "W/\"1c-J3EiwfZwVQjKTKvpvazUfTni8fI\"",
+          "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+          "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=%2Bw4oDFW8mAJfmUxT1%2FSCWUtHN1qvriwOz8Jy8g%2BduVc%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1794466213\"}],\"max_age\":3600}",
+          "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=%2Bw4oDFW8mAJfmUxT1%2FSCWUtHN1qvriwOz8Jy8g%2BduVc%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1794466213\"",
+          "server": "Heroku",
+          "via": "1.1 heroku-router",
+          "x-powered-by": "Express"
+        },
+        "responseBody": "{\"reason\":\"Bad credentials\"}",
+        "durationMs": 297,
+        "identity": "none",
+        "pathTemplate": "/auth"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC4"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "testId": "TC_RESTFUL_BOOKER_BOOKING_GET_001",
+      "title": "Browse bookings and filter them by their attributes",
+      "category": "Positive-Functional",
+      "endpoint": "GET /booking",
+      "classification": "Real API defect",
+      "reason": "1 of 6 checks failed (Real API defect: 1). Most severe: Query filter does not return the matching items: created booking is part of the filtered result",
+      "expected": "HTTP 200",
+      "actual": "• [TC_RESTFUL_BOOKER_BOOKING_GET_001.4] GET /booking?checkin=<value of a newly created booking> returns that booking: created booking is part of the filtered result",
+      "error": "Error: 1 of 6 checks failed:\n• [TC_RESTFUL_BOOKER_BOOKING_GET_001.4] GET /booking?checkin=<value of a newly created booking> returns that booking: created booking is part of the filtered result\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1",
+      "evidence": {
+        "method": "GET",
+        "url": "https://restful-booker.herokuapp.com/booking",
+        "requestHeaders": {},
+        "status": 200,
+        "responseHeaders": {
+          "content-length": "62323",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Thu, 12 Nov 2026 06:50:22 GMT",
+          "etag": "W/\"f373-QgN6xADoUOLb1IRVvSCKibbWZSo\"",
+          "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+          "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=fZsFFDmx9RrTQtnLbi%2FBjXlA7NT%2BS4FPfPrwWdrlGU4%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1794466222\"}],\"max_age\":3600}",
+          "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=fZsFFDmx9RrTQtnLbi%2FBjXlA7NT%2BS4FPfPrwWdrlGU4%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1794466222\"",
+          "server": "Heroku",
+          "via": "1.1 heroku-router",
+          "x-powered-by": "Express"
+        },
+        "responseBody": "[{\"bookingid\":1},{\"bookingid\":2},{\"bookingid\":3},{\"bookingid\":4},{\"bookingid\":5},{\"bookingid\":6},{\"bookingid\":7},{\"bookingid\":8},{\"bookingid\":9},{\"bookingid\":10},{\"bookingid\":11},{\"bookingid\":12},{\"bookingid\":13},{\"bookingid\":14},{\"bookingid\":15},{\"bookingid\":16},{\"bookingid\":17},{\"bookingid\":18},{\"bookingid\":19},{\"bookingid\":20},{\"bookingid\":21},{\"bookingid\":22},{\"bookingid\":23},{\"bookingid\":24},{\"bookingid\":25},{\"bookingid\":26},{\"bookingid\":27},{\"bookingid\":28},{\"bookingid\":30},{\"bookingid\":31},{\"bookingid\":32},{\"bookingid\":33},{\"bookingid\":34},{\"bookingid\":35},{\"bookingid\":36},{\"bookingid\":37},{\"bookingid\":38},{\"bookingid\":39},{\"bookingid\":40},{\"bookingid\":41},{\"bookingid\":44},{\"bookingid\":45},{\"bookingid\":46},{\"bookingid\":47},{\"bookingid\":48},{\"bookingid\":49},{\"bookingid\":50},{\"bookingid\":51},{\"bookingid\":52},{\"bookingid\":53},{\"bookingid\":54},{\"bookingid\":55},{\"bookingid\":56},{\"bookingid\":57},{\"bookingid\":58},{\"bookingid\":60},{\"bookingid\":61},{\"bookingid\":63},{\"bookingid\":64},{\"bookingid\":65},{\"bookingid\":67},{\"bookingid\":68},{\"bookingid\":69},{\"bookingid\":70},{\"bookingid\":71},{\"bookingid\":72},{\"bookingid\":73},{\"bookingid\":74},{\"bookingid\":75},{\"bookingid\":77},{\"bookingid\":78},{\"bookingid\":79},{\"bookingid\":80},{\"bookingid\":82},{\"bookingid\":83},{\"bookingid\":84},{\"bookingid\":86},{\"bookingid\":87},{\"bookingid\":88},{\"bookingid\":91},{\"bookingid\":92},{\"bookingid\":94},{\"bookingid\":95},{\"bookingid\":96},{\"bookingid\":98},{\"bookingid\":99},{\"bookingid\":101},{\"bookingid\":102},{\"bookingid\":104},{\"bookingid\":105},{\"bookingid\":106},{\"bookingid\":107},{\"bookingid\":108},{\"bookingid\":111},{\"bookingid\":112},{\"bookingid\":114},{\"bookingid\":116},{\"bookingid\":117},{\"bookingid\":118},{\"bookingid\":119},{\"bookingid\":120},{\"bookingid\":121},{\"bookingid\":124},{\"bookingid\":125},{\"bookingid\":126},{\"bookingid\":128},{\"bookingid\":129},{\"bookingid\":130},{\"bookingid\":131},{\"bookingid\":132},{\"bookingid\":135},{\"bookingid\":137},{\"bookingid\":138},{\"bookingid\":139},{\"bookingid\":141},{\"bookingid\":142},{\"bookingid\":143},{\"bookingid\":144},{\"bookingid\":145},{\"bookingid\":148},{\"bookingid\":149},{\"bookingid\":150},{\"bookingid\":151},{\"bookingid\":152},{\"bookingid\":155},{\"bookingid\":156},{\"bookingid\":157},{\"bookingid\":158},{\"bookingid\":160},{\"bookingid\":163},{\"bookingid\":164},{\"bookingid\":166},{\"bookingid\":167},{\"bookingid\":168},{\"bookingid\":170},{\"bookingid\":172},{\"bookingid\":173},{\"bookingid\":174},{\"bookingid\":175},{\"bookingid\":177},{\"bookingid\":178},{\"bookingid\":180},{\"bookingid\":181},{\"bookingid\":183},{\"bookingid\":184},{\"bookingid\":186},{\"bookingid\":188},{\"bookingid\":189},{\"bookingid\":190},{\"bookingid\":191},{\"bookingid\":192},{\"bookingid\":195},{\"bookingid\":196},{\"bookingid\":197},{\"bookingid\":199},{\"bookingid\":200},{\"bookingid\":201},{\"bookingid\":204},{\"bookingid\":205},{\"bookingid\":206},{\"bookingid\":207},{\"bookingid\":208},{\"bookingid\":210},{\"bookingid\":211},{\"bookingid\":212},{\"bookingid\":213},{\"bookingid\":214},{\"bookingid\":215},{\"bookingid\":219},{\"bookingid\":220},{\"bookingid\":222},{\"bookingid\":223},{\"bookingid\":224},{\"bookingid\":225},{\"bookingid\":228},{\"bookingid\":229},{\"bookingid\":230},{\"bookingid\":231},{\"bookingid\":233},{\"bookingid\":235},{\"bookingid\":236},{\"bookingid\":237},{\"bookingid\":239},{\"bookingid\":240},{\"bookingid\":242},{\"bookingid\":243},{\"bookingid\":244},{\"bookingid\":245},{\"bookingid\":248},{\"bookingid\":249},{\"bookingid\":250},{\"bookingid\":253},{\"bookingid\":254},{\"bookingid\":255},{\"bookingid\":257},{\"bookingid\":258},{\"bookingid\":260},{\"bookingid\":261},{\"bookingid\":263},{\"bookingid\":264},{\"bookingid\":266},{\"bookingid\":267},{\"bookingid\":269},{\"bookingid\":271},{\"bookingid\":272},{\"bookingid\":273},{\"bookingid\":274},{\"bookingid\":276},{\"bookingid\":277},{\"bookingid\":278},{\"bookingid\":280},{\"bookingid\":281},{\"bookingid\":283},{\"bookingid\":284},{\"bookingid\":286},{\"bookingid\":288},{\"bookingid\":289},{\"bookingid\":290},{\"bookingid\":292},{\"bookingid\":294},{\"bookingid\":295},{\"bookingid\":296},{\"bookingid\":298},{\"bookingid\":299},{\"bookingid\":300},{\"bookingid\":302},{\"bookingid\":303},{\"bookin...[truncated 62323 chars]",
+        "durationMs": 287,
+        "identity": "none",
+        "pathTemplate": "/booking"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC3"
+      ]
+    },
+    {
+      "severity": "Low",
+      "testId": "TC_RESTFUL_BOOKER_BOOKING_ID_DELETE_001",
+      "title": "Delete a booking; deleting a booking that does not exist is rejected",
+      "category": "Positive-Functional",
+      "endpoint": "DELETE /booking/{id}",
+      "classification": "Contract/Spec mismatch",
+      "reason": "1 of 2 checks failed (Contract/Spec mismatch: 1). Most severe: Rejected with 405 instead of the expected 404.",
+      "expected": "HTTP 404",
+      "actual": "HTTP 405",
+      "error": "Error: 1 of 2 checks failed:\n• [TC_RESTFUL_BOOKER_BOOKING_ID_DELETE_001.2] DELETE /booking/{id} with a non-existent id returns 404: Expected status 404 but got 405. DELETE https://restful-booker.herokuapp.com/booking/999999999 -> 405 body=Method Not Allowed\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1",
+      "evidence": {
+        "method": "DELETE",
+        "url": "https://restful-booker.herokuapp.com/booking/999999999",
+        "requestHeaders": {
+          "Cookie": "***"
+        },
+        "status": 405,
+        "responseHeaders": {
+          "content-length": "18",
+          "content-type": "text/plain; charset=utf-8",
+          "date": "Thu, 12 Nov 2026 06:50:54 GMT",
+          "etag": "W/\"12-UGJMK66P4abaBlq0vKHJaCKuGCA\"",
+          "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+          "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=7wvv0Q9E8Ix%2BEXUyh0EqO0Ji37Qwi%2BvVVvCDbAtD9gM%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1794466254\"}],\"max_age\":3600}",
+          "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=7wvv0Q9E8Ix%2BEXUyh0EqO0Ji37Qwi%2BvVVvCDbAtD9gM%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1794466254\"",
+          "server": "Heroku",
+          "via": "1.1 heroku-router",
+          "x-powered-by": "Express"
+        },
+        "responseBody": "Method Not Allowed",
+        "durationMs": 291,
+        "identity": "admin",
+        "pathTemplate": "/booking/{id}"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC5"
+      ]
+    },
+    {
+      "severity": "High",
+      "testId": "TC_RESTFUL_BOOKER_BOOKING_GET_002",
+      "title": "Searching bookings with missing or invalid criteria is rejected",
+      "category": "Negative",
+      "endpoint": "GET /booking",
+      "classification": "Real API defect",
+      "reason": "Server error 500 for invalid input - input validation is missing.",
+      "expected": "HTTP 400 or 422 (never 5xx)",
+      "actual": "HTTP 500",
+      "error": "Error: Server error (5xx) returned. GET https://restful-booker.herokuapp.com/booking?checkin=not-a-date -> 500 body=Internal Server Error\n\nexpect(received).toBeLessThan(expected)\n\nExpected: < 500\nReceived:   500",
+      "evidence": {
+        "method": "GET",
+        "url": "https://restful-booker.herokuapp.com/booking?checkin=not-a-date",
+        "requestHeaders": {},
+        "status": 500,
+        "responseHeaders": {
+          "content-length": "21",
+          "content-type": "text/plain; charset=utf-8",
+          "date": "Thu, 12 Nov 2026 06:51:04 GMT",
+          "etag": "W/\"15-/6VXivhc2MKdLfIkLcUE47K6aH0\"",
+          "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+          "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=FcBRzjPtDs2K3mLWYG%2FplQBxOFFt4GtC0BjT8WFmzdQ%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1794466264\"}],\"max_age\":3600}",
+          "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=FcBRzjPtDs2K3mLWYG%2FplQBxOFFt4GtC0BjT8WFmzdQ%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1794466264\"",
+          "server": "Heroku",
+          "via": "1.1 heroku-router",
+          "x-powered-by": "Express"
+        },
+        "responseBody": "Internal Server Error",
+        "durationMs": 946,
+        "identity": "none",
+        "pathTemplate": "/booking"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC1"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "testId": "TC_RESTFUL_BOOKER_BOOKING_POST_002",
+      "title": "Creating a booking with missing or invalid details is rejected",
+      "category": "Negative",
+      "endpoint": "POST /booking",
+      "classification": "Real API defect",
+      "reason": "16 of 16 checks failed (Real API defect: 16). Most severe: Server error 500 for invalid input - input validation is missing.",
+      "expected": "HTTP 400 or 422 (never 5xx)",
+      "actual": "HTTP 500",
+      "error": "Error: 16 of 16 checks failed:\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.1] POST /booking without required field \"firstname\" is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -> 500 body=Internal Server Error\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.2] POST /booking without required field \"lastname\" is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -> 500 body=Internal Server Error\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.3] POST /booking without required field \"totalprice\" is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -> 500 body=Internal Server Error\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.4] POST /booking without required field \"depositpaid\" is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -> 500 body=Internal Server Error\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.5] POST /booking without required field \"bookingdates.checkin\" is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -> 500 body=Internal Server Error\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.6] POST /booking without required field \"bookingdates.checkout\" is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -> 500 body=Internal Server Error\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.7] POST /booking without required field \"additionalneeds\" is rejected with 400/422: Expected status 400 or 422 but got 200. POST https://restful-booker.herokuapp.com/booking -> 200 body={\"bookingid\":299,\"booking\":{\"firstname\":\"Mose\",\"lastname\":\"Gutmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"}}}\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.8] POST /booking with empty string for required \"firstname\" is rejected with 400/422: Expected status 400 or 422 but got 200. POST https://restful-booker.herokuapp.com/booking -> 200 body={\"bookingid\":305,\"booking\":{\"firstname\":\"\",\"lastname\":\"Gutmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":\"Breakfast\"}}\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.9] POST /booking with wrong type for \"firstname\" (number instead of string) is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -> 500 body=Internal Server Error\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.10] POST /booking with wrong type for \"lastname\" (number instead of string) is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -> 500 body=Internal Server Error\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.11] POST /booking with wrong type for \"totalprice\" (string instead of number) is rejected with 400/422: Expected status 400 or 422 but got 200. POST https://restful-booker.herokuapp.com/booking -> 200 body={\"bookingid\":322,\"booking\":{\"firstname\":\"Mose\",\"lastname\":\"Gutmann\",\"totalprice\":null,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":\"Breakfast\"}}\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.12] POST /booking with wrong type for \"depositpaid\" (string instead of boolean) is rejected with 400/422: Expected status 400 or 422 but got 200. POST https://restful-booker.herokuapp.com/booking -> 200 body={\"bookingid\":329,\"booking\":{\"firstname\":\"Mose\",\"lastname\":\"Gutmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":\"Breakfast\"}}\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.13] POST /booking with wrong type for \"bookingdates\" (array instead of object) is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -> 500 body=Internal Server Error\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.14] POST /booking with wrong type for \"additionalneeds\" (number instead of string) is rejected with 400/422: Expected status 400 or 422 but got 200. POST https://restful-booker.herokuapp.com/booking -> 200 body={\"bookingid\":337,\"booking\":{\"firstname\":\"Mose\",\"lastname\":\"Gutmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":12345}}\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.15] POST /booking with invalid date for \"bookingdates.checkin\" is rejected with 400/422: Expected status 400 or 422 but got 200. POST https://restful-booker.herokuapp.com/booking -> 200 body={\"bookingid\":341,\"booking\":{\"firstname\":\"Mose\",\"lastname\":\"Gutmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"0NaN-aN-aN\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":\"Breakfast\"}}\n• [TC_RESTFUL_BOOKER_BOOKING_POST_002.16] POST /booking with invalid date for \"bookingdates.checkout\" is rejected with 400/422: Expected status 400 or 422 but got 200. POST https://restful-booker.herokuapp.com/booking -> 200 body={\"bookingid\":346,\"booking\":{\"firstname\":\"Mose\",\"lastname\":\"Gutmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"0NaN-aN-aN\"},\"additionalneeds\":\"Breakfast\"}}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 16",
+      "evidence": {
+        "method": "POST",
+        "url": "https://restful-booker.herokuapp.com/booking",
+        "requestHeaders": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"firstname\":\"Mose\",\"lastname\":\"Gutmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2024-13-45\"},\"additionalneeds\":\"Breakfast\"}",
+        "status": 200,
+        "responseHeaders": {
+          "content-length": "199",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Thu, 12 Nov 2026 06:51:23 GMT",
+          "etag": "W/\"c7-I66zWw9xV8LQG0yoMQtZF256rG8\"",
+          "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+          "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=DU%2F4w%2FT7x2efEPywfHqZ%2BEh5YLJUrD2ccg989yT2zWI%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1794466283\"}],\"max_age\":3600}",
+          "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=DU%2F4w%2FT7x2efEPywfHqZ%2BEh5YLJUrD2ccg989yT2zWI%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1794466283\"",
+          "server": "Heroku",
+          "via": "1.1 heroku-router",
+          "x-powered-by": "Express"
+        },
+        "responseBody": "{\"bookingid\":346,\"booking\":{\"firstname\":\"Mose\",\"lastname\":\"Gutmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"0NaN-aN-aN\"},\"additionalneeds\":\"Breakfast\"}}",
+        "durationMs": 273,
+        "identity": "none",
+        "pathTemplate": "/booking"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC1",
+        "RC2"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "testId": "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002",
+      "title": "Updating a booking with invalid details, or a booking that does not exist, is rejected",
+      "category": "Negative",
+      "endpoint": "PATCH /booking/{id}",
+      "classification": "Real API defect",
+      "reason": "19 of 26 checks failed (Real API defect: 17, Contract/Spec mismatch: 2). Most severe: Documented rule not enforced: invalid input accepted with 200.",
+      "expected": "HTTP 400 or 422",
+      "actual": "HTTP 200",
+      "error": "Error: 19 of 26 checks failed:\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.1] PATCH /booking/{id} with a non-existent id returns 404: Expected status 404 but got 405. PATCH https://restful-booker.herokuapp.com/booking/999999999 -> 405 body=Method Not Allowed\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.2] PATCH /booking/{id} with wrong type for \"firstname\" (number instead of string) is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/740 -> 200 body={\"firstname\":12345,\"lastname\":\"Nitzsche\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":\"Breakfast\"}\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.3] PATCH /booking/{id} with wrong type for \"lastname\" (number instead of string) is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/751 -> 200 body={\"firstname\":\"Kennedy\",\"lastname\":12345,\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":\"Breakfast\"}\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.4] PATCH /booking/{id} with wrong type for \"totalprice\" (string instead of number) is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/766 -> 200 body={\"firstname\":\"Kennedy\",\"lastname\":\"Graham\",\"totalprice\":null,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":\"Breakfast\"}\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.5] PATCH /booking/{id} with wrong type for \"depositpaid\" (string instead of boolean) is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/785 -> 200 body={\"firstname\":\"Kennedy\",\"lastname\":\"Kertzmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":\"Breakfast\"}\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.6] PATCH /booking/{id} with wrong type for \"bookingdates\" (array instead of object) is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/800 -> 200 body={\"firstname\":\"Kennedy\",\"lastname\":\"Reynolds\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"0NaN-aN-aN\",\"checkout\":\"0NaN-aN-aN\"},\"additionalneeds\":\"Breakfast\"}\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.7] PATCH /booking/{id} with wrong type for \"additionalneeds\" (number instead of string) is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/814 -> 200 body={\"firstname\":\"Kennedy\",\"lastname\":\"Blanda\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":12345}\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.8] PATCH /booking/{id} with invalid date for \"bookingdates.checkin\" is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/826 -> 200 body={\"firstname\":\"Markus\",\"lastname\":\"Kunde\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"0NaN-aN-aN\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":\"Breakfast\"}\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.9] PATCH /booking/{id} with invalid date for \"bookingdates.checkout\" is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/841 -> 200 body={\"firstname\":\"Markus\",\"lastname\":\"Kunde\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"0NaN-aN-aN\"},\"additionalneeds\":\"Breakfast\"}\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.10] PUT /booking/{id} with a non-existent id returns 404: Expected status 404 but got 405. PUT https://restful-booker.herokuapp.com/booking/999999999 -> 405 body=Method Not Allowed\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.17] PUT /booking/{id} without required field \"additionalneeds\" is rejected with 400/422: Expected status 400 or 422 but got 200. PUT https://restful-booker.herokuapp.com/booking/927 -> 200 body={\"firstname\":\"Dallas\",\"lastname\":\"Hartmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":\"Breakfast\"}\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.18] PUT /booking/{id} with empty string for required \"firstname\" is rejected with 400/422: Expected status 400 or 422 but got 200. PUT https://restful-booker.herokuapp.com/booking/938 -> 200 body={\"firstname\":\"\",\"lastname\":\"Hartmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":\"Breakfast\"}\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.19] PUT /booking/{id} with wrong type for \"firstname\" (number instead of string) is rejected with 400/422: Server error (5xx) returned. PUT https://restful-booker.herokuapp.com/booking/952 -> 500 body=Internal Server Error\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.20] PUT /booking/{id} with wrong type for \"lastname\" (number instead of string) is rejected with 400/422: Server error (5xx) returned. PUT https://restful-booker.herokuapp.com/booking/968 -> 500 body=Internal Server Error\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.21] PUT /booking/{id} with wrong type for \"totalprice\" (string instead of number) is rejected with 400/422: Expected status 400 or 422 but got 200. PUT https://restful-booker.herokuapp.com/booking/981 -> 200 body={\"firstname\":\"Dallas\",\"lastname\":\"Hartmann\",\"totalprice\":null,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2026-01-05\"},\"additionalneeds\":\"Breakfast\"}\n• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.22] PUT /booking/{id} with wrong type for \"depositpaid\" (string instead of boolean) is rejected with 400/422: Expected status 400 or 422 but got 200. PUT https://restful-booker.herokuapp.com/booking/991 -> 200 body={\"firstname\":\"Dallas\",\"lastname\":\"Hartmann\",\"totalprice\":111,\"",
+      "evidence": {
+        "method": "PUT",
+        "url": "https://restful-booker.herokuapp.com/booking/1035",
+        "requestHeaders": {
+          "Accept": "application/json",
+          "Cookie": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"firstname\":\"Dallas\",\"lastname\":\"Hartmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"2024-13-45\"},\"additionalneeds\":\"Breakfast\"}",
+        "status": 200,
+        "responseHeaders": {
+          "content-length": "174",
+          "content-type": "application/json; charset=utf-8",
+          "date": "Thu, 12 Nov 2026 06:52:37 GMT",
+          "etag": "W/\"ae-3tqmq61CU9ZjEeeP9YzfPwq75LA\"",
+          "nel": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}",
+          "report-to": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=i96Nmh3Gbwn9EHcrB56cdM%2FbGXIJETrBKUaU7bQtN7s%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1794466357\"}],\"max_age\":3600}",
+          "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=i96Nmh3Gbwn9EHcrB56cdM%2FbGXIJETrBKUaU7bQtN7s%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1794466357\"",
+          "server": "Heroku",
+          "via": "1.1 heroku-router",
+          "x-powered-by": "Express"
+        },
+        "responseBody": "{\"firstname\":\"Dallas\",\"lastname\":\"Hartmann\",\"totalprice\":111,\"depositpaid\":true,\"bookingdates\":{\"checkin\":\"2026-01-01\",\"checkout\":\"0NaN-aN-aN\"},\"additionalneeds\":\"Breakfast\"}",
+        "durationMs": 375,
+        "identity": "admin",
+        "pathTemplate": "/booking/{id}"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC2",
+        "RC1",
+        "RC5"
+      ]
+    }
+  ],
+  "rootCauses": [
+    {
+      "key": "5xx-invalid-input",
+      "id": "RC1",
+      "classification": "Real API defect",
+      "severity": "High",
+      "title": "Invalid input crashes the server (5xx instead of 400/422)",
+      "hint": "Validate request bodies, parameters and ids before processing; map validation errors to 400/422.",
+      "checks": 12,
+      "testIds": [
+        "TC_RESTFUL_BOOKER_BOOKING_GET_002",
+        "TC_RESTFUL_BOOKER_BOOKING_POST_002",
+        "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002"
+      ],
+      "endpoints": [
+        "GET /booking",
+        "POST /booking",
+        "PUT /booking/{id}"
+      ],
+      "example": {
+        "testId": "TC_RESTFUL_BOOKER_BOOKING_GET_002",
+        "expected": "HTTP 400 or 422 (never 5xx)",
+        "actual": "HTTP 500"
+      }
+    },
+    {
+      "key": "accepts-invalid:Real API defect:200",
+      "id": "RC2",
+      "classification": "Real API defect",
+      "severity": "Medium",
+      "title": "Invalid input is accepted with HTTP 200 - validation is missing",
+      "hint": "Reject missing, null, wrongly typed, out-of-range and badly formatted fields with 400/422.",
+      "checks": 22,
+      "testIds": [
+        "TC_RESTFUL_BOOKER_BOOKING_POST_002",
+        "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002"
+      ],
+      "endpoints": [
+        "PATCH /booking/{id}",
+        "POST /booking",
+        "PUT /booking/{id}"
+      ],
+      "example": {
+        "testId": "TC_RESTFUL_BOOKER_BOOKING_POST_002.7",
+        "expected": "HTTP 400 or 422",
+        "actual": "HTTP 200"
+      }
+    },
+    {
+      "key": "filter:GET /booking",
+      "id": "RC3",
+      "classification": "Real API defect",
+      "severity": "Medium",
+      "title": "Filtering GET /booking does not return the matching items",
+      "hint": "Check the filter implementation (and indexing delay, if any) for this query parameter.",
+      "checks": 1,
+      "testIds": [
+        "TC_RESTFUL_BOOKER_BOOKING_GET_001"
+      ],
+      "endpoints": [
+        "GET /booking"
+      ],
+      "example": {
+        "testId": "TC_RESTFUL_BOOKER_BOOKING_GET_001.4",
+        "expected": "HTTP 200",
+        "actual": "• [TC_RESTFUL_BOOKER_BOOKING_GET_001.4] GET /booking?checkin=<value of a newly created booking> returns that booking: created booking is part of the filtered result"
+      }
+    },
+    {
+      "key": "login-status:Contract/Spec mismatch:200",
+      "id": "RC4",
+      "classification": "Contract/Spec mismatch",
+      "severity": "Low",
+      "title": "Failed logins are answered with HTTP 200 (no token is issued)",
+      "hint": "Answer failed logins with 401 (400 for missing fields) and document it; clients cannot tell success from failure by status today.",
+      "checks": 4,
+      "testIds": [
+        "TC_RESTFUL_BOOKER_AUTH_POST_001"
+      ],
+      "endpoints": [
+        "POST /auth"
+      ],
+      "example": {
+        "testId": "TC_RESTFUL_BOOKER_AUTH_POST_001.2",
+        "expected": "HTTP 400 or 401 or 403 or 422",
+        "actual": "HTTP 200"
+      }
+    },
+    {
+      "key": "status:405-vs-404",
+      "id": "RC5",
+      "classification": "Contract/Spec mismatch",
+      "severity": "Low",
+      "title": "Answers 405 where 404 is expected",
+      "hint": "Align the status codes with the spec - or, if the behaviour is intended, pin it in spec/contract-overrides.json.",
+      "checks": 3,
+      "testIds": [
+        "TC_RESTFUL_BOOKER_BOOKING_ID_DELETE_001",
+        "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002"
+      ],
+      "endpoints": [
+        "DELETE /booking/{id}",
+        "PATCH /booking/{id}",
+        "PUT /booking/{id}"
+      ],
+      "example": {
+        "testId": "TC_RESTFUL_BOOKER_BOOKING_ID_DELETE_001.2",
+        "expected": "HTTP 404",
+        "actual": "HTTP 405"
+      }
+    }
+  ]
+}

@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>petstore API test summary</title>
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--fg:#1d1d1b;--muted:#6b6b66;--line:#e3e2dc;--ok:#1f7a4d;--bad:#b42318;--skip:#9a9a92;--accent:#2f5bd3;--warn:#b26b00}
+@media (prefers-color-scheme:dark){:root{--bg:#161615;--card:#1f1f1d;--fg:#ecebe6;--muted:#a3a29b;--line:#34332f;--ok:#4cc38a;--bad:#ff6b5e;--skip:#77766f;--accent:#7d9bff;--warn:#e0a640}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:1280px;margin:0 auto;padding:24px 16px 64px}h1{font-size:24px;margin:0 0 4px}h2{font-size:17px;margin:32px 0 10px}
+a{color:var(--accent)}.muted{color:var(--muted)}.small{font-size:12px}.mono{font-family:ui-monospace,Consolas,monospace;font-size:12px;word-break:break-all}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}.card .v{font-size:26px;font-weight:650}.card .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.ok{color:var(--ok)}.bad{color:var(--bad)}.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.links a{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 10px;text-decoration:none}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:12px;color:var(--muted);font-weight:600;white-space:nowrap}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.barcell{min-width:140px}
+.bar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--line)}.bar .p{background:var(--ok)}.bar .f{background:var(--bad)}.bar .s{background:var(--skip)}
+.tag{display:inline-block;border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600;border:1px solid currentColor;white-space:nowrap}
+.cls-RealAPIdefect{color:var(--bad)}.cls-ContractSpecmismatch{color:var(--warn)}.cls-Testdataissue{color:var(--accent)}.cls-FlakyEnvironmentissue,.flaky{color:var(--skip)}
+pre{white-space:pre-wrap;word-break:break-word;max-height:320px;overflow:auto;background:var(--bg);padding:8px;border-radius:6px;font-size:11px}
+details summary{cursor:pointer;color:var(--accent)}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+input,select{background:var(--card);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font:inherit}
+ul.assume li{margin:4px 0}
+table.matrix td.mx{font-size:11px;text-align:center;white-space:nowrap;min-width:72px}
+td.mx.pass{background:color-mix(in srgb,var(--ok) 14%,transparent)}td.mx.fail{background:color-mix(in srgb,var(--bad) 14%,transparent)}
+td.mx.skipped,td.mx.not-run,td.mx.none{color:var(--muted)}
+td.mx.finding{background:color-mix(in srgb,var(--bad) 32%,transparent);font-weight:700;outline:2px solid var(--bad);outline-offset:-2px}
+.tag.finding{color:var(--bad);margin-top:3px}.tag.owasp{color:var(--accent)}
+.banner{margin-top:16px;padding:12px 14px;border-radius:10px;border:1px solid var(--warn);background:color-mix(in srgb,var(--warn) 12%,transparent)}.banner ul{margin:6px 0 0;padding-left:18px}
+.sev-Critical{color:var(--bad);font-weight:700}.sev-High{color:var(--bad)}.sev-Medium{color:var(--warn)}.sev-Low{color:var(--muted)}
+</style>
+</head>
+<body><main>
+<h1>Swagger Petstore</h1>
+<div class="muted">API <b>petstore</b> &middot; input <a href="https://petstore.swagger.io/v2/swagger.json">https://petstore.swagger.io/v2/swagger.json</a> &middot; base URL <span class="mono">https://petstore.swagger.io/v2</span> &middot; spec source swagger2 &middot; auth apiKey</div>
+<div class="muted">Run 2026-11-11 16:38:22 UTC &middot; duration 155 s &middot; 20 endpoints &middot; 33 test cases</div>
+<div class="links"><a href="html/index.html">Playwright HTML report</a><a href="../test-cases/petstore_qtest_import.xlsx">qTest Excel import file</a><a href="triage.json">triage.json</a><a href="run-log.txt">run-log.txt</a></div>
+
+
+<div class="cards">
+<div class="card"><div class="k">Total</div><div class="v">33</div></div>
+<div class="card"><div class="k">Executed</div><div class="v ">100%</div><div class="small muted">33 of 33</div></div>
+<div class="card"><div class="k">Pass rate</div><div class="v">27%</div><div class="small muted">of executed tests</div></div>
+<div class="card"><div class="k">Passed</div><div class="v ok">9</div></div>
+<div class="card"><div class="k">Failed</div><div class="v bad">24</div></div>
+<div class="card"><div class="k">Skipped</div><div class="v muted">0</div></div>
+<div class="card"><div class="k">Flaky</div><div class="v">0</div></div>
+<div class="card"><div class="k">Root causes</div><div class="v">10</div><div class="small muted">7 real defects</div></div>
+</div>
+<p class="small">Compared with the previous full run (2026-11-11 16:31 UTC): <b>3</b> new failure(s), <b>4</b> fixed (ran and passed). New: <span class="mono">TC_PETSTORE_PET_FINDBYSTATUS_GET_001, TC_PETSTORE_PET_POST_004, TC_PETSTORE_USER_POST_003</span></p>
+
+<h2>Root causes (10 behind 24 failing tests)</h2>
+<div class="tablewrap"><table><thead><tr><th>ID</th><th>Severity</th><th>Class</th><th>Root cause</th><th>Failed checks</th><th>Example</th></tr></thead><tbody><tr><td class="mono">RC1</td><td><span class="tag sev-High">High</span></td>
+<td><span class="tag cls-RealAPIdefect">Real API defect</span></td>
+<td><b>Invalid input crashes the server (5xx instead of 400/422)</b><div class="small muted">Validate request bodies, parameters and ids before processing; map validation errors to 400/422.</div>
+<details><summary>5 endpoint(s), 5 test(s)</summary><div class="small mono">POST /pet<br>POST /store/order<br>POST /user<br>PUT /pet<br>PUT /user/{username}</div><div class="small mono" style="margin-top:6px">TC_PETSTORE_PET_POST_002, TC_PETSTORE_PET_PUT_002, TC_PETSTORE_STORE_ORDER_POST_002, TC_PETSTORE_USER_POST_002, TC_PETSTORE_USER_USERNAME_PUT_002</div></details></td>
+<td class="n">17</td><td class="small"><span class="mono">TC_PETSTORE_PET_POST_002.4</span><br><b>Expected:</b> HTTP 405 (never 5xx)<br><b>Actual:</b> HTTP 500</td></tr>
+<tr><td class="mono">RC2</td><td><span class="tag sev-High">High</span></td>
+<td><span class="tag cls-RealAPIdefect">Real API defect</span></td>
+<td><b>Security: request without valid credentials was answered with 200.</b><div class="small muted">See the evidence of the listed tests.</div>
+<details><summary>7 endpoint(s), 2 test(s)</summary><div class="small mono">DELETE /pet/{petId}<br>GET /pet/findByStatus<br>GET /pet/findByTags<br>GET /pet/{petId}<br>GET /store/inventory<br>POST /pet<br>PUT /pet</div><div class="small mono" style="margin-top:6px">TC_PETSTORE_PET_POST_004, TC_PETSTORE_STORE_INVENTORY_GET_002</div></details></td>
+<td class="n">14</td><td class="small"><span class="mono">TC_PETSTORE_PET_POST_004.2</span><br><b>Expected:</b> HTTP 401<br><b>Actual:</b> HTTP 200</td></tr>
+<tr><td class="mono">RC3</td><td><span class="tag sev-High">High</span></td>
+<td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag owasp">API3:2023</span></td>
+<td><b>Security (API3:2023): client-supplied privileged fields were stored</b><div class="small muted">Enforce object/function/property-level authorization on the server for every request.</div>
+<details><summary>3 endpoint(s), 2 test(s)</summary><div class="small mono">POST /pet<br>POST /user<br>PUT /user/{username}</div><div class="small mono" style="margin-top:6px">TC_PETSTORE_PET_POST_004, TC_PETSTORE_USER_CREATEWITHLIST_POST_003</div></details></td>
+<td class="n">3</td><td class="small"><span class="mono">TC_PETSTORE_PET_POST_004.19</span><br><b>Expected:</b> HTTP 201 or 400 or 422<br><b>Actual:</b> HTTP 200</td></tr>
+<tr><td class="mono">RC4</td><td><span class="tag sev-High">High</span></td>
+<td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag owasp">API3:2023</span></td>
+<td><b>Security (API3:2023): response exposes sensitive fields</b><div class="small muted">Enforce object/function/property-level authorization on the server for every request.</div>
+<details><summary>1 endpoint(s), 1 test(s)</summary><div class="small mono">GET /user/{username}</div><div class="small mono" style="margin-top:6px">TC_PETSTORE_USER_CREATEWITHLIST_POST_003</div></details></td>
+<td class="n">1</td><td class="small"><span class="mono">TC_PETSTORE_USER_CREATEWITHLIST_POST_003.9</span><br><b>Expected:</b> HTTP 200<br><b>Actual:</b> • [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.9] GET /user/{username} exposes no sensitive fields (password/secret/token/ssn) and no fields outside the documented schema: Sensitive field exposed in response: password</td></tr>
+<tr><td class="mono">RC5</td><td><span class="tag sev-Medium">Medium</span></td>
+<td><span class="tag cls-RealAPIdefect">Real API defect</span></td>
+<td><b>Invalid input is accepted with HTTP 200 - validation is missing</b><div class="small muted">Reject missing, null, wrongly typed, out-of-range and badly formatted fields with 400/422.</div>
+<details><summary>10 endpoint(s), 9 test(s)</summary><div class="small mono">GET /pet/findByStatus<br>GET /pet/findByTags<br>GET /user/login<br>POST /pet<br>POST /store/order<br>POST /user<br>POST /user/createWithArray<br>POST /user/createWithList<br>PUT /pet<br>PUT /user/{username}</div><div class="small mono" style="margin-top:6px">TC_PETSTORE_PET_POST_002, TC_PETSTORE_PET_PUT_002, TC_PETSTORE_PET_FINDBYSTATUS_GET_002, TC_PETSTORE_PET_FINDBYTAGS_GET_002, TC_PETSTORE_STORE_ORDER_POST_002, TC_PETSTORE_USER_POST_002, TC_PETSTORE_USER_CREATEWITHLIST_POST_001, TC_PETSTORE_USER_USERNAME_PUT_002, TC_PETSTORE_USER_LOGIN_GET_002</div></details></td>
+<td class="n">40</td><td class="small"><span class="mono">TC_PETSTORE_PET_POST_002.1</span><br><b>Expected:</b> HTTP 405<br><b>Actual:</b> HTTP 200</td></tr>
+<tr><td class="mono">RC6</td><td><span class="tag sev-Medium">Medium</span></td>
+<td><span class="tag cls-RealAPIdefect">Real API defect</span></td>
+<td><b>Values are not stored or returned exactly as sent (truncated, trimmed, converted)</b><div class="small muted">Store and return values unchanged, or reject input the API cannot store with 400/422.</div>
+<details><summary>2 endpoint(s), 2 test(s)</summary><div class="small mono">POST /store/order<br>PUT /user/{username}</div><div class="small mono" style="margin-top:6px">TC_PETSTORE_STORE_ORDER_POST_001, TC_PETSTORE_USER_USERNAME_PUT_001</div></details></td>
+<td class="n">4</td><td class="small"><span class="mono">TC_PETSTORE_STORE_ORDER_POST_001.1</span><br><b>Expected:</b> shipDate = (request value)<br><b>Actual:</b> (different)</td></tr>
+<tr><td class="mono">RC7</td><td><span class="tag sev-Medium">Medium</span></td>
+<td><span class="tag cls-RealAPIdefect">Real API defect</span></td>
+<td><b>GET /pet/findByTags: expected &quot;Expected at least one item&quot; - not met</b><div class="small muted">See the evidence of the listed tests: the API answered, but not with the expected content.</div>
+<details><summary>1 endpoint(s), 1 test(s)</summary><div class="small mono">GET /pet/findByTags</div><div class="small mono" style="margin-top:6px">TC_PETSTORE_PET_FINDBYTAGS_GET_001</div></details></td>
+<td class="n">1</td><td class="small"><span class="mono">TC_PETSTORE_PET_FINDBYTAGS_GET_001.1</span><br><b>Expected:</b> HTTP 200<br><b>Actual:</b> • [TC_PETSTORE_PET_FINDBYTAGS_GET_001.1] GET /pet/findByTags with a valid request returns 200 and the required fields: Expected at least one item</td></tr>
+<tr><td class="mono">RC8</td><td><span class="tag sev-Low">Low</span></td>
+<td><span class="tag cls-ContractSpecmismatch">Contract/Spec mismatch</span></td>
+<td><b>Success code 200 differs from the documented one.</b><div class="small muted">See the evidence of the listed tests.</div>
+<details><summary>4 endpoint(s), 8 test(s)</summary><div class="small mono">POST /pet<br>POST /user<br>POST /user/createWithArray<br>POST /user/createWithList</div><div class="small mono" style="margin-top:6px">TC_PETSTORE_PET_POST_001, TC_PETSTORE_PET_POST_003, TC_PETSTORE_PET_POST_004, TC_PETSTORE_USER_POST_001, TC_PETSTORE_USER_POST_003, TC_PETSTORE_USER_CREATEWITHLIST_POST_002, TC_PETSTORE_USER_CREATEWITHARRAY_POST_001, TC_PETSTORE_USER_CREATEWITHLIST_POST_003</div></details></td>
+<td class="n">18</td><td class="small"><span class="mono">TC_PETSTORE_PET_POST_001.1</span><br><b>Expected:</b> HTTP 201<br><b>Actual:</b> HTTP 200</td></tr>
+<tr><td class="mono">RC9</td><td><span class="tag sev-Low">Low</span></td>
+<td><span class="tag cls-ContractSpecmismatch">Contract/Spec mismatch</span></td>
+<td><b>Response bodies do not match the documented schema</b><div class="small muted">Fix the response shape or update the spec; see the failing fields in each test.</div>
+<details><summary>2 endpoint(s), 4 test(s)</summary><div class="small mono">GET /pet/findByStatus<br>GET /user/login</div><div class="small mono" style="margin-top:6px">TC_PETSTORE_PET_FINDBYSTATUS_GET_001, TC_PETSTORE_PET_POST_004, TC_PETSTORE_USER_LOGIN_GET_001, TC_PETSTORE_USER_CREATEWITHLIST_POST_003</div></details></td>
+<td class="n">10</td><td class="small"><span class="mono">TC_PETSTORE_PET_FINDBYSTATUS_GET_001.1</span><br><b>Expected:</b> body matches PetFindbystatusGetResponse<br><b>Actual:</b> 105.name: Required</td></tr>
+<tr><td class="mono">RC10</td><td><span class="tag sev-Low">Low</span></td>
+<td><span class="tag cls-FlakyEnvironmentissue">Flaky/Environment issue</span></td>
+<td><b>Responses slower than the RESPONSE_TIME_MS limit</b><div class="small muted">Re-run to confirm; shared demo hosts are often slow. Raise RESPONSE_TIME_MS if the limit is too strict.</div>
+<details><summary>1 endpoint(s), 1 test(s)</summary><div class="small mono">POST /store/order</div><div class="small mono" style="margin-top:6px">TC_PETSTORE_STORE_ORDER_POST_003</div></details></td>
+<td class="n">1</td><td class="small"><span class="mono">TC_PETSTORE_STORE_ORDER_POST_003</span><br><b>Expected:</b> &lt;= 2000 ms<br><b>Actual:</b> 2930 ms</td></tr></tbody></table></div>
+<p class="small muted">Failed checks with the same underlying problem are grouped, whatever endpoint they hit. Fix a root cause and all its checks should pass.</p>
+
+<h2>Spec drift (14)</h2>
+<p class="small">Documented behaviour (spec source: swagger2) compared with what the API did in this run. <b>14</b> fix API, <b>0</b> fix docs &middot; <a href="openapi-patch.json">openapi-patch.json</a> (0 JSON Patch operations) &middot; <a href="openapi-suggested.yaml">openapi-suggested.yaml</a> &middot; <a href="spec-drift.json">spec-drift.json</a>.
+Where the documentation is silent, consistent behaviour is suggested for the docs; where it is explicit, the API must comply.</p><div class="tablewrap"><table><thead><tr><th>ID</th><th>Fix</th><th>Kind</th><th>Endpoint</th><th>Documented</th><th>Observed</th><th>Confidence (checks)</th><th>Evidence</th></tr></thead><tbody><tr><td class="mono">D1</td><td><span class="tag sev-High">fix API</span></td><td class="small">validation-not-enforced</td><td class="mono small">POST /pet</td>
+<td class="small">Invalid input is rejected with 405</td><td class="small">Accepted with HTTP 200 in 6 checks (e.g. POST /pet without required field &quot;name&quot; is rejected with 405)</td><td class="small">high (6)</td><td class="mono small">TC_PETSTORE_PET_POST_002.1, TC_PETSTORE_PET_POST_002.2, TC_PETSTORE_PET_POST_002.3 +3</td></tr><tr><td class="mono">D2</td><td><span class="tag sev-High">fix API</span></td><td class="small">validation-not-enforced</td><td class="mono small">PUT /pet</td>
+<td class="small">Invalid input is rejected with 400</td><td class="small">Accepted with HTTP 200 in 6 checks (e.g. PUT /pet without required field &quot;name&quot; is rejected with 400)</td><td class="small">high (6)</td><td class="mono small">TC_PETSTORE_PET_PUT_002.1, TC_PETSTORE_PET_PUT_002.2, TC_PETSTORE_PET_PUT_002.3 +3</td></tr><tr><td class="mono">D3</td><td><span class="tag sev-High">fix API</span></td><td class="small">validation-not-enforced</td><td class="mono small">POST /user</td>
+<td class="small">Invalid input is rejected with 400</td><td class="small">Accepted with HTTP 200 in 6 checks (e.g. POST /user with wrong type for &quot;username&quot; (number instead of string) is rejected with 400)</td><td class="small">high (6)</td><td class="mono small">TC_PETSTORE_USER_POST_002.2, TC_PETSTORE_USER_POST_002.3, TC_PETSTORE_USER_POST_002.4 +3</td></tr><tr><td class="mono">D4</td><td><span class="tag sev-High">fix API</span></td><td class="small">validation-not-enforced</td><td class="mono small">PUT /user/{username}</td>
+<td class="small">Invalid input is rejected with 400</td><td class="small">Accepted with HTTP 200 in 6 checks (e.g. PUT /user/{username} with wrong type for &quot;username&quot; (number instead of string) is rejected with 400)</td><td class="small">high (6)</td><td class="mono small">TC_PETSTORE_USER_USERNAME_PUT_002.3, TC_PETSTORE_USER_USERNAME_PUT_002.4, TC_PETSTORE_USER_USERNAME_PUT_002.5 +3</td></tr><tr><td class="mono">D5</td><td><span class="tag sev-High">fix API</span></td><td class="small">server-error</td><td class="mono small">POST /store/order</td>
+<td class="small">No 5xx response documented for client input</td><td class="small">HTTP 500 in 5 responses</td><td class="small">high (5)</td><td class="mono small">TC_PETSTORE_STORE_ORDER_POST_002</td></tr><tr><td class="mono">D6</td><td><span class="tag sev-High">fix API</span></td><td class="small">server-error</td><td class="mono small">POST /pet</td>
+<td class="small">No 5xx response documented for client input</td><td class="small">HTTP 500 in 4 responses</td><td class="small">medium (4)</td><td class="mono small">TC_PETSTORE_PET_POST_002</td></tr><tr><td class="mono">D7</td><td><span class="tag sev-High">fix API</span></td><td class="small">server-error</td><td class="mono small">PUT /pet</td>
+<td class="small">No 5xx response documented for client input</td><td class="small">HTTP 500 in 4 responses</td><td class="small">medium (4)</td><td class="mono small">TC_PETSTORE_PET_PUT_002</td></tr><tr><td class="mono">D8</td><td><span class="tag sev-High">fix API</span></td><td class="small">validation-not-enforced</td><td class="mono small">POST /store/order</td>
+<td class="small">Invalid input is rejected with 400</td><td class="small">Accepted with HTTP 200 in 3 checks (e.g. POST /store/order with wrong type for &quot;shipDate&quot; (number instead of string) is rejected with 400)</td><td class="small">medium (3)</td><td class="mono small">TC_PETSTORE_STORE_ORDER_POST_002.4, TC_PETSTORE_STORE_ORDER_POST_002.5, TC_PETSTORE_STORE_ORDER_POST_002.7</td></tr><tr><td class="mono">D9</td><td><span class="tag sev-High">fix API</span></td><td class="small">server-error</td><td class="mono small">POST /user</td>
+<td class="small">No 5xx response documented for client input</td><td class="small">HTTP 500 in 2 responses</td><td class="small">medium (2)</td><td class="mono small">TC_PETSTORE_USER_POST_002</td></tr><tr><td class="mono">D10</td><td><span class="tag sev-High">fix API</span></td><td class="small">server-error</td><td class="mono small">PUT /user/{username}</td>
+<td class="small">No 5xx response documented for client input</td><td class="small">HTTP 500 in 2 responses</td><td class="small">medium (2)</td><td class="mono small">TC_PETSTORE_USER_USERNAME_PUT_002</td></tr><tr><td class="mono">D11</td><td><span class="tag sev-High">fix API</span></td><td class="small">validation-not-enforced</td><td class="mono small">GET /user/login</td>
+<td class="small">Invalid input is rejected with 400</td><td class="small">Accepted with HTTP 200 in 2 checks (e.g. GET /user/login without required query parameter &quot;username&quot; is rejected with 400)</td><td class="small">medium (2)</td><td class="mono small">TC_PETSTORE_USER_LOGIN_GET_002.1, TC_PETSTORE_USER_LOGIN_GET_002.3</td></tr><tr><td class="mono">D12</td><td><span class="tag sev-High">fix API</span></td><td class="small">type-mismatch</td><td class="mono small">GET /user/login</td>
+<td class="small">&quot;&lt;body&gt;&quot; is string</td><td class="small">object in all 2 successful responses</td><td class="small">medium (2)</td><td class="mono small">TC_PETSTORE_USER_LOGIN_GET_001</td></tr><tr><td class="mono">D13</td><td><span class="tag sev-High">fix API</span></td><td class="small">validation-not-enforced</td><td class="mono small">GET /pet/findByStatus</td>
+<td class="small">Invalid input is rejected with 400</td><td class="small">Accepted with HTTP 200 in 1 check (e.g. GET /pet/findByStatus without required query parameter &quot;status&quot; is rejected with 400)</td><td class="small">low (1)</td><td class="mono small">TC_PETSTORE_PET_FINDBYSTATUS_GET_002.1</td></tr><tr><td class="mono">D14</td><td><span class="tag sev-High">fix API</span></td><td class="small">validation-not-enforced</td><td class="mono small">GET /pet/findByTags</td>
+<td class="small">Invalid input is rejected with 400</td><td class="small">Accepted with HTTP 200 in 1 check (e.g. GET /pet/findByTags without required query parameter &quot;tags&quot; is rejected with 400)</td><td class="small">low (1)</td><td class="mono small">TC_PETSTORE_PET_FINDBYTAGS_GET_002.1</td></tr></tbody></table></div>
+
+<h2>Pre-run checks</h2>
+<div class="tablewrap"><table><thead><tr><th>Identity</th><th>Status</th><th>Checks needing it</th><th>Provided by (.env names)</th><th>Action</th></tr></thead><tbody><tr><td>admin</td><td><span class="ok">configured</span></td><td class="n">59</td><td class="small mono">PETSTORE_API_KEY</td><td class="small"></td></tr></tbody></table></div>
+<p class="small">Quota: <b>ok</b> - GET /store/inventory -&gt; 200. &middot; Expected before the run: 156 of 156 checks executable.</p>
+
+<h2>Results by category</h2>
+<div class="tablewrap"><table><thead><tr><th>Category</th><th>Total</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Executed</th><th>Pass rate</th><th></th></tr></thead><tbody>
+<tr><td>Positive-Functional</td><td class="n">21</td><td class="n ok">9</td><td class="n bad">12</td><td class="n muted">0</td><td class="n">100%</td><td class="n">43%</td><td class="barcell"><div class="bar" role="img" aria-label="9 passed, 12 failed, 0 skipped">
+    <span class="p" style="width:42.86%"></span><span class="f" style="width:57.14%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>Negative</td><td class="n">9</td><td class="n ok">0</td><td class="n bad">9</td><td class="n muted">0</td><td class="n">100%</td><td class="n">0%</td><td class="barcell"><div class="bar" role="img" aria-label="0 passed, 9 failed, 0 skipped">
+    <span class="p" style="width:0.00%"></span><span class="f" style="width:100.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>Authorization</td><td class="n">3</td><td class="n ok">0</td><td class="n bad">3</td><td class="n muted">0</td><td class="n">100%</td><td class="n">0%</td><td class="barcell"><div class="bar" role="img" aria-label="0 passed, 3 failed, 0 skipped">
+    <span class="p" style="width:0.00%"></span><span class="f" style="width:100.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+</tbody></table></div>
+
+<h2>Results by endpoint</h2>
+<div class="tablewrap"><table><thead><tr><th>Endpoint</th><th>Total</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Executed</th><th>Pass rate</th><th></th></tr></thead><tbody>
+<tr><td>GET /pet/{petId}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>POST /pet</td><td class="n">4</td><td class="n ok">0</td><td class="n bad">4</td><td class="n muted">0</td><td class="n">100%</td><td class="n">0%</td><td class="barcell"><div class="bar" role="img" aria-label="0 passed, 4 failed, 0 skipped">
+    <span class="p" style="width:0.00%"></span><span class="f" style="width:100.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>DELETE /pet/{petId}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>PUT /pet</td><td class="n">2</td><td class="n ok">1</td><td class="n bad">1</td><td class="n muted">0</td><td class="n">100%</td><td class="n">50%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 1 failed, 0 skipped">
+    <span class="p" style="width:50.00%"></span><span class="f" style="width:50.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /pet/findByStatus</td><td class="n">2</td><td class="n ok">0</td><td class="n bad">2</td><td class="n muted">0</td><td class="n">100%</td><td class="n">0%</td><td class="barcell"><div class="bar" role="img" aria-label="0 passed, 2 failed, 0 skipped">
+    <span class="p" style="width:0.00%"></span><span class="f" style="width:100.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /pet/findByTags</td><td class="n">2</td><td class="n ok">0</td><td class="n bad">2</td><td class="n muted">0</td><td class="n">100%</td><td class="n">0%</td><td class="barcell"><div class="bar" role="img" aria-label="0 passed, 2 failed, 0 skipped">
+    <span class="p" style="width:0.00%"></span><span class="f" style="width:100.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /store/order/{orderId}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>POST /store/order</td><td class="n">3</td><td class="n ok">0</td><td class="n bad">3</td><td class="n muted">0</td><td class="n">100%</td><td class="n">0%</td><td class="barcell"><div class="bar" role="img" aria-label="0 passed, 3 failed, 0 skipped">
+    <span class="p" style="width:0.00%"></span><span class="f" style="width:100.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>DELETE /store/order/{orderId}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /store/inventory</td><td class="n">2</td><td class="n ok">1</td><td class="n bad">1</td><td class="n muted">0</td><td class="n">100%</td><td class="n">50%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 1 failed, 0 skipped">
+    <span class="p" style="width:50.00%"></span><span class="f" style="width:50.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /user/{username}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>POST /user</td><td class="n">3</td><td class="n ok">0</td><td class="n bad">3</td><td class="n muted">0</td><td class="n">100%</td><td class="n">0%</td><td class="barcell"><div class="bar" role="img" aria-label="0 passed, 3 failed, 0 skipped">
+    <span class="p" style="width:0.00%"></span><span class="f" style="width:100.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>PUT /user/{username}</td><td class="n">2</td><td class="n ok">0</td><td class="n bad">2</td><td class="n muted">0</td><td class="n">100%</td><td class="n">0%</td><td class="barcell"><div class="bar" role="img" aria-label="0 passed, 2 failed, 0 skipped">
+    <span class="p" style="width:0.00%"></span><span class="f" style="width:100.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>DELETE /user/{username}</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>POST /user/createWithList</td><td class="n">3</td><td class="n ok">0</td><td class="n bad">3</td><td class="n muted">0</td><td class="n">100%</td><td class="n">0%</td><td class="barcell"><div class="bar" role="img" aria-label="0 passed, 3 failed, 0 skipped">
+    <span class="p" style="width:0.00%"></span><span class="f" style="width:100.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /user/login</td><td class="n">2</td><td class="n ok">0</td><td class="n bad">2</td><td class="n muted">0</td><td class="n">100%</td><td class="n">0%</td><td class="barcell"><div class="bar" role="img" aria-label="0 passed, 2 failed, 0 skipped">
+    <span class="p" style="width:0.00%"></span><span class="f" style="width:100.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>GET /user/logout</td><td class="n">1</td><td class="n ok">1</td><td class="n bad">0</td><td class="n muted">0</td><td class="n">100%</td><td class="n">100%</td><td class="barcell"><div class="bar" role="img" aria-label="1 passed, 0 failed, 0 skipped">
+    <span class="p" style="width:100.00%"></span><span class="f" style="width:0.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+<tr><td>POST /user/createWithArray</td><td class="n">1</td><td class="n ok">0</td><td class="n bad">1</td><td class="n muted">0</td><td class="n">100%</td><td class="n">0%</td><td class="barcell"><div class="bar" role="img" aria-label="0 passed, 1 failed, 0 skipped">
+    <span class="p" style="width:0.00%"></span><span class="f" style="width:100.00%"></span><span class="s" style="width:0.00%"></span></div></td></tr>
+</tbody></table></div>
+
+<h2>Access matrix</h2>
+<div class="tablewrap"><table class="matrix"><thead><tr><th>Endpoint</th><th>admin</th><th>none</th><th>invalid</th></tr></thead><tbody><tr><td class="mono">POST /pet</td><td class="mx fail" title="TC_PETSTORE_PET_POST_004.1">exp 201<br>act 200</td><td class="mx finding" title="TC_PETSTORE_PET_POST_004.2">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td><td class="mx finding" title="TC_PETSTORE_PET_POST_004.3">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td></tr>
+<tr><td class="mono">PUT /pet</td><td class="mx pass" title="TC_PETSTORE_PET_POST_004.4">exp 200<br>act 200</td><td class="mx finding" title="TC_PETSTORE_PET_POST_004.5">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td><td class="mx finding" title="TC_PETSTORE_PET_POST_004.6">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td></tr>
+<tr><td class="mono">GET /pet/findByStatus</td><td class="mx fail" title="TC_PETSTORE_PET_POST_004.7">exp 200<br>act 200</td><td class="mx finding" title="TC_PETSTORE_PET_POST_004.8">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td><td class="mx finding" title="TC_PETSTORE_PET_POST_004.9">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td></tr>
+<tr><td class="mono">GET /pet/findByTags</td><td class="mx pass" title="TC_PETSTORE_PET_POST_004.10">exp 200<br>act 200</td><td class="mx finding" title="TC_PETSTORE_PET_POST_004.11">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td><td class="mx finding" title="TC_PETSTORE_PET_POST_004.12">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td></tr>
+<tr><td class="mono">GET /pet/{petId}</td><td class="mx pass" title="TC_PETSTORE_PET_POST_004.13">exp 200<br>act 200</td><td class="mx finding" title="TC_PETSTORE_PET_POST_004.14">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td><td class="mx finding" title="TC_PETSTORE_PET_POST_004.15">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td></tr>
+<tr><td class="mono">DELETE /pet/{petId}</td><td class="mx pass" title="TC_PETSTORE_PET_POST_004.16">exp 200<br>act 200</td><td class="mx finding" title="TC_PETSTORE_PET_POST_004.17">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td><td class="mx finding" title="TC_PETSTORE_PET_POST_004.18">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td></tr>
+<tr><td class="mono">GET /store/inventory</td><td class="mx pass" title="TC_PETSTORE_STORE_INVENTORY_GET_002.1">exp 200<br>act 200</td><td class="mx finding" title="TC_PETSTORE_STORE_INVENTORY_GET_002.2">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td><td class="mx finding" title="TC_PETSTORE_STORE_INVENTORY_GET_002.3">exp 401<br>act 200<div class="tag finding">Auth bypass</div></td></tr>
+<tr><td class="mono">POST /store/order</td><td class="mx none">-</td><td class="mx pass" title="TC_PETSTORE_STORE_INVENTORY_GET_002.4">exp 200<br>act 200</td><td class="mx none">-</td></tr>
+<tr><td class="mono">GET /store/order/{orderId}</td><td class="mx none">-</td><td class="mx pass" title="TC_PETSTORE_STORE_INVENTORY_GET_002.5">exp 200<br>act 200</td><td class="mx none">-</td></tr>
+<tr><td class="mono">DELETE /store/order/{orderId}</td><td class="mx none">-</td><td class="mx pass" title="TC_PETSTORE_STORE_INVENTORY_GET_002.6">exp 200<br>act 200</td><td class="mx none">-</td></tr>
+<tr><td class="mono">POST /user/createWithList</td><td class="mx none">-</td><td class="mx fail" title="TC_PETSTORE_USER_CREATEWITHLIST_POST_003.1">exp 201<br>act 200</td><td class="mx none">-</td></tr>
+<tr><td class="mono">GET /user/{username}</td><td class="mx none">-</td><td class="mx pass" title="TC_PETSTORE_USER_CREATEWITHLIST_POST_003.2">exp 200<br>act 404</td><td class="mx none">-</td></tr>
+<tr><td class="mono">PUT /user/{username}</td><td class="mx none">-</td><td class="mx pass" title="TC_PETSTORE_USER_CREATEWITHLIST_POST_003.3">exp 200<br>act 200</td><td class="mx none">-</td></tr>
+<tr><td class="mono">DELETE /user/{username}</td><td class="mx none">-</td><td class="mx pass" title="TC_PETSTORE_USER_CREATEWITHLIST_POST_003.4">exp 200<br>act 200</td><td class="mx none">-</td></tr>
+<tr><td class="mono">GET /user/login</td><td class="mx none">-</td><td class="mx fail" title="TC_PETSTORE_USER_CREATEWITHLIST_POST_003.5">exp 200<br>act 200</td><td class="mx none">-</td></tr>
+<tr><td class="mono">GET /user/logout</td><td class="mx none">-</td><td class="mx pass" title="TC_PETSTORE_USER_CREATEWITHLIST_POST_003.6">exp 200<br>act 200</td><td class="mx none">-</td></tr>
+<tr><td class="mono">POST /user/createWithArray</td><td class="mx none">-</td><td class="mx fail" title="TC_PETSTORE_USER_CREATEWITHLIST_POST_003.7">exp 201<br>act 200</td><td class="mx none">-</td></tr>
+<tr><td class="mono">POST /user</td><td class="mx none">-</td><td class="mx fail" title="TC_PETSTORE_USER_CREATEWITHLIST_POST_003.8">exp 201<br>act 200</td><td class="mx none">-</td></tr></tbody></table></div>
+<p class="small muted">Cell: expected vs actual status of the request under test. Green pass, red fail, grey skipped (credentials not configured).
+Highlighted cells are authorization bypasses (2xx where access must be denied) with their OWASP API Top 10 id. No token values are stored.</p>
+
+<h2>Authorization findings (1)</h2>
+<div class="tablewrap"><table><thead><tr><th>Severity</th><th>OWASP API Top 10</th><th>Test</th><th>Finding</th></tr></thead><tbody><tr><td><span class="tag sev-High">High</span></td><td>API3:2023 Broken Object Property Level Authorization</td><td><span class="mono">TC_PETSTORE_USER_CREATEWITHLIST_POST_003</span><div class="small">Users can be used without logging in (public API); privileged fields cannot be set by the client; responses expose no sensitive data</div></td><td class="small">8 of 13 checks failed (Real API defect: 3, Contract/Spec mismatch: 5). Most severe: Security (API3:2023 Broken Object Property Level Authorization): response exposes sensitive fields - password</td></tr></tbody></table></div>
+
+<h2>Failures (24)</h2>
+<div class="filters"><input id="q" type="search" placeholder="Filter by id, title, endpoint..." aria-label="Filter failures">
+<select id="cls" aria-label="Triage class"><option value="">All triage classes</option><option>Real API defect</option><option>Contract/Spec mismatch</option><option>Test data issue</option><option>Flaky/Environment issue</option></select>
+<select id="cat" aria-label="Category"><option value="">All categories</option><option>Positive-Functional</option><option>Positive-DataValidation</option><option>Negative</option><option>Boundary</option><option>Auth</option><option>Authorization</option></select></div>
+<div class="tablewrap"><table id="fail"><thead><tr><th>Test ID</th><th>Test</th><th>Triage</th><th>Expected vs actual</th><th>Evidence</th></tr></thead><tbody>
+<tr data-class="Contract/Spec mismatch" data-cat="Positive-Functional">
+  <td class="mono">TC_PETSTORE_PET_POST_001</td>
+  <td>Create a pet with valid details; the saved values match what was sent<div class="muted small">Positive-Functional &middot; POST /pet</div></td>
+  <td><span class="tag cls-ContractSpecmismatch">Contract/Spec mismatch</span> <span class="tag sev-Low">Low</span><div class="small">3 of 3 checks failed (Contract/Spec mismatch: 3). Most severe: Success code 200 differs from the documented one.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 201<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/pet &rarr; 200 (356 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Isaias Gutmann&quot;},&quot;name&quot;:&quot;Ms. Cheyenne Kuhn&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Neva Graham&quot;}],&quot;status&quot;:&quot;available&quot;}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:38:37 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Isaias Gutmann&quot;},&quot;name&quot;:&quot;Ms. Cheyenne Kuhn&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Neva Graham&quot;}],&quot;status&quot;:&quot;available&quot;}</pre></details><details><summary>error</summary><pre>Error: 3 of 3 checks failed:
+• [TC_PETSTORE_PET_POST_001.1] POST /pet with a valid request returns 201 and the required fields: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Asa Johns&quot;},&quot;name&quot;:&quot;Darrin Kshlerin&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Mr. Art Funk&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_001.2] POST /pet with only required fields (optional fields omitted) succeeds: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:9223372036854563675,&quot;name&quot;:&quot;Lazaro Terry&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[]}
+• [TC_PETSTORE_PET_POST_001.3] POST /pet persists/echoes every request value exactly (no truncation or type change): Expected status 201 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Isaias Gutmann&quot;},&quot;name&quot;:&quot;Ms. Cheyenne Kuhn&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Neva Graham&quot;}],&quot;status&quot;:&quot;available&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 3</pre></details></td>
+</tr>
+<tr data-class="Contract/Spec mismatch" data-cat="Positive-Functional">
+  <td class="mono">TC_PETSTORE_PET_POST_003</td>
+  <td>Manage a pet end to end: create, view, update and delete it; it is gone afterwards<div class="muted small">Positive-Functional &middot; POST /pet</div></td>
+  <td><span class="tag cls-ContractSpecmismatch">Contract/Spec mismatch</span> <span class="tag sev-Low">Low</span><div class="small">Success code 200 differs from the documented one.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 201<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/pet &rarr; 200 (1786 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Keshawn Weimann&quot;},&quot;name&quot;:&quot;Gianni Christiansen-Upton&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Stefanie Hoeger PhD&quot;}],&quot;status&quot;:&quot;available&quot;}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:38:45 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Keshawn Weimann&quot;},&quot;name&quot;:&quot;Gianni Christiansen-Upton&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Stefanie Hoeger PhD&quot;}],&quot;status&quot;:&quot;available&quot;}</pre></details><details><summary>error</summary><pre>Error: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Keshawn Weimann&quot;},&quot;name&quot;:&quot;Gianni Christiansen-Upton&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Stefanie Hoeger PhD&quot;}],&quot;status&quot;:&quot;available&quot;}
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: 200
+Received array: [201]</pre></details></td>
+</tr>
+<tr data-class="Contract/Spec mismatch" data-cat="Positive-Functional">
+  <td class="mono">TC_PETSTORE_PET_FINDBYSTATUS_GET_001</td>
+  <td>Finds Pets by status<div class="muted small">Positive-Functional &middot; GET /pet/findByStatus</div></td>
+  <td><span class="tag cls-ContractSpecmismatch">Contract/Spec mismatch</span> <span class="tag sev-Low">Low</span><div class="small">4 of 4 checks failed (Contract/Spec mismatch: 4). Most severe: Response body does not match the documented/inferred schema.</div></td>
+  <td class="small"><b>Expected:</b> body matches PetFindbystatusGetResponse<br><b>Actual:</b> 105.name: Required</td>
+  <td class="small"><details><summary>GET https://petstore.swagger.io/v2/pet/findByStatus?status=available &rarr; 200 (396 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;}
+Request body: (none)
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:38:57 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: [{&quot;id&quot;:1245,&quot;category&quot;:{&quot;id&quot;:1245,&quot;name&quot;:&quot;xyz&quot;},&quot;name&quot;:&quot;xyz&quot;,&quot;photoUrls&quot;:[&quot;test&quot;],&quot;tags&quot;:[],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562762,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:12121,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;TestPetName&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562823,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562825,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562826,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562827,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562828,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562830,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562831,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562832,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string1&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562835,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562836,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:6767,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;doggo&quot;},&quot;name&quot;:&quot;Persik&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562855,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562863,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;fish&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562864,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;fish&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562866,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;fish&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562878,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562879,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562881,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;fish&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562883,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562897,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;fish&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562905,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562906,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562916,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;test&quot;},&quot;name&quot;:&quot;newname&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;cat&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562919,&quot;catego...[truncated 15724 chars]</pre></details><details><summary>error</summary><pre>Error: 4 of 4 checks failed:
+• [TC_PETSTORE_PET_FINDBYSTATUS_GET_001.1] GET /pet/findByStatus with a valid request returns 200 and the required fields: Schema validation failed: 105.name: Required
+• [TC_PETSTORE_PET_FINDBYSTATUS_GET_001.2] GET /pet/findByStatus?status=available returns only items whose status matches: Schema validation failed: 105.name: Required
+• [TC_PETSTORE_PET_FINDBYSTATUS_GET_001.3] GET /pet/findByStatus response matches the schema for every field of every array item (type, format, presence): Schema validation failed: 105.name: Required
+• [TC_PETSTORE_PET_FINDBYSTATUS_GET_001.4] GET /pet/findByStatus formatted fields are valid (status:enum): Schema validation failed: 105.name: Required
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 4</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Positive-Functional">
+  <td class="mono">TC_PETSTORE_PET_FINDBYTAGS_GET_001</td>
+  <td>Finds Pets by tags<div class="muted small">Positive-Functional &middot; GET /pet/findByTags</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-Medium">Medium</span><div class="small">1 of 3 checks failed (Real API defect: 1). Most severe: Expectation not met: Expected at least one item</div></td>
+  <td class="small"><b>Expected:</b> HTTP 200<br><b>Actual:</b> • [TC_PETSTORE_PET_FINDBYTAGS_GET_001.1] GET /pet/findByTags with a valid request returns 200 and the required fields: Expected at least one item</td>
+  <td class="small"><details><summary>GET https://petstore.swagger.io/v2/pet/findByTags?tags=ipsam+saepe &rarr; 200 (373 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;}
+Request body: (none)
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:39:04 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: []</pre></details><details><summary>error</summary><pre>Error: 1 of 3 checks failed:
+• [TC_PETSTORE_PET_FINDBYTAGS_GET_001.1] GET /pet/findByTags with a valid request returns 200 and the required fields: Expected at least one item
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 1</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Negative">
+  <td class="mono">TC_PETSTORE_PET_POST_002</td>
+  <td>Creating a pet with missing or invalid details is rejected<div class="muted small">Negative &middot; POST /pet</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-Medium">Medium</span><div class="small">10 of 10 checks failed (Real API defect: 10). Most severe: Documented rule not enforced: invalid input accepted with 200.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 405<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/pet &rarr; 200 (360 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Jordane Welch&quot;},&quot;name&quot;:&quot;Clifton Waters&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Carmelo Collins Jr.&quot;}],&quot;status&quot;:&quot;NOT_A_VALID_ENUM&quot;}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:39:19 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Jordane Welch&quot;},&quot;name&quot;:&quot;Clifton Waters&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Carmelo Collins Jr.&quot;}],&quot;status&quot;:&quot;NOT_A_VALID_ENUM&quot;}</pre></details><details><summary>error</summary><pre>Error: 10 of 10 checks failed:
+• [TC_PETSTORE_PET_POST_002.1] POST /pet without required field &quot;name&quot; is rejected with 405: Expected status 405 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Jordane Welch&quot;},&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Carmelo Collins Jr.&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_002.2] POST /pet without required field &quot;photoUrls&quot; is rejected with 405: Expected status 405 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Jordane Welch&quot;},&quot;name&quot;:&quot;Clifton Waters&quot;,&quot;photoUrls&quot;:[],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Carmelo Collins Jr.&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_002.3] POST /pet with empty string for required &quot;name&quot; is rejected with 405: Expected status 405 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Jordane Welch&quot;},&quot;name&quot;:&quot;&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Carmelo Collins Jr.&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_002.4] POST /pet with wrong type for &quot;id&quot; (string instead of integer) is rejected with 405: Server error (5xx) returned. POST https://petstore.swagger.io/v2/pet -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_PET_POST_002.5] POST /pet with wrong type for &quot;category&quot; (array instead of object) is rejected with 405: Server error (5xx) returned. POST https://petstore.swagger.io/v2/pet -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_PET_POST_002.6] POST /pet with wrong type for &quot;name&quot; (number instead of string) is rejected with 405: Expected status 405 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Jordane Welch&quot;},&quot;name&quot;:&quot;12345&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Carmelo Collins Jr.&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_002.7] POST /pet with wrong type for &quot;photoUrls&quot; (object instead of array) is rejected with 405: Server error (5xx) returned. POST https://petstore.swagger.io/v2/pet -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_PET_POST_002.8] POST /pet with wrong type for &quot;tags&quot; (object instead of array) is rejected with 405: Server error (5xx) returned. POST https://petstore.swagger.io/v2/pet -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_PET_POST_002.9] POST /pet with wrong type for &quot;status&quot; (number instead of string) is rejected with 405: Expected status 405 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Jordane Welch&quot;},&quot;name&quot;:&quot;Clifton Waters&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Carmelo Collins Jr.&quot;}],&quot;status&quot;:&quot;12345&quot;}
+• [TC_PETSTORE_PET_POST_002.10] POST /pet with invalid enum value for &quot;status&quot; is rejected with 405: Expected status 405 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Jordane Welch&quot;},&quot;name&quot;:&quot;Clifton Waters&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Carmelo Collins Jr.&quot;}],&quot;status&quot;:&quot;NOT_A_VALID_ENUM&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 10</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Negative">
+  <td class="mono">TC_PETSTORE_PET_PUT_002</td>
+  <td>Update an existing pet: missing or invalid input is rejected<div class="muted small">Negative &middot; PUT /pet</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-Medium">Medium</span><div class="small">10 of 10 checks failed (Real API defect: 10). Most severe: Documented rule not enforced: invalid input accepted with 200.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 400<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>PUT https://petstore.swagger.io/v2/pet &rarr; 200 (363 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Ellen Keeling DVM&quot;},&quot;name&quot;:&quot;Patience Schulist&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Bell Dickens&quot;}],&quot;status&quot;:&quot;NOT_A_VALID_ENUM&quot;}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:39:34 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Ellen Keeling DVM&quot;},&quot;name&quot;:&quot;Patience Schulist&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Bell Dickens&quot;}],&quot;status&quot;:&quot;NOT_A_VALID_ENUM&quot;}</pre></details><details><summary>error</summary><pre>Error: 10 of 10 checks failed:
+• [TC_PETSTORE_PET_PUT_002.1] PUT /pet without required field &quot;name&quot; is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Ellen Keeling DVM&quot;},&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Bell Dickens&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_PUT_002.2] PUT /pet without required field &quot;photoUrls&quot; is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Ellen Keeling DVM&quot;},&quot;name&quot;:&quot;Patience Schulist&quot;,&quot;photoUrls&quot;:[],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Bell Dickens&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_PUT_002.3] PUT /pet with empty string for required &quot;name&quot; is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Ellen Keeling DVM&quot;},&quot;name&quot;:&quot;&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Bell Dickens&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_PUT_002.4] PUT /pet with wrong type for &quot;id&quot; (string instead of integer) is rejected with 400: Server error (5xx) returned. PUT https://petstore.swagger.io/v2/pet -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_PET_PUT_002.5] PUT /pet with wrong type for &quot;category&quot; (array instead of object) is rejected with 400: Server error (5xx) returned. PUT https://petstore.swagger.io/v2/pet -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_PET_PUT_002.6] PUT /pet with wrong type for &quot;name&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Ellen Keeling DVM&quot;},&quot;name&quot;:&quot;12345&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Bell Dickens&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_PUT_002.7] PUT /pet with wrong type for &quot;photoUrls&quot; (object instead of array) is rejected with 400: Server error (5xx) returned. PUT https://petstore.swagger.io/v2/pet -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_PET_PUT_002.8] PUT /pet with wrong type for &quot;tags&quot; (object instead of array) is rejected with 400: Server error (5xx) returned. PUT https://petstore.swagger.io/v2/pet -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_PET_PUT_002.9] PUT /pet with wrong type for &quot;status&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Ellen Keeling DVM&quot;},&quot;name&quot;:&quot;Patience Schulist&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Bell Dickens&quot;}],&quot;status&quot;:&quot;12345&quot;}
+• [TC_PETSTORE_PET_PUT_002.10] PUT /pet with invalid enum value for &quot;status&quot; is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Ellen Keeling DVM&quot;},&quot;name&quot;:&quot;Patience Schulist&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Bell Dickens&quot;}],&quot;status&quot;:&quot;NOT_A_VALID_ENUM&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 10</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Negative">
+  <td class="mono">TC_PETSTORE_PET_FINDBYSTATUS_GET_002</td>
+  <td>Finds Pets by status: missing or invalid input is rejected<div class="muted small">Negative &middot; GET /pet/findByStatus</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-Medium">Medium</span><div class="small">3 of 3 checks failed (Real API defect: 3). Most severe: Documented rule not enforced: invalid input accepted with 200.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 400<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>GET https://petstore.swagger.io/v2/pet/findByStatus?status=NOT_A_VALID_ENUM &rarr; 200 (357 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;}
+Request body: (none)
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:39:40 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: []</pre></details><details><summary>error</summary><pre>Error: 3 of 3 checks failed:
+• [TC_PETSTORE_PET_FINDBYSTATUS_GET_002.1] GET /pet/findByStatus without required query parameter &quot;status&quot; is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/pet/findByStatus -&gt; 200 body=[]
+• [TC_PETSTORE_PET_FINDBYSTATUS_GET_002.2] GET /pet/findByStatus with an empty value for required query parameter &quot;status&quot; is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/pet/findByStatus?status= -&gt; 200 body=[{&quot;id&quot;:9223372036854562922,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;}],&quot;status&quot;:&quot;&quot;},{&quot;id&quot;:9223372036854563388,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;}],&quot;status&quot;:&quot;&quot;},{&quot;id&quot;:9223372036854563636,&quot;category&quot;:{&quot;...
+• [TC_PETSTORE_PET_FINDBYSTATUS_GET_002.3] GET /pet/findByStatus?status=&lt;invalid enum value&gt; is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/pet/findByStatus?status=NOT_A_VALID_ENUM -&gt; 200 body=[]
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 3</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Negative">
+  <td class="mono">TC_PETSTORE_PET_FINDBYTAGS_GET_002</td>
+  <td>Finds Pets by tags: missing or invalid input is rejected<div class="muted small">Negative &middot; GET /pet/findByTags</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-Medium">Medium</span><div class="small">2 of 2 checks failed (Real API defect: 2). Most severe: Documented rule not enforced: invalid input accepted with 200.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 400<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>GET https://petstore.swagger.io/v2/pet/findByTags?tags= &rarr; 200 (357 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;}
+Request body: (none)
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:39:46 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: [{&quot;id&quot;:9223372036854562922,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;}],&quot;status&quot;:&quot;&quot;},{&quot;id&quot;:9223372036854563388,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;}],&quot;status&quot;:&quot;&quot;},{&quot;id&quot;:9223372036854563636,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;}],&quot;status&quot;:&quot;&quot;}]</pre></details><details><summary>error</summary><pre>Error: 2 of 2 checks failed:
+• [TC_PETSTORE_PET_FINDBYTAGS_GET_002.1] GET /pet/findByTags without required query parameter &quot;tags&quot; is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/pet/findByTags -&gt; 200 body=[]
+• [TC_PETSTORE_PET_FINDBYTAGS_GET_002.2] GET /pet/findByTags with an empty value for required query parameter &quot;tags&quot; is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/pet/findByTags?tags= -&gt; 200 body=[{&quot;id&quot;:9223372036854562922,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;}],&quot;status&quot;:&quot;&quot;},{&quot;id&quot;:9223372036854563388,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;&quot;}],&quot;status&quot;:&quot;&quot;},{&quot;id&quot;:9223372036854563636,&quot;category&quot;:{&quot;...
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 2</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Authorization">
+  <td class="mono">TC_PETSTORE_PET_POST_004</td>
+  <td>Only authorised users can use pets; privileged fields cannot be set by the client; responses expose no sensitive data<div class="muted small">Authorization &middot; POST /pet</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-High">High</span><div class="small">16 of 22 checks failed (Real API defect: 13, Contract/Spec mismatch: 3). Most severe: Security: request without valid credentials was answered with 200.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 401<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>GET https://petstore.swagger.io/v2/pet/1 &rarr; 200 (347 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;}
+Request body: (none)
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:40:29 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Lorenza Deckow&quot;},&quot;name&quot;:&quot;Liam Orn&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Frederic Considine V&quot;}],&quot;status&quot;:&quot;available&quot;}</pre></details><details><summary>error</summary><pre>Error: 16 of 22 checks failed:
+• [TC_PETSTORE_PET_POST_004.1] POST /pet with a valid admin token succeeds (201): Expected status 201 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Alessandra Hahn&quot;},&quot;name&quot;:&quot;Elissa Bahringer&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Chadd Bruen&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_004.2] POST /pet without a token is rejected with 401: Expected status 401 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Alessandra Hahn&quot;},&quot;name&quot;:&quot;Elissa Bahringer&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Chadd Bruen&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_004.3] POST /pet with an invalid random token is rejected with 401: Expected status 401 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Alessandra Hahn&quot;},&quot;name&quot;:&quot;Elissa Bahringer&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Chadd Bruen&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_004.5] PUT /pet without a token is rejected with 401: Expected status 401 but got 200. PUT https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Julius Bogisich&quot;},&quot;name&quot;:&quot;Pierce Lakin&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Rowena Daniel&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_004.6] PUT /pet with an invalid random token is rejected with 401: Expected status 401 but got 200. PUT https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Julius Bogisich&quot;},&quot;name&quot;:&quot;Pierce Lakin&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Rowena Daniel&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_004.7] GET /pet/findByStatus with a valid admin token succeeds (200): Schema validation failed: 103.name: Required
+• [TC_PETSTORE_PET_POST_004.8] GET /pet/findByStatus without a token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/pet/findByStatus?status=available -&gt; 200 body=[{&quot;id&quot;:12121,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;TestPetName&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562823,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;availa...
+• [TC_PETSTORE_PET_POST_004.9] GET /pet/findByStatus with an invalid random token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/pet/findByStatus?status=available -&gt; 200 body=[{&quot;id&quot;:12121,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;TestPetName&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;available&quot;},{&quot;id&quot;:9223372036854562823,&quot;category&quot;:{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;},&quot;name&quot;:&quot;doggie&quot;,&quot;photoUrls&quot;:[&quot;string&quot;],&quot;tags&quot;:[{&quot;id&quot;:0,&quot;name&quot;:&quot;string&quot;}],&quot;status&quot;:&quot;availa...
+• [TC_PETSTORE_PET_POST_004.11] GET /pet/findByTags without a token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/pet/findByTags?tags=clamo+cinis -&gt; 200 body=[]
+• [TC_PETSTORE_PET_POST_004.12] GET /pet/findByTags with an invalid random token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/pet/findByTags?tags=corrumpo+sono -&gt; 200 body=[]
+• [TC_PETSTORE_PET_POST_004.14] GET /pet/{petId} without a token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/pet/1 -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Mrs. Viola Wuckert&quot;},&quot;name&quot;:&quot;Lenora Wisoky&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Merl Cummings&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_004.15] GET /pet/{petId} with an invalid random token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/pet/1 -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Gabriel Adams&quot;},&quot;name&quot;:&quot;August Roob&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Mrs. Magnolia Franecki&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_004.17] DELETE /pet/{petId} without a token is rejected with 401: Expected status 401 but got 200. DELETE https://petstore.swagger.io/v2/pet/1 -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_PET_POST_004.18] DELETE /pet/{petId} with an invalid random token is rejected with 401: Expected status 401 but got 200. DELETE https://petstore.swagger.io/v2/pet/1 -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_PET_POST_004.19] Mass assignment: POST /pet ignores or rejects privileged fields (role, isAdmin, is_admin, owner, ownerId, createdAt): Expected status 201 or 400 or 422 but got 200. POST https://petstore.swagger.io/v2/pet -&gt; 200 body={&quot;id&quot;:1,&quot;category&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;Betsy Walter&quot;},&quot;name&quot;:&quot;Kristoffer Mayer&quot;,&quot;photoUrls&quot;:[&quot;example.com&quot;],&quot;tags&quot;:[{&quot;id&quot;:1,&quot;name&quot;:&quot;Stephany Dickinson&quot;}],&quot;status&quot;:&quot;available&quot;}
+• [TC_PETSTORE_PET_POST_004.20] GET /pet/findByStatus exposes no sensitive fields (password/secret/token/ssn) and no fields outside the documented schema: Schema validation failed: 104.name: Required
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 16</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Positive-Functional">
+  <td class="mono">TC_PETSTORE_STORE_ORDER_POST_001</td>
+  <td>Create an order with valid details; the saved values match what was sent<div class="muted small">Positive-Functional &middot; POST /store/order</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-Medium">Medium</span><div class="small">2 of 5 checks failed (Real API defect: 2). Most severe: Sent value not persisted/returned exactly (truncation, trimming or type change).</div></td>
+  <td class="small"><b>Expected:</b> shipDate = (request value)<br><b>Actual:</b> (different)</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/store/order &rarr; 200 (382 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;petId&quot;:1,&quot;quantity&quot;:42,&quot;shipDate&quot;:&quot;2026-01-01T10:00:00.000Z&quot;,&quot;status&quot;:&quot;placed&quot;,&quot;complete&quot;:true}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:38:40 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;id&quot;:1,&quot;petId&quot;:1,&quot;quantity&quot;:42,&quot;shipDate&quot;:&quot;2026-01-01T10:00:00.000+0000&quot;,&quot;status&quot;:&quot;placed&quot;,&quot;complete&quot;:true}</pre></details><details><summary>error</summary><pre>Error: 2 of 5 checks failed:
+• [TC_PETSTORE_STORE_ORDER_POST_001.1] POST /store/order with a valid request returns 200 and the required fields: Field &quot;shipDate&quot; was not persisted/echoed exactly
+• [TC_PETSTORE_STORE_ORDER_POST_001.5] POST /store/order persists/echoes every request value exactly (no truncation or type change): Field &quot;shipDate&quot; was not persisted/echoed exactly
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 2</pre></details></td>
+</tr>
+<tr data-class="Flaky/Environment issue" data-cat="Positive-Functional">
+  <td class="mono">TC_PETSTORE_STORE_ORDER_POST_003</td>
+  <td>Manage an order end to end: create, view, update and delete it; it is gone afterwards<div class="muted small">Positive-Functional &middot; POST /store/order</div></td>
+  <td><span class="tag cls-FlakyEnvironmentissue">Flaky/Environment issue</span> <span class="tag sev-Low">Low</span><div class="small">Response time over threshold; re-run to confirm before raising a performance defect.</div></td>
+  <td class="small"><b>Expected:</b> &lt;= 2000 ms<br><b>Actual:</b> 2930 ms</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/store/order &rarr; 200 (2930 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;petId&quot;:1,&quot;quantity&quot;:42,&quot;shipDate&quot;:&quot;2026-01-01T10:00:00.000Z&quot;,&quot;status&quot;:&quot;placed&quot;,&quot;complete&quot;:true}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:38:50 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;id&quot;:1,&quot;petId&quot;:1,&quot;quantity&quot;:42,&quot;shipDate&quot;:&quot;2026-01-01T10:00:00.000+0000&quot;,&quot;status&quot;:&quot;placed&quot;,&quot;complete&quot;:true}</pre></details><details><summary>error</summary><pre>Error: Response took 2930 ms (limit 2000 ms)
+
+expect(received).toBeLessThanOrEqual(expected)
+
+Expected: &lt;= 2000
+Received:    2930</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Negative">
+  <td class="mono">TC_PETSTORE_STORE_ORDER_POST_002</td>
+  <td>Creating an order with missing or invalid details is rejected<div class="muted small">Negative &middot; POST /store/order</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-High">High</span><div class="small">8 of 8 checks failed (Real API defect: 8). Most severe: Server error 500 for invalid input - input validation is missing.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 400 (never 5xx)<br><b>Actual:</b> HTTP 500</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/store/order &rarr; 500 (407 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;petId&quot;:1,&quot;quantity&quot;:42,&quot;shipDate&quot;:&quot;yesterday at noon&quot;,&quot;status&quot;:&quot;placed&quot;,&quot;complete&quot;:true}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:39:04 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}</pre></details><details><summary>error</summary><pre>Error: 8 of 8 checks failed:
+• [TC_PETSTORE_STORE_ORDER_POST_002.1] POST /store/order with wrong type for &quot;id&quot; (string instead of integer) is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/store/order -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_STORE_ORDER_POST_002.2] POST /store/order with wrong type for &quot;petId&quot; (string instead of integer) is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/store/order -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_STORE_ORDER_POST_002.3] POST /store/order with wrong type for &quot;quantity&quot; (string instead of integer) is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/store/order -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_STORE_ORDER_POST_002.4] POST /store/order with wrong type for &quot;shipDate&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/store/order -&gt; 200 body={&quot;id&quot;:1,&quot;petId&quot;:1,&quot;quantity&quot;:42,&quot;shipDate&quot;:&quot;1970-01-01T00:00:12.345+0000&quot;,&quot;status&quot;:&quot;placed&quot;,&quot;complete&quot;:true}
+• [TC_PETSTORE_STORE_ORDER_POST_002.5] POST /store/order with wrong type for &quot;status&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/store/order -&gt; 200 body={&quot;id&quot;:1,&quot;petId&quot;:1,&quot;quantity&quot;:42,&quot;shipDate&quot;:&quot;2026-01-01T10:00:00.000+0000&quot;,&quot;status&quot;:&quot;12345&quot;,&quot;complete&quot;:true}
+• [TC_PETSTORE_STORE_ORDER_POST_002.6] POST /store/order with wrong type for &quot;complete&quot; (string instead of boolean) is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/store/order -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_STORE_ORDER_POST_002.7] POST /store/order with invalid enum value for &quot;status&quot; is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/store/order -&gt; 200 body={&quot;id&quot;:1,&quot;petId&quot;:1,&quot;quantity&quot;:42,&quot;shipDate&quot;:&quot;2026-01-01T10:00:00.000+0000&quot;,&quot;status&quot;:&quot;NOT_A_VALID_ENUM&quot;,&quot;complete&quot;:true}
+• [TC_PETSTORE_STORE_ORDER_POST_002.8] POST /store/order with invalid date-time for &quot;shipDate&quot; is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/store/order -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 8</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Authorization">
+  <td class="mono">TC_PETSTORE_STORE_INVENTORY_GET_002</td>
+  <td>Only authorised users can use orders; public orders operations work without logging in; privileged fields cannot be set by the client; responses expose no sensitive data<div class="muted small">Authorization &middot; GET /store/inventory</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-High">High</span><div class="small">2 of 9 checks failed (Real API defect: 2). Most severe: Security: request without valid credentials was answered with 200.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 401<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>GET https://petstore.swagger.io/v2/store/order/1 &rarr; 200 (360 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;}
+Request body: (none)
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:39:27 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;id&quot;:1,&quot;petId&quot;:1,&quot;quantity&quot;:42,&quot;shipDate&quot;:&quot;2026-01-01T10:00:00.000+0000&quot;,&quot;status&quot;:&quot;placed&quot;,&quot;complete&quot;:true}</pre></details><details><summary>error</summary><pre>Error: 2 of 9 checks failed:
+• [TC_PETSTORE_STORE_INVENTORY_GET_002.2] GET /store/inventory without a token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/store/inventory -&gt; 200 body={&quot;sold&quot;:51,&quot;1&quot;:2,&quot;string&quot;:584,&quot;pending&quot;:6,&quot;available&quot;:105,&quot;invalid&quot;:1,&quot;NOT_A_VALID_ENUM&quot;:1,&quot;awaiable&quot;:1,&quot;peric&quot;:4}
+• [TC_PETSTORE_STORE_INVENTORY_GET_002.3] GET /store/inventory with an invalid random token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/store/inventory -&gt; 200 body={&quot;sold&quot;:51,&quot;1&quot;:2,&quot;string&quot;:584,&quot;pending&quot;:6,&quot;available&quot;:105,&quot;invalid&quot;:1,&quot;NOT_A_VALID_ENUM&quot;:1,&quot;awaiable&quot;:1,&quot;peric&quot;:4}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 2</pre></details></td>
+</tr>
+<tr data-class="Contract/Spec mismatch" data-cat="Positive-Functional">
+  <td class="mono">TC_PETSTORE_USER_POST_001</td>
+  <td>Create an user with valid details; the saved values match what was sent<div class="muted small">Positive-Functional &middot; POST /user</div></td>
+  <td><span class="tag cls-ContractSpecmismatch">Contract/Spec mismatch</span> <span class="tag sev-Low">Low</span><div class="small">3 of 3 checks failed (Contract/Spec mismatch: 3). Most severe: Success code 200 differs from the documented one.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 201<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/user &rarr; 200 (358 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;username&quot;:&quot;Deangelo69&quot;,&quot;firstName&quot;:&quot;Isaiah&quot;,&quot;lastName&quot;:&quot;Schoen&quot;,&quot;email&quot;:&quot;alter pauci&quot;,&quot;password&quot;:&quot;amplus voluptatem&quot;,&quot;phone&quot;:&quot;1-555-0100&quot;,&quot;userStatus&quot;:42}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:38:35 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}</pre></details><details><summary>error</summary><pre>Error: 3 of 3 checks failed:
+• [TC_PETSTORE_USER_POST_001.1] POST /user with a valid request returns 201 and the required fields: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_POST_001.2] POST /user with only required fields (optional fields omitted) succeeds: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;0&quot;}
+• [TC_PETSTORE_USER_POST_001.3] POST /user persists/echoes every request value exactly (no truncation or type change): Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 3</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Positive-Functional">
+  <td class="mono">TC_PETSTORE_USER_USERNAME_PUT_001</td>
+  <td>Update an existing user (full and partial update)<div class="muted small">Positive-Functional &middot; PUT /user/{username}</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-Medium">Medium</span><div class="small">2 of 3 checks failed (Real API defect: 2). Most severe: Sent value not persisted/returned exactly (truncation, trimming or type change).</div></td>
+  <td class="small"><b>Expected:</b> id = (request value)<br><b>Actual:</b> (different)</td>
+  <td class="small"><details><summary>PUT https://petstore.swagger.io/v2/user/OtisHintz5 &rarr; 200 (350 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;username&quot;:&quot;Forest94&quot;,&quot;firstName&quot;:&quot;Rafaela&quot;,&quot;lastName&quot;:&quot;Watsica&quot;,&quot;email&quot;:&quot;asporto tertius&quot;,&quot;password&quot;:&quot;amitto vulticulus&quot;,&quot;phone&quot;:&quot;1-555-0100&quot;,&quot;userStatus&quot;:42}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:38:49 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}</pre></details><details><summary>error</summary><pre>Error: 2 of 3 checks failed:
+• [TC_PETSTORE_USER_USERNAME_PUT_001.1] PUT /user/{username} with a valid request returns 200 and the required fields: Field &quot;id&quot; was not persisted/echoed exactly
+• [TC_PETSTORE_USER_USERNAME_PUT_001.3] PUT /user/{username} persists/echoes every request value exactly (no truncation or type change): Field &quot;id&quot; was not persisted/echoed exactly
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 2</pre></details></td>
+</tr>
+<tr data-class="Contract/Spec mismatch" data-cat="Positive-Functional">
+  <td class="mono">TC_PETSTORE_USER_POST_003</td>
+  <td>Manage an user end to end: create, view, update and delete it; it is gone afterwards<div class="muted small">Positive-Functional &middot; POST /user</div></td>
+  <td><span class="tag cls-ContractSpecmismatch">Contract/Spec mismatch</span> <span class="tag sev-Low">Low</span><div class="small">Success code 200 differs from the documented one.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 201<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/user &rarr; 200 (1511 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;username&quot;:&quot;PinkHeller&quot;,&quot;firstName&quot;:&quot;Kylie&quot;,&quot;lastName&quot;:&quot;Lind&quot;,&quot;email&quot;:&quot;tenus sordeo&quot;,&quot;password&quot;:&quot;laboriosam verumtamen&quot;,&quot;phone&quot;:&quot;1-555-0100&quot;,&quot;userStatus&quot;:42}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:38:59 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}</pre></details><details><summary>error</summary><pre>Error: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+
+expect(received).toContain(expected) // indexOf
+
+Expected value: 200
+Received array: [201]</pre></details></td>
+</tr>
+<tr data-class="Contract/Spec mismatch" data-cat="Positive-Functional">
+  <td class="mono">TC_PETSTORE_USER_CREATEWITHLIST_POST_002</td>
+  <td>Creates list of users with given input array (POST /user/createWithList)<div class="muted small">Positive-Functional &middot; POST /user/createWithList</div></td>
+  <td><span class="tag cls-ContractSpecmismatch">Contract/Spec mismatch</span> <span class="tag sev-Low">Low</span><div class="small">3 of 3 checks failed (Contract/Spec mismatch: 3). Most severe: Success code 200 differs from the documented one.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 201<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/user/createWithList &rarr; 200 (363 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: [{&quot;id&quot;:1,&quot;username&quot;:&quot;Kasey_Streich&quot;,&quot;firstName&quot;:&quot;Vergie&quot;,&quot;lastName&quot;:&quot;McGlynn&quot;,&quot;email&quot;:&quot;vulgivagus doloremque&quot;,&quot;password&quot;:&quot;ulterius suppono&quot;,&quot;phone&quot;:&quot;1-555-0100&quot;,&quot;userStatus&quot;:42}]
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:39:07 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;ok&quot;}</pre></details><details><summary>error</summary><pre>Error: 3 of 3 checks failed:
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_002.1] POST /user/createWithList with a valid request returns 201 and the required fields: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithList -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;ok&quot;}
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_002.2] POST /user/createWithList with only required fields in each item (optional fields omitted) succeeds: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithList -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;ok&quot;}
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_002.3] POST /user/createWithList persists/echoes every request value exactly (no truncation or type change): Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithList -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;ok&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 3</pre></details></td>
+</tr>
+<tr data-class="Contract/Spec mismatch" data-cat="Positive-Functional">
+  <td class="mono">TC_PETSTORE_USER_LOGIN_GET_001</td>
+  <td>Logs user into the system<div class="muted small">Positive-Functional &middot; GET /user/login</div></td>
+  <td><span class="tag cls-ContractSpecmismatch">Contract/Spec mismatch</span> <span class="tag sev-Low">Low</span><div class="small">2 of 2 checks failed (Contract/Spec mismatch: 2). Most severe: Response body does not match the documented/inferred schema.</div></td>
+  <td class="small"><b>Expected:</b> body matches UserLoginGetResponse<br><b>Actual:</b> &lt;root&gt;: Expected string, received object</td>
+  <td class="small"><details><summary>GET https://petstore.swagger.io/v2/user/login?username=Perry_Bednar&amp;password=vel+aliquid &rarr; 200 (347 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;}
+Request body: (none)
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:39:13 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;x-expires-after&quot;:&quot;Wed Nov 11 17:39:13 UTC 2026&quot;,&quot;x-rate-limit&quot;:&quot;5000&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;logged in user session:1794415153088&quot;}</pre></details><details><summary>error</summary><pre>Error: 2 of 2 checks failed:
+• [TC_PETSTORE_USER_LOGIN_GET_001.1] GET /user/login with a valid request returns 200 and the required fields: Schema validation failed: &lt;root&gt;: Expected string, received object
+• [TC_PETSTORE_USER_LOGIN_GET_001.2] GET /user/login response matches the schema for every field (type, format, presence): Schema validation failed: &lt;root&gt;: Expected string, received object
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 2</pre></details></td>
+</tr>
+<tr data-class="Contract/Spec mismatch" data-cat="Positive-Functional">
+  <td class="mono">TC_PETSTORE_USER_CREATEWITHARRAY_POST_001</td>
+  <td>Creates list of users with given input array (POST /user/createWithArray)<div class="muted small">Positive-Functional &middot; POST /user/createWithArray</div></td>
+  <td><span class="tag cls-ContractSpecmismatch">Contract/Spec mismatch</span> <span class="tag sev-Low">Low</span><div class="small">3 of 3 checks failed (Contract/Spec mismatch: 3). Most severe: Success code 200 differs from the documented one.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 201<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/user/createWithArray &rarr; 200 (366 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: [{&quot;id&quot;:1,&quot;username&quot;:&quot;Emmanuel24&quot;,&quot;firstName&quot;:&quot;Monserrate&quot;,&quot;lastName&quot;:&quot;Pollich&quot;,&quot;email&quot;:&quot;officia deinde&quot;,&quot;password&quot;:&quot;super blanditiis&quot;,&quot;phone&quot;:&quot;1-555-0100&quot;,&quot;userStatus&quot;:42}]
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:39:21 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;ok&quot;}</pre></details><details><summary>error</summary><pre>Error: 3 of 3 checks failed:
+• [TC_PETSTORE_USER_CREATEWITHARRAY_POST_001.1] POST /user/createWithArray with a valid request returns 201 and the required fields: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithArray -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;ok&quot;}
+• [TC_PETSTORE_USER_CREATEWITHARRAY_POST_001.2] POST /user/createWithArray with only required fields in each item (optional fields omitted) succeeds: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithArray -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;ok&quot;}
+• [TC_PETSTORE_USER_CREATEWITHARRAY_POST_001.3] POST /user/createWithArray persists/echoes every request value exactly (no truncation or type change): Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithArray -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;ok&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 3</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Negative">
+  <td class="mono">TC_PETSTORE_USER_POST_002</td>
+  <td>Creating an user with missing or invalid details is rejected<div class="muted small">Negative &middot; POST /user</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-High">High</span><div class="small">8 of 8 checks failed (Real API defect: 8). Most severe: Server error 500 for invalid input - input validation is missing.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 400 (never 5xx)<br><b>Actual:</b> HTTP 500</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/user &rarr; 500 (474 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;username&quot;:&quot;JarretFrami2&quot;,&quot;firstName&quot;:&quot;Lora&quot;,&quot;lastName&quot;:&quot;Sporer&quot;,&quot;email&quot;:&quot;approbo confugo&quot;,&quot;password&quot;:&quot;cursus adduco&quot;,&quot;phone&quot;:&quot;1-555-0100&quot;,&quot;userStatus&quot;:&quot;not-a-number&quot;}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:39:33 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}</pre></details><details><summary>error</summary><pre>Error: 8 of 8 checks failed:
+• [TC_PETSTORE_USER_POST_002.1] POST /user with wrong type for &quot;id&quot; (string instead of integer) is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/user -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_USER_POST_002.2] POST /user with wrong type for &quot;username&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_POST_002.3] POST /user with wrong type for &quot;firstName&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_POST_002.4] POST /user with wrong type for &quot;lastName&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_POST_002.5] POST /user with wrong type for &quot;email&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_POST_002.6] POST /user with wrong type for &quot;password&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_POST_002.7] POST /user with wrong type for &quot;phone&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_POST_002.8] POST /user with wrong type for &quot;userStatus&quot; (string instead of integer) is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/user -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 8</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Negative">
+  <td class="mono">TC_PETSTORE_USER_CREATEWITHLIST_POST_001</td>
+  <td>Creating a duplicate user is handled safely (validation rules are not documented)<div class="muted small">Negative &middot; POST /user/createWithList</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-Medium">Medium</span><div class="small">3 of 3 checks failed (Real API defect: 3). Most severe: Documented rule not enforced: invalid input accepted with 200.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 201<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/user &rarr; 200 (488 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;username&quot;:&quot;JarretFrami2&quot;,&quot;firstName&quot;:&quot;Lora&quot;,&quot;lastName&quot;:&quot;Sporer&quot;,&quot;email&quot;:&quot;approbo confugo&quot;,&quot;password&quot;:&quot;cursus adduco&quot;,&quot;phone&quot;:&quot;1-555-0100&quot;,&quot;userStatus&quot;:42}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:39:40 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}</pre></details><details><summary>error</summary><pre>Error: 3 of 3 checks failed:
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_001.1] POST /user/createWithList twice with the same item &quot;username&quot; is handled safely - accepted or rejected as a duplicate (uniqueness undocumented), never a 5xx: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithList -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;ok&quot;}
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_001.2] POST /user/createWithArray twice with the same item &quot;username&quot; is handled safely - accepted or rejected as a duplicate (uniqueness undocumented), never a 5xx: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithArray -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;ok&quot;}
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_001.3] POST /user twice with the same &quot;username&quot; is handled safely - accepted or rejected as a duplicate (uniqueness undocumented), never a 5xx: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 3</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Negative">
+  <td class="mono">TC_PETSTORE_USER_USERNAME_PUT_002</td>
+  <td>Updating an user with invalid details, or an user that does not exist, is rejected<div class="muted small">Negative &middot; PUT /user/{username}</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-High">High</span><div class="small">9 of 9 checks failed (Real API defect: 9). Most severe: Documented rule not enforced: invalid input accepted with 200.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 404<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>PUT https://petstore.swagger.io/v2/user/Silas80 &rarr; 500 (349 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;username&quot;:&quot;GerryKiehn&quot;,&quot;firstName&quot;:&quot;Johnson&quot;,&quot;lastName&quot;:&quot;Okuneva&quot;,&quot;email&quot;:&quot;pecto terra&quot;,&quot;password&quot;:&quot;cupressus cultellus&quot;,&quot;phone&quot;:&quot;1-555-0100&quot;,&quot;userStatus&quot;:&quot;not-a-number&quot;}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:40:16 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}</pre></details><details><summary>error</summary><pre>Error: 9 of 9 checks failed:
+• [TC_PETSTORE_USER_USERNAME_PUT_002.1] PUT /user/{username} with a non-existent username returns 404: Expected status 404 but got 200. PUT https://petstore.swagger.io/v2/user/999999999 -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_USERNAME_PUT_002.2] PUT /user/{username} with wrong type for &quot;id&quot; (string instead of integer) is rejected with 400: Server error (5xx) returned. PUT https://petstore.swagger.io/v2/user/Jasmin9 -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+• [TC_PETSTORE_USER_USERNAME_PUT_002.3] PUT /user/{username} with wrong type for &quot;username&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/user/Tiffany_Herman -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_USERNAME_PUT_002.4] PUT /user/{username} with wrong type for &quot;firstName&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/user/Urban41 -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_USERNAME_PUT_002.5] PUT /user/{username} with wrong type for &quot;lastName&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/user/DenaJohnson20 -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_USERNAME_PUT_002.6] PUT /user/{username} with wrong type for &quot;email&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/user/Brian_DAmore -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_USERNAME_PUT_002.7] PUT /user/{username} with wrong type for &quot;password&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/user/Orion10 -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_USERNAME_PUT_002.8] PUT /user/{username} with wrong type for &quot;phone&quot; (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/user/Valerie_Bogan23 -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_USERNAME_PUT_002.9] PUT /user/{username} with wrong type for &quot;userStatus&quot; (string instead of integer) is rejected with 400: Server error (5xx) returned. PUT https://petstore.swagger.io/v2/user/Silas80 -&gt; 500 body={&quot;code&quot;:500,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;something bad happened&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 9</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Negative">
+  <td class="mono">TC_PETSTORE_USER_LOGIN_GET_002</td>
+  <td>Logs user into the system: missing or invalid input is rejected<div class="muted small">Negative &middot; GET /user/login</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-Medium">Medium</span><div class="small">4 of 4 checks failed (Real API defect: 4). Most severe: Documented rule not enforced: invalid input accepted with 200.</div></td>
+  <td class="small"><b>Expected:</b> HTTP 400<br><b>Actual:</b> HTTP 200</td>
+  <td class="small"><details><summary>GET https://petstore.swagger.io/v2/user/login?username=Raul83&amp;password= &rarr; 200 (356 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;}
+Request body: (none)
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:40:25 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;x-expires-after&quot;:&quot;Wed Nov 11 17:40:25 UTC 2026&quot;,&quot;x-rate-limit&quot;:&quot;5000&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;logged in user session:1794415225021&quot;}</pre></details><details><summary>error</summary><pre>Error: 4 of 4 checks failed:
+• [TC_PETSTORE_USER_LOGIN_GET_002.1] GET /user/login without required query parameter &quot;username&quot; is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/user/login?password=despecto+crudelis -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;logged in user session:1794415223442&quot;}
+• [TC_PETSTORE_USER_LOGIN_GET_002.2] GET /user/login with an empty value for required query parameter &quot;username&quot; is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/user/login?username=&amp;password=despecto+crudelis -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;logged in user session:1794415223968&quot;}
+• [TC_PETSTORE_USER_LOGIN_GET_002.3] GET /user/login without required query parameter &quot;password&quot; is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/user/login?username=Raul83 -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;logged in user session:1794415224501&quot;}
+• [TC_PETSTORE_USER_LOGIN_GET_002.4] GET /user/login with an empty value for required query parameter &quot;password&quot; is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/user/login?username=Raul83&amp;password= -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;logged in user session:1794415225021&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 4</pre></details></td>
+</tr>
+<tr data-class="Real API defect" data-cat="Authorization">
+  <td class="mono">TC_PETSTORE_USER_CREATEWITHLIST_POST_003</td>
+  <td>Users can be used without logging in (public API); privileged fields cannot be set by the client; responses expose no sensitive data<div class="muted small">Authorization &middot; POST /user/createWithList</div></td>
+  <td><span class="tag cls-RealAPIdefect">Real API defect</span> <span class="tag sev-High">High</span> <span class="tag owasp">API3:2023</span><div class="small">8 of 13 checks failed (Real API defect: 3, Contract/Spec mismatch: 5). Most severe: Security (API3:2023 Broken Object Property Level Authorization): response exposes sensitive fields - password</div></td>
+  <td class="small"><b>Expected:</b> HTTP 200<br><b>Actual:</b> • [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.9] GET /user/{username} exposes no sensitive fields (password/secret/token/ssn) and no fields outside the documented schema: Sensitive field exposed in response: password</td>
+  <td class="small"><details><summary>POST https://petstore.swagger.io/v2/user &rarr; 200 (363 ms)</summary><pre>Request headers: {&quot;api_key&quot;:&quot;***&quot;,&quot;Content-Type&quot;:&quot;application/json&quot;}
+Request body: {&quot;id&quot;:1,&quot;username&quot;:&quot;KhalilDeckow&quot;,&quot;firstName&quot;:&quot;Joelle&quot;,&quot;lastName&quot;:&quot;Herman&quot;,&quot;email&quot;:&quot;canis sit&quot;,&quot;password&quot;:&quot;claustrum dapifer&quot;,&quot;phone&quot;:&quot;1-555-0100&quot;,&quot;userStatus&quot;:42,&quot;role&quot;:&quot;mass-assignment-admin&quot;,&quot;isAdmin&quot;:true,&quot;is_admin&quot;:true,&quot;owner&quot;:&quot;mass-assignment-attacker&quot;,&quot;ownerId&quot;:987654321,&quot;createdAt&quot;:&quot;2000-01-01T00:00:00.000Z&quot;}
+
+Response headers: {&quot;date&quot;:&quot;Wed, 11 Nov 2026 16:40:56 GMT&quot;,&quot;content-type&quot;:&quot;application/json&quot;,&quot;transfer-encoding&quot;:&quot;chunked&quot;,&quot;connection&quot;:&quot;keep-alive&quot;,&quot;access-control-allow-origin&quot;:&quot;*&quot;,&quot;access-control-allow-methods&quot;:&quot;GET, POST, DELETE, PUT&quot;,&quot;access-control-allow-headers&quot;:&quot;Content-Type, api_key, Authorization&quot;,&quot;server&quot;:&quot;Jetty(9.2.9.v20150224)&quot;}
+Response body: {&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}</pre></details><details><summary>error</summary><pre>Error: 8 of 13 checks failed:
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.1] Public POST /user/createWithList works without any token: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithList -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;ok&quot;}
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.5] Public GET /user/login works without any token: Schema validation failed: &lt;root&gt;: Expected string, received object
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.7] Public POST /user/createWithArray works without any token: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithArray -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;ok&quot;}
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.8] Public POST /user works without any token: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.9] GET /user/{username} exposes no sensitive fields (password/secret/token/ssn) and no fields outside the documented schema: Sensitive field exposed in response: password
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.10] Mass assignment: PUT /user/{username} ignores or rejects privileged fields (role, isAdmin, is_admin, owner, ownerId, createdAt): Expected status 200 but got 404. GET https://petstore.swagger.io/v2/user/Bianka_Cormier96 -&gt; 404 body={&quot;code&quot;:1,&quot;type&quot;:&quot;error&quot;,&quot;message&quot;:&quot;User not found&quot;}
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.11] GET /user/login exposes no sensitive fields (password/secret/token/ssn) and no fields outside the documented schema: Schema validation failed: &lt;root&gt;: Expected string, received object
+• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.13] Mass assignment: POST /user ignores or rejects privileged fields (role, isAdmin, is_admin, owner, ownerId, createdAt): Expected status 201 or 400 or 422 but got 200. POST https://petstore.swagger.io/v2/user -&gt; 200 body={&quot;code&quot;:200,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;1&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 8</pre></details></td>
+</tr>
+</tbody></table></div>
+
+<h2>Skipped (0)</h2>
+<div class="tablewrap"><table><thead><tr><th>Test ID</th><th>Test</th><th>Reason</th></tr></thead><tbody>
+<tr><td colspan="3" class="muted">Nothing skipped.</td></tr>
+</tbody></table></div>
+
+<h2>Run history</h2>
+<div class="tablewrap"><table><thead><tr><th>Run (UTC)</th><th>Tests</th><th>Executed</th><th>Pass rate</th><th>Failed</th><th>Root causes</th><th>By class</th><th></th></tr></thead><tbody><tr><td class="small">2026-11-11 16:38</td><td class="n">33</td><td class="n">100%</td><td class="n">27%</td><td class="n">24</td><td class="n">10</td><td class="small">Contract/Spec mismatch: 8, Real API defect: 15, Flaky/Environment issue: 1</td><td class="small"><i>this run</i></td></tr><tr><td class="small">2026-11-11 16:31</td><td class="n">35</td><td class="n">100%</td><td class="n">29%</td><td class="n">25</td><td class="n">9</td><td class="small">Contract/Spec mismatch: 6, Real API defect: 14, Test data issue: 5</td><td class="small"><a href="history/20261111-163142Z/summary.html">report</a></td></tr><tr><td class="small">2026-11-11 14:09</td><td class="n">35</td><td class="n">63%</td><td class="n">23%</td><td class="n">17</td><td class="n">8</td><td class="small">Real API defect: 9, Contract/Spec mismatch: 5, Test data issue: 3</td><td class="small"><a href="history/20261111-140911Z/summary.html">report</a></td></tr><tr><td class="small">2026-11-10 15:04</td><td class="n">184</td><td class="n">64%</td><td class="n">32%</td><td class="n">79</td><td class="n">10</td><td class="small">Real API defect: 40, Test data issue: 22, Contract/Spec mismatch: 17</td><td class="small"><a href="history/20261110-150432Z/summary.html">report</a></td></tr></tbody></table></div>
+
+<h2>Assumptions</h2>
+<ul class="assume"><li>Spec found at https://petstore.swagger.io/v2/swagger.json (swagger2).</li><li>POST /pet: no 2xx response documented, assuming 201.</li><li>PUT /pet: no 2xx response documented, assuming 200.</li><li>POST /pet/{petId}: no 2xx response documented, assuming 201.</li><li>DELETE /pet/{petId}: no 2xx response documented, assuming 200.</li><li>DELETE /store/order/{orderId}: no 2xx response documented, assuming 200.</li><li>POST /user/createWithList: no 2xx response documented, assuming 201.</li><li>PUT /user/{username}: no 2xx response documented, assuming 200.</li><li>DELETE /user/{username}: no 2xx response documented, assuming 200.</li><li>GET /user/logout: no 2xx response documented, assuming 200.</li><li>POST /user/createWithArray: no 2xx response documented, assuming 201.</li><li>POST /user: no 2xx response documented, assuming 201.</li><li>OAuth2/OpenID scheme(s) petstore_auth declared but not used: the agent does not run OAuth flows; every protected endpoint is tested with &quot;api_key&quot;.</li><li>Unauthenticated status not documented: expecting 401 for missing/invalid credentials (RFC 7235).</li><li>Response-time threshold: 2000 ms (RESPONSE_TIME_MS).</li><li>Where limits are undocumented: strings 1..255 chars, numbers 0..2147483647, arrays up to 100 items.</li><li>Negative tests without a documented error schema assert a leak-free error body rather than a specific JSON structure.</li><li>53 checks target validation rules/limits that are not documented; they run as robustness checks (4xx, or 2xx storing values exactly; never 5xx).</li><li>Calibrated convention (unknownId, store_order_orderId_GET): 404 instead of assumed 404 - consistent across 5 checks.</li><li>Calibrated convention (unknownId, store_order_orderId_DELETE): 404 instead of assumed 404 - consistent across 3 checks.</li><li>Business-level test cases: 277 low-value technical checks were left out (idempotency repeats, malformed/empty bodies, injection strings, exotic boundaries, expired/malformed/wrong-scheme tokens, token-hygiene tricks). Run with --level high for every check.</li></ul>
+<h2>Not applicable to this API</h2>
+<ul class="assume"><li>POST /pet/{petId}/uploadImage: consumes multipart/form-data; not exercised by the JSON-based generated tests (test manually or extend the client).</li><li>POST /pet: duplicate creation - no uniqueness constraint documented or implied.</li><li>GET /pet/findByStatus: pagination/sorting - no pagination or sort parameters documented.</li><li>GET /pet/findByTags: exact-match filter check for &quot;tags&quot; - the matching item field is a array, so per-item equality cannot be asserted (covered by the happy-path schema check).</li><li>GET /pet/findByTags: pagination/sorting - no pagination or sort parameters documented.</li><li>POST /pet/{petId}: consumes application/x-www-form-urlencoded; not exercised by the JSON-based generated tests (test manually or extend the client).</li><li>POST /store/order: duplicate creation - no uniqueness constraint documented or implied.</li><li>BOLA, BFLA and OAuth2 scope checks - not generated: the agent tests with one identity (admin) and does not run OAuth flows.</li><li>Token hygiene alg:none / tampered signature - apiKey credentials are not signed tokens.</li><li>Token reuse after logout - no logout endpoint with login-issued tokens documented.</li><li>Wrong-role (403) checks - the API documents no roles; normal-user cases are skipped unless USER credentials are configured.</li></ul>
+</main>
+<script>
+(function(){var q=document.getElementById('q'),c=document.getElementById('cls'),k=document.getElementById('cat');
+function f(){var t=q.value.toLowerCase();document.querySelectorAll('#fail tbody tr[data-class]').forEach(function(r){
+var ok=(!t||r.textContent.toLowerCase().indexOf(t)>=0)&&(!c.value||r.dataset.class===c.value)&&(!k.value||r.dataset.cat===k.value);r.style.display=ok?'':'none';});}
+[q,c,k].forEach(function(el){el.addEventListener('input',f);});})();
+</script>
+</body></html>

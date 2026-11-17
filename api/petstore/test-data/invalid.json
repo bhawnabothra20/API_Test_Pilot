@@ -1,0 +1,1251 @@
+{
+  "TC_PETSTORE_PET_PETID_GET_001.4": {
+    "note": "non-existent id",
+    "pathParams": {
+      "petId": 999999999
+    }
+  },
+  "TC_PETSTORE_PET_POST_002.1": {
+    "note": "missing name",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Jordane Welch"
+      },
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Carmelo Collins Jr."
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_002.2": {
+    "note": "missing photoUrls",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Jordane Welch"
+      },
+      "name": "Clifton Waters",
+      "tags": [
+        {
+          "id": 1,
+          "name": "Carmelo Collins Jr."
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_002.3": {
+    "note": "empty name",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Jordane Welch"
+      },
+      "name": "",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Carmelo Collins Jr."
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_002.4": {
+    "note": "wrong type id",
+    "body": {
+      "id": "not-a-number",
+      "category": {
+        "id": 1,
+        "name": "Jordane Welch"
+      },
+      "name": "Clifton Waters",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Carmelo Collins Jr."
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_002.5": {
+    "note": "wrong type category",
+    "body": {
+      "id": 1,
+      "category": [
+        "array-instead-of-object"
+      ],
+      "name": "Clifton Waters",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Carmelo Collins Jr."
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_002.6": {
+    "note": "wrong type name",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Jordane Welch"
+      },
+      "name": 12345,
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Carmelo Collins Jr."
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_002.7": {
+    "note": "wrong type photoUrls",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Jordane Welch"
+      },
+      "name": "Clifton Waters",
+      "photoUrls": {
+        "unexpected": "object-instead-of-array"
+      },
+      "tags": [
+        {
+          "id": 1,
+          "name": "Carmelo Collins Jr."
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_002.8": {
+    "note": "wrong type tags",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Jordane Welch"
+      },
+      "name": "Clifton Waters",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": {
+        "unexpected": "object-instead-of-array"
+      },
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_002.9": {
+    "note": "wrong type status",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Jordane Welch"
+      },
+      "name": "Clifton Waters",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Carmelo Collins Jr."
+        }
+      ],
+      "status": 12345
+    }
+  },
+  "TC_PETSTORE_PET_POST_002.10": {
+    "note": "invalid enum status",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Jordane Welch"
+      },
+      "name": "Clifton Waters",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Carmelo Collins Jr."
+        }
+      ],
+      "status": "NOT_A_VALID_ENUM"
+    }
+  },
+  "TC_PETSTORE_PET_PETID_DELETE_001.2": {
+    "note": "non-existent id",
+    "pathParams": {
+      "petId": 999999999
+    }
+  },
+  "TC_PETSTORE_PET_PUT_002.1": {
+    "note": "missing name",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Ellen Keeling DVM"
+      },
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Bell Dickens"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_PUT_002.2": {
+    "note": "missing photoUrls",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Ellen Keeling DVM"
+      },
+      "name": "Patience Schulist",
+      "tags": [
+        {
+          "id": 1,
+          "name": "Bell Dickens"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_PUT_002.3": {
+    "note": "empty name",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Ellen Keeling DVM"
+      },
+      "name": "",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Bell Dickens"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_PUT_002.4": {
+    "note": "wrong type id",
+    "body": {
+      "id": "not-a-number",
+      "category": {
+        "id": 1,
+        "name": "Ellen Keeling DVM"
+      },
+      "name": "Patience Schulist",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Bell Dickens"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_PUT_002.5": {
+    "note": "wrong type category",
+    "body": {
+      "id": 1,
+      "category": [
+        "array-instead-of-object"
+      ],
+      "name": "Patience Schulist",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Bell Dickens"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_PUT_002.6": {
+    "note": "wrong type name",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Ellen Keeling DVM"
+      },
+      "name": 12345,
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Bell Dickens"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_PUT_002.7": {
+    "note": "wrong type photoUrls",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Ellen Keeling DVM"
+      },
+      "name": "Patience Schulist",
+      "photoUrls": {
+        "unexpected": "object-instead-of-array"
+      },
+      "tags": [
+        {
+          "id": 1,
+          "name": "Bell Dickens"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_PUT_002.8": {
+    "note": "wrong type tags",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Ellen Keeling DVM"
+      },
+      "name": "Patience Schulist",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": {
+        "unexpected": "object-instead-of-array"
+      },
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_PUT_002.9": {
+    "note": "wrong type status",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Ellen Keeling DVM"
+      },
+      "name": "Patience Schulist",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Bell Dickens"
+        }
+      ],
+      "status": 12345
+    }
+  },
+  "TC_PETSTORE_PET_PUT_002.10": {
+    "note": "invalid enum status",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Ellen Keeling DVM"
+      },
+      "name": "Patience Schulist",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Bell Dickens"
+        }
+      ],
+      "status": "NOT_A_VALID_ENUM"
+    }
+  },
+  "TC_PETSTORE_PET_FINDBYSTATUS_GET_002.1": {
+    "note": "missing query status",
+    "query": {}
+  },
+  "TC_PETSTORE_PET_FINDBYSTATUS_GET_002.2": {
+    "note": "empty query status",
+    "query": {
+      "status": ""
+    }
+  },
+  "TC_PETSTORE_PET_FINDBYSTATUS_GET_002.3": {
+    "note": "invalid enum query status",
+    "query": {
+      "status": "NOT_A_VALID_ENUM"
+    }
+  },
+  "TC_PETSTORE_PET_FINDBYTAGS_GET_002.1": {
+    "note": "missing query tags",
+    "query": {}
+  },
+  "TC_PETSTORE_PET_FINDBYTAGS_GET_002.2": {
+    "note": "empty query tags",
+    "query": {
+      "tags": ""
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.2": {
+    "note": "without a token",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Alessandra Hahn"
+      },
+      "name": "Elissa Bahringer",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Chadd Bruen"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.3": {
+    "note": "with an invalid random token",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Alessandra Hahn"
+      },
+      "name": "Elissa Bahringer",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Chadd Bruen"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.5": {
+    "note": "without a token",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Julius Bogisich"
+      },
+      "name": "Pierce Lakin",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Rowena Daniel"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.6": {
+    "note": "with an invalid random token",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Julius Bogisich"
+      },
+      "name": "Pierce Lakin",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Rowena Daniel"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.8": {
+    "note": "without a token",
+    "query": {
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.9": {
+    "note": "with an invalid random token",
+    "query": {
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.11": {
+    "note": "without a token",
+    "query": {
+      "tags": "clamo cinis"
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.12": {
+    "note": "with an invalid random token",
+    "query": {
+      "tags": "corrumpo sono"
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.14": {
+    "note": "without a token",
+    "setupBody": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Mrs. Viola Wuckert"
+      },
+      "name": "Lenora Wisoky",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Merl Cummings"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.15": {
+    "note": "with an invalid random token",
+    "setupBody": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Gabriel Adams"
+      },
+      "name": "August Roob",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Mrs. Magnolia Franecki"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.17": {
+    "note": "without a token",
+    "setupBody": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Elaina Fadel"
+      },
+      "name": "Daniella Hand DDS",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Carli Balistreri"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.18": {
+    "note": "with an invalid random token",
+    "setupBody": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Dr. Shaniya Hauck"
+      },
+      "name": "Maci Koelpin",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Carlos Reichert"
+        }
+      ],
+      "status": "available"
+    }
+  },
+  "TC_PETSTORE_PET_POST_004.19": {
+    "note": "mass assignment",
+    "body": {
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Betsy Walter"
+      },
+      "name": "Kristoffer Mayer",
+      "photoUrls": [
+        "example.com"
+      ],
+      "tags": [
+        {
+          "id": 1,
+          "name": "Stephany Dickinson"
+        }
+      ],
+      "status": "available",
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "privilegedFields": {
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    }
+  },
+  "TC_PETSTORE_STORE_ORDER_ORDERID_GET_001.4": {
+    "note": "non-existent id",
+    "pathParams": {
+      "orderId": 999999999
+    }
+  },
+  "TC_PETSTORE_STORE_ORDER_POST_002.1": {
+    "note": "wrong type id",
+    "body": {
+      "id": "not-a-number",
+      "petId": 1,
+      "quantity": 42,
+      "shipDate": "2026-01-01T10:00:00.000Z",
+      "status": "placed",
+      "complete": true
+    }
+  },
+  "TC_PETSTORE_STORE_ORDER_POST_002.2": {
+    "note": "wrong type petId",
+    "body": {
+      "id": 1,
+      "petId": "not-a-number",
+      "quantity": 42,
+      "shipDate": "2026-01-01T10:00:00.000Z",
+      "status": "placed",
+      "complete": true
+    }
+  },
+  "TC_PETSTORE_STORE_ORDER_POST_002.3": {
+    "note": "wrong type quantity",
+    "body": {
+      "id": 1,
+      "petId": 1,
+      "quantity": "not-a-number",
+      "shipDate": "2026-01-01T10:00:00.000Z",
+      "status": "placed",
+      "complete": true
+    }
+  },
+  "TC_PETSTORE_STORE_ORDER_POST_002.4": {
+    "note": "wrong type shipDate",
+    "body": {
+      "id": 1,
+      "petId": 1,
+      "quantity": 42,
+      "shipDate": 12345,
+      "status": "placed",
+      "complete": true
+    }
+  },
+  "TC_PETSTORE_STORE_ORDER_POST_002.5": {
+    "note": "wrong type status",
+    "body": {
+      "id": 1,
+      "petId": 1,
+      "quantity": 42,
+      "shipDate": "2026-01-01T10:00:00.000Z",
+      "status": 12345,
+      "complete": true
+    }
+  },
+  "TC_PETSTORE_STORE_ORDER_POST_002.6": {
+    "note": "wrong type complete",
+    "body": {
+      "id": 1,
+      "petId": 1,
+      "quantity": 42,
+      "shipDate": "2026-01-01T10:00:00.000Z",
+      "status": "placed",
+      "complete": "not-a-boolean"
+    }
+  },
+  "TC_PETSTORE_STORE_ORDER_POST_002.7": {
+    "note": "invalid enum status",
+    "body": {
+      "id": 1,
+      "petId": 1,
+      "quantity": 42,
+      "shipDate": "2026-01-01T10:00:00.000Z",
+      "status": "NOT_A_VALID_ENUM",
+      "complete": true
+    }
+  },
+  "TC_PETSTORE_STORE_ORDER_POST_002.8": {
+    "note": "invalid format shipDate",
+    "body": {
+      "id": 1,
+      "petId": 1,
+      "quantity": 42,
+      "shipDate": "yesterday at noon",
+      "status": "placed",
+      "complete": true
+    }
+  },
+  "TC_PETSTORE_STORE_ORDER_ORDERID_DELETE_001.2": {
+    "note": "non-existent id",
+    "pathParams": {
+      "orderId": 999999999
+    }
+  },
+  "TC_PETSTORE_STORE_INVENTORY_GET_002.2": {
+    "note": "without a token"
+  },
+  "TC_PETSTORE_STORE_INVENTORY_GET_002.3": {
+    "note": "with an invalid random token"
+  },
+  "TC_PETSTORE_STORE_INVENTORY_GET_002.8": {
+    "note": "mass assignment",
+    "body": {
+      "id": 1,
+      "petId": 1,
+      "quantity": 42,
+      "shipDate": "2026-01-01T10:00:00.000Z",
+      "status": "placed",
+      "complete": true,
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "privilegedFields": {
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    }
+  },
+  "TC_PETSTORE_USER_USERNAME_GET_001.3": {
+    "note": "non-existent id",
+    "pathParams": {
+      "username": 999999999
+    }
+  },
+  "TC_PETSTORE_USER_POST_002.1": {
+    "note": "wrong type id",
+    "body": {
+      "id": "not-a-number",
+      "username": "JarretFrami2",
+      "firstName": "Lora",
+      "lastName": "Sporer",
+      "email": "approbo confugo",
+      "password": "cursus adduco",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_POST_002.2": {
+    "note": "wrong type username",
+    "body": {
+      "id": 1,
+      "username": 12345,
+      "firstName": "Lora",
+      "lastName": "Sporer",
+      "email": "approbo confugo",
+      "password": "cursus adduco",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_POST_002.3": {
+    "note": "wrong type firstName",
+    "body": {
+      "id": 1,
+      "username": "JarretFrami2",
+      "firstName": 12345,
+      "lastName": "Sporer",
+      "email": "approbo confugo",
+      "password": "cursus adduco",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_POST_002.4": {
+    "note": "wrong type lastName",
+    "body": {
+      "id": 1,
+      "username": "JarretFrami2",
+      "firstName": "Lora",
+      "lastName": 12345,
+      "email": "approbo confugo",
+      "password": "cursus adduco",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_POST_002.5": {
+    "note": "wrong type email",
+    "body": {
+      "id": 1,
+      "username": "JarretFrami2",
+      "firstName": "Lora",
+      "lastName": "Sporer",
+      "email": 12345,
+      "password": "cursus adduco",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_POST_002.6": {
+    "note": "wrong type password",
+    "body": {
+      "id": 1,
+      "username": "JarretFrami2",
+      "firstName": "Lora",
+      "lastName": "Sporer",
+      "email": "approbo confugo",
+      "password": 12345,
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_POST_002.7": {
+    "note": "wrong type phone",
+    "body": {
+      "id": 1,
+      "username": "JarretFrami2",
+      "firstName": "Lora",
+      "lastName": "Sporer",
+      "email": "approbo confugo",
+      "password": "cursus adduco",
+      "phone": 12345,
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_POST_002.8": {
+    "note": "wrong type userStatus",
+    "body": {
+      "id": 1,
+      "username": "JarretFrami2",
+      "firstName": "Lora",
+      "lastName": "Sporer",
+      "email": "approbo confugo",
+      "password": "cursus adduco",
+      "phone": "1-555-0100",
+      "userStatus": "not-a-number"
+    }
+  },
+  "TC_PETSTORE_USER_CREATEWITHLIST_POST_001.1": {
+    "note": "duplicate item username",
+    "body": [
+      {
+        "id": 1,
+        "username": "AubreyShanahan",
+        "firstName": "Mathew",
+        "lastName": "Jast",
+        "email": "curvo bis",
+        "password": "sono sonitus",
+        "phone": "1-555-0100",
+        "userStatus": 42
+      }
+    ]
+  },
+  "TC_PETSTORE_USER_CREATEWITHLIST_POST_001.2": {
+    "note": "duplicate item username",
+    "body": [
+      {
+        "id": 1,
+        "username": "Jarvis_Kassulke36",
+        "firstName": "Dallas",
+        "lastName": "Braun",
+        "email": "delectatio aufero",
+        "password": "vehemens aureus",
+        "phone": "1-555-0100",
+        "userStatus": 42
+      }
+    ]
+  },
+  "TC_PETSTORE_USER_CREATEWITHLIST_POST_001.3": {
+    "note": "duplicate username",
+    "body": {
+      "id": 1,
+      "username": "JarretFrami2",
+      "firstName": "Lora",
+      "lastName": "Sporer",
+      "email": "approbo confugo",
+      "password": "cursus adduco",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_USERNAME_PUT_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "username": 999999999
+    },
+    "body": {
+      "id": 1,
+      "username": "Deion41",
+      "firstName": "Brandt",
+      "lastName": "Huel",
+      "email": "sequi corpus",
+      "password": "molestiae ascisco",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_USERNAME_PUT_002.2": {
+    "note": "wrong type id",
+    "body": {
+      "id": "not-a-number",
+      "username": "GerryKiehn",
+      "firstName": "Johnson",
+      "lastName": "Okuneva",
+      "email": "pecto terra",
+      "password": "cupressus cultellus",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    },
+    "setupBody": {
+      "id": 1,
+      "username": "Jasmin9",
+      "firstName": "Jarrett",
+      "lastName": "Abshire",
+      "email": "commodi tum",
+      "password": "amaritudo torqueo",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_USERNAME_PUT_002.3": {
+    "note": "wrong type username",
+    "body": {
+      "id": 1,
+      "username": 12345,
+      "firstName": "Johnson",
+      "lastName": "Okuneva",
+      "email": "pecto terra",
+      "password": "cupressus cultellus",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    },
+    "setupBody": {
+      "id": 1,
+      "username": "Tiffany_Herman",
+      "firstName": "Loren",
+      "lastName": "Bauch",
+      "email": "aeger synagoga",
+      "password": "supplanto tandem",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_USERNAME_PUT_002.4": {
+    "note": "wrong type firstName",
+    "body": {
+      "id": 1,
+      "username": "GerryKiehn",
+      "firstName": 12345,
+      "lastName": "Okuneva",
+      "email": "pecto terra",
+      "password": "cupressus cultellus",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    },
+    "setupBody": {
+      "id": 1,
+      "username": "Urban41",
+      "firstName": "Waylon",
+      "lastName": "Tillman",
+      "email": "summa articulus",
+      "password": "curto amita",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_USERNAME_PUT_002.5": {
+    "note": "wrong type lastName",
+    "body": {
+      "id": 1,
+      "username": "GerryKiehn",
+      "firstName": "Johnson",
+      "lastName": 12345,
+      "email": "pecto terra",
+      "password": "cupressus cultellus",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    },
+    "setupBody": {
+      "id": 1,
+      "username": "DenaJohnson20",
+      "firstName": "Brionna",
+      "lastName": "Cole",
+      "email": "ars verus",
+      "password": "adopto acidus",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_USERNAME_PUT_002.6": {
+    "note": "wrong type email",
+    "body": {
+      "id": 1,
+      "username": "GerryKiehn",
+      "firstName": "Johnson",
+      "lastName": "Okuneva",
+      "email": 12345,
+      "password": "cupressus cultellus",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    },
+    "setupBody": {
+      "id": 1,
+      "username": "Brian_DAmore",
+      "firstName": "Bettye",
+      "lastName": "Spinka",
+      "email": "contabesco volutabrum",
+      "password": "recusandae atavus",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_USERNAME_PUT_002.7": {
+    "note": "wrong type password",
+    "body": {
+      "id": 1,
+      "username": "GerryKiehn",
+      "firstName": "Johnson",
+      "lastName": "Okuneva",
+      "email": "pecto terra",
+      "password": 12345,
+      "phone": "1-555-0100",
+      "userStatus": 42
+    },
+    "setupBody": {
+      "id": 1,
+      "username": "Orion10",
+      "firstName": "Monserrate",
+      "lastName": "Wisoky",
+      "email": "adopto delibero",
+      "password": "nam utique",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_USERNAME_PUT_002.8": {
+    "note": "wrong type phone",
+    "body": {
+      "id": 1,
+      "username": "GerryKiehn",
+      "firstName": "Johnson",
+      "lastName": "Okuneva",
+      "email": "pecto terra",
+      "password": "cupressus cultellus",
+      "phone": 12345,
+      "userStatus": 42
+    },
+    "setupBody": {
+      "id": 1,
+      "username": "Valerie_Bogan23",
+      "firstName": "London",
+      "lastName": "Kiehn",
+      "email": "coepi ascisco",
+      "password": "usitas caveo",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_USERNAME_PUT_002.9": {
+    "note": "wrong type userStatus",
+    "body": {
+      "id": 1,
+      "username": "GerryKiehn",
+      "firstName": "Johnson",
+      "lastName": "Okuneva",
+      "email": "pecto terra",
+      "password": "cupressus cultellus",
+      "phone": "1-555-0100",
+      "userStatus": "not-a-number"
+    },
+    "setupBody": {
+      "id": 1,
+      "username": "Silas80",
+      "firstName": "Lance",
+      "lastName": "Thompson",
+      "email": "baiulus verbera",
+      "password": "spiculum repudiandae",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_USERNAME_DELETE_001.2": {
+    "note": "non-existent id",
+    "pathParams": {
+      "username": 999999999
+    }
+  },
+  "TC_PETSTORE_USER_LOGIN_GET_002.1": {
+    "note": "missing query username",
+    "query": {
+      "password": "despecto crudelis"
+    }
+  },
+  "TC_PETSTORE_USER_LOGIN_GET_002.2": {
+    "note": "empty query username",
+    "query": {
+      "username": "",
+      "password": "despecto crudelis"
+    }
+  },
+  "TC_PETSTORE_USER_LOGIN_GET_002.3": {
+    "note": "missing query password",
+    "query": {
+      "username": "Raul83"
+    }
+  },
+  "TC_PETSTORE_USER_LOGIN_GET_002.4": {
+    "note": "empty query password",
+    "query": {
+      "username": "Raul83",
+      "password": ""
+    }
+  },
+  "TC_PETSTORE_USER_CREATEWITHLIST_POST_003.10": {
+    "note": "mass assignment",
+    "body": {
+      "id": 1,
+      "username": "Tomasa38",
+      "firstName": "Maida",
+      "lastName": "Prosacco",
+      "email": "volaticus caries",
+      "password": "adimpleo adicio",
+      "phone": "1-555-0100",
+      "userStatus": 42,
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "privilegedFields": {
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "setupBody": {
+      "id": 1,
+      "username": "Bianka_Cormier96",
+      "firstName": "Dustin",
+      "lastName": "Bailey",
+      "email": "caterva derideo",
+      "password": "collum accusamus",
+      "phone": "1-555-0100",
+      "userStatus": 42
+    }
+  },
+  "TC_PETSTORE_USER_CREATEWITHLIST_POST_003.13": {
+    "note": "mass assignment",
+    "body": {
+      "id": 1,
+      "username": "KhalilDeckow",
+      "firstName": "Joelle",
+      "lastName": "Herman",
+      "email": "canis sit",
+      "password": "claustrum dapifer",
+      "phone": "1-555-0100",
+      "userStatus": 42,
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "privilegedFields": {
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    }
+  }
+}

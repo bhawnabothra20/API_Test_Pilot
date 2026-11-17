@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="restful-booker" tests="13" failures="6" errors="0" skipped="0" time="181.406">
+  <testsuite name="restful-booker / Auth" tests="2" failures="1" errors="0" skipped="0" time="7.033" timestamp="2026-11-12T06:50:02.396Z">
+    <testcase name="[TC_RESTFUL_BOOKER_AUTH_POST_001] Log in with valid credentials; wrong or missing credentials are rejected without a token" classname="restful-booker.Auth" time="5.931">
+      <failure message="RC4 (Low, Contract/Spec mismatch): Failed logins are answered with HTTP 200 (no token is issued)" type="Contract/Spec mismatch">Classification: Contract/Spec mismatch
+Reason: 4 of 5 checks failed (Contract/Spec mismatch: 4). Most severe: Failed login answered with 200 (no token issued); the failure status is not documented.
+Expected: HTTP 400 or 401 or 403 or 422
+Actual: HTTP 200
+Request: POST https://restful-booker.herokuapp.com/auth -&gt; 200
+
+Error: 4 of 5 checks failed:
+• [TC_RESTFUL_BOOKER_AUTH_POST_001.2] POST /auth with a wrong password is rejected without a token: Expected status 400 or 401 or 403 or 422 but got 200. POST https://restful-booker.herokuapp.com/auth -&gt; 200 body={&quot;reason&quot;:&quot;Bad credentials&quot;}
+• [TC_RESTFUL_BOOKER_AUTH_POST_001.3] POST /auth without &quot;username&quot; is rejected: Expected status 400 or 401 or 403 or 422 but got 200. POST https://restful-booker.herokuapp.com/auth -&gt; 200 body={&quot;reason&quot;:&quot;Bad credentials&quot;}
+• [TC_RESTFUL_BOOKER_AUTH_POST_001.4] POST /auth without &quot;password&quot; is rejected: Expected status 400 or 401 or 403 or 422 but got 200. POST https://restful-booker.herokuapp.com/auth -&gt; 200 body={&quot;reason&quot;:&quot;Bad credentials&quot;}
+• [TC_RESTFUL_BOOKER_AUTH_POST_001.5] POST /auth with an empty body is rejected: Expected status 400 or 401 or 403 or 422 but got 200. POST https://restful-booker.herokuapp.com/auth -&gt; 200 body={&quot;reason&quot;:&quot;Bad credentials&quot;}
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 4</failure>
+    </testcase>
+    <testcase name="[TC_RESTFUL_BOOKER_PING_GET_002] Pings can be used without logging in (public API)" classname="restful-booker.Auth" time="1.102"/>
+  </testsuite>
+  <testsuite name="restful-booker / Positive-Functional" tests="7" failures="2" errors="0" skipped="0" time="50.083" timestamp="2026-11-12T06:50:02.396Z">
+    <testcase name="[TC_RESTFUL_BOOKER_BOOKING_GET_001] Browse bookings and filter them by their attributes" classname="restful-booker.Positive-Functional" time="14.795">
+      <failure message="RC3 (Medium, Real API defect): Filtering GET /booking does not return the matching items" type="Real API defect">Classification: Real API defect
+Reason: 1 of 6 checks failed (Real API defect: 1). Most severe: Query filter does not return the matching items: created booking is part of the filtered result
+Expected: HTTP 200
+Actual: • [TC_RESTFUL_BOOKER_BOOKING_GET_001.4] GET /booking?checkin=&lt;value of a newly created booking&gt; returns that booking: created booking is part of the filtered result
+Request: GET https://restful-booker.herokuapp.com/booking -&gt; 200
+
+Error: 1 of 6 checks failed:
+• [TC_RESTFUL_BOOKER_BOOKING_GET_001.4] GET /booking?checkin=&lt;value of a newly created booking&gt; returns that booking: created booking is part of the filtered result
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 1</failure>
+    </testcase>
+    <testcase name="[TC_RESTFUL_BOOKER_BOOKING_ID_GET_001] View a booking by its id; an unknown booking is not found" classname="restful-booker.Positive-Functional" time="5.072"/>
+    <testcase name="[TC_RESTFUL_BOOKER_BOOKING_POST_001] Create a booking with valid details; the saved values match what was sent" classname="restful-booker.Positive-Functional" time="2.446"/>
+    <testcase name="[TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_001] Update an existing booking (full and partial update)" classname="restful-booker.Positive-Functional" time="11.480"/>
+    <testcase name="[TC_RESTFUL_BOOKER_BOOKING_ID_DELETE_001] Delete a booking; deleting a booking that does not exist is rejected" classname="restful-booker.Positive-Functional" time="10.587">
+      <failure message="RC5 (Low, Contract/Spec mismatch): Answers 405 where 404 is expected" type="Contract/Spec mismatch">Classification: Contract/Spec mismatch
+Reason: 1 of 2 checks failed (Contract/Spec mismatch: 1). Most severe: Rejected with 405 instead of the expected 404.
+Expected: HTTP 404
+Actual: HTTP 405
+Request: DELETE https://restful-booker.herokuapp.com/booking/999999999 -&gt; 405
+
+Error: 1 of 2 checks failed:
+• [TC_RESTFUL_BOOKER_BOOKING_ID_DELETE_001.2] DELETE /booking/{id} with a non-existent id returns 404: Expected status 404 but got 405. DELETE https://restful-booker.herokuapp.com/booking/999999999 -&gt; 405 body=Method Not Allowed
+
+expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 1</failure>
+    </testcase>
+    <testcase name="[TC_RESTFUL_BOOKER_BOOKING_POST_003] Manage a booking end to end: create, view, update and delete it; it is gone afterwards" classname="restful-booker.Positive-Functional" time="4.640"/>
+    <testcase name="[TC_RESTFUL_BOOKER_PING_GET_001] HealthCheck" classname="restful-booker.Positive-Functional" time="1.063"/>
+  </testsuite>
+  <testsuite name="restful-booker / Negative" tests="3" failures="3" errors="0" skipped="0" time="90.292" timestamp="2026-11-12T06:50:02.396Z">
+    <testcase name="[TC_RESTFUL_BOOKER_BOOKING_GET_002] Searching bookings with missing or invalid criteria is rejected" classname="restful-booker.Negative" time="2.154">
+      <failure message="RC1 (High, Real API defect): Invalid input crashes the server (5xx instead of 400/422)" type="Real API defect">Classification: Real API defect
+Reason: Server error 500 for invalid input - input validation is missing.
+Expected: HTTP 400 or 422 (never 5xx)
+Actual: HTTP 500
+Request: GET https://restful-booker.herokuapp.com/booking?checkin=not-a-date -&gt; 500
+
+Error: Server error (5xx) returned. GET https://restful-booker.herokuapp.com/booking?checkin=not-a-date -&gt; 500 body=Internal Server Error
+
+expect(received).toBeLessThan(expected)
+
+Expected: &lt; 500
+Received:   500</failure>
+    </testcase>
+    <testcase name="[TC_RESTFUL_BOOKER_BOOKING_POST_002] Creating a booking with missing or invalid details is rejected" classname="restful-booker.Negative" time="15.773">
+      <failure message="RC1 (High, Real API defect): Invalid input crashes the server (5xx instead of 400/422) | RC2 (Medium, Real API defect): Invalid input is accepted with HTTP 200 - validation is missing" type="Real API defect">Classification: Real API defect
+Reason: 16 of 16 checks failed (Real API defect: 16). Most severe: Server error 500 for invalid input - input validation is missing.
+Expected: HTTP 400 or 422 (never 5xx)
+Actual: HTTP 500
+Request: POST https://restful-booker.herokuapp.com/booking -&gt; 200
+
+Error: 16 of 16 checks failed:
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.1] POST /booking without required field &quot;firstname&quot; is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -&gt; 500 body=Internal Server Error
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.2] POST /booking without required field &quot;lastname&quot; is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -&gt; 500 body=Internal Server Error
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.3] POST /booking without required field &quot;totalprice&quot; is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -&gt; 500 body=Internal Server Error
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.4] POST /booking without required field &quot;depositpaid&quot; is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -&gt; 500 body=Internal Server Error
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.5] POST /booking without required field &quot;bookingdates.checkin&quot; is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -&gt; 500 body=Internal Server Error
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.6] POST /booking without required field &quot;bookingdates.checkout&quot; is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -&gt; 500 body=Internal Server Error
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.7] POST /booking without required field &quot;additionalneeds&quot; is rejected with 400/422: Expected status 400 or 422 but got 200. POST https://restful-booker.herokuapp.com/booking -&gt; 200 body={&quot;bookingid&quot;:299,&quot;booking&quot;:{&quot;firstname&quot;:&quot;Mose&quot;,&quot;lastname&quot;:&quot;Gutmann&quot;,&quot;totalprice&quot;:111,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;2026-01-01&quot;,&quot;checkout&quot;:&quot;2026-01-05&quot;}}}
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.8] POST /booking with empty string for required &quot;firstname&quot; is rejected with 400/422: Expected status 400 or 422 but got 200. POST https://restful-booker.herokuapp.com/booking -&gt; 200 body={&quot;bookingid&quot;:305,&quot;booking&quot;:{&quot;firstname&quot;:&quot;&quot;,&quot;lastname&quot;:&quot;Gutmann&quot;,&quot;totalprice&quot;:111,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;2026-01-01&quot;,&quot;checkout&quot;:&quot;2026-01-05&quot;},&quot;additionalneeds&quot;:&quot;Breakfast&quot;}}
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.9] POST /booking with wrong type for &quot;firstname&quot; (number instead of string) is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -&gt; 500 body=Internal Server Error
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.10] POST /booking with wrong type for &quot;lastname&quot; (number instead of string) is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -&gt; 500 body=Internal Server Error
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.11] POST /booking with wrong type for &quot;totalprice&quot; (string instead of number) is rejected with 400/422: Expected status 400 or 422 but got 200. POST https://restful-booker.herokuapp.com/booking -&gt; 200 body={&quot;bookingid&quot;:322,&quot;booking&quot;:{&quot;firstname&quot;:&quot;Mose&quot;,&quot;lastname&quot;:&quot;Gutmann&quot;,&quot;totalprice&quot;:null,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;2026-01-01&quot;,&quot;checkout&quot;:&quot;2026-01-05&quot;},&quot;additionalneeds&quot;:&quot;Breakfast&quot;}}
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.12] POST /booking with wrong type for &quot;depositpaid&quot; (string instead of boolean) is rejected with 400/422: Expected status 400 or 422 but got 200. POST https://restful-booker.herokuapp.com/booking -&gt; 200 body={&quot;bookingid&quot;:329,&quot;booking&quot;:{&quot;firstname&quot;:&quot;Mose&quot;,&quot;lastname&quot;:&quot;Gutmann&quot;,&quot;totalprice&quot;:111,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;2026-01-01&quot;,&quot;checkout&quot;:&quot;2026-01-05&quot;},&quot;additionalneeds&quot;:&quot;Breakfast&quot;}}
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.13] POST /booking with wrong type for &quot;bookingdates&quot; (array instead of object) is rejected with 400/422: Server error (5xx) returned. POST https://restful-booker.herokuapp.com/booking -&gt; 500 body=Internal Server Error
+• [TC_RESTFUL_BOOKER_BOOKING_POST_002.14] POST /booking with wrong type for &quot;additionalneeds&quot; (number</failure>
+    </testcase>
+    <testcase name="[TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002] Updating a booking with invalid details, or a booking that does not exist, is rejected" classname="restful-booker.Negative" time="72.365">
+      <failure message="RC2 (Medium, Real API defect): Invalid input is accepted with HTTP 200 - validation is missing | RC1 (High, Real API defect): Invalid input crashes the server (5xx instead of 400/422) | RC5 (Low, Contract/Spec mismatch): Answers 405 where 404 is expected" type="Real API defect">Classification: Real API defect
+Reason: 19 of 26 checks failed (Real API defect: 17, Contract/Spec mismatch: 2). Most severe: Documented rule not enforced: invalid input accepted with 200.
+Expected: HTTP 400 or 422
+Actual: HTTP 200
+Request: PUT https://restful-booker.herokuapp.com/booking/1035 -&gt; 200
+
+Error: 19 of 26 checks failed:
+• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.1] PATCH /booking/{id} with a non-existent id returns 404: Expected status 404 but got 405. PATCH https://restful-booker.herokuapp.com/booking/999999999 -&gt; 405 body=Method Not Allowed
+• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.2] PATCH /booking/{id} with wrong type for &quot;firstname&quot; (number instead of string) is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/740 -&gt; 200 body={&quot;firstname&quot;:12345,&quot;lastname&quot;:&quot;Nitzsche&quot;,&quot;totalprice&quot;:111,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;2026-01-01&quot;,&quot;checkout&quot;:&quot;2026-01-05&quot;},&quot;additionalneeds&quot;:&quot;Breakfast&quot;}
+• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.3] PATCH /booking/{id} with wrong type for &quot;lastname&quot; (number instead of string) is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/751 -&gt; 200 body={&quot;firstname&quot;:&quot;Kennedy&quot;,&quot;lastname&quot;:12345,&quot;totalprice&quot;:111,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;2026-01-01&quot;,&quot;checkout&quot;:&quot;2026-01-05&quot;},&quot;additionalneeds&quot;:&quot;Breakfast&quot;}
+• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.4] PATCH /booking/{id} with wrong type for &quot;totalprice&quot; (string instead of number) is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/766 -&gt; 200 body={&quot;firstname&quot;:&quot;Kennedy&quot;,&quot;lastname&quot;:&quot;Graham&quot;,&quot;totalprice&quot;:null,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;2026-01-01&quot;,&quot;checkout&quot;:&quot;2026-01-05&quot;},&quot;additionalneeds&quot;:&quot;Breakfast&quot;}
+• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.5] PATCH /booking/{id} with wrong type for &quot;depositpaid&quot; (string instead of boolean) is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/785 -&gt; 200 body={&quot;firstname&quot;:&quot;Kennedy&quot;,&quot;lastname&quot;:&quot;Kertzmann&quot;,&quot;totalprice&quot;:111,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;2026-01-01&quot;,&quot;checkout&quot;:&quot;2026-01-05&quot;},&quot;additionalneeds&quot;:&quot;Breakfast&quot;}
+• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.6] PATCH /booking/{id} with wrong type for &quot;bookingdates&quot; (array instead of object) is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/800 -&gt; 200 body={&quot;firstname&quot;:&quot;Kennedy&quot;,&quot;lastname&quot;:&quot;Reynolds&quot;,&quot;totalprice&quot;:111,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;0NaN-aN-aN&quot;,&quot;checkout&quot;:&quot;0NaN-aN-aN&quot;},&quot;additionalneeds&quot;:&quot;Breakfast&quot;}
+• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.7] PATCH /booking/{id} with wrong type for &quot;additionalneeds&quot; (number instead of string) is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/814 -&gt; 200 body={&quot;firstname&quot;:&quot;Kennedy&quot;,&quot;lastname&quot;:&quot;Blanda&quot;,&quot;totalprice&quot;:111,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;2026-01-01&quot;,&quot;checkout&quot;:&quot;2026-01-05&quot;},&quot;additionalneeds&quot;:12345}
+• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.8] PATCH /booking/{id} with invalid date for &quot;bookingdates.checkin&quot; is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/826 -&gt; 200 body={&quot;firstname&quot;:&quot;Markus&quot;,&quot;lastname&quot;:&quot;Kunde&quot;,&quot;totalprice&quot;:111,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;0NaN-aN-aN&quot;,&quot;checkout&quot;:&quot;2026-01-05&quot;},&quot;additionalneeds&quot;:&quot;Breakfast&quot;}
+• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.9] PATCH /booking/{id} with invalid date for &quot;bookingdates.checkout&quot; is rejected with 400/422: Expected status 400 or 422 but got 200. PATCH https://restful-booker.herokuapp.com/booking/841 -&gt; 200 body={&quot;firstname&quot;:&quot;Markus&quot;,&quot;lastname&quot;:&quot;Kunde&quot;,&quot;totalprice&quot;:111,&quot;depositpaid&quot;:true,&quot;bookingdates&quot;:{&quot;checkin&quot;:&quot;2026-01-01&quot;,&quot;checkout&quot;:&quot;0NaN-aN-aN&quot;},&quot;additionalneeds&quot;:&quot;Breakfast&quot;}
+• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.10] PUT /booking/{id} with a non-existent id returns 404: Expected status 404 but got 405. PUT https://restful-booker.herokuapp.com/booking/999999999 -&gt; 405 body=Method Not Allowed
+• [TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.17] PUT /booking/{id} without required field &quot;additiona</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="restful-booker / Authorization" tests="1" failures="0" errors="0" skipped="0" time="23.488" timestamp="2026-11-12T06:50:02.396Z">
+    <testcase name="[TC_RESTFUL_BOOKER_BOOKING_POST_004] Only authorised users can use bookings; public bookings operations work without logging in; privileged fields cannot be set by the client; responses expose no sensitive data" classname="restful-booker.Authorization" time="23.488"/>
+  </testsuite>
+</testsuites>

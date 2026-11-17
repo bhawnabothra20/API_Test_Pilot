@@ -1,0 +1,1222 @@
+{
+  "apiName": "petstore",
+  "generatedAt": "2026-11-11T16:40:57.583Z",
+  "runStartedAt": "2026-11-11T16:38:22.360Z",
+  "items": [
+    {
+      "severity": "Low",
+      "testId": "TC_PETSTORE_PET_POST_001",
+      "title": "Create a pet with valid details; the saved values match what was sent",
+      "category": "Positive-Functional",
+      "endpoint": "POST /pet",
+      "classification": "Contract/Spec mismatch",
+      "reason": "3 of 3 checks failed (Contract/Spec mismatch: 3). Most severe: Success code 200 differs from the documented one.",
+      "expected": "HTTP 201",
+      "actual": "HTTP 200",
+      "error": "Error: 3 of 3 checks failed:\n• [TC_PETSTORE_PET_POST_001.1] POST /pet with a valid request returns 201 and the required fields: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Asa Johns\"},\"name\":\"Darrin Kshlerin\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Mr. Art Funk\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_001.2] POST /pet with only required fields (optional fields omitted) succeeds: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":9223372036854563675,\"name\":\"Lazaro Terry\",\"photoUrls\":[\"example.com\"],\"tags\":[]}\n• [TC_PETSTORE_PET_POST_001.3] POST /pet persists/echoes every request value exactly (no truncation or type change): Expected status 201 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Isaias Gutmann\"},\"name\":\"Ms. Cheyenne Kuhn\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Neva Graham\"}],\"status\":\"available\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 3",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/pet",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"category\":{\"id\":1,\"name\":\"Isaias Gutmann\"},\"name\":\"Ms. Cheyenne Kuhn\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Neva Graham\"}],\"status\":\"available\"}",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:38:37 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"id\":1,\"category\":{\"id\":1,\"name\":\"Isaias Gutmann\"},\"name\":\"Ms. Cheyenne Kuhn\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Neva Graham\"}],\"status\":\"available\"}",
+        "durationMs": 356,
+        "identity": "admin",
+        "pathTemplate": "/pet"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC8"
+      ]
+    },
+    {
+      "severity": "Low",
+      "testId": "TC_PETSTORE_PET_POST_003",
+      "title": "Manage a pet end to end: create, view, update and delete it; it is gone afterwards",
+      "category": "Positive-Functional",
+      "endpoint": "POST /pet",
+      "classification": "Contract/Spec mismatch",
+      "reason": "Success code 200 differs from the documented one.",
+      "expected": "HTTP 201",
+      "actual": "HTTP 200",
+      "error": "Error: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Keshawn Weimann\"},\"name\":\"Gianni Christiansen-Upton\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Stefanie Hoeger PhD\"}],\"status\":\"available\"}\n\nexpect(received).toContain(expected) // indexOf\n\nExpected value: 200\nReceived array: [201]",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/pet",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"category\":{\"id\":1,\"name\":\"Keshawn Weimann\"},\"name\":\"Gianni Christiansen-Upton\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Stefanie Hoeger PhD\"}],\"status\":\"available\"}",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:38:45 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"id\":1,\"category\":{\"id\":1,\"name\":\"Keshawn Weimann\"},\"name\":\"Gianni Christiansen-Upton\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Stefanie Hoeger PhD\"}],\"status\":\"available\"}",
+        "durationMs": 1786,
+        "identity": "admin",
+        "pathTemplate": "/pet"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC8"
+      ]
+    },
+    {
+      "severity": "Low",
+      "testId": "TC_PETSTORE_PET_FINDBYSTATUS_GET_001",
+      "title": "Finds Pets by status",
+      "category": "Positive-Functional",
+      "endpoint": "GET /pet/findByStatus",
+      "classification": "Contract/Spec mismatch",
+      "reason": "4 of 4 checks failed (Contract/Spec mismatch: 4). Most severe: Response body does not match the documented/inferred schema.",
+      "expected": "body matches PetFindbystatusGetResponse",
+      "actual": "105.name: Required",
+      "error": "Error: 4 of 4 checks failed:\n• [TC_PETSTORE_PET_FINDBYSTATUS_GET_001.1] GET /pet/findByStatus with a valid request returns 200 and the required fields: Schema validation failed: 105.name: Required\n• [TC_PETSTORE_PET_FINDBYSTATUS_GET_001.2] GET /pet/findByStatus?status=available returns only items whose status matches: Schema validation failed: 105.name: Required\n• [TC_PETSTORE_PET_FINDBYSTATUS_GET_001.3] GET /pet/findByStatus response matches the schema for every field of every array item (type, format, presence): Schema validation failed: 105.name: Required\n• [TC_PETSTORE_PET_FINDBYSTATUS_GET_001.4] GET /pet/findByStatus formatted fields are valid (status:enum): Schema validation failed: 105.name: Required\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 4",
+      "evidence": {
+        "method": "GET",
+        "url": "https://petstore.swagger.io/v2/pet/findByStatus?status=available",
+        "requestHeaders": {
+          "api_key": "***"
+        },
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:38:57 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "[{\"id\":1245,\"category\":{\"id\":1245,\"name\":\"xyz\"},\"name\":\"xyz\",\"photoUrls\":[\"test\"],\"tags\":[],\"status\":\"available\"},{\"id\":9223372036854562762,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":12121,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"TestPetName\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562823,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562825,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562826,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562827,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562828,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562830,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562831,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562832,\"category\":{\"id\":0,\"name\":\"string1\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562835,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562836,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":6767,\"category\":{\"id\":0,\"name\":\"doggo\"},\"name\":\"Persik\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562855,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562863,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"fish\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562864,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"fish\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562866,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"fish\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562878,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562879,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"status\":\"available\"},{\"id\":9223372036854562881,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"fish\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562883,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562897,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"fish\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562905,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562906,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562916,\"category\":{\"id\":0,\"name\":\"test\"},\"name\":\"newname\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"cat\"}],\"status\":\"available\"},{\"id\":9223372036854562919,\"catego...[truncated 15724 chars]",
+        "durationMs": 396,
+        "identity": "admin",
+        "pathTemplate": "/pet/findByStatus"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC9"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "testId": "TC_PETSTORE_PET_FINDBYTAGS_GET_001",
+      "title": "Finds Pets by tags",
+      "category": "Positive-Functional",
+      "endpoint": "GET /pet/findByTags",
+      "classification": "Real API defect",
+      "reason": "1 of 3 checks failed (Real API defect: 1). Most severe: Expectation not met: Expected at least one item",
+      "expected": "HTTP 200",
+      "actual": "• [TC_PETSTORE_PET_FINDBYTAGS_GET_001.1] GET /pet/findByTags with a valid request returns 200 and the required fields: Expected at least one item",
+      "error": "Error: 1 of 3 checks failed:\n• [TC_PETSTORE_PET_FINDBYTAGS_GET_001.1] GET /pet/findByTags with a valid request returns 200 and the required fields: Expected at least one item\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 1",
+      "evidence": {
+        "method": "GET",
+        "url": "https://petstore.swagger.io/v2/pet/findByTags?tags=ipsam+saepe",
+        "requestHeaders": {
+          "api_key": "***"
+        },
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:39:04 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "[]",
+        "durationMs": 373,
+        "identity": "admin",
+        "pathTemplate": "/pet/findByTags"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC7"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "testId": "TC_PETSTORE_PET_POST_002",
+      "title": "Creating a pet with missing or invalid details is rejected",
+      "category": "Negative",
+      "endpoint": "POST /pet",
+      "classification": "Real API defect",
+      "reason": "10 of 10 checks failed (Real API defect: 10). Most severe: Documented rule not enforced: invalid input accepted with 200.",
+      "expected": "HTTP 405",
+      "actual": "HTTP 200",
+      "error": "Error: 10 of 10 checks failed:\n• [TC_PETSTORE_PET_POST_002.1] POST /pet without required field \"name\" is rejected with 405: Expected status 405 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Jordane Welch\"},\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Carmelo Collins Jr.\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_002.2] POST /pet without required field \"photoUrls\" is rejected with 405: Expected status 405 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Jordane Welch\"},\"name\":\"Clifton Waters\",\"photoUrls\":[],\"tags\":[{\"id\":1,\"name\":\"Carmelo Collins Jr.\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_002.3] POST /pet with empty string for required \"name\" is rejected with 405: Expected status 405 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Jordane Welch\"},\"name\":\"\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Carmelo Collins Jr.\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_002.4] POST /pet with wrong type for \"id\" (string instead of integer) is rejected with 405: Server error (5xx) returned. POST https://petstore.swagger.io/v2/pet -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_PET_POST_002.5] POST /pet with wrong type for \"category\" (array instead of object) is rejected with 405: Server error (5xx) returned. POST https://petstore.swagger.io/v2/pet -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_PET_POST_002.6] POST /pet with wrong type for \"name\" (number instead of string) is rejected with 405: Expected status 405 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Jordane Welch\"},\"name\":\"12345\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Carmelo Collins Jr.\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_002.7] POST /pet with wrong type for \"photoUrls\" (object instead of array) is rejected with 405: Server error (5xx) returned. POST https://petstore.swagger.io/v2/pet -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_PET_POST_002.8] POST /pet with wrong type for \"tags\" (object instead of array) is rejected with 405: Server error (5xx) returned. POST https://petstore.swagger.io/v2/pet -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_PET_POST_002.9] POST /pet with wrong type for \"status\" (number instead of string) is rejected with 405: Expected status 405 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Jordane Welch\"},\"name\":\"Clifton Waters\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Carmelo Collins Jr.\"}],\"status\":\"12345\"}\n• [TC_PETSTORE_PET_POST_002.10] POST /pet with invalid enum value for \"status\" is rejected with 405: Expected status 405 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Jordane Welch\"},\"name\":\"Clifton Waters\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Carmelo Collins Jr.\"}],\"status\":\"NOT_A_VALID_ENUM\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 10",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/pet",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"category\":{\"id\":1,\"name\":\"Jordane Welch\"},\"name\":\"Clifton Waters\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Carmelo Collins Jr.\"}],\"status\":\"NOT_A_VALID_ENUM\"}",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:39:19 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"id\":1,\"category\":{\"id\":1,\"name\":\"Jordane Welch\"},\"name\":\"Clifton Waters\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Carmelo Collins Jr.\"}],\"status\":\"NOT_A_VALID_ENUM\"}",
+        "durationMs": 360,
+        "identity": "admin",
+        "pathTemplate": "/pet"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC5",
+        "RC1"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "testId": "TC_PETSTORE_PET_PUT_002",
+      "title": "Update an existing pet: missing or invalid input is rejected",
+      "category": "Negative",
+      "endpoint": "PUT /pet",
+      "classification": "Real API defect",
+      "reason": "10 of 10 checks failed (Real API defect: 10). Most severe: Documented rule not enforced: invalid input accepted with 200.",
+      "expected": "HTTP 400",
+      "actual": "HTTP 200",
+      "error": "Error: 10 of 10 checks failed:\n• [TC_PETSTORE_PET_PUT_002.1] PUT /pet without required field \"name\" is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Ellen Keeling DVM\"},\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Bell Dickens\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_PUT_002.2] PUT /pet without required field \"photoUrls\" is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Ellen Keeling DVM\"},\"name\":\"Patience Schulist\",\"photoUrls\":[],\"tags\":[{\"id\":1,\"name\":\"Bell Dickens\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_PUT_002.3] PUT /pet with empty string for required \"name\" is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Ellen Keeling DVM\"},\"name\":\"\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Bell Dickens\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_PUT_002.4] PUT /pet with wrong type for \"id\" (string instead of integer) is rejected with 400: Server error (5xx) returned. PUT https://petstore.swagger.io/v2/pet -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_PET_PUT_002.5] PUT /pet with wrong type for \"category\" (array instead of object) is rejected with 400: Server error (5xx) returned. PUT https://petstore.swagger.io/v2/pet -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_PET_PUT_002.6] PUT /pet with wrong type for \"name\" (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Ellen Keeling DVM\"},\"name\":\"12345\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Bell Dickens\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_PUT_002.7] PUT /pet with wrong type for \"photoUrls\" (object instead of array) is rejected with 400: Server error (5xx) returned. PUT https://petstore.swagger.io/v2/pet -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_PET_PUT_002.8] PUT /pet with wrong type for \"tags\" (object instead of array) is rejected with 400: Server error (5xx) returned. PUT https://petstore.swagger.io/v2/pet -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_PET_PUT_002.9] PUT /pet with wrong type for \"status\" (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Ellen Keeling DVM\"},\"name\":\"Patience Schulist\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Bell Dickens\"}],\"status\":\"12345\"}\n• [TC_PETSTORE_PET_PUT_002.10] PUT /pet with invalid enum value for \"status\" is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Ellen Keeling DVM\"},\"name\":\"Patience Schulist\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Bell Dickens\"}],\"status\":\"NOT_A_VALID_ENUM\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 10",
+      "evidence": {
+        "method": "PUT",
+        "url": "https://petstore.swagger.io/v2/pet",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"category\":{\"id\":1,\"name\":\"Ellen Keeling DVM\"},\"name\":\"Patience Schulist\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Bell Dickens\"}],\"status\":\"NOT_A_VALID_ENUM\"}",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:39:34 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"id\":1,\"category\":{\"id\":1,\"name\":\"Ellen Keeling DVM\"},\"name\":\"Patience Schulist\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Bell Dickens\"}],\"status\":\"NOT_A_VALID_ENUM\"}",
+        "durationMs": 363,
+        "identity": "admin",
+        "pathTemplate": "/pet"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC5",
+        "RC1"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "testId": "TC_PETSTORE_PET_FINDBYSTATUS_GET_002",
+      "title": "Finds Pets by status: missing or invalid input is rejected",
+      "category": "Negative",
+      "endpoint": "GET /pet/findByStatus",
+      "classification": "Real API defect",
+      "reason": "3 of 3 checks failed (Real API defect: 3). Most severe: Documented rule not enforced: invalid input accepted with 200.",
+      "expected": "HTTP 400",
+      "actual": "HTTP 200",
+      "error": "Error: 3 of 3 checks failed:\n• [TC_PETSTORE_PET_FINDBYSTATUS_GET_002.1] GET /pet/findByStatus without required query parameter \"status\" is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/pet/findByStatus -> 200 body=[]\n• [TC_PETSTORE_PET_FINDBYSTATUS_GET_002.2] GET /pet/findByStatus with an empty value for required query parameter \"status\" is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/pet/findByStatus?status= -> 200 body=[{\"id\":9223372036854562922,\"category\":{\"id\":0,\"name\":\"\"},\"name\":\"doggie\",\"photoUrls\":[\"\"],\"tags\":[{\"id\":0,\"name\":\"\"}],\"status\":\"\"},{\"id\":9223372036854563388,\"category\":{\"id\":0,\"name\":\"\"},\"name\":\"doggie\",\"photoUrls\":[\"\"],\"tags\":[{\"id\":0,\"name\":\"\"}],\"status\":\"\"},{\"id\":9223372036854563636,\"category\":{\"...\n• [TC_PETSTORE_PET_FINDBYSTATUS_GET_002.3] GET /pet/findByStatus?status=<invalid enum value> is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/pet/findByStatus?status=NOT_A_VALID_ENUM -> 200 body=[]\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 3",
+      "evidence": {
+        "method": "GET",
+        "url": "https://petstore.swagger.io/v2/pet/findByStatus?status=NOT_A_VALID_ENUM",
+        "requestHeaders": {
+          "api_key": "***"
+        },
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:39:40 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "[]",
+        "durationMs": 357,
+        "identity": "admin",
+        "pathTemplate": "/pet/findByStatus"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC5"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "testId": "TC_PETSTORE_PET_FINDBYTAGS_GET_002",
+      "title": "Finds Pets by tags: missing or invalid input is rejected",
+      "category": "Negative",
+      "endpoint": "GET /pet/findByTags",
+      "classification": "Real API defect",
+      "reason": "2 of 2 checks failed (Real API defect: 2). Most severe: Documented rule not enforced: invalid input accepted with 200.",
+      "expected": "HTTP 400",
+      "actual": "HTTP 200",
+      "error": "Error: 2 of 2 checks failed:\n• [TC_PETSTORE_PET_FINDBYTAGS_GET_002.1] GET /pet/findByTags without required query parameter \"tags\" is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/pet/findByTags -> 200 body=[]\n• [TC_PETSTORE_PET_FINDBYTAGS_GET_002.2] GET /pet/findByTags with an empty value for required query parameter \"tags\" is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/pet/findByTags?tags= -> 200 body=[{\"id\":9223372036854562922,\"category\":{\"id\":0,\"name\":\"\"},\"name\":\"doggie\",\"photoUrls\":[\"\"],\"tags\":[{\"id\":0,\"name\":\"\"}],\"status\":\"\"},{\"id\":9223372036854563388,\"category\":{\"id\":0,\"name\":\"\"},\"name\":\"doggie\",\"photoUrls\":[\"\"],\"tags\":[{\"id\":0,\"name\":\"\"}],\"status\":\"\"},{\"id\":9223372036854563636,\"category\":{\"...\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 2",
+      "evidence": {
+        "method": "GET",
+        "url": "https://petstore.swagger.io/v2/pet/findByTags?tags=",
+        "requestHeaders": {
+          "api_key": "***"
+        },
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:39:46 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "[{\"id\":9223372036854562922,\"category\":{\"id\":0,\"name\":\"\"},\"name\":\"doggie\",\"photoUrls\":[\"\"],\"tags\":[{\"id\":0,\"name\":\"\"}],\"status\":\"\"},{\"id\":9223372036854563388,\"category\":{\"id\":0,\"name\":\"\"},\"name\":\"doggie\",\"photoUrls\":[\"\"],\"tags\":[{\"id\":0,\"name\":\"\"}],\"status\":\"\"},{\"id\":9223372036854563636,\"category\":{\"id\":0,\"name\":\"\"},\"name\":\"doggie\",\"photoUrls\":[\"\"],\"tags\":[{\"id\":0,\"name\":\"\"}],\"status\":\"\"}]",
+        "durationMs": 357,
+        "identity": "admin",
+        "pathTemplate": "/pet/findByTags"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC5"
+      ]
+    },
+    {
+      "severity": "High",
+      "testId": "TC_PETSTORE_PET_POST_004",
+      "title": "Only authorised users can use pets; privileged fields cannot be set by the client; responses expose no sensitive data",
+      "category": "Authorization",
+      "endpoint": "POST /pet",
+      "classification": "Real API defect",
+      "reason": "16 of 22 checks failed (Real API defect: 13, Contract/Spec mismatch: 3). Most severe: Security: request without valid credentials was answered with 200.",
+      "expected": "HTTP 401",
+      "actual": "HTTP 200",
+      "error": "Error: 16 of 22 checks failed:\n• [TC_PETSTORE_PET_POST_004.1] POST /pet with a valid admin token succeeds (201): Expected status 201 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Alessandra Hahn\"},\"name\":\"Elissa Bahringer\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Chadd Bruen\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_004.2] POST /pet without a token is rejected with 401: Expected status 401 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Alessandra Hahn\"},\"name\":\"Elissa Bahringer\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Chadd Bruen\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_004.3] POST /pet with an invalid random token is rejected with 401: Expected status 401 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Alessandra Hahn\"},\"name\":\"Elissa Bahringer\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Chadd Bruen\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_004.5] PUT /pet without a token is rejected with 401: Expected status 401 but got 200. PUT https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Julius Bogisich\"},\"name\":\"Pierce Lakin\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Rowena Daniel\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_004.6] PUT /pet with an invalid random token is rejected with 401: Expected status 401 but got 200. PUT https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Julius Bogisich\"},\"name\":\"Pierce Lakin\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Rowena Daniel\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_004.7] GET /pet/findByStatus with a valid admin token succeeds (200): Schema validation failed: 103.name: Required\n• [TC_PETSTORE_PET_POST_004.8] GET /pet/findByStatus without a token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/pet/findByStatus?status=available -> 200 body=[{\"id\":12121,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"TestPetName\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562823,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"availa...\n• [TC_PETSTORE_PET_POST_004.9] GET /pet/findByStatus with an invalid random token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/pet/findByStatus?status=available -> 200 body=[{\"id\":12121,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"TestPetName\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"available\"},{\"id\":9223372036854562823,\"category\":{\"id\":0,\"name\":\"string\"},\"name\":\"doggie\",\"photoUrls\":[\"string\"],\"tags\":[{\"id\":0,\"name\":\"string\"}],\"status\":\"availa...\n• [TC_PETSTORE_PET_POST_004.11] GET /pet/findByTags without a token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/pet/findByTags?tags=clamo+cinis -> 200 body=[]\n• [TC_PETSTORE_PET_POST_004.12] GET /pet/findByTags with an invalid random token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/pet/findByTags?tags=corrumpo+sono -> 200 body=[]\n• [TC_PETSTORE_PET_POST_004.14] GET /pet/{petId} without a token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/pet/1 -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Mrs. Viola Wuckert\"},\"name\":\"Lenora Wisoky\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Merl Cummings\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_004.15] GET /pet/{petId} with an invalid random token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/pet/1 -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Gabriel Adams\"},\"name\":\"August Roob\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Mrs. Magnolia Franecki\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_004.17] DELETE /pet/{petId} without a token is rejected with 401: Expected status 401 but got 200. DELETE https://petstore.swagger.io/v2/pet/1 -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_PET_POST_004.18] DELETE /pet/{petId} with an invalid random token is rejected with 401: Expected status 401 but got 200. DELETE https://petstore.swagger.io/v2/pet/1 -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_PET_POST_004.19] Mass assignment: POST /pet ignores or rejects privileged fields (role, isAdmin, is_admin, owner, ownerId, createdAt): Expected status 201 or 400 or 422 but got 200. POST https://petstore.swagger.io/v2/pet -> 200 body={\"id\":1,\"category\":{\"id\":1,\"name\":\"Betsy Walter\"},\"name\":\"Kristoffer Mayer\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Stephany Dickinson\"}],\"status\":\"available\"}\n• [TC_PETSTORE_PET_POST_004.20] GET /pet/findByStatus exposes no sensitive fields (password/secret/token/ssn) and no fields outside the documented schema: Schema validation failed: 104.name: Required\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 16",
+      "evidence": {
+        "method": "GET",
+        "url": "https://petstore.swagger.io/v2/pet/1",
+        "requestHeaders": {
+          "api_key": "***"
+        },
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:40:29 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"id\":1,\"category\":{\"id\":1,\"name\":\"Lorenza Deckow\"},\"name\":\"Liam Orn\",\"photoUrls\":[\"example.com\"],\"tags\":[{\"id\":1,\"name\":\"Frederic Considine V\"}],\"status\":\"available\"}",
+        "durationMs": 347,
+        "identity": "admin",
+        "pathTemplate": "/pet/{petId}"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC2",
+        "RC3",
+        "RC8",
+        "RC9"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "testId": "TC_PETSTORE_STORE_ORDER_POST_001",
+      "title": "Create an order with valid details; the saved values match what was sent",
+      "category": "Positive-Functional",
+      "endpoint": "POST /store/order",
+      "classification": "Real API defect",
+      "reason": "2 of 5 checks failed (Real API defect: 2). Most severe: Sent value not persisted/returned exactly (truncation, trimming or type change).",
+      "expected": "shipDate = (request value)",
+      "actual": "(different)",
+      "error": "Error: 2 of 5 checks failed:\n• [TC_PETSTORE_STORE_ORDER_POST_001.1] POST /store/order with a valid request returns 200 and the required fields: Field \"shipDate\" was not persisted/echoed exactly\n• [TC_PETSTORE_STORE_ORDER_POST_001.5] POST /store/order persists/echoes every request value exactly (no truncation or type change): Field \"shipDate\" was not persisted/echoed exactly\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 2",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/store/order",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"petId\":1,\"quantity\":42,\"shipDate\":\"2026-01-01T10:00:00.000Z\",\"status\":\"placed\",\"complete\":true}",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:38:40 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"id\":1,\"petId\":1,\"quantity\":42,\"shipDate\":\"2026-01-01T10:00:00.000+0000\",\"status\":\"placed\",\"complete\":true}",
+        "durationMs": 382,
+        "identity": "none",
+        "pathTemplate": "/store/order"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC6"
+      ]
+    },
+    {
+      "severity": "Low",
+      "testId": "TC_PETSTORE_STORE_ORDER_POST_003",
+      "title": "Manage an order end to end: create, view, update and delete it; it is gone afterwards",
+      "category": "Positive-Functional",
+      "endpoint": "POST /store/order",
+      "classification": "Flaky/Environment issue",
+      "reason": "Response time over threshold; re-run to confirm before raising a performance defect.",
+      "expected": "<= 2000 ms",
+      "actual": "2930 ms",
+      "error": "Error: Response took 2930 ms (limit 2000 ms)\n\nexpect(received).toBeLessThanOrEqual(expected)\n\nExpected: <= 2000\nReceived:    2930",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/store/order",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"petId\":1,\"quantity\":42,\"shipDate\":\"2026-01-01T10:00:00.000Z\",\"status\":\"placed\",\"complete\":true}",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:38:50 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"id\":1,\"petId\":1,\"quantity\":42,\"shipDate\":\"2026-01-01T10:00:00.000+0000\",\"status\":\"placed\",\"complete\":true}",
+        "durationMs": 2930,
+        "identity": "none",
+        "pathTemplate": "/store/order"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC10"
+      ]
+    },
+    {
+      "severity": "High",
+      "testId": "TC_PETSTORE_STORE_ORDER_POST_002",
+      "title": "Creating an order with missing or invalid details is rejected",
+      "category": "Negative",
+      "endpoint": "POST /store/order",
+      "classification": "Real API defect",
+      "reason": "8 of 8 checks failed (Real API defect: 8). Most severe: Server error 500 for invalid input - input validation is missing.",
+      "expected": "HTTP 400 (never 5xx)",
+      "actual": "HTTP 500",
+      "error": "Error: 8 of 8 checks failed:\n• [TC_PETSTORE_STORE_ORDER_POST_002.1] POST /store/order with wrong type for \"id\" (string instead of integer) is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/store/order -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_STORE_ORDER_POST_002.2] POST /store/order with wrong type for \"petId\" (string instead of integer) is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/store/order -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_STORE_ORDER_POST_002.3] POST /store/order with wrong type for \"quantity\" (string instead of integer) is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/store/order -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_STORE_ORDER_POST_002.4] POST /store/order with wrong type for \"shipDate\" (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/store/order -> 200 body={\"id\":1,\"petId\":1,\"quantity\":42,\"shipDate\":\"1970-01-01T00:00:12.345+0000\",\"status\":\"placed\",\"complete\":true}\n• [TC_PETSTORE_STORE_ORDER_POST_002.5] POST /store/order with wrong type for \"status\" (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/store/order -> 200 body={\"id\":1,\"petId\":1,\"quantity\":42,\"shipDate\":\"2026-01-01T10:00:00.000+0000\",\"status\":\"12345\",\"complete\":true}\n• [TC_PETSTORE_STORE_ORDER_POST_002.6] POST /store/order with wrong type for \"complete\" (string instead of boolean) is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/store/order -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_STORE_ORDER_POST_002.7] POST /store/order with invalid enum value for \"status\" is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/store/order -> 200 body={\"id\":1,\"petId\":1,\"quantity\":42,\"shipDate\":\"2026-01-01T10:00:00.000+0000\",\"status\":\"NOT_A_VALID_ENUM\",\"complete\":true}\n• [TC_PETSTORE_STORE_ORDER_POST_002.8] POST /store/order with invalid date-time for \"shipDate\" is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/store/order -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 8",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/store/order",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"petId\":1,\"quantity\":42,\"shipDate\":\"yesterday at noon\",\"status\":\"placed\",\"complete\":true}",
+        "status": 500,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:39:04 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}",
+        "durationMs": 407,
+        "identity": "none",
+        "pathTemplate": "/store/order"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC1",
+        "RC5"
+      ]
+    },
+    {
+      "severity": "High",
+      "testId": "TC_PETSTORE_STORE_INVENTORY_GET_002",
+      "title": "Only authorised users can use orders; public orders operations work without logging in; privileged fields cannot be set by the client; responses expose no sensitive data",
+      "category": "Authorization",
+      "endpoint": "GET /store/inventory",
+      "classification": "Real API defect",
+      "reason": "2 of 9 checks failed (Real API defect: 2). Most severe: Security: request without valid credentials was answered with 200.",
+      "expected": "HTTP 401",
+      "actual": "HTTP 200",
+      "error": "Error: 2 of 9 checks failed:\n• [TC_PETSTORE_STORE_INVENTORY_GET_002.2] GET /store/inventory without a token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/store/inventory -> 200 body={\"sold\":51,\"1\":2,\"string\":584,\"pending\":6,\"available\":105,\"invalid\":1,\"NOT_A_VALID_ENUM\":1,\"awaiable\":1,\"peric\":4}\n• [TC_PETSTORE_STORE_INVENTORY_GET_002.3] GET /store/inventory with an invalid random token is rejected with 401: Expected status 401 but got 200. GET https://petstore.swagger.io/v2/store/inventory -> 200 body={\"sold\":51,\"1\":2,\"string\":584,\"pending\":6,\"available\":105,\"invalid\":1,\"NOT_A_VALID_ENUM\":1,\"awaiable\":1,\"peric\":4}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 2",
+      "evidence": {
+        "method": "GET",
+        "url": "https://petstore.swagger.io/v2/store/order/1",
+        "requestHeaders": {
+          "api_key": "***"
+        },
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:39:27 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"id\":1,\"petId\":1,\"quantity\":42,\"shipDate\":\"2026-01-01T10:00:00.000+0000\",\"status\":\"placed\",\"complete\":true}",
+        "durationMs": 360,
+        "identity": "none",
+        "pathTemplate": "/store/order/{orderId}"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC2"
+      ]
+    },
+    {
+      "severity": "Low",
+      "testId": "TC_PETSTORE_USER_POST_001",
+      "title": "Create an user with valid details; the saved values match what was sent",
+      "category": "Positive-Functional",
+      "endpoint": "POST /user",
+      "classification": "Contract/Spec mismatch",
+      "reason": "3 of 3 checks failed (Contract/Spec mismatch: 3). Most severe: Success code 200 differs from the documented one.",
+      "expected": "HTTP 201",
+      "actual": "HTTP 200",
+      "error": "Error: 3 of 3 checks failed:\n• [TC_PETSTORE_USER_POST_001.1] POST /user with a valid request returns 201 and the required fields: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_POST_001.2] POST /user with only required fields (optional fields omitted) succeeds: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"0\"}\n• [TC_PETSTORE_USER_POST_001.3] POST /user persists/echoes every request value exactly (no truncation or type change): Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 3",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/user",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"username\":\"Deangelo69\",\"firstName\":\"Isaiah\",\"lastName\":\"Schoen\",\"email\":\"alter pauci\",\"password\":\"amplus voluptatem\",\"phone\":\"1-555-0100\",\"userStatus\":42}",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:38:35 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}",
+        "durationMs": 358,
+        "identity": "none",
+        "pathTemplate": "/user"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC8"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "testId": "TC_PETSTORE_USER_USERNAME_PUT_001",
+      "title": "Update an existing user (full and partial update)",
+      "category": "Positive-Functional",
+      "endpoint": "PUT /user/{username}",
+      "classification": "Real API defect",
+      "reason": "2 of 3 checks failed (Real API defect: 2). Most severe: Sent value not persisted/returned exactly (truncation, trimming or type change).",
+      "expected": "id = (request value)",
+      "actual": "(different)",
+      "error": "Error: 2 of 3 checks failed:\n• [TC_PETSTORE_USER_USERNAME_PUT_001.1] PUT /user/{username} with a valid request returns 200 and the required fields: Field \"id\" was not persisted/echoed exactly\n• [TC_PETSTORE_USER_USERNAME_PUT_001.3] PUT /user/{username} persists/echoes every request value exactly (no truncation or type change): Field \"id\" was not persisted/echoed exactly\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 2",
+      "evidence": {
+        "method": "PUT",
+        "url": "https://petstore.swagger.io/v2/user/OtisHintz5",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"username\":\"Forest94\",\"firstName\":\"Rafaela\",\"lastName\":\"Watsica\",\"email\":\"asporto tertius\",\"password\":\"amitto vulticulus\",\"phone\":\"1-555-0100\",\"userStatus\":42}",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:38:49 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}",
+        "durationMs": 350,
+        "identity": "none",
+        "pathTemplate": "/user/{username}"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC6"
+      ]
+    },
+    {
+      "severity": "Low",
+      "testId": "TC_PETSTORE_USER_POST_003",
+      "title": "Manage an user end to end: create, view, update and delete it; it is gone afterwards",
+      "category": "Positive-Functional",
+      "endpoint": "POST /user",
+      "classification": "Contract/Spec mismatch",
+      "reason": "Success code 200 differs from the documented one.",
+      "expected": "HTTP 201",
+      "actual": "HTTP 200",
+      "error": "Error: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n\nexpect(received).toContain(expected) // indexOf\n\nExpected value: 200\nReceived array: [201]",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/user",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"username\":\"PinkHeller\",\"firstName\":\"Kylie\",\"lastName\":\"Lind\",\"email\":\"tenus sordeo\",\"password\":\"laboriosam verumtamen\",\"phone\":\"1-555-0100\",\"userStatus\":42}",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:38:59 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}",
+        "durationMs": 1511,
+        "identity": "none",
+        "pathTemplate": "/user"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC8"
+      ]
+    },
+    {
+      "severity": "Low",
+      "testId": "TC_PETSTORE_USER_CREATEWITHLIST_POST_002",
+      "title": "Creates list of users with given input array (POST /user/createWithList)",
+      "category": "Positive-Functional",
+      "endpoint": "POST /user/createWithList",
+      "classification": "Contract/Spec mismatch",
+      "reason": "3 of 3 checks failed (Contract/Spec mismatch: 3). Most severe: Success code 200 differs from the documented one.",
+      "expected": "HTTP 201",
+      "actual": "HTTP 200",
+      "error": "Error: 3 of 3 checks failed:\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_002.1] POST /user/createWithList with a valid request returns 201 and the required fields: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithList -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"ok\"}\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_002.2] POST /user/createWithList with only required fields in each item (optional fields omitted) succeeds: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithList -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"ok\"}\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_002.3] POST /user/createWithList persists/echoes every request value exactly (no truncation or type change): Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithList -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"ok\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 3",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/user/createWithList",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "[{\"id\":1,\"username\":\"Kasey_Streich\",\"firstName\":\"Vergie\",\"lastName\":\"McGlynn\",\"email\":\"vulgivagus doloremque\",\"password\":\"ulterius suppono\",\"phone\":\"1-555-0100\",\"userStatus\":42}]",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:39:07 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"code\":200,\"type\":\"unknown\",\"message\":\"ok\"}",
+        "durationMs": 363,
+        "identity": "none",
+        "pathTemplate": "/user/createWithList"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC8"
+      ]
+    },
+    {
+      "severity": "Low",
+      "testId": "TC_PETSTORE_USER_LOGIN_GET_001",
+      "title": "Logs user into the system",
+      "category": "Positive-Functional",
+      "endpoint": "GET /user/login",
+      "classification": "Contract/Spec mismatch",
+      "reason": "2 of 2 checks failed (Contract/Spec mismatch: 2). Most severe: Response body does not match the documented/inferred schema.",
+      "expected": "body matches UserLoginGetResponse",
+      "actual": "<root>: Expected string, received object",
+      "error": "Error: 2 of 2 checks failed:\n• [TC_PETSTORE_USER_LOGIN_GET_001.1] GET /user/login with a valid request returns 200 and the required fields: Schema validation failed: <root>: Expected string, received object\n• [TC_PETSTORE_USER_LOGIN_GET_001.2] GET /user/login response matches the schema for every field (type, format, presence): Schema validation failed: <root>: Expected string, received object\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 2",
+      "evidence": {
+        "method": "GET",
+        "url": "https://petstore.swagger.io/v2/user/login?username=Perry_Bednar&password=vel+aliquid",
+        "requestHeaders": {
+          "api_key": "***"
+        },
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:39:13 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "x-expires-after": "Wed Nov 11 17:39:13 UTC 2026",
+          "x-rate-limit": "5000",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"code\":200,\"type\":\"unknown\",\"message\":\"logged in user session:1794415153088\"}",
+        "durationMs": 347,
+        "identity": "none",
+        "pathTemplate": "/user/login"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC9"
+      ]
+    },
+    {
+      "severity": "Low",
+      "testId": "TC_PETSTORE_USER_CREATEWITHARRAY_POST_001",
+      "title": "Creates list of users with given input array (POST /user/createWithArray)",
+      "category": "Positive-Functional",
+      "endpoint": "POST /user/createWithArray",
+      "classification": "Contract/Spec mismatch",
+      "reason": "3 of 3 checks failed (Contract/Spec mismatch: 3). Most severe: Success code 200 differs from the documented one.",
+      "expected": "HTTP 201",
+      "actual": "HTTP 200",
+      "error": "Error: 3 of 3 checks failed:\n• [TC_PETSTORE_USER_CREATEWITHARRAY_POST_001.1] POST /user/createWithArray with a valid request returns 201 and the required fields: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithArray -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"ok\"}\n• [TC_PETSTORE_USER_CREATEWITHARRAY_POST_001.2] POST /user/createWithArray with only required fields in each item (optional fields omitted) succeeds: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithArray -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"ok\"}\n• [TC_PETSTORE_USER_CREATEWITHARRAY_POST_001.3] POST /user/createWithArray persists/echoes every request value exactly (no truncation or type change): Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithArray -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"ok\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 3",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/user/createWithArray",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "[{\"id\":1,\"username\":\"Emmanuel24\",\"firstName\":\"Monserrate\",\"lastName\":\"Pollich\",\"email\":\"officia deinde\",\"password\":\"super blanditiis\",\"phone\":\"1-555-0100\",\"userStatus\":42}]",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:39:21 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"code\":200,\"type\":\"unknown\",\"message\":\"ok\"}",
+        "durationMs": 366,
+        "identity": "none",
+        "pathTemplate": "/user/createWithArray"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC8"
+      ]
+    },
+    {
+      "severity": "High",
+      "testId": "TC_PETSTORE_USER_POST_002",
+      "title": "Creating an user with missing or invalid details is rejected",
+      "category": "Negative",
+      "endpoint": "POST /user",
+      "classification": "Real API defect",
+      "reason": "8 of 8 checks failed (Real API defect: 8). Most severe: Server error 500 for invalid input - input validation is missing.",
+      "expected": "HTTP 400 (never 5xx)",
+      "actual": "HTTP 500",
+      "error": "Error: 8 of 8 checks failed:\n• [TC_PETSTORE_USER_POST_002.1] POST /user with wrong type for \"id\" (string instead of integer) is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/user -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_USER_POST_002.2] POST /user with wrong type for \"username\" (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_POST_002.3] POST /user with wrong type for \"firstName\" (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_POST_002.4] POST /user with wrong type for \"lastName\" (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_POST_002.5] POST /user with wrong type for \"email\" (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_POST_002.6] POST /user with wrong type for \"password\" (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_POST_002.7] POST /user with wrong type for \"phone\" (number instead of string) is rejected with 400: Expected status 400 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_POST_002.8] POST /user with wrong type for \"userStatus\" (string instead of integer) is rejected with 400: Server error (5xx) returned. POST https://petstore.swagger.io/v2/user -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 8",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/user",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"username\":\"JarretFrami2\",\"firstName\":\"Lora\",\"lastName\":\"Sporer\",\"email\":\"approbo confugo\",\"password\":\"cursus adduco\",\"phone\":\"1-555-0100\",\"userStatus\":\"not-a-number\"}",
+        "status": 500,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:39:33 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}",
+        "durationMs": 474,
+        "identity": "none",
+        "pathTemplate": "/user"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC1",
+        "RC5"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "testId": "TC_PETSTORE_USER_CREATEWITHLIST_POST_001",
+      "title": "Creating a duplicate user is handled safely (validation rules are not documented)",
+      "category": "Negative",
+      "endpoint": "POST /user/createWithList",
+      "classification": "Real API defect",
+      "reason": "3 of 3 checks failed (Real API defect: 3). Most severe: Documented rule not enforced: invalid input accepted with 200.",
+      "expected": "HTTP 201",
+      "actual": "HTTP 200",
+      "error": "Error: 3 of 3 checks failed:\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_001.1] POST /user/createWithList twice with the same item \"username\" is handled safely - accepted or rejected as a duplicate (uniqueness undocumented), never a 5xx: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithList -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"ok\"}\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_001.2] POST /user/createWithArray twice with the same item \"username\" is handled safely - accepted or rejected as a duplicate (uniqueness undocumented), never a 5xx: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithArray -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"ok\"}\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_001.3] POST /user twice with the same \"username\" is handled safely - accepted or rejected as a duplicate (uniqueness undocumented), never a 5xx: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 3",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/user",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"username\":\"JarretFrami2\",\"firstName\":\"Lora\",\"lastName\":\"Sporer\",\"email\":\"approbo confugo\",\"password\":\"cursus adduco\",\"phone\":\"1-555-0100\",\"userStatus\":42}",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:39:40 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}",
+        "durationMs": 488,
+        "identity": "none",
+        "pathTemplate": "/user"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC5"
+      ]
+    },
+    {
+      "severity": "High",
+      "testId": "TC_PETSTORE_USER_USERNAME_PUT_002",
+      "title": "Updating an user with invalid details, or an user that does not exist, is rejected",
+      "category": "Negative",
+      "endpoint": "PUT /user/{username}",
+      "classification": "Real API defect",
+      "reason": "9 of 9 checks failed (Real API defect: 9). Most severe: Documented rule not enforced: invalid input accepted with 200.",
+      "expected": "HTTP 404",
+      "actual": "HTTP 200",
+      "error": "Error: 9 of 9 checks failed:\n• [TC_PETSTORE_USER_USERNAME_PUT_002.1] PUT /user/{username} with a non-existent username returns 404: Expected status 404 but got 200. PUT https://petstore.swagger.io/v2/user/999999999 -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_USERNAME_PUT_002.2] PUT /user/{username} with wrong type for \"id\" (string instead of integer) is rejected with 400: Server error (5xx) returned. PUT https://petstore.swagger.io/v2/user/Jasmin9 -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n• [TC_PETSTORE_USER_USERNAME_PUT_002.3] PUT /user/{username} with wrong type for \"username\" (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/user/Tiffany_Herman -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_USERNAME_PUT_002.4] PUT /user/{username} with wrong type for \"firstName\" (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/user/Urban41 -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_USERNAME_PUT_002.5] PUT /user/{username} with wrong type for \"lastName\" (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/user/DenaJohnson20 -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_USERNAME_PUT_002.6] PUT /user/{username} with wrong type for \"email\" (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/user/Brian_DAmore -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_USERNAME_PUT_002.7] PUT /user/{username} with wrong type for \"password\" (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/user/Orion10 -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_USERNAME_PUT_002.8] PUT /user/{username} with wrong type for \"phone\" (number instead of string) is rejected with 400: Expected status 400 but got 200. PUT https://petstore.swagger.io/v2/user/Valerie_Bogan23 -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_USERNAME_PUT_002.9] PUT /user/{username} with wrong type for \"userStatus\" (string instead of integer) is rejected with 400: Server error (5xx) returned. PUT https://petstore.swagger.io/v2/user/Silas80 -> 500 body={\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 9",
+      "evidence": {
+        "method": "PUT",
+        "url": "https://petstore.swagger.io/v2/user/Silas80",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"username\":\"GerryKiehn\",\"firstName\":\"Johnson\",\"lastName\":\"Okuneva\",\"email\":\"pecto terra\",\"password\":\"cupressus cultellus\",\"phone\":\"1-555-0100\",\"userStatus\":\"not-a-number\"}",
+        "status": 500,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:40:16 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"code\":500,\"type\":\"unknown\",\"message\":\"something bad happened\"}",
+        "durationMs": 349,
+        "identity": "none",
+        "pathTemplate": "/user/{username}"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC5",
+        "RC1"
+      ]
+    },
+    {
+      "severity": "Medium",
+      "testId": "TC_PETSTORE_USER_LOGIN_GET_002",
+      "title": "Logs user into the system: missing or invalid input is rejected",
+      "category": "Negative",
+      "endpoint": "GET /user/login",
+      "classification": "Real API defect",
+      "reason": "4 of 4 checks failed (Real API defect: 4). Most severe: Documented rule not enforced: invalid input accepted with 200.",
+      "expected": "HTTP 400",
+      "actual": "HTTP 200",
+      "error": "Error: 4 of 4 checks failed:\n• [TC_PETSTORE_USER_LOGIN_GET_002.1] GET /user/login without required query parameter \"username\" is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/user/login?password=despecto+crudelis -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"logged in user session:1794415223442\"}\n• [TC_PETSTORE_USER_LOGIN_GET_002.2] GET /user/login with an empty value for required query parameter \"username\" is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/user/login?username=&password=despecto+crudelis -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"logged in user session:1794415223968\"}\n• [TC_PETSTORE_USER_LOGIN_GET_002.3] GET /user/login without required query parameter \"password\" is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/user/login?username=Raul83 -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"logged in user session:1794415224501\"}\n• [TC_PETSTORE_USER_LOGIN_GET_002.4] GET /user/login with an empty value for required query parameter \"password\" is rejected with 400: Expected status 400 but got 200. GET https://petstore.swagger.io/v2/user/login?username=Raul83&password= -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"logged in user session:1794415225021\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 4",
+      "evidence": {
+        "method": "GET",
+        "url": "https://petstore.swagger.io/v2/user/login?username=Raul83&password=",
+        "requestHeaders": {
+          "api_key": "***"
+        },
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:40:25 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "x-expires-after": "Wed Nov 11 17:40:25 UTC 2026",
+          "x-rate-limit": "5000",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"code\":200,\"type\":\"unknown\",\"message\":\"logged in user session:1794415225021\"}",
+        "durationMs": 356,
+        "identity": "none",
+        "pathTemplate": "/user/login"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC5"
+      ]
+    },
+    {
+      "severity": "High",
+      "owasp": "API3:2023",
+      "testId": "TC_PETSTORE_USER_CREATEWITHLIST_POST_003",
+      "title": "Users can be used without logging in (public API); privileged fields cannot be set by the client; responses expose no sensitive data",
+      "category": "Authorization",
+      "endpoint": "POST /user/createWithList",
+      "classification": "Real API defect",
+      "reason": "8 of 13 checks failed (Real API defect: 3, Contract/Spec mismatch: 5). Most severe: Security (API3:2023 Broken Object Property Level Authorization): response exposes sensitive fields - password",
+      "expected": "HTTP 200",
+      "actual": "• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.9] GET /user/{username} exposes no sensitive fields (password/secret/token/ssn) and no fields outside the documented schema: Sensitive field exposed in response: password",
+      "error": "Error: 8 of 13 checks failed:\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.1] Public POST /user/createWithList works without any token: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithList -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"ok\"}\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.5] Public GET /user/login works without any token: Schema validation failed: <root>: Expected string, received object\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.7] Public POST /user/createWithArray works without any token: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user/createWithArray -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"ok\"}\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.8] Public POST /user works without any token: Expected status 201 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.9] GET /user/{username} exposes no sensitive fields (password/secret/token/ssn) and no fields outside the documented schema: Sensitive field exposed in response: password\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.10] Mass assignment: PUT /user/{username} ignores or rejects privileged fields (role, isAdmin, is_admin, owner, ownerId, createdAt): Expected status 200 but got 404. GET https://petstore.swagger.io/v2/user/Bianka_Cormier96 -> 404 body={\"code\":1,\"type\":\"error\",\"message\":\"User not found\"}\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.11] GET /user/login exposes no sensitive fields (password/secret/token/ssn) and no fields outside the documented schema: Schema validation failed: <root>: Expected string, received object\n• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.13] Mass assignment: POST /user ignores or rejects privileged fields (role, isAdmin, is_admin, owner, ownerId, createdAt): Expected status 201 or 400 or 422 but got 200. POST https://petstore.swagger.io/v2/user -> 200 body={\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}\n\nexpect(received).toBe(expected) // Object.is equality\n\nExpected: 0\nReceived: 8",
+      "evidence": {
+        "method": "POST",
+        "url": "https://petstore.swagger.io/v2/user",
+        "requestHeaders": {
+          "api_key": "***",
+          "Content-Type": "application/json"
+        },
+        "requestBody": "{\"id\":1,\"username\":\"KhalilDeckow\",\"firstName\":\"Joelle\",\"lastName\":\"Herman\",\"email\":\"canis sit\",\"password\":\"claustrum dapifer\",\"phone\":\"1-555-0100\",\"userStatus\":42,\"role\":\"mass-assignment-admin\",\"isAdmin\":true,\"is_admin\":true,\"owner\":\"mass-assignment-attacker\",\"ownerId\":987654321,\"createdAt\":\"2000-01-01T00:00:00.000Z\"}",
+        "status": 200,
+        "responseHeaders": {
+          "date": "Wed, 11 Nov 2026 16:40:56 GMT",
+          "content-type": "application/json",
+          "transfer-encoding": "chunked",
+          "connection": "keep-alive",
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, DELETE, PUT",
+          "access-control-allow-headers": "Content-Type, api_key, Authorization",
+          "server": "Jetty(9.2.9.v20150224)"
+        },
+        "responseBody": "{\"code\":200,\"type\":\"unknown\",\"message\":\"1\"}",
+        "durationMs": 363,
+        "identity": "none",
+        "pathTemplate": "/user"
+      },
+      "flaky": false,
+      "rootCauses": [
+        "RC4",
+        "RC3",
+        "RC8",
+        "RC9"
+      ]
+    }
+  ],
+  "rootCauses": [
+    {
+      "key": "5xx-invalid-input",
+      "id": "RC1",
+      "classification": "Real API defect",
+      "severity": "High",
+      "title": "Invalid input crashes the server (5xx instead of 400/422)",
+      "hint": "Validate request bodies, parameters and ids before processing; map validation errors to 400/422.",
+      "checks": 17,
+      "testIds": [
+        "TC_PETSTORE_PET_POST_002",
+        "TC_PETSTORE_PET_PUT_002",
+        "TC_PETSTORE_STORE_ORDER_POST_002",
+        "TC_PETSTORE_USER_POST_002",
+        "TC_PETSTORE_USER_USERNAME_PUT_002"
+      ],
+      "endpoints": [
+        "POST /pet",
+        "POST /store/order",
+        "POST /user",
+        "PUT /pet",
+        "PUT /user/{username}"
+      ],
+      "example": {
+        "testId": "TC_PETSTORE_PET_POST_002.4",
+        "expected": "HTTP 405 (never 5xx)",
+        "actual": "HTTP 500"
+      }
+    },
+    {
+      "key": "Real API defect:Security: request without valid credentials was answered with N.",
+      "id": "RC2",
+      "classification": "Real API defect",
+      "severity": "High",
+      "title": "Security: request without valid credentials was answered with 200.",
+      "hint": "See the evidence of the listed tests.",
+      "checks": 14,
+      "testIds": [
+        "TC_PETSTORE_PET_POST_004",
+        "TC_PETSTORE_STORE_INVENTORY_GET_002"
+      ],
+      "endpoints": [
+        "DELETE /pet/{petId}",
+        "GET /pet/findByStatus",
+        "GET /pet/findByTags",
+        "GET /pet/{petId}",
+        "GET /store/inventory",
+        "POST /pet",
+        "PUT /pet"
+      ],
+      "example": {
+        "testId": "TC_PETSTORE_PET_POST_004.2",
+        "expected": "HTTP 401",
+        "actual": "HTTP 200"
+      }
+    },
+    {
+      "key": "security:API3:2023:client-supplied privileged fields were stored",
+      "id": "RC3",
+      "classification": "Real API defect",
+      "severity": "High",
+      "title": "Security (API3:2023): client-supplied privileged fields were stored",
+      "hint": "Enforce object/function/property-level authorization on the server for every request.",
+      "checks": 3,
+      "testIds": [
+        "TC_PETSTORE_PET_POST_004",
+        "TC_PETSTORE_USER_CREATEWITHLIST_POST_003"
+      ],
+      "endpoints": [
+        "POST /pet",
+        "POST /user",
+        "PUT /user/{username}"
+      ],
+      "example": {
+        "testId": "TC_PETSTORE_PET_POST_004.19",
+        "expected": "HTTP 201 or 400 or 422",
+        "actual": "HTTP 200"
+      },
+      "owasp": "API3:2023"
+    },
+    {
+      "key": "security:API3:2023:response exposes sensitive fields",
+      "id": "RC4",
+      "classification": "Real API defect",
+      "severity": "High",
+      "title": "Security (API3:2023): response exposes sensitive fields",
+      "hint": "Enforce object/function/property-level authorization on the server for every request.",
+      "checks": 1,
+      "testIds": [
+        "TC_PETSTORE_USER_CREATEWITHLIST_POST_003"
+      ],
+      "endpoints": [
+        "GET /user/{username}"
+      ],
+      "example": {
+        "testId": "TC_PETSTORE_USER_CREATEWITHLIST_POST_003.9",
+        "expected": "HTTP 200",
+        "actual": "• [TC_PETSTORE_USER_CREATEWITHLIST_POST_003.9] GET /user/{username} exposes no sensitive fields (password/secret/token/ssn) and no fields outside the documented schema: Sensitive field exposed in response: password"
+      },
+      "owasp": "API3:2023"
+    },
+    {
+      "key": "accepts-invalid:Real API defect:200",
+      "id": "RC5",
+      "classification": "Real API defect",
+      "severity": "Medium",
+      "title": "Invalid input is accepted with HTTP 200 - validation is missing",
+      "hint": "Reject missing, null, wrongly typed, out-of-range and badly formatted fields with 400/422.",
+      "checks": 40,
+      "testIds": [
+        "TC_PETSTORE_PET_POST_002",
+        "TC_PETSTORE_PET_PUT_002",
+        "TC_PETSTORE_PET_FINDBYSTATUS_GET_002",
+        "TC_PETSTORE_PET_FINDBYTAGS_GET_002",
+        "TC_PETSTORE_STORE_ORDER_POST_002",
+        "TC_PETSTORE_USER_POST_002",
+        "TC_PETSTORE_USER_CREATEWITHLIST_POST_001",
+        "TC_PETSTORE_USER_USERNAME_PUT_002",
+        "TC_PETSTORE_USER_LOGIN_GET_002"
+      ],
+      "endpoints": [
+        "GET /pet/findByStatus",
+        "GET /pet/findByTags",
+        "GET /user/login",
+        "POST /pet",
+        "POST /store/order",
+        "POST /user",
+        "POST /user/createWithArray",
+        "POST /user/createWithList",
+        "PUT /pet",
+        "PUT /user/{username}"
+      ],
+      "example": {
+        "testId": "TC_PETSTORE_PET_POST_002.1",
+        "expected": "HTTP 405",
+        "actual": "HTTP 200"
+      }
+    },
+    {
+      "key": "not-stored-exactly:Real API defect",
+      "id": "RC6",
+      "classification": "Real API defect",
+      "severity": "Medium",
+      "title": "Values are not stored or returned exactly as sent (truncated, trimmed, converted)",
+      "hint": "Store and return values unchanged, or reject input the API cannot store with 400/422.",
+      "checks": 4,
+      "testIds": [
+        "TC_PETSTORE_STORE_ORDER_POST_001",
+        "TC_PETSTORE_USER_USERNAME_PUT_001"
+      ],
+      "endpoints": [
+        "POST /store/order",
+        "PUT /user/{username}"
+      ],
+      "example": {
+        "testId": "TC_PETSTORE_STORE_ORDER_POST_001.1",
+        "expected": "shipDate = (request value)",
+        "actual": "(different)"
+      }
+    },
+    {
+      "key": "expectation:GET /pet/findByTags:Expected at least one item",
+      "id": "RC7",
+      "classification": "Real API defect",
+      "severity": "Medium",
+      "title": "GET /pet/findByTags: expected \"Expected at least one item\" - not met",
+      "hint": "See the evidence of the listed tests: the API answered, but not with the expected content.",
+      "checks": 1,
+      "testIds": [
+        "TC_PETSTORE_PET_FINDBYTAGS_GET_001"
+      ],
+      "endpoints": [
+        "GET /pet/findByTags"
+      ],
+      "example": {
+        "testId": "TC_PETSTORE_PET_FINDBYTAGS_GET_001.1",
+        "expected": "HTTP 200",
+        "actual": "• [TC_PETSTORE_PET_FINDBYTAGS_GET_001.1] GET /pet/findByTags with a valid request returns 200 and the required fields: Expected at least one item"
+      }
+    },
+    {
+      "key": "Contract/Spec mismatch:Success code N differs from the documented one.",
+      "id": "RC8",
+      "classification": "Contract/Spec mismatch",
+      "severity": "Low",
+      "title": "Success code 200 differs from the documented one.",
+      "hint": "See the evidence of the listed tests.",
+      "checks": 18,
+      "testIds": [
+        "TC_PETSTORE_PET_POST_001",
+        "TC_PETSTORE_PET_POST_003",
+        "TC_PETSTORE_PET_POST_004",
+        "TC_PETSTORE_USER_POST_001",
+        "TC_PETSTORE_USER_POST_003",
+        "TC_PETSTORE_USER_CREATEWITHLIST_POST_002",
+        "TC_PETSTORE_USER_CREATEWITHARRAY_POST_001",
+        "TC_PETSTORE_USER_CREATEWITHLIST_POST_003"
+      ],
+      "endpoints": [
+        "POST /pet",
+        "POST /user",
+        "POST /user/createWithArray",
+        "POST /user/createWithList"
+      ],
+      "example": {
+        "testId": "TC_PETSTORE_PET_POST_001.1",
+        "expected": "HTTP 201",
+        "actual": "HTTP 200"
+      }
+    },
+    {
+      "key": "schema:Contract/Spec mismatch",
+      "id": "RC9",
+      "classification": "Contract/Spec mismatch",
+      "severity": "Low",
+      "title": "Response bodies do not match the documented schema",
+      "hint": "Fix the response shape or update the spec; see the failing fields in each test.",
+      "checks": 10,
+      "testIds": [
+        "TC_PETSTORE_PET_FINDBYSTATUS_GET_001",
+        "TC_PETSTORE_PET_POST_004",
+        "TC_PETSTORE_USER_LOGIN_GET_001",
+        "TC_PETSTORE_USER_CREATEWITHLIST_POST_003"
+      ],
+      "endpoints": [
+        "GET /pet/findByStatus",
+        "GET /user/login"
+      ],
+      "example": {
+        "testId": "TC_PETSTORE_PET_FINDBYSTATUS_GET_001.1",
+        "expected": "body matches PetFindbystatusGetResponse",
+        "actual": "105.name: Required"
+      }
+    },
+    {
+      "key": "slow-response",
+      "id": "RC10",
+      "classification": "Flaky/Environment issue",
+      "severity": "Low",
+      "title": "Responses slower than the RESPONSE_TIME_MS limit",
+      "hint": "Re-run to confirm; shared demo hosts are often slow. Raise RESPONSE_TIME_MS if the limit is too strict.",
+      "checks": 1,
+      "testIds": [
+        "TC_PETSTORE_STORE_ORDER_POST_003"
+      ],
+      "endpoints": [
+        "POST /store/order"
+      ],
+      "example": {
+        "testId": "TC_PETSTORE_STORE_ORDER_POST_003",
+        "expected": "<= 2000 ms",
+        "actual": "2930 ms"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1359 @@
+{
+  "TC_REQRES_API_LOGIN_POST_001.2": {
+    "note": "wrong password",
+    "body": {
+      "email": "${env:USERNAME}",
+      "password": "definitely-wrong-password-123"
+    }
+  },
+  "TC_REQRES_API_LOGIN_POST_001.3": {
+    "note": "missing username",
+    "body": {
+      "password": "some-password"
+    }
+  },
+  "TC_REQRES_API_LOGIN_POST_001.4": {
+    "note": "missing password",
+    "body": {
+      "email": "${env:USERNAME}"
+    }
+  },
+  "TC_REQRES_API_LOGIN_POST_001.5": {
+    "note": "empty body",
+    "body": {}
+  },
+  "TC_REQRES_API_REGISTER_POST_001.1": {
+    "note": "duplicate email",
+    "body": {
+      "email": "bethel.cartwright90@example.com",
+      "password": "crastinus varius"
+    }
+  },
+  "TC_REQRES_API_REGISTER_POST_001.2": {
+    "note": "duplicate email",
+    "body": {
+      "email": "michelle.barton86@example.com",
+      "project_id": "amiculum angustus",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_REGISTER_POST_001.3": {
+    "note": "duplicate email",
+    "body": {
+      "email": "philip33@example.com",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_USERS_GET_002": {
+    "note": "wrong query type",
+    "query": {
+      "page": "abc"
+    }
+  },
+  "TC_REQRES_API_USERS_ID_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_REQRES_API_USERS_ID_PUT_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {}
+  },
+  "TC_REQRES_API_USERS_ID_PATCH_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_REQRES_API_USERS_ID_DELETE_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_REQRES_API_UNKNOWN_GET_002": {
+    "note": "wrong query type",
+    "query": {
+      "page": "abc"
+    }
+  },
+  "TC_REQRES_API_UNKNOWN_ID_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_REQRES_API_REGISTER_POST_003.1": {
+    "note": "missing email",
+    "body": {
+      "password": "crastinus varius"
+    }
+  },
+  "TC_REQRES_API_REGISTER_POST_003.2": {
+    "note": "missing password",
+    "body": {
+      "email": "bethel.cartwright90@example.com"
+    }
+  },
+  "TC_REQRES_API_REGISTER_POST_003.3": {
+    "note": "empty email",
+    "body": {
+      "email": "",
+      "password": "crastinus varius"
+    }
+  },
+  "TC_REQRES_API_REGISTER_POST_003.4": {
+    "note": "wrong type email",
+    "body": {
+      "email": 12345,
+      "password": "crastinus varius"
+    }
+  },
+  "TC_REQRES_API_REGISTER_POST_003.5": {
+    "note": "wrong type password",
+    "body": {
+      "email": "bethel.cartwright90@example.com",
+      "password": 12345
+    }
+  },
+  "TC_REQRES_API_REGISTER_POST_003.6": {
+    "note": "invalid format email",
+    "body": {
+      "email": "not-an-email",
+      "password": "crastinus varius"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_POST_002.1": {
+    "note": "missing name",
+    "body": {
+      "slug": "delectus consectetur",
+      "schema": {},
+      "project_id": "adamo vergo",
+      "visibility": "coma demo"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_POST_002.2": {
+    "note": "empty name",
+    "body": {
+      "name": "",
+      "slug": "delectus consectetur",
+      "schema": {},
+      "project_id": "adamo vergo",
+      "visibility": "coma demo"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_POST_002.3": {
+    "note": "wrong type name",
+    "body": {
+      "name": 12345,
+      "slug": "delectus consectetur",
+      "schema": {},
+      "project_id": "adamo vergo",
+      "visibility": "coma demo"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_POST_002.4": {
+    "note": "wrong type slug",
+    "body": {
+      "name": "Allene Shanahan",
+      "slug": 12345,
+      "schema": {},
+      "project_id": "adamo vergo",
+      "visibility": "coma demo"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_POST_002.5": {
+    "note": "wrong type schema",
+    "body": {
+      "name": "Allene Shanahan",
+      "slug": "delectus consectetur",
+      "schema": [
+        "array-instead-of-object"
+      ],
+      "project_id": "adamo vergo",
+      "visibility": "coma demo"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_POST_002.6": {
+    "note": "wrong type project_id",
+    "body": {
+      "name": "Allene Shanahan",
+      "slug": "delectus consectetur",
+      "schema": {},
+      "project_id": 12345,
+      "visibility": "coma demo"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_POST_002.7": {
+    "note": "wrong type visibility",
+    "body": {
+      "name": "Allene Shanahan",
+      "slug": "delectus consectetur",
+      "schema": {},
+      "project_id": "adamo vergo",
+      "visibility": 12345
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_PUT_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    },
+    "body": {
+      "name": "Wilhelmine Mitchell",
+      "slug": "argumentum cubitum",
+      "schema": {},
+      "visibility": "somnus suppellex"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_PUT_002.2": {
+    "note": "wrong type name",
+    "body": {
+      "name": 12345,
+      "slug": "admitto decens",
+      "schema": {},
+      "visibility": "theatrum uter"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_PUT_002.3": {
+    "note": "wrong type slug",
+    "body": {
+      "name": "Ellen Keeling DVM",
+      "slug": 12345,
+      "schema": {},
+      "visibility": "theatrum uter"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_PUT_002.4": {
+    "note": "wrong type schema",
+    "body": {
+      "name": "Ellen Keeling DVM",
+      "slug": "admitto decens",
+      "schema": [
+        "array-instead-of-object"
+      ],
+      "visibility": "theatrum uter"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_PUT_002.5": {
+    "note": "wrong type visibility",
+    "body": {
+      "name": "Ellen Keeling DVM",
+      "slug": "admitto decens",
+      "schema": {},
+      "visibility": 12345
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_DELETE_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_GET_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_GET_002.2": {
+    "note": "invalid enum query order",
+    "query": {
+      "order": "NOT_A_VALID_ENUM"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_GET_002.3": {
+    "note": "wrong query type",
+    "query": {
+      "page": "abc"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_POST_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    },
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_POST_002.2": {
+    "note": "missing data",
+    "body": {}
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_POST_002.3": {
+    "note": "wrong type data",
+    "body": {
+      "data": [
+        "array-instead-of-object"
+      ]
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    },
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_002.2": {
+    "note": "missing data",
+    "body": {}
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_002.3": {
+    "note": "wrong type data",
+    "body": {
+      "data": [
+        "array-instead-of-object"
+      ]
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_PATCH_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_PATCH_002.2": {
+    "note": "wrong type data",
+    "body": {
+      "data": [
+        "array-instead-of-object"
+      ]
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_DELETE_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    }
+  },
+  "TC_REQRES_API_APPUSERS_LOGIN_POST_002.1": {
+    "note": "missing email",
+    "body": {
+      "project_id": "amiculum angustus",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_LOGIN_POST_002.2": {
+    "note": "empty email",
+    "body": {
+      "email": "",
+      "project_id": "amiculum angustus",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_LOGIN_POST_002.3": {
+    "note": "wrong type email",
+    "body": {
+      "email": 12345,
+      "project_id": "amiculum angustus",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_LOGIN_POST_002.4": {
+    "note": "wrong type project_id",
+    "body": {
+      "email": "michelle.barton86@example.com",
+      "project_id": 12345,
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_LOGIN_POST_002.5": {
+    "note": "wrong type metadata",
+    "body": {
+      "email": "michelle.barton86@example.com",
+      "project_id": "amiculum angustus",
+      "metadata": [
+        "array-instead-of-object"
+      ]
+    }
+  },
+  "TC_REQRES_API_APPUSERS_LOGIN_POST_002.6": {
+    "note": "invalid format email",
+    "body": {
+      "email": "not-an-email",
+      "project_id": "amiculum angustus",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_VERIFY_POST_002.1": {
+    "note": "missing token",
+    "body": {}
+  },
+  "TC_REQRES_API_APPUSERS_VERIFY_POST_002.2": {
+    "note": "empty token",
+    "body": {
+      "token": ""
+    }
+  },
+  "TC_REQRES_API_APPUSERS_VERIFY_POST_002.3": {
+    "note": "wrong type token",
+    "body": {
+      "token": 12345
+    }
+  },
+  "TC_REQRES_API_APPUSERS_GET_002": {
+    "note": "wrong query type",
+    "query": {
+      "limit": "abc"
+    }
+  },
+  "TC_REQRES_API_APPUSERS_POST_002.1": {
+    "note": "missing email",
+    "body": {
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_POST_002.2": {
+    "note": "empty email",
+    "body": {
+      "email": "",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_POST_002.3": {
+    "note": "wrong type email",
+    "body": {
+      "email": 12345,
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_POST_002.4": {
+    "note": "wrong type metadata",
+    "body": {
+      "email": "philip33@example.com",
+      "metadata": [
+        "array-instead-of-object"
+      ]
+    }
+  },
+  "TC_REQRES_API_APPUSERS_POST_002.5": {
+    "note": "invalid format email",
+    "body": {
+      "email": "not-an-email",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_PUT_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "email": "marcelle97@example.com",
+      "status": "available",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_PUT_002.2": {
+    "note": "wrong type email",
+    "body": {
+      "email": 12345,
+      "status": "available",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_PUT_002.3": {
+    "note": "wrong type status",
+    "body": {
+      "email": "kristi_bartell71@example.com",
+      "status": 12345,
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_PUT_002.4": {
+    "note": "wrong type metadata",
+    "body": {
+      "email": "kristi_bartell71@example.com",
+      "status": "available",
+      "metadata": [
+        "array-instead-of-object"
+      ]
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_PUT_002.5": {
+    "note": "invalid format email",
+    "body": {
+      "email": "not-an-email",
+      "status": "available",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_DELETE_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_SESSIONS_SIMULATE_POST_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_PROJECTID_APPUSERS_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "projectId": 999999999
+    }
+  },
+  "TC_REQRES_API_PROJECTS_PROJECTID_APPUSERS_TOTAL_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "projectId": 999999999
+    }
+  },
+  "TC_REQRES_API_CUSTOM_PATH_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "path": 999999999
+    }
+  },
+  "TC_REQRES_API_CUSTOM_PATH_POST_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "path": 999999999
+    },
+    "body": {}
+  },
+  "TC_REQRES_API_CUSTOM_PATH_PUT_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "path": 999999999
+    },
+    "body": {}
+  },
+  "TC_REQRES_API_CUSTOM_PATH_PATCH_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "path": 999999999
+    }
+  },
+  "TC_REQRES_API_CUSTOM_PATH_DELETE_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "path": 999999999
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.3": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.4": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.6": {
+    "note": "without a token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.7": {
+    "note": "with an invalid random token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.9": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.10": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.12": {
+    "note": "without a token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.13": {
+    "note": "with an invalid random token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.15": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.16": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.18": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.19": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.21": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.22": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.24": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.25": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.27": {
+    "note": "without a token",
+    "body": {
+      "email": "alicia_fay65@example.com",
+      "password": "provident minima"
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.28": {
+    "note": "with an invalid random token",
+    "body": {
+      "email": "alicia_fay65@example.com",
+      "password": "provident minima"
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.30": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.31": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.33": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.34": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.36": {
+    "note": "without a token",
+    "body": {
+      "name": "Jamaal Leuschke",
+      "slug": "comis virga",
+      "schema": {},
+      "project_id": "eveniet angulus",
+      "visibility": "tergiversatio vinco"
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.37": {
+    "note": "with an invalid random token",
+    "body": {
+      "name": "Jamaal Leuschke",
+      "slug": "comis virga",
+      "schema": {},
+      "project_id": "eveniet angulus",
+      "visibility": "tergiversatio vinco"
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.39": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.40": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.42": {
+    "note": "without a token",
+    "body": {
+      "name": "Giovanny Franey",
+      "slug": "depromo minima",
+      "schema": {},
+      "visibility": "causa alias"
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.43": {
+    "note": "with an invalid random token",
+    "body": {
+      "name": "Giovanny Franey",
+      "slug": "depromo minima",
+      "schema": {},
+      "visibility": "causa alias"
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.45": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.46": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.48": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.49": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.51": {
+    "note": "without a token",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.52": {
+    "note": "with an invalid random token",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.54": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.55": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.57": {
+    "note": "without a token",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.58": {
+    "note": "with an invalid random token",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.60": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.61": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.63": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.64": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.66": {
+    "note": "without a token",
+    "body": {
+      "email": "tommie75@example.com",
+      "project_id": "vox ubi",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.67": {
+    "note": "with an invalid random token",
+    "body": {
+      "email": "tommie75@example.com",
+      "project_id": "vox ubi",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.70": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.71": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.73": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.74": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.76": {
+    "note": "without a token",
+    "body": {
+      "email": "raoul_buckridge@example.com",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.77": {
+    "note": "with an invalid random token",
+    "body": {
+      "email": "raoul_buckridge@example.com",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.79": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.80": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.82": {
+    "note": "without a token",
+    "body": {
+      "email": "elta16@example.com",
+      "status": "available",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.83": {
+    "note": "with an invalid random token",
+    "body": {
+      "email": "elta16@example.com",
+      "status": "available",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.85": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.86": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.88": {
+    "note": "without a token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.89": {
+    "note": "with an invalid random token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.91": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.92": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.94": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.95": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.97": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.98": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.100": {
+    "note": "without a token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.101": {
+    "note": "with an invalid random token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.103": {
+    "note": "without a token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.104": {
+    "note": "with an invalid random token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.106": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.107": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.109": {
+    "note": "without a token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.110": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_GET_001.4": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_POST_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    },
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_POST_002.2": {
+    "note": "missing data",
+    "body": {},
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_POST_002.3": {
+    "note": "wrong type data",
+    "body": {
+      "data": [
+        "array-instead-of-object"
+      ]
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    },
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_002.2": {
+    "note": "missing data",
+    "body": {},
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_002.3": {
+    "note": "wrong type data",
+    "body": {
+      "data": [
+        "array-instead-of-object"
+      ]
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_002.4": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_002.5": {
+    "note": "wrong type data",
+    "body": {
+      "data": [
+        "array-instead-of-object"
+      ]
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_DELETE_001.2": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "slug": 999999999
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.2": {
+    "note": "without a token"
+  },
+  "TC_REQRES_APP_ME_GET_002.3": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_APP_ME_GET_002.5": {
+    "note": "without a token"
+  },
+  "TC_REQRES_APP_ME_GET_002.6": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_APP_ME_GET_002.8": {
+    "note": "without a token"
+  },
+  "TC_REQRES_APP_ME_GET_002.9": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_APP_ME_GET_002.11": {
+    "note": "without a token"
+  },
+  "TC_REQRES_APP_ME_GET_002.12": {
+    "note": "with an invalid random token"
+  },
+  "TC_REQRES_APP_ME_GET_002.14": {
+    "note": "without a token",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.15": {
+    "note": "with an invalid random token",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.17": {
+    "note": "without a token",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.18": {
+    "note": "with an invalid random token",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.20": {
+    "note": "without a token",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.21": {
+    "note": "with an invalid random token",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.23": {
+    "note": "without a token",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.24": {
+    "note": "with an invalid random token",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.26": {
+    "note": "without a token",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.27": {
+    "note": "with an invalid random token",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.32": {
+    "note": "mass assignment",
+    "body": {
+      "data": {},
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "privilegedFields": {
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.34": {
+    "note": "mass assignment",
+    "body": {
+      "data": {},
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "privilegedFields": {
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.35": {
+    "note": "mass assignment",
+    "body": {
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "privilegedFields": {
+      "role": "mass-assignment-admin",
+      "isAdmin": true,
+      "is_admin": true,
+      "owner": "mass-assignment-attacker",
+      "ownerId": 987654321,
+      "createdAt": "2000-01-01T00:00:00.000Z"
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_LOGIN_POST_002.1": {
+    "note": "missing email",
+    "body": {
+      "password": "vitiosus audacia"
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_LOGIN_POST_002.2": {
+    "note": "missing password",
+    "body": {
+      "email": "darren_auer29@example.com"
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_LOGIN_POST_002.3": {
+    "note": "empty email",
+    "body": {
+      "email": "",
+      "password": "vitiosus audacia"
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_LOGIN_POST_002.4": {
+    "note": "wrong type email",
+    "body": {
+      "email": 12345,
+      "password": "vitiosus audacia"
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_LOGIN_POST_002.5": {
+    "note": "wrong type password",
+    "body": {
+      "email": "darren_auer29@example.com",
+      "password": 12345
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_LOGIN_POST_002.6": {
+    "note": "invalid format email",
+    "body": {
+      "email": "not-an-email",
+      "password": "vitiosus audacia"
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_LOGIN_POST_003": {
+    "note": "duplicate email",
+    "body": {
+      "email": "darren_auer29@example.com",
+      "password": "vitiosus audacia"
+    }
+  },
+  "TC_REQRES_AGENT_V1_USERS_GET_002": {
+    "note": "wrong query type",
+    "query": {
+      "limit": "abc"
+    }
+  },
+  "TC_REQRES_AGENT_V1_USERS_ID_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_MFA_VERIFY_POST_002.1": {
+    "note": "missing challenge_token",
+    "body": {
+      "code": "termes condico"
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_MFA_VERIFY_POST_002.2": {
+    "note": "missing code",
+    "body": {
+      "challenge_token": "sint canonicus"
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_MFA_VERIFY_POST_002.3": {
+    "note": "empty challenge_token",
+    "body": {
+      "challenge_token": "",
+      "code": "termes condico"
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_MFA_VERIFY_POST_002.4": {
+    "note": "wrong type challenge_token",
+    "body": {
+      "challenge_token": 12345,
+      "code": "termes condico"
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_MFA_VERIFY_POST_002.5": {
+    "note": "wrong type code",
+    "body": {
+      "challenge_token": "sint canonicus",
+      "code": 12345
+    }
+  },
+  "TC_REQRES_AGENT_V1_ORDERS_GET_002.1": {
+    "note": "invalid enum query status",
+    "query": {
+      "status": "NOT_A_VALID_ENUM"
+    }
+  },
+  "TC_REQRES_AGENT_V1_ORDERS_GET_002.2": {
+    "note": "wrong query type",
+    "query": {
+      "limit": "abc"
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_POST_002.1": {
+    "note": "missing name",
+    "body": {
+      "steps": [
+        "caries summa"
+      ],
+      "loop": true,
+      "scope": "per-run"
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_POST_002.2": {
+    "note": "missing steps",
+    "body": {
+      "name": "Thora DuBuque",
+      "loop": true,
+      "scope": "per-run"
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_POST_002.3": {
+    "note": "empty name",
+    "body": {
+      "name": "",
+      "steps": [
+        "caries summa"
+      ],
+      "loop": true,
+      "scope": "per-run"
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_POST_002.4": {
+    "note": "wrong type name",
+    "body": {
+      "name": 12345,
+      "steps": [
+        "caries summa"
+      ],
+      "loop": true,
+      "scope": "per-run"
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_POST_002.5": {
+    "note": "wrong type steps",
+    "body": {
+      "name": "Thora DuBuque",
+      "steps": {
+        "unexpected": "object-instead-of-array"
+      },
+      "loop": true,
+      "scope": "per-run"
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_POST_002.6": {
+    "note": "wrong type loop",
+    "body": {
+      "name": "Thora DuBuque",
+      "steps": [
+        "caries summa"
+      ],
+      "loop": "not-a-boolean",
+      "scope": "per-run"
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_POST_002.7": {
+    "note": "wrong type scope",
+    "body": {
+      "name": "Thora DuBuque",
+      "steps": [
+        "caries summa"
+      ],
+      "loop": true,
+      "scope": 12345
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_POST_002.8": {
+    "note": "invalid enum scope",
+    "body": {
+      "name": "Thora DuBuque",
+      "steps": [
+        "caries summa"
+      ],
+      "loop": true,
+      "scope": "NOT_A_VALID_ENUM"
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_NAME_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "name": 999999999
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_NAME_DELETE_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "name": 999999999
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_NAME_STATE_DELETE_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "name": 999999999
+    }
+  },
+  "TC_REQRES_AGENT_V1_TRAJECTORIES_GET_002": {
+    "note": "wrong query type",
+    "query": {
+      "limit": "abc"
+    }
+  },
+  "TC_REQRES_AGENT_V1_TRAJECTORIES_RUN_ID_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "run_id": 999999999
+    }
+  },
+  "TC_REQRES_AGENT_V1_TRAJECTORIES_RUN_ID_EXPORT_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "run_id": 999999999
+    }
+  },
+  "TC_REQRES_AGENT_V1_TRAJECTORIES_A_DIFF_B_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "a": 999999999
+    }
+  },
+  "TC_REQRES_AGENT_V1_SCENARIOS_SCENARIO_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "scenario": 999999999
+    }
+  }
+}

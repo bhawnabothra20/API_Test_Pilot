@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jsonplaceholder" tests="59" failures="0" errors="0" skipped="0" time="109.608">
+  <testsuite name="jsonplaceholder / Positive-Functional" tests="37" failures="0" errors="0" skipped="0" time="127.556" timestamp="2026-11-11T16:51:36.256Z">
+    <testcase name="[TC_JSONPLACEHOLDER_ALBUMS_GET_001] Browse the list of albums" classname="jsonplaceholder.Positive-Functional" time="1.491"/>
+    <testcase name="[TC_JSONPLACEHOLDER_ALBUMS_ID_GET_001] View an album by its id; an unknown album is not found" classname="jsonplaceholder.Positive-Functional" time="2.696"/>
+    <testcase name="[TC_JSONPLACEHOLDER_ALBUMS_POST_001] Create an album with valid details; the saved values match what was sent" classname="jsonplaceholder.Positive-Functional" time="2.138"/>
+    <testcase name="[TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_001] Update an existing album (full and partial update)" classname="jsonplaceholder.Positive-Functional" time="3.657"/>
+    <testcase name="[TC_JSONPLACEHOLDER_ALBUMS_ID_DELETE_001] Delete an album; deleting an album that does not exist is rejected" classname="jsonplaceholder.Positive-Functional" time="1.474"/>
+    <testcase name="[TC_JSONPLACEHOLDER_ALBUMS_POST_003] Manage an album end to end; as documented, changes are answered but not saved" classname="jsonplaceholder.Positive-Functional" time="3.057"/>
+    <testcase name="[TC_JSONPLACEHOLDER_COMMENTS_GET_001] Browse comments and filter them by their attributes" classname="jsonplaceholder.Positive-Functional" time="17.801">
+      <system-out>Flaky: failed first, passed on retry.</system-out>
+    </testcase>
+    <testcase name="[TC_JSONPLACEHOLDER_COMMENTS_ID_GET_001] View a comment by its id; an unknown comment is not found" classname="jsonplaceholder.Positive-Functional" time="2.605"/>
+    <testcase name="[TC_JSONPLACEHOLDER_COMMENTS_POST_001] Create a comment with valid details; the saved values match what was sent" classname="jsonplaceholder.Positive-Functional" time="2.429"/>
+    <testcase name="[TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_001] Update an existing comment (full and partial update)" classname="jsonplaceholder.Positive-Functional" time="4.457"/>
+    <testcase name="[TC_JSONPLACEHOLDER_COMMENTS_ID_DELETE_001] Delete a comment; deleting a comment that does not exist is rejected" classname="jsonplaceholder.Positive-Functional" time="1.641"/>
+    <testcase name="[TC_JSONPLACEHOLDER_COMMENTS_POST_004] Manage a comment end to end; as documented, changes are answered but not saved" classname="jsonplaceholder.Positive-Functional" time="3.414"/>
+    <testcase name="[TC_JSONPLACEHOLDER_PHOTOS_GET_001] Browse the list of photos" classname="jsonplaceholder.Positive-Functional" time="2.477"/>
+    <testcase name="[TC_JSONPLACEHOLDER_PHOTOS_ID_GET_001] View a photo by its id; an unknown photo is not found" classname="jsonplaceholder.Positive-Functional" time="2.628"/>
+    <testcase name="[TC_JSONPLACEHOLDER_PHOTOS_POST_001] Create a photo with valid details; the saved values match what was sent" classname="jsonplaceholder.Positive-Functional" time="2.223"/>
+    <testcase name="[TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_001] Update an existing photo (full and partial update)" classname="jsonplaceholder.Positive-Functional" time="4.489"/>
+    <testcase name="[TC_JSONPLACEHOLDER_PHOTOS_ID_DELETE_001] Delete a photo; deleting a photo that does not exist is rejected" classname="jsonplaceholder.Positive-Functional" time="1.468"/>
+    <testcase name="[TC_JSONPLACEHOLDER_PHOTOS_POST_003] Manage a photo end to end; as documented, changes are answered but not saved" classname="jsonplaceholder.Positive-Functional" time="3.292"/>
+    <testcase name="[TC_JSONPLACEHOLDER_POSTS_GET_001] Browse the list of posts" classname="jsonplaceholder.Positive-Functional" time="1.383"/>
+    <testcase name="[TC_JSONPLACEHOLDER_POSTS_ID_GET_001] View a post by its id; an unknown post is not found" classname="jsonplaceholder.Positive-Functional" time="2.034"/>
+    <testcase name="[TC_JSONPLACEHOLDER_POSTS_POST_001] Create a post with valid details; the saved values match what was sent" classname="jsonplaceholder.Positive-Functional" time="3.312"/>
+    <testcase name="[TC_JSONPLACEHOLDER_POSTS_ID_PUT_001] Update an existing post (full and partial update)" classname="jsonplaceholder.Positive-Functional" time="3.595"/>
+    <testcase name="[TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001] Delete a post; deleting a post that does not exist is rejected" classname="jsonplaceholder.Positive-Functional" time="4.842">
+      <system-out>Flaky: failed first, passed on retry.</system-out>
+    </testcase>
+    <testcase name="[TC_JSONPLACEHOLDER_POSTS_POST_003] Manage a post end to end; as documented, changes are answered but not saved" classname="jsonplaceholder.Positive-Functional" time="3.605"/>
+    <testcase name="[TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001] List comments of one posts" classname="jsonplaceholder.Positive-Functional" time="7.517">
+      <system-out>Flaky: failed first, passed on retry.</system-out>
+    </testcase>
+    <testcase name="[TC_JSONPLACEHOLDER_TODOS_GET_001] Browse the list of todos" classname="jsonplaceholder.Positive-Functional" time="1.304"/>
+    <testcase name="[TC_JSONPLACEHOLDER_TODOS_ID_GET_001] View a todo by its id; an unknown todo is not found" classname="jsonplaceholder.Positive-Functional" time="1.937"/>
+    <testcase name="[TC_JSONPLACEHOLDER_TODOS_POST_001] Create a todo with valid details; the saved values match what was sent" classname="jsonplaceholder.Positive-Functional" time="1.760"/>
+    <testcase name="[TC_JSONPLACEHOLDER_TODOS_ID_PUT_001] Update an existing todo (full and partial update)" classname="jsonplaceholder.Positive-Functional" time="3.424"/>
+    <testcase name="[TC_JSONPLACEHOLDER_TODOS_ID_DELETE_001] Delete a todo; deleting a todo that does not exist is rejected" classname="jsonplaceholder.Positive-Functional" time="1.817"/>
+    <testcase name="[TC_JSONPLACEHOLDER_TODOS_POST_003] Manage a todo end to end; as documented, changes are answered but not saved" classname="jsonplaceholder.Positive-Functional" time="3.124"/>
+    <testcase name="[TC_JSONPLACEHOLDER_USERS_GET_001] Browse the list of users" classname="jsonplaceholder.Positive-Functional" time="1.849"/>
+    <testcase name="[TC_JSONPLACEHOLDER_USERS_ID_GET_001] View an user by its id; an unknown user is not found" classname="jsonplaceholder.Positive-Functional" time="3.271"/>
+    <testcase name="[TC_JSONPLACEHOLDER_USERS_POST_001] Create an user with valid details; the saved values match what was sent" classname="jsonplaceholder.Positive-Functional" time="4.702"/>
+    <testcase name="[TC_JSONPLACEHOLDER_USERS_ID_PUT_001] Update an existing user (full and partial update)" classname="jsonplaceholder.Positive-Functional" time="5.087"/>
+    <testcase name="[TC_JSONPLACEHOLDER_USERS_ID_DELETE_001] Delete an user; deleting an user that does not exist is rejected" classname="jsonplaceholder.Positive-Functional" time="1.307"/>
+    <testcase name="[TC_JSONPLACEHOLDER_USERS_POST_004] Manage an user end to end; as documented, changes are answered but not saved" classname="jsonplaceholder.Positive-Functional" time="8.249"/>
+  </testsuite>
+  <testsuite name="jsonplaceholder / Negative" tests="16" failures="0" errors="0" skipped="0" time="135.707" timestamp="2026-11-11T16:51:36.256Z">
+    <testcase name="[TC_JSONPLACEHOLDER_ALBUMS_POST_002] Creating an album with missing or invalid details is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="2.797"/>
+    <testcase name="[TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_002] Updating an album with invalid details, or an album that does not exist, is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="7.451"/>
+    <testcase name="[TC_JSONPLACEHOLDER_COMMENTS_GET_002] Searching comments with missing or invalid criteria is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="0.882"/>
+    <testcase name="[TC_JSONPLACEHOLDER_COMMENTS_POST_002] Creating a comment with missing or invalid details is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="18.919">
+      <system-out>Flaky: failed first, passed on retry.</system-out>
+    </testcase>
+    <testcase name="[TC_JSONPLACEHOLDER_COMMENTS_POST_003] Creating a duplicate comment is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="2.800"/>
+    <testcase name="[TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002] Updating a comment with invalid details, or a comment that does not exist, is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="24.216">
+      <system-out>Flaky: failed first, passed on retry.</system-out>
+    </testcase>
+    <testcase name="[TC_JSONPLACEHOLDER_PHOTOS_POST_002] Creating a photo with missing or invalid details is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="16.250">
+      <system-out>Flaky: failed first, passed on retry.</system-out>
+    </testcase>
+    <testcase name="[TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002] Updating a photo with invalid details, or a photo that does not exist, is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="10.796"/>
+    <testcase name="[TC_JSONPLACEHOLDER_POSTS_POST_002] Creating a post with missing or invalid details is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="4.186"/>
+    <testcase name="[TC_JSONPLACEHOLDER_POSTS_ID_PUT_002] Updating a post with invalid details, or a post that does not exist, is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="7.370"/>
+    <testcase name="[TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_002] List comments of one posts: missing or invalid input is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="0.928"/>
+    <testcase name="[TC_JSONPLACEHOLDER_TODOS_POST_002] Creating a todo with missing or invalid details is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="4.085"/>
+    <testcase name="[TC_JSONPLACEHOLDER_TODOS_ID_PUT_002] Updating a todo with invalid details, or a todo that does not exist, is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="6.993"/>
+    <testcase name="[TC_JSONPLACEHOLDER_USERS_POST_002] Creating an user with missing or invalid details is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="11.042"/>
+    <testcase name="[TC_JSONPLACEHOLDER_USERS_POST_003] Creating a duplicate user is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="1.778"/>
+    <testcase name="[TC_JSONPLACEHOLDER_USERS_ID_PUT_002] Updating an user with invalid details, or an user that does not exist, is handled safely (validation rules are not documented)" classname="jsonplaceholder.Negative" time="15.214"/>
+  </testsuite>
+  <testsuite name="jsonplaceholder / Authorization" tests="6" failures="0" errors="0" skipped="0" time="35.119" timestamp="2026-11-11T16:51:36.256Z">
+    <testcase name="[TC_JSONPLACEHOLDER_ALBUMS_GET_002] Albums can be used without logging in (public API); responses expose no sensitive data" classname="jsonplaceholder.Authorization" time="4.017"/>
+    <testcase name="[TC_JSONPLACEHOLDER_COMMENTS_GET_003] Comments can be used without logging in (public API); responses expose no sensitive data" classname="jsonplaceholder.Authorization" time="3.873"/>
+    <testcase name="[TC_JSONPLACEHOLDER_PHOTOS_GET_002] Photos can be used without logging in (public API); responses expose no sensitive data" classname="jsonplaceholder.Authorization" time="14.843">
+      <system-out>Flaky: failed first, passed on retry.</system-out>
+    </testcase>
+    <testcase name="[TC_JSONPLACEHOLDER_POSTS_GET_002] Posts can be used without logging in (public API); responses expose no sensitive data" classname="jsonplaceholder.Authorization" time="4.486"/>
+    <testcase name="[TC_JSONPLACEHOLDER_TODOS_GET_002] Todos can be used without logging in (public API); responses expose no sensitive data" classname="jsonplaceholder.Authorization" time="3.816"/>
+    <testcase name="[TC_JSONPLACEHOLDER_USERS_GET_002] Users can be used without logging in (public API); responses expose no sensitive data" classname="jsonplaceholder.Authorization" time="4.084"/>
+  </testsuite>
+</testsuites>

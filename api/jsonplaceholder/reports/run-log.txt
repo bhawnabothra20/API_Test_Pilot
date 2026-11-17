@@ -1,0 +1,1575 @@
+[2026-11-10T14:05:50.654Z] /api-test https://jsonplaceholder.typicode.com/ --name jsonplaceholder (stages: setup, safety, discover, design, excel, scripts, typecheck, preflight, run, calibrate, report, final)
+[2026-11-10T14:05:50.659Z] --- [0] setup
+[2026-11-10T14:05:50.662Z] api name: jsonplaceholder -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder
+[2026-11-10T14:05:50.664Z]     setup done in 0.0 s
+[2026-11-10T14:05:50.666Z] --- [1] safety
+[2026-11-10T14:05:50.668Z] host allowed: jsonplaceholder.typicode.com
+[2026-11-10T14:05:50.669Z]     safety done in 0.0 s
+[2026-11-10T14:05:50.678Z] --- [2] discover
+[2026-11-10T14:06:05.942Z] discovered 37 endpoints, 6 resources (source: html-links, auth: none); 10 assumptions
+[2026-11-10T14:06:05.944Z] base URL: https://jsonplaceholder.typicode.com (jsonplaceholder.typicode.com)
+[2026-11-10T14:06:05.944Z]     discover done in 15.3 s
+[2026-11-10T14:06:05.946Z] --- [3] design
+[2026-11-10T14:06:06.033Z] contract: 516 checks use calibrated/overridden expectations (8 notes)
+[2026-11-10T14:06:06.071Z] designed 334 high-level test cases covering 906 checks {"Positive-Functional":69,"Positive-DataValidation":37,"Negative":113,"Boundary":65,"Auth":37,"Authorization":13}; test data written to C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-data
+[2026-11-10T14:06:06.072Z]     design done in 0.1 s
+[2026-11-10T14:06:06.074Z] --- [4] excel
+[2026-11-10T14:06:06.585Z] excel valid: 334 cases / 1295 step rows -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-10T14:06:06.587Z]     excel done in 0.5 s
+[2026-11-10T14:06:06.589Z] --- [5] scripts
+[2026-11-10T14:06:06.680Z] generated 6 spec files (334 tests); traceability OK
+[2026-11-10T14:06:06.682Z]     scripts done in 0.1 s
+[2026-11-10T14:06:06.685Z] --- [6] typecheck
+[2026-11-10T14:06:09.112Z] tsc --noEmit: OK
+[2026-11-10T14:06:09.114Z]     typecheck done in 2.4 s
+[2026-11-10T14:06:09.116Z] --- [7] preflight
+[2026-11-10T14:06:09.878Z] quota: ok - GET /posts -> 200, 3599999/3600000 requests left.
+[2026-11-10T14:06:09.880Z] expected coverage: 906 of 906 checks can execute (100%)
+[2026-11-10T14:06:09.881Z]     preflight done in 0.8 s
+[2026-11-10T14:06:09.883Z] --- [8] run
+[2026-11-10T14:06:09.892Z] running: API_NAME=jsonplaceholder npx playwright test
+[global-setup] jsonplaceholder: auth=none admin=not configured user=not configured user2=not configured insufficientScope=not configured
+
+Running 334 tests using 4 workers
+················································································
+·×·F·×··×F×·F·×T×±±················×··F×···F×·×··F×F··×F····F······××····FF·····
+················································································
+····································×·F···········××FF·····×···F·······×·F······
+····×···F·························
+
+  1) api\jsonplaceholder\tests\albums.spec.ts:443:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_POST_005] POST /albums safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_ALBUMS_POST_005.1] POST /albums with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/albums -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_ALBUMS_POST_005.2] POST /albums with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/albums -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\albums.spec.ts:481:23
+
+    Error Context: test-results\jsonplaceholder\albums-jsonplaceholder-alb-ee4ea-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_ALBUMS_POST_005.1] POST /albums with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/albums -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_ALBUMS_POST_005.2] POST /albums with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/albums -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\albums.spec.ts:481:23
+
+    Error Context: test-results\jsonplaceholder\albums-jsonplaceholder-alb-ee4ea-rongly-typed-request-bodies-retry1\error-context.md
+
+  2) api\jsonplaceholder\tests\albums.spec.ts:655:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_006] PUT /albums/{id} safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_006.1] PUT /albums/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/albums/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_006.2] PUT /albums/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/albums/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\albums.spec.ts:697:23
+
+    Error Context: test-results\jsonplaceholder\albums-jsonplaceholder-alb-97579-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_006.1] PUT /albums/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/albums/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_006.2] PUT /albums/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/albums/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\albums.spec.ts:697:23
+
+    Error Context: test-results\jsonplaceholder\albums-jsonplaceholder-alb-97579-rongly-typed-request-bodies-retry1\error-context.md
+
+  3) api\jsonplaceholder\tests\albums.spec.ts:780:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_ID_PATCH_004] PATCH /albums/{id} safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_ALBUMS_ID_PATCH_004.1] PATCH /albums/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/albums/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_ALBUMS_ID_PATCH_004.2] PATCH /albums/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/albums/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\albums.spec.ts:822:23
+
+    Error Context: test-results\jsonplaceholder\albums-jsonplaceholder-alb-3637d-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_ALBUMS_ID_PATCH_004.1] PATCH /albums/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/albums/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_ALBUMS_ID_PATCH_004.2] PATCH /albums/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/albums/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\albums.spec.ts:822:23
+
+    Error Context: test-results\jsonplaceholder\albums-jsonplaceholder-alb-3637d-rongly-typed-request-bodies-retry1\error-context.md
+
+  4) api\jsonplaceholder\tests\comments.spec.ts:547:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_POST_005] POST /comments safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_COMMENTS_POST_005.1] POST /comments with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/comments -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_COMMENTS_POST_005.2] POST /comments with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/comments -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\comments.spec.ts:585:23
+
+    Error Context: test-results\jsonplaceholder\comments-jsonplaceholder-c-29226-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_COMMENTS_POST_005.1] POST /comments with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/comments -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_COMMENTS_POST_005.2] POST /comments with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/comments -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\comments.spec.ts:585:23
+
+    Error Context: test-results\jsonplaceholder\comments-jsonplaceholder-c-29226-rongly-typed-request-bodies-retry1\error-context.md
+
+  5) api\jsonplaceholder\tests\comments.spec.ts:838:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_006] PUT /comments/{id} safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_006.1] PUT /comments/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/comments/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_006.2] PUT /comments/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/comments/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\comments.spec.ts:880:23
+
+    Error Context: test-results\jsonplaceholder\comments-jsonplaceholder-c-e2b7d-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_006.1] PUT /comments/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/comments/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_006.2] PUT /comments/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/comments/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\comments.spec.ts:880:23
+
+    Error Context: test-results\jsonplaceholder\comments-jsonplaceholder-c-e2b7d-rongly-typed-request-bodies-retry1\error-context.md
+
+  6) api\jsonplaceholder\tests\comments.spec.ts:993:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_ID_PATCH_004] PATCH /comments/{id} safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_COMMENTS_ID_PATCH_004.1] PATCH /comments/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/comments/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_COMMENTS_ID_PATCH_004.2] PATCH /comments/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/comments/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\comments.spec.ts:1035:23
+
+    Error Context: test-results\jsonplaceholder\comments-jsonplaceholder-c-398b0-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_COMMENTS_ID_PATCH_004.1] PATCH /comments/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/comments/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_COMMENTS_ID_PATCH_004.2] PATCH /comments/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/comments/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\comments.spec.ts:1035:23
+
+    Error Context: test-results\jsonplaceholder\comments-jsonplaceholder-c-398b0-rongly-typed-request-bodies-retry1\error-context.md
+
+  7) api\jsonplaceholder\tests\photos.spec.ts:522:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_POST_005] POST /photos safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_PHOTOS_POST_005.1] POST /photos with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/photos -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_PHOTOS_POST_005.2] POST /photos with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/photos -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\photos.spec.ts:560:23
+
+    Error Context: test-results\jsonplaceholder\photos-jsonplaceholder-pho-bf503-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Test timeout of 45000ms exceeded.
+
+    Error Context: test-results\jsonplaceholder\photos-jsonplaceholder-pho-bf503-rongly-typed-request-bodies-retry1\error-context.md
+
+  8) api\jsonplaceholder\tests\photos.spec.ts:810:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_006] PUT /photos/{id} safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_006.1] PUT /photos/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/photos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_006.2] PUT /photos/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/photos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\photos.spec.ts:852:23
+
+    Error Context: test-results\jsonplaceholder\photos-jsonplaceholder-pho-772d9-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_006.1] PUT /photos/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/photos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_006.2] PUT /photos/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/photos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\photos.spec.ts:852:23
+
+    Error Context: test-results\jsonplaceholder\photos-jsonplaceholder-pho-772d9-rongly-typed-request-bodies-retry1\error-context.md
+
+  9) api\jsonplaceholder\tests\photos.spec.ts:975:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_ID_PATCH_004] PATCH /photos/{id} safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_PHOTOS_ID_PATCH_004.1] PATCH /photos/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/photos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_PHOTOS_ID_PATCH_004.2] PATCH /photos/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/photos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\photos.spec.ts:1017:23
+
+    Error Context: test-results\jsonplaceholder\photos-jsonplaceholder-pho-18d21-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_PHOTOS_ID_PATCH_004.1] PATCH /photos/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/photos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_PHOTOS_ID_PATCH_004.2] PATCH /photos/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/photos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\photos.spec.ts:1017:23
+
+    Error Context: test-results\jsonplaceholder\photos-jsonplaceholder-pho-18d21-rongly-typed-request-bodies-retry1\error-context.md
+
+  10) api\jsonplaceholder\tests\posts.spec.ts:526:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_POST_005] POST /posts safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_POSTS_POST_005.1] POST /posts with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/posts -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_POSTS_POST_005.2] POST /posts with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/posts -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\posts.spec.ts:564:23
+
+    Error Context: test-results\jsonplaceholder\posts-jsonplaceholder-post-39d71-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_POSTS_POST_005.1] POST /posts with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/posts -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_POSTS_POST_005.2] POST /posts with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/posts -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\posts.spec.ts:564:23
+
+    Error Context: test-results\jsonplaceholder\posts-jsonplaceholder-post-39d71-rongly-typed-request-bodies-retry1\error-context.md
+
+  11) api\jsonplaceholder\tests\posts.spec.ts:767:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_ID_PUT_006] PUT /posts/{id} safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_POSTS_ID_PUT_006.1] PUT /posts/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/posts/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_POSTS_ID_PUT_006.2] PUT /posts/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/posts/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\posts.spec.ts:809:23
+
+    Error Context: test-results\jsonplaceholder\posts-jsonplaceholder-post-afefa-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_POSTS_ID_PUT_006.1] PUT /posts/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/posts/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_POSTS_ID_PUT_006.2] PUT /posts/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/posts/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\posts.spec.ts:809:23
+
+    Error Context: test-results\jsonplaceholder\posts-jsonplaceholder-post-afefa-rongly-typed-request-bodies-retry1\error-context.md
+
+  12) api\jsonplaceholder\tests\posts.spec.ts:902:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_ID_PATCH_004] PATCH /posts/{id} safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_POSTS_ID_PATCH_004.1] PATCH /posts/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/posts/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_POSTS_ID_PATCH_004.2] PATCH /posts/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/posts/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\posts.spec.ts:944:23
+
+    Error Context: test-results\jsonplaceholder\posts-jsonplaceholder-post-f4e04-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_POSTS_ID_PATCH_004.1] PATCH /posts/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/posts/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_POSTS_ID_PATCH_004.2] PATCH /posts/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/posts/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\posts.spec.ts:944:23
+
+    Error Context: test-results\jsonplaceholder\posts-jsonplaceholder-post-f4e04-rongly-typed-request-bodies-retry1\error-context.md
+
+  13) api\jsonplaceholder\tests\todos.spec.ts:461:9 › jsonplaceholder / todos › Negative › [TC_JSONPLACEHOLDER_TODOS_POST_005] POST /todos safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_TODOS_POST_005.1] POST /todos with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/todos -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_TODOS_POST_005.2] POST /todos with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/todos -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\todos.spec.ts:499:23
+
+    Error Context: test-results\jsonplaceholder\todos-jsonplaceholder-todo-19a47-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_TODOS_POST_005.1] POST /todos with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/todos -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_TODOS_POST_005.2] POST /todos with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/todos -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\todos.spec.ts:499:23
+
+    Error Context: test-results\jsonplaceholder\todos-jsonplaceholder-todo-19a47-rongly-typed-request-bodies-retry1\error-context.md
+
+  14) api\jsonplaceholder\tests\todos.spec.ts:702:9 › jsonplaceholder / todos › Negative › [TC_JSONPLACEHOLDER_TODOS_ID_PUT_006] PUT /todos/{id} safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_TODOS_ID_PUT_006.1] PUT /todos/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/todos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_TODOS_ID_PUT_006.2] PUT /todos/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/todos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\todos.spec.ts:744:23
+
+    Error Context: test-results\jsonplaceholder\todos-jsonplaceholder-todo-5da64-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_TODOS_ID_PUT_006.1] PUT /todos/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/todos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_TODOS_ID_PUT_006.2] PUT /todos/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/todos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\todos.spec.ts:744:23
+
+    Error Context: test-results\jsonplaceholder\todos-jsonplaceholder-todo-5da64-rongly-typed-request-bodies-retry1\error-context.md
+
+  15) api\jsonplaceholder\tests\todos.spec.ts:837:9 › jsonplaceholder / todos › Negative › [TC_JSONPLACEHOLDER_TODOS_ID_PATCH_004] PATCH /todos/{id} safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_TODOS_ID_PATCH_004.1] PATCH /todos/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/todos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_TODOS_ID_PATCH_004.2] PATCH /todos/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/todos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\todos.spec.ts:879:23
+
+    Error Context: test-results\jsonplaceholder\todos-jsonplaceholder-todo-5d87a-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_TODOS_ID_PATCH_004.1] PATCH /todos/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/todos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_TODOS_ID_PATCH_004.2] PATCH /todos/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/todos/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\todos.spec.ts:879:23
+
+    Error Context: test-results\jsonplaceholder\todos-jsonplaceholder-todo-5d87a-rongly-typed-request-bodies-retry1\error-context.md
+
+  16) api\jsonplaceholder\tests\users.spec.ts:585:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_POST_005] POST /users safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_USERS_POST_005.1] POST /users with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/users -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_USERS_POST_005.2] POST /users with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/users -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\users.spec.ts:623:23
+
+    Error Context: test-results\jsonplaceholder\users-jsonplaceholder-user-dd322-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_USERS_POST_005.1] POST /users with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/users -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_USERS_POST_005.2] POST /users with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. POST https://jsonplaceholder.typicode.com/users -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\users.spec.ts:623:23
+
+    Error Context: test-results\jsonplaceholder\users-jsonplaceholder-user-dd322-rongly-typed-request-bodies-retry1\error-context.md
+
+  17) api\jsonplaceholder\tests\users.spec.ts:973:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_ID_PUT_006] PUT /users/{id} safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_USERS_ID_PUT_006.1] PUT /users/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/users/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_USERS_ID_PUT_006.2] PUT /users/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/users/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\users.spec.ts:1015:23
+
+    Error Context: test-results\jsonplaceholder\users-jsonplaceholder-user-35f19-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_USERS_ID_PUT_006.1] PUT /users/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/users/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_USERS_ID_PUT_006.2] PUT /users/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PUT https://jsonplaceholder.typicode.com/users/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\users.spec.ts:1015:23
+
+    Error Context: test-results\jsonplaceholder\users-jsonplaceholder-user-35f19-rongly-typed-request-bodies-retry1\error-context.md
+
+  18) api\jsonplaceholder\tests\users.spec.ts:1158:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_ID_PATCH_004] PATCH /users/{id} safely handles empty, malformed and wrongly typed request bodies 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_USERS_ID_PATCH_004.1] PATCH /users/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/users/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_USERS_ID_PATCH_004.2] PATCH /users/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/users/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\users.spec.ts:1200:23
+
+    Error Context: test-results\jsonplaceholder\users-jsonplaceholder-user-05361-rongly-typed-request-bodies\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_USERS_ID_PATCH_004.1] PATCH /users/{id} with no body is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/users/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+    • [TC_JSONPLACEHOLDER_USERS_ID_PATCH_004.2] PATCH /users/{id} with malformed JSON is rejected or stored exactly (rule undocumented), never a 5xx: Server error (5xx) returned. PATCH https://jsonplaceholder.typicode.com/users/1 -> 500 body=SyntaxError: Unexpected token '"', "#" is not valid JSON
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\users.spec.ts:1200:23
+
+    Error Context: test-results\jsonplaceholder\users-jsonplaceholder-user-05361-rongly-typed-request-bodies-retry1\error-context.md
+
+  19) api\jsonplaceholder\tests\albums.spec.ts:557:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_ID_GET_005] Unsupported method POST on /albums/{id} is rejected or stored exactly (rule undocumented), never a 5xx 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: apiRequestContext.fetch: Request context disposed.
+    Call log:
+      - → POST https://jsonplaceholder.typicode.com/albums/999999999
+        - user-agent: api-test-agent/1.0 (practice-api-testing)
+        - accept: */*
+        - accept-encoding: gzip,deflate,br
+
+
+       at ..\..\..\shared\fixtures\api-fixture.ts:251
+
+      249 |     if (this.delayMs > 0) await sleep(this.delayMs);
+      250 |     const started = Date.now();
+    > 251 |     const res = await this.request.fetch(url, {
+          |                                    ^
+      252 |       method: opts.method,
+      253 |       headers,
+      254 |       data,
+        at ApiClient.sendOnce (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\fixtures\api-fixture.ts:251:36)
+        at ApiClient.send (C:\Users\BhawnaBothra\projects\API_Test_Agent\shared\fixtures\api-fixture.ts:189:17)
+        at C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\albums.spec.ts:559:19
+
+    Error Context: test-results\jsonplaceholder\albums-jsonplaceholder-alb-ba166-le-undocumented-never-a-5xx\error-context.md
+
+  20) api\jsonplaceholder\tests\posts.spec.ts:567:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_POST_006] POST /posts safely handles wrong data types, invalid enum values and invalid formats 
+
+    Test timeout of 45000ms exceeded.
+
+    Error Context: test-results\jsonplaceholder\posts-jsonplaceholder-post-46d14--values-and-invalid-formats\error-context.md
+
+  18 failed
+    api\jsonplaceholder\tests\albums.spec.ts:443:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_POST_005] POST /albums safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\albums.spec.ts:655:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_006] PUT /albums/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\albums.spec.ts:780:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_ID_PATCH_004] PATCH /albums/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\comments.spec.ts:547:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_POST_005] POST /comments safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\comments.spec.ts:838:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_006] PUT /comments/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\comments.spec.ts:993:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_ID_PATCH_004] PATCH /comments/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\photos.spec.ts:522:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_POST_005] POST /photos safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\photos.spec.ts:810:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_006] PUT /photos/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\photos.spec.ts:975:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_ID_PATCH_004] PATCH /photos/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\posts.spec.ts:526:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_POST_005] POST /posts safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\posts.spec.ts:767:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_ID_PUT_006] PUT /posts/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\posts.spec.ts:902:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_ID_PATCH_004] PATCH /posts/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\todos.spec.ts:461:9 › jsonplaceholder / todos › Negative › [TC_JSONPLACEHOLDER_TODOS_POST_005] POST /todos safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\todos.spec.ts:702:9 › jsonplaceholder / todos › Negative › [TC_JSONPLACEHOLDER_TODOS_ID_PUT_006] PUT /todos/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\todos.spec.ts:837:9 › jsonplaceholder / todos › Negative › [TC_JSONPLACEHOLDER_TODOS_ID_PATCH_004] PATCH /todos/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\users.spec.ts:585:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_POST_005] POST /users safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\users.spec.ts:973:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_ID_PUT_006] PUT /users/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\users.spec.ts:1158:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_ID_PATCH_004] PATCH /users/{id} safely handles empty, malformed and wrongly typed request bodies 
+  2 flaky
+    api\jsonplaceholder\tests\albums.spec.ts:557:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_ID_GET_005] Unsupported method POST on /albums/{id} is rejected or stored exactly (rule undocumented), never a 5xx 
+    api\jsonplaceholder\tests\posts.spec.ts:567:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_POST_006] POST /posts safely handles wrong data types, invalid enum values and invalid formats 
+  314 passed (28.8m)
+
+[2026-11-10T14:35:02.977Z]     api\jsonplaceholder\tests\todos.spec.ts:837:9 › jsonplaceholder / todos › Negative › [TC_JSONPLACEHOLDER_TODOS_ID_PATCH_004] PATCH /todos/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\users.spec.ts:585:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_POST_005] POST /users safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\users.spec.ts:973:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_ID_PUT_006] PUT /users/{id} safely handles empty, malformed and wrongly typed request bodies 
+    api\jsonplaceholder\tests\users.spec.ts:1158:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_ID_PATCH_004] PATCH /users/{id} safely handles empty, malformed and wrongly typed request bodies 
+  2 flaky
+    api\jsonplaceholder\tests\albums.spec.ts:557:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_ID_GET_005] Unsupported method POST on /albums/{id} is rejected or stored exactly (rule undocumented), never a 5xx 
+    api\jsonplaceholder\tests\posts.spec.ts:567:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_POST_006] POST /posts safely handles wrong data types, invalid enum values and invalid formats 
+  314 passed (28.8m)
+[2026-11-10T14:35:03.003Z]     run done in 1733.1 s
+[2026-11-10T14:35:03.005Z] --- [9] calibrate
+[2026-11-10T14:35:03.478Z] no new conventions to learn
+[2026-11-10T14:35:03.478Z]     calibrate done in 0.5 s
+[2026-11-10T14:35:03.480Z] --- [10] report
+[2026-11-10T14:35:05.321Z] triaged 20 failures into 3 root causes; summary -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\summary.html
+[2026-11-10T14:35:05.873Z] junit: 334 tests, 18 failures, 0 skipped -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\junit.xml
+[2026-11-10T14:35:06.437Z] ci-summary -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\ci-summary.md
+[2026-11-10T14:35:06.854Z] run archived -> reports/history/20261110-140612Z/
+[2026-11-10T14:35:06.856Z]     report done in 3.4 s
+[2026-11-10T14:35:06.858Z] --- [11] final
+[2026-11-10T14:35:07.582Z] ================ API TEST RUN COMPLETE ================
+[2026-11-10T14:35:07.583Z] API            : jsonplaceholder  (https://jsonplaceholder.typicode.com/)
+[2026-11-10T14:35:07.585Z] Test cases     : 334
+[2026-11-10T14:35:07.587Z] Results        : total 334 | passed 314 | failed 18 | skipped 0 | flaky 2
+[2026-11-10T14:35:07.590Z] Coverage       : 100% of tests executed | pass rate 95% of executed
+[2026-11-10T14:35:07.593Z] Failure triage : Real API defect: 17 | Flaky/Environment issue: 1
+[2026-11-10T14:35:07.594Z] Root causes    : 3 distinct problems behind 20 failing tests
+[2026-11-10T14:35:07.596Z]   RC1  High     Invalid input crashes the server (5xx instead of 400/422) (34 checks, 17 endpoints)
+[2026-11-10T14:35:07.597Z] qTest Excel    : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-10T14:35:07.599Z] Summary report : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\summary.html
+[2026-11-10T14:35:07.603Z] Playwright     : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\html\index.html
+[2026-11-10T14:35:07.608Z] Triage         : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\triage.json
+[2026-11-10T14:35:07.610Z] Run log        : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\run-log.txt
+[2026-11-10T14:35:07.613Z] =======================================================
+[2026-11-10T14:35:07.614Z]     final done in 0.8 s
+[2026-11-10T14:35:07.616Z] CI gate        : PASSED (exit 0)
+[2026-11-10T14:35:07.618Z] CI summary     : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\ci-summary.md
+[2026-11-10T14:52:39.881Z] /api-test https://jsonplaceholder.typicode.com/ --name jsonplaceholder (stages: drift, final)
+[2026-11-10T14:52:39.887Z] --- [11] drift
+[2026-11-10T14:52:40.673Z] spec drift: 23 items (17 fix API, 6 fix docs), 0 doc changes withheld for unclean evidence -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\spec-drift.json
+[2026-11-10T14:52:41.635Z]     drift done in 1.7 s
+[2026-11-10T14:52:41.636Z] --- [12] final
+[2026-11-10T14:52:42.881Z] ================ API TEST RUN COMPLETE ================
+[2026-11-10T14:52:42.883Z] API            : jsonplaceholder  (https://jsonplaceholder.typicode.com/)
+[2026-11-10T14:52:42.884Z] Test cases     : 334
+[2026-11-10T14:52:42.886Z] Results        : total 334 | passed 314 | failed 18 | skipped 0 | flaky 2
+[2026-11-10T14:52:42.888Z] Coverage       : 100% of tests executed | pass rate 95% of executed
+[2026-11-10T14:52:42.892Z] Failure triage : Real API defect: 17 | Flaky/Environment issue: 1
+[2026-11-10T14:52:42.895Z] Root causes    : 3 distinct problems behind 20 failing tests
+[2026-11-10T14:52:42.898Z]   RC1  High     Invalid input crashes the server (5xx instead of 400/422) (34 checks, 17 endpoints)
+[2026-11-10T14:52:42.900Z] Spec drift     : 23 items - 17 fix API, 6 fix docs -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\spec-drift.json
+[2026-11-10T14:52:42.901Z] qTest Excel    : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-10T14:52:42.903Z] Summary report : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\summary.html
+[2026-11-10T14:52:42.905Z] Playwright     : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\html\index.html
+[2026-11-10T14:52:42.906Z] Triage         : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\triage.json
+[2026-11-10T14:52:42.908Z] Run log        : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\run-log.txt
+[2026-11-10T14:52:42.909Z] =======================================================
+[2026-11-10T14:52:42.911Z]     final done in 1.3 s
+[2026-11-10T15:07:56.863Z] /api-test https://jsonplaceholder.typicode.com/ --name jsonplaceholder (stages: design, excel, scripts)
+[2026-11-10T15:07:56.867Z] --- [3] design
+[2026-11-10T15:07:56.999Z] spec diff: first-design: no previous design (spec/design-cache.json) - everything generated
+[2026-11-10T15:07:57.034Z] contract: 516 checks use calibrated/overridden expectations (8 notes)
+[2026-11-10T15:07:57.093Z] designed 334 high-level test cases covering 906 checks {"Positive-Functional":69,"Positive-DataValidation":37,"Negative":113,"Boundary":65,"Auth":37,"Authorization":13}; test data written to C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-data
+[2026-11-10T15:07:57.094Z]     design done in 0.2 s
+[2026-11-10T15:07:57.097Z] --- [4] excel
+[2026-11-10T15:07:57.999Z] excel valid: 334 cases / 1295 step rows -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-10T15:07:58.007Z]     excel done in 0.9 s
+[2026-11-10T15:07:58.016Z] --- [5] scripts
+[2026-11-10T15:07:58.160Z] generated 6 spec files (334 tests): 0 rewritten, 6 unchanged; traceability OK
+[2026-11-10T15:07:58.163Z]     scripts done in 0.1 s
+[2026-11-10T15:08:02.882Z] /api-test https://jsonplaceholder.typicode.com/ --name jsonplaceholder (stages: design, excel, scripts)
+[2026-11-10T15:08:02.886Z] --- [3] design
+[2026-11-10T15:08:02.989Z] spec diff: spec unchanged - all groups reused from the previous design
+[2026-11-10T15:08:03.013Z] contract: 516 checks use calibrated/overridden expectations (8 notes)
+[2026-11-10T15:08:03.061Z] designed 334 high-level test cases covering 906 checks {"Positive-Functional":69,"Positive-DataValidation":37,"Negative":113,"Boundary":65,"Auth":37,"Authorization":13}; test data written to C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-data
+[2026-11-10T15:08:03.063Z]     design done in 0.2 s
+[2026-11-10T15:08:03.065Z] --- [4] excel
+[2026-11-10T15:08:03.622Z] excel valid: 334 cases / 1295 step rows -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-10T15:08:03.624Z]     excel done in 0.6 s
+[2026-11-10T15:08:03.626Z] --- [5] scripts
+[2026-11-10T15:08:03.712Z] generated 6 spec files (334 tests): 0 rewritten, 6 unchanged; traceability OK
+[2026-11-10T15:08:03.715Z]     scripts done in 0.1 s
+[2026-11-10T15:08:28.045Z] /api-test https://jsonplaceholder.typicode.com/ --name jsonplaceholder (stages: design, excel, scripts)
+[2026-11-10T15:08:28.051Z] --- [3] design
+[2026-11-10T15:08:28.213Z] spec diff: endpoints +0 -6 ~1; regenerated posts; reused 4 group(s); removed todos; checks +0 -137
+[2026-11-10T15:08:28.216Z]   changed POST /posts: requestBody.schema.properties.title.maxLength: (none) -> 120
+[2026-11-10T15:08:28.219Z]   removed GET /todos, POST /todos, GET /todos/{id}, PUT /todos/{id}, PATCH /todos/{id}, DELETE /todos/{id}
+[2026-11-10T15:08:28.255Z] contract: 439 checks use calibrated/overridden expectations (8 notes)
+[2026-11-10T15:08:28.318Z] designed 280 high-level test cases covering 769 checks {"Positive-Functional":58,"Positive-DataValidation":31,"Negative":95,"Boundary":54,"Auth":31,"Authorization":11}; test data written to C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-data
+[2026-11-10T15:08:28.320Z]     design done in 0.3 s
+[2026-11-10T15:08:28.322Z] --- [4] excel
+[2026-11-10T15:08:28.895Z] excel valid: 280 cases / 1096 step rows -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-10T15:08:28.897Z]     excel done in 0.6 s
+[2026-11-10T15:08:28.900Z] --- [5] scripts
+[2026-11-10T15:08:28.980Z] generated 5 spec files (280 tests): 1 rewritten (posts.spec.ts), 4 unchanged, removed todos.spec.ts; schemas written: todos.schema.ts (removed); traceability OK
+[2026-11-10T15:08:28.983Z]     scripts done in 0.1 s
+[2026-11-10T15:09:02.612Z] /api-test https://jsonplaceholder.typicode.com/ --name jsonplaceholder (stages: design, excel, scripts)
+[2026-11-10T15:09:02.615Z] --- [3] design
+[2026-11-10T15:09:02.779Z] spec diff: endpoints +6 -0 ~1; regenerated posts, todos; reused 4 group(s); checks +137 -0 ~5
+[2026-11-10T15:09:02.781Z]   changed POST /posts: requestBody.schema.properties.title.maxLength: 120 -> (none)
+[2026-11-10T15:09:02.784Z]   added   GET /todos, POST /todos, GET /todos/{id}, PUT /todos/{id}, PATCH /todos/{id}, DELETE /todos/{id}
+[2026-11-10T15:09:02.834Z] contract: 516 checks use calibrated/overridden expectations (8 notes)
+[2026-11-10T15:09:02.906Z] designed 334 high-level test cases covering 906 checks {"Positive-Functional":69,"Positive-DataValidation":37,"Negative":113,"Boundary":65,"Auth":37,"Authorization":13}; test data written to C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-data
+[2026-11-10T15:09:02.908Z]     design done in 0.3 s
+[2026-11-10T15:09:02.910Z] --- [4] excel
+[2026-11-10T15:09:03.546Z] excel valid: 334 cases / 1295 step rows -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-10T15:09:03.548Z]     excel done in 0.6 s
+[2026-11-10T15:09:03.551Z] --- [5] scripts
+[2026-11-10T15:09:03.650Z] generated 6 spec files (334 tests): 2 rewritten (posts.spec.ts, todos.spec.ts), 4 unchanged; schemas written: todos.schema.ts; traceability OK
+[2026-11-10T15:09:03.651Z]     scripts done in 0.1 s
+[2026-11-10T15:09:19.504Z] /api-test https://jsonplaceholder.typicode.com/ --name jsonplaceholder (stages: design, excel, scripts)
+[2026-11-10T15:09:19.508Z] --- [3] design
+[2026-11-10T15:09:19.625Z] spec diff: spec unchanged - all groups reused from the previous design
+[2026-11-10T15:09:19.664Z] contract: 516 checks use calibrated/overridden expectations (8 notes)
+[2026-11-10T15:09:19.732Z] designed 334 high-level test cases covering 906 checks {"Positive-Functional":69,"Positive-DataValidation":37,"Negative":113,"Boundary":65,"Auth":37,"Authorization":13}; test data written to C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-data
+[2026-11-10T15:09:19.734Z]     design done in 0.2 s
+[2026-11-10T15:09:19.736Z] --- [4] excel
+[2026-11-10T15:09:20.299Z] excel valid: 334 cases / 1295 step rows -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-10T15:09:20.303Z]     excel done in 0.6 s
+[2026-11-10T15:09:20.305Z] --- [5] scripts
+[2026-11-10T15:09:20.384Z] generated 6 spec files (334 tests): 0 rewritten, 6 unchanged; traceability OK
+[2026-11-10T15:09:20.385Z]     scripts done in 0.1 s
+[2026-11-10T15:33:37.952Z] /api-test https://jsonplaceholder.typicode.com/ --name jsonplaceholder (stages: design, excel, scripts, typecheck)
+[2026-11-10T15:33:37.962Z] --- [3] design
+[2026-11-10T15:33:38.539Z] spec diff: full: the test-design code changed since the previous design - everything regenerated
+[2026-11-10T15:33:38.579Z] contract: 516 checks use calibrated/overridden expectations (8 notes)
+[2026-11-10T15:33:38.620Z] designed 59 business-level test cases covering 906 checks {"Positive-Functional":37,"Authorization":6,"Negative":16}; test data written to C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-data
+[2026-11-10T15:33:38.624Z]     design done in 0.7 s
+[2026-11-10T15:33:38.629Z] --- [4] excel
+[2026-11-10T15:33:38.972Z] excel valid: 59 cases / 373 step rows -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-10T15:33:38.974Z]     excel done in 0.3 s
+[2026-11-10T15:33:38.976Z] --- [5] scripts
+[2026-11-10T15:33:39.065Z] generated 6 spec files (59 tests): 6 rewritten (posts.spec.ts, comments.spec.ts, albums.spec.ts, photos.spec.ts, todos.spec.ts, users.spec.ts), 0 unchanged; traceability OK
+[2026-11-10T15:33:39.068Z]     scripts done in 0.1 s
+[2026-11-10T15:33:39.072Z] --- [6] typecheck
+[2026-11-10T15:33:41.708Z] tsc --noEmit: OK
+[2026-11-10T15:33:41.711Z]     typecheck done in 2.6 s
+[2026-11-10T15:34:21.154Z] /api-test https://jsonplaceholder.typicode.com/ --name jsonplaceholder (stages: design, excel, scripts, typecheck, preflight, run, calibrate, report, drift, final)
+[2026-11-10T15:34:21.156Z] --- [3] design
+[2026-11-10T15:34:21.297Z] spec diff: full: the test-design code changed since the previous design - everything regenerated
+[2026-11-10T15:34:21.331Z] contract: 516 checks use calibrated/overridden expectations (8 notes)
+[2026-11-10T15:34:21.361Z] designed 59 business-level test cases covering 332 checks (574 low-value technical checks left out; --level high runs all 906) {"Positive-Functional":37,"Negative":16,"Authorization":6}; test data written to C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-data
+[2026-11-10T15:34:21.362Z]     design done in 0.2 s
+[2026-11-10T15:34:21.363Z] --- [4] excel
+[2026-11-10T15:34:21.571Z] excel valid: 59 cases / 373 step rows -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-10T15:34:21.572Z]     excel done in 0.2 s
+[2026-11-10T15:34:21.574Z] --- [5] scripts
+[2026-11-10T15:34:21.614Z] generated 6 spec files (59 tests): 6 rewritten (posts.spec.ts, comments.spec.ts, albums.spec.ts, photos.spec.ts, todos.spec.ts, users.spec.ts), 0 unchanged; traceability OK
+[2026-11-10T15:34:21.615Z]     scripts done in 0.0 s
+[2026-11-10T15:34:21.617Z] --- [6] typecheck
+[2026-11-10T15:34:23.750Z] tsc --noEmit: OK
+[2026-11-10T15:34:23.752Z]     typecheck done in 2.1 s
+[2026-11-10T15:34:23.755Z] --- [7] preflight
+[2026-11-10T15:34:24.491Z] quota: ok - GET /posts -> 200, 3599999/3600000 requests left.
+[2026-11-10T15:34:24.495Z] expected coverage: 332 of 332 checks can execute (100%)
+[2026-11-10T15:34:24.499Z]     preflight done in 0.7 s
+[2026-11-10T15:34:24.503Z] --- [8] run
+[2026-11-10T15:34:24.516Z] running: API_NAME=jsonplaceholder npx playwright test
+[global-setup] jsonplaceholder: auth=none admin=not configured user=not configured user2=not configured insufficientScope=not configured
+
+Running 59 tests using 4 workers
+
+  ok  1 api\jsonplaceholder\tests\posts.spec.ts:11:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_GET_001] Browse the list of posts (1.2s)
+  ok  4 api\jsonplaceholder\tests\albums.spec.ts:11:9 › jsonplaceholder / albums › Positive-Functional › [TC_JSONPLACEHOLDER_ALBUMS_GET_001] Browse the list of albums (1.2s)
+  ok  2 api\jsonplaceholder\tests\photos.spec.ts:11:9 › jsonplaceholder / photos › Positive-Functional › [TC_JSONPLACEHOLDER_PHOTOS_GET_001] Browse the list of photos (2.1s)
+  ok  3 api\jsonplaceholder\tests\comments.spec.ts:11:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_GET_001] Browse comments and filter them by their attributes (2.4s)
+  ok  5 api\jsonplaceholder\tests\posts.spec.ts:33:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_GET_001] View a post by its id; an unknown post is not found (1.8s)
+  ok  6 api\jsonplaceholder\tests\albums.spec.ts:33:9 › jsonplaceholder / albums › Positive-Functional › [TC_JSONPLACEHOLDER_ALBUMS_ID_GET_001] View an album by its id; an unknown album is not found (1.8s)
+  ok  9 api\jsonplaceholder\tests\posts.spec.ts:65:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_POST_001] Create a post with valid details; the saved values match what was sent (1.9s)
+  ok  7 api\jsonplaceholder\tests\photos.spec.ts:41:9 › jsonplaceholder / photos › Positive-Functional › [TC_JSONPLACEHOLDER_PHOTOS_ID_GET_001] View a photo by its id; an unknown photo is not found (2.8s)
+  ok 10 api\jsonplaceholder\tests\albums.spec.ts:65:9 › jsonplaceholder / albums › Positive-Functional › [TC_JSONPLACEHOLDER_ALBUMS_POST_001] Create an album with valid details; the saved values match what was sent (1.8s)
+  ok  8 api\jsonplaceholder\tests\comments.spec.ts:52:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_ID_GET_001] View a comment by its id; an unknown comment is not found (2.6s)
+  ok 14 api\jsonplaceholder\tests\comments.spec.ts:93:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_POST_001] Create a comment with valid details; the saved values match what was sent (2.2s)
+  ok 12 api\jsonplaceholder\tests\photos.spec.ts:82:9 › jsonplaceholder / photos › Positive-Functional › [TC_JSONPLACEHOLDER_PHOTOS_POST_001] Create a photo with valid details; the saved values match what was sent (2.7s)
+  ok 11 api\jsonplaceholder\tests\posts.spec.ts:96:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_PUT_001] Update an existing post (full and partial update) (3.1s)
+  ok 13 api\jsonplaceholder\tests\albums.spec.ts:96:9 › jsonplaceholder / albums › Positive-Functional › [TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_001] Update an existing album (full and partial update) (3.4s)
+  ok 17 api\jsonplaceholder\tests\posts.spec.ts:159:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001] Delete a post; deleting a post that does not exist is rejected (1.5s)
+  ok 18 api\jsonplaceholder\tests\albums.spec.ts:159:9 › jsonplaceholder / albums › Positive-Functional › [TC_JSONPLACEHOLDER_ALBUMS_ID_DELETE_001] Delete an album; deleting an album that does not exist is rejected (1.5s)
+  ok 16 api\jsonplaceholder\tests\photos.spec.ts:121:9 › jsonplaceholder / photos › Positive-Functional › [TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_001] Update an existing photo (full and partial update) (4.3s)
+  ok 15 api\jsonplaceholder\tests\comments.spec.ts:132:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_001] Update an existing comment (full and partial update) (4.8s)
+  ok 19 api\jsonplaceholder\tests\posts.spec.ts:182:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_POST_003] Manage a post end to end; as documented, changes are answered but not saved (3.2s)
+  ok 20 api\jsonplaceholder\tests\albums.spec.ts:182:9 › jsonplaceholder / albums › Positive-Functional › [TC_JSONPLACEHOLDER_ALBUMS_POST_003] Manage an album end to end; as documented, changes are answered but not saved (3.0s)
+  ok 21 api\jsonplaceholder\tests\photos.spec.ts:202:9 › jsonplaceholder / photos › Positive-Functional › [TC_JSONPLACEHOLDER_PHOTOS_ID_DELETE_001] Delete a photo; deleting a photo that does not exist is rejected (1.4s)
+  ok 22 api\jsonplaceholder\tests\comments.spec.ts:213:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_ID_DELETE_001] Delete a comment; deleting a comment that does not exist is rejected (1.5s)
+  ok 23 api\jsonplaceholder\tests\posts.spec.ts:212:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001] List comments of one posts (1.5s)
+  ok 24 api\jsonplaceholder\tests\albums.spec.ts:214:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_POST_002] Creating an album with missing or invalid details is handled safely (validation rules are not documented) (2.7s)
+  ok 25 api\jsonplaceholder\tests\photos.spec.ts:225:9 › jsonplaceholder / photos › Positive-Functional › [TC_JSONPLACEHOLDER_PHOTOS_POST_003] Manage a photo end to end; as documented, changes are answered but not saved (3.0s)
+  ok 26 api\jsonplaceholder\tests\comments.spec.ts:236:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_POST_004] Manage a comment end to end; as documented, changes are answered but not saved (3.0s)
+  ok 30 api\jsonplaceholder\tests\comments.spec.ts:268:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_GET_002] Searching comments with missing or invalid criteria is handled safely (validation rules are not documented) (753ms)
+  ok 27 api\jsonplaceholder\tests\posts.spec.ts:247:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_POST_002] Creating a post with missing or invalid details is handled safely (validation rules are not documented) (4.1s)
+  ok 28 api\jsonplaceholder\tests\albums.spec.ts:264:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_002] Updating an album with invalid details, or an album that does not exist, is handled safely (validation rules are not documented) (4.7s)
+  ok 29 api\jsonplaceholder\tests\photos.spec.ts:257:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_POST_002] Creating a photo with missing or invalid details is handled safely (validation rules are not documented) (5.5s)
+  ok 31 api\jsonplaceholder\tests\comments.spec.ts:278:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_POST_002] Creating a comment with missing or invalid details is handled safely (validation rules are not documented) (5.1s)
+  ok 35 api\jsonplaceholder\tests\comments.spec.ts:373:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_POST_003] Creating a duplicate comment is handled safely (validation rules are not documented) (1.4s)
+  ok 33 api\jsonplaceholder\tests\albums.spec.ts:359:9 › jsonplaceholder / albums › Authorization › [TC_JSONPLACEHOLDER_ALBUMS_GET_002] Albums can be used without logging in (public API); responses expose no sensitive data (3.8s)
+  ok 32 api\jsonplaceholder\tests\posts.spec.ts:315:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_ID_PUT_002] Updating a post with invalid details, or a post that does not exist, is handled safely (validation rules are not documented) (6.2s)
+  ok 38 api\jsonplaceholder\tests\posts.spec.ts:438:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_002] List comments of one posts: missing or invalid input is handled safely (validation rules are not documented) (855ms)
+  ok 37 api\jsonplaceholder\tests\todos.spec.ts:11:9 › jsonplaceholder / todos › Positive-Functional › [TC_JSONPLACEHOLDER_TODOS_GET_001] Browse the list of todos (1.3s)
+  ok 40 api\jsonplaceholder\tests\todos.spec.ts:33:9 › jsonplaceholder / todos › Positive-Functional › [TC_JSONPLACEHOLDER_TODOS_ID_GET_001] View a todo by its id; an unknown todo is not found (2.1s)
+  ok 41 api\jsonplaceholder\tests\todos.spec.ts:65:9 › jsonplaceholder / todos › Positive-Functional › [TC_JSONPLACEHOLDER_TODOS_POST_001] Create a todo with valid details; the saved values match what was sent (1.9s)
+  ok 39 api\jsonplaceholder\tests\posts.spec.ts:450:9 › jsonplaceholder / posts › Authorization › [TC_JSONPLACEHOLDER_POSTS_GET_002] Posts can be used without logging in (public API); responses expose no sensitive data (4.4s)
+  ok 34 api\jsonplaceholder\tests\photos.spec.ts:361:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002] Updating a photo with invalid details, or a photo that does not exist, is handled safely (validation rules are not documented) (9.5s)
+  ok 43 api\jsonplaceholder\tests\users.spec.ts:11:9 › jsonplaceholder / users › Positive-Functional › [TC_JSONPLACEHOLDER_USERS_GET_001] Browse the list of users (1.5s)
+  ok 36 api\jsonplaceholder\tests\comments.spec.ts:385:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002] Updating a comment with invalid details, or a comment that does not exist, is handled safely (validation rules are not documented) (8.5s)
+  ok 42 api\jsonplaceholder\tests\todos.spec.ts:96:9 › jsonplaceholder / todos › Positive-Functional › [TC_JSONPLACEHOLDER_TODOS_ID_PUT_001] Update an existing todo (full and partial update) (3.4s)
+  ok 45 api\jsonplaceholder\tests\users.spec.ts:41:9 › jsonplaceholder / users › Positive-Functional › [TC_JSONPLACEHOLDER_USERS_ID_GET_001] View an user by its id; an unknown user is not found (2.2s)
+  ok 47 api\jsonplaceholder\tests\todos.spec.ts:159:9 › jsonplaceholder / todos › Positive-Functional › [TC_JSONPLACEHOLDER_TODOS_ID_DELETE_001] Delete a todo; deleting a todo that does not exist is rejected (1.5s)
+  ok 44 api\jsonplaceholder\tests\photos.spec.ts:556:9 › jsonplaceholder / photos › Authorization › [TC_JSONPLACEHOLDER_PHOTOS_GET_002] Photos can be used without logging in (public API); responses expose no sensitive data (4.1s)
+  ok 48 api\jsonplaceholder\tests\users.spec.ts:82:9 › jsonplaceholder / users › Positive-Functional › [TC_JSONPLACEHOLDER_USERS_POST_001] Create an user with valid details; the saved values match what was sent (2.2s)
+  ok 46 api\jsonplaceholder\tests\comments.spec.ts:560:9 › jsonplaceholder / comments › Authorization › [TC_JSONPLACEHOLDER_COMMENTS_GET_003] Comments can be used without logging in (public API); responses expose no sensitive data (4.3s)
+  ok 49 api\jsonplaceholder\tests\todos.spec.ts:182:9 › jsonplaceholder / todos › Positive-Functional › [TC_JSONPLACEHOLDER_TODOS_POST_003] Manage a todo end to end; as documented, changes are answered but not saved (3.0s)
+  ok 50 api\jsonplaceholder\tests\users.spec.ts:121:9 › jsonplaceholder / users › Positive-Functional › [TC_JSONPLACEHOLDER_USERS_ID_PUT_001] Update an existing user (full and partial update) (4.4s)
+  ok 51 api\jsonplaceholder\tests\todos.spec.ts:214:9 › jsonplaceholder / todos › Negative › [TC_JSONPLACEHOLDER_TODOS_POST_002] Creating a todo with missing or invalid details is handled safely (validation rules are not documented) (4.1s)
+  ok 52 api\jsonplaceholder\tests\users.spec.ts:202:9 › jsonplaceholder / users › Positive-Functional › [TC_JSONPLACEHOLDER_USERS_ID_DELETE_001] Delete an user; deleting an user that does not exist is rejected (1.4s)
+  ok 54 api\jsonplaceholder\tests\users.spec.ts:225:9 › jsonplaceholder / users › Positive-Functional › [TC_JSONPLACEHOLDER_USERS_POST_004] Manage an user end to end; as documented, changes are answered but not saved (3.5s)
+  ok 53 api\jsonplaceholder\tests\todos.spec.ts:282:9 › jsonplaceholder / todos › Negative › [TC_JSONPLACEHOLDER_TODOS_ID_PUT_002] Updating a todo with invalid details, or a todo that does not exist, is handled safely (validation rules are not documented) (6.5s)
+  ok 56 api\jsonplaceholder\tests\todos.spec.ts:407:9 › jsonplaceholder / todos › Authorization › [TC_JSONPLACEHOLDER_TODOS_GET_002] Todos can be used without logging in (public API); responses expose no sensitive data (4.0s)
+  ok 55 api\jsonplaceholder\tests\users.spec.ts:257:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_POST_002] Creating an user with missing or invalid details is handled safely (validation rules are not documented) (9.8s)
+  ok 57 api\jsonplaceholder\tests\users.spec.ts:433:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_POST_003] Creating a duplicate user is handled safely (validation rules are not documented) (1.4s)
+  ok 58 api\jsonplaceholder\tests\users.spec.ts:445:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_ID_PUT_002] Updating an user with invalid details, or an user that does not exist, is handled safely (validation rules are not documented) (14.5s)
+  ok 59 api\jsonplaceholder\tests\users.spec.ts:740:9 › jsonplaceholder / users › Authorization › [TC_JSONPLACEHOLDER_USERS_GET_002] Users can be used without logging in (public API); responses expose no sensitive data (4.0s)
+
+  59 passed (1.3m)
+
+[2026-11-10T15:35:43.892Z]   ok 53 api\jsonplaceholder\tests\todos.spec.ts:282:9 › jsonplaceholder / todos › Negative › [TC_JSONPLACEHOLDER_TODOS_ID_PUT_002] Updating a todo with invalid details, or a todo that does not exist, is handled safely (validation rules are not documented) (6.5s)
+  ok 56 api\jsonplaceholder\tests\todos.spec.ts:407:9 › jsonplaceholder / todos › Authorization › [TC_JSONPLACEHOLDER_TODOS_GET_002] Todos can be used without logging in (public API); responses expose no sensitive data (4.0s)
+  ok 55 api\jsonplaceholder\tests\users.spec.ts:257:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_POST_002] Creating an user with missing or invalid details is handled safely (validation rules are not documented) (9.8s)
+  ok 57 api\jsonplaceholder\tests\users.spec.ts:433:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_POST_003] Creating a duplicate user is handled safely (validation rules are not documented) (1.4s)
+  ok 58 api\jsonplaceholder\tests\users.spec.ts:445:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_ID_PUT_002] Updating an user with invalid details, or an user that does not exist, is handled safely (validation rules are not documented) (14.5s)
+  ok 59 api\jsonplaceholder\tests\users.spec.ts:740:9 › jsonplaceholder / users › Authorization › [TC_JSONPLACEHOLDER_USERS_GET_002] Users can be used without logging in (public API); responses expose no sensitive data (4.0s)
+
+  59 passed (1.3m)
+[2026-11-10T15:35:43.900Z]     run done in 79.4 s
+[2026-11-10T15:35:43.903Z] --- [9] calibrate
+[2026-11-10T15:35:44.015Z] no new conventions to learn
+[2026-11-10T15:35:44.019Z]     calibrate done in 0.1 s
+[2026-11-10T15:35:44.034Z] --- [10] report
+[2026-11-10T15:35:44.473Z] triaged 0 failures into 0 root causes; summary -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\summary.html
+[2026-11-10T15:35:44.581Z] junit: 59 tests, 0 failures, 0 skipped -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\junit.xml
+[2026-11-10T15:35:44.694Z] run archived -> reports/history/20261110-153426Z/
+[2026-11-10T15:35:44.697Z]     report done in 0.7 s
+[2026-11-10T15:35:44.698Z] --- [11] drift
+[2026-11-10T15:35:44.855Z] spec drift: 6 items (0 fix API, 6 fix docs), 0 doc changes withheld for unclean evidence -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\spec-drift.json
+[2026-11-10T15:35:45.092Z]     drift done in 0.4 s
+[2026-11-10T15:35:45.103Z] --- [12] final
+[2026-11-10T15:35:45.470Z] ================ API TEST RUN COMPLETE ================
+[2026-11-10T15:35:45.471Z] API            : jsonplaceholder  (https://jsonplaceholder.typicode.com/)
+[2026-11-10T15:35:45.473Z] Test cases     : 59
+[2026-11-10T15:35:45.474Z] Spec changes   : full: the test-design code changed since the previous design - everything regenerated
+[2026-11-10T15:35:45.475Z] Results        : total 59 | passed 59 | failed 0 | skipped 0 | flaky 0
+[2026-11-10T15:35:45.476Z] Coverage       : 100% of tests executed | pass rate 100% of executed
+[2026-11-10T15:35:45.477Z] Spec drift     : 6 items - 0 fix API, 6 fix docs -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\spec-drift.json
+[2026-11-10T15:35:45.479Z] qTest Excel    : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-10T15:35:45.480Z] Summary report : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\summary.html
+[2026-11-10T15:35:45.482Z] Playwright     : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\html\index.html
+[2026-11-10T15:35:45.485Z] Triage         : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\triage.json
+[2026-11-10T15:35:45.487Z] Run log        : C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\run-log.txt
+[2026-11-10T15:35:45.489Z] =======================================================
+[2026-11-10T15:35:45.491Z]     final done in 0.4 s
+[2026-11-10T15:37:40.228Z] /api-test https://jsonplaceholder.typicode.com/ --name jsonplaceholder (stages: design, excel, scripts, typecheck)
+[2026-11-10T15:37:40.231Z] --- [3] design
+[2026-11-10T15:37:40.397Z] spec diff: full: the test-design code changed since the previous design - everything regenerated
+[2026-11-10T15:37:40.430Z] contract: 516 checks use calibrated/overridden expectations (8 notes)
+[2026-11-10T15:37:40.471Z] designed 59 business-level test cases covering 332 checks (574 low-value technical checks left out; --level high runs all 906) {"Positive-Functional":37,"Negative":16,"Authorization":6}; test data written to C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-data
+[2026-11-10T15:37:40.474Z]     design done in 0.2 s
+[2026-11-10T15:37:40.476Z] --- [4] excel
+[2026-11-10T15:37:40.790Z] excel valid: 59 cases / 373 step rows -> C:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-10T15:37:40.792Z]     excel done in 0.3 s
+[2026-11-10T15:37:40.794Z] --- [5] scripts
+[2026-11-10T15:37:40.828Z] generated 6 spec files (59 tests): 0 rewritten, 6 unchanged; traceability OK
+[2026-11-10T15:37:40.830Z]     scripts done in 0.0 s
+[2026-11-10T15:37:40.831Z] --- [6] typecheck
+[2026-11-10T15:37:43.031Z] tsc --noEmit: OK
+[2026-11-10T15:37:43.035Z]     typecheck done in 2.2 s
+[2026-11-11T13:51:09.164Z] /api-test https://jsonplaceholder.typicode.com/ --name jsonplaceholder (stages: design, excel, scripts)
+[2026-11-11T13:51:09.168Z] --- [3] design
+[2026-11-11T13:51:09.323Z] spec diff: full: the test-design code changed since the previous design - everything regenerated
+[2026-11-11T13:51:09.357Z] contract: 516 checks use calibrated/overridden expectations (8 notes)
+[2026-11-11T13:51:09.400Z] designed 59 business-level test cases covering 332 checks (574 low-value technical checks left out; --level high runs all 906) {"Positive-Functional":37,"Negative":16,"Authorization":6}; test data written to c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-data
+[2026-11-11T13:51:09.402Z]     design done in 0.2 s
+[2026-11-11T13:51:09.403Z] --- [4] excel
+[2026-11-11T13:51:09.712Z] excel valid: 59 cases / 373 step rows -> c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-11T13:51:09.714Z]     excel done in 0.3 s
+[2026-11-11T13:51:09.717Z] --- [5] scripts
+[2026-11-11T13:51:09.801Z] generated 6 spec files (59 tests): 0 rewritten, 6 unchanged; traceability OK
+[2026-11-11T13:51:09.804Z]     scripts done in 0.1 s
+[2026-11-11T16:51:03.637Z] /api-test-pilot https://jsonplaceholder.typicode.com/ --name jsonplaceholder (stages: discover, design, excel, scripts, typecheck, preflight, run, calibrate, report, drift, final)
+[2026-11-11T16:51:03.650Z] --- [2] discover
+[2026-11-11T16:51:20.417Z] discovered 37 endpoints, 6 resources (source: html-links, auth: none); 10 assumptions
+[2026-11-11T16:51:20.423Z] base URL: https://jsonplaceholder.typicode.com (jsonplaceholder.typicode.com)
+[2026-11-11T16:51:20.429Z]     discover done in 16.8 s
+[2026-11-11T16:51:20.433Z] --- [3] design
+[2026-11-11T16:51:20.823Z] spec diff: spec unchanged - all groups reused from the previous design
+[2026-11-11T16:51:21.155Z] contract: 516 checks use calibrated/overridden expectations (8 notes)
+[2026-11-11T16:51:21.287Z] designed 59 business-level test cases covering 332 checks (574 low-value technical checks left out; --level high runs all 906) {"Positive-Functional":37,"Negative":16,"Authorization":6}; test data written to c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-data
+[2026-11-11T16:51:21.292Z]     design done in 0.9 s
+[2026-11-11T16:51:21.300Z] --- [4] excel
+[2026-11-11T16:51:22.380Z] excel valid: 59 cases / 373 step rows -> c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-11T16:51:22.386Z]     excel done in 1.1 s
+[2026-11-11T16:51:22.391Z] --- [5] scripts
+[2026-11-11T16:51:22.510Z] generated 6 spec files (59 tests): 0 rewritten, 6 unchanged; traceability OK
+[2026-11-11T16:51:22.516Z]     scripts done in 0.1 s
+[2026-11-11T16:51:22.522Z] --- [6] typecheck
+[2026-11-11T16:51:28.604Z] tsc --noEmit: OK
+[2026-11-11T16:51:28.607Z]     typecheck done in 6.1 s
+[2026-11-11T16:51:28.613Z] --- [7] preflight
+[2026-11-11T16:51:30.672Z] quota: ok - GET /posts -> 200, 3599999/3600000 requests left.
+[2026-11-11T16:51:30.676Z] expected coverage: 332 of 332 checks can execute (100%)
+[2026-11-11T16:51:30.681Z]     preflight done in 2.1 s
+[2026-11-11T16:51:30.685Z] --- [8] run
+[2026-11-11T16:51:30.708Z] running: API_NAME=jsonplaceholder npx playwright test
+[global-setup] jsonplaceholder: auth=none admin=not configured
+
+Running 59 tests using 4 workers
+
+  ok  2 api\jsonplaceholder\tests\posts.spec.ts:11:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_GET_001] Browse the list of posts (1.4s)
+  ok  3 api\jsonplaceholder\tests\albums.spec.ts:11:9 › jsonplaceholder / albums › Positive-Functional › [TC_JSONPLACEHOLDER_ALBUMS_GET_001] Browse the list of albums (1.5s)
+  ok  1 api\jsonplaceholder\tests\photos.spec.ts:11:9 › jsonplaceholder / photos › Positive-Functional › [TC_JSONPLACEHOLDER_PHOTOS_GET_001] Browse the list of photos (2.5s)
+  ok  5 api\jsonplaceholder\tests\posts.spec.ts:33:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_GET_001] View a post by its id; an unknown post is not found (2.0s)
+  ok  6 api\jsonplaceholder\tests\albums.spec.ts:33:9 › jsonplaceholder / albums › Positive-Functional › [TC_JSONPLACEHOLDER_ALBUMS_ID_GET_001] View an album by its id; an unknown album is not found (2.7s)
+  ok  7 api\jsonplaceholder\tests\photos.spec.ts:41:9 › jsonplaceholder / photos › Positive-Functional › [TC_JSONPLACEHOLDER_PHOTOS_ID_GET_001] View a photo by its id; an unknown photo is not found (2.6s)
+  ok  9 api\jsonplaceholder\tests\albums.spec.ts:65:9 › jsonplaceholder / albums › Positive-Functional › [TC_JSONPLACEHOLDER_ALBUMS_POST_001] Create an album with valid details; the saved values match what was sent (2.1s)
+  ok  8 api\jsonplaceholder\tests\posts.spec.ts:65:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_POST_001] Create a post with valid details; the saved values match what was sent (3.3s)
+  ok 10 api\jsonplaceholder\tests\photos.spec.ts:82:9 › jsonplaceholder / photos › Positive-Functional › [TC_JSONPLACEHOLDER_PHOTOS_POST_001] Create a photo with valid details; the saved values match what was sent (2.2s)
+  ok 11 api\jsonplaceholder\tests\albums.spec.ts:96:9 › jsonplaceholder / albums › Positive-Functional › [TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_001] Update an existing album (full and partial update) (3.7s)
+  ok 12 api\jsonplaceholder\tests\posts.spec.ts:96:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_PUT_001] Update an existing post (full and partial update) (3.6s)
+  ok 14 api\jsonplaceholder\tests\albums.spec.ts:159:9 › jsonplaceholder / albums › Positive-Functional › [TC_JSONPLACEHOLDER_ALBUMS_ID_DELETE_001] Delete an album; deleting an album that does not exist is rejected (1.5s)
+  ok 13 api\jsonplaceholder\tests\photos.spec.ts:121:9 › jsonplaceholder / photos › Positive-Functional › [TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_001] Update an existing photo (full and partial update) (4.5s)
+  ok 17 api\jsonplaceholder\tests\photos.spec.ts:202:9 › jsonplaceholder / photos › Positive-Functional › [TC_JSONPLACEHOLDER_PHOTOS_ID_DELETE_001] Delete a photo; deleting a photo that does not exist is rejected (1.5s)
+  x  15 api\jsonplaceholder\tests\posts.spec.ts:159:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001] Delete a post; deleting a post that does not exist is rejected (3.1s)
+  ok 16 api\jsonplaceholder\tests\albums.spec.ts:182:9 › jsonplaceholder / albums › Positive-Functional › [TC_JSONPLACEHOLDER_ALBUMS_POST_003] Manage an album end to end; as documented, changes are answered but not saved (3.1s)
+  x   4 api\jsonplaceholder\tests\comments.spec.ts:11:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_GET_001] Browse comments and filter them by their attributes (15.7s)
+  ok 18 api\jsonplaceholder\tests\photos.spec.ts:225:9 › jsonplaceholder / photos › Positive-Functional › [TC_JSONPLACEHOLDER_PHOTOS_POST_003] Manage a photo end to end; as documented, changes are answered but not saved (3.3s)
+  ok 20 api\jsonplaceholder\tests\posts.spec.ts:159:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001] Delete a post; deleting a post that does not exist is rejected (retry #1) (1.8s)
+  ok 19 api\jsonplaceholder\tests\albums.spec.ts:214:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_POST_002] Creating an album with missing or invalid details is handled safely (validation rules are not documented) (2.8s)
+  ok 22 api\jsonplaceholder\tests\comments.spec.ts:11:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_GET_001] Browse comments and filter them by their attributes (retry #1) (2.1s)
+  ok 23 api\jsonplaceholder\tests\posts.spec.ts:182:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_POST_003] Manage a post end to end; as documented, changes are answered but not saved (3.6s)
+  ok 25 api\jsonplaceholder\tests\comments.spec.ts:52:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_ID_GET_001] View a comment by its id; an unknown comment is not found (2.6s)
+  ok 27 api\jsonplaceholder\tests\comments.spec.ts:93:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_POST_001] Create a comment with valid details; the saved values match what was sent (2.4s)
+  ok 24 api\jsonplaceholder\tests\albums.spec.ts:264:9 › jsonplaceholder / albums › Negative › [TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_002] Updating an album with invalid details, or an album that does not exist, is handled safely (validation rules are not documented) (7.5s)
+  x  26 api\jsonplaceholder\tests\posts.spec.ts:212:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001] List comments of one posts (5.3s)
+  x  21 api\jsonplaceholder\tests\photos.spec.ts:257:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_POST_002] Creating a photo with missing or invalid details is handled safely (validation rules are not documented) (10.6s)
+  ok 28 api\jsonplaceholder\tests\comments.spec.ts:132:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_001] Update an existing comment (full and partial update) (4.5s)
+  ok 29 api\jsonplaceholder\tests\albums.spec.ts:359:9 › jsonplaceholder / albums › Authorization › [TC_JSONPLACEHOLDER_ALBUMS_GET_002] Albums can be used without logging in (public API); responses expose no sensitive data (4.0s)
+  ok 30 api\jsonplaceholder\tests\posts.spec.ts:212:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001] List comments of one posts (retry #1) (2.2s)
+  ok 32 api\jsonplaceholder\tests\comments.spec.ts:213:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_ID_DELETE_001] Delete a comment; deleting a comment that does not exist is rejected (1.6s)
+  ok 33 api\jsonplaceholder\tests\todos.spec.ts:11:9 › jsonplaceholder / todos › Positive-Functional › [TC_JSONPLACEHOLDER_TODOS_GET_001] Browse the list of todos (1.3s)
+  ok 36 api\jsonplaceholder\tests\todos.spec.ts:33:9 › jsonplaceholder / todos › Positive-Functional › [TC_JSONPLACEHOLDER_TODOS_ID_GET_001] View a todo by its id; an unknown todo is not found (1.9s)
+  ok 35 api\jsonplaceholder\tests\comments.spec.ts:236:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_POST_004] Manage a comment end to end; as documented, changes are answered but not saved (3.4s)
+  ok 34 api\jsonplaceholder\tests\posts.spec.ts:247:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_POST_002] Creating a post with missing or invalid details is handled safely (validation rules are not documented) (4.2s)
+  ok 31 api\jsonplaceholder\tests\photos.spec.ts:257:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_POST_002] Creating a photo with missing or invalid details is handled safely (validation rules are not documented) (retry #1) (5.6s)
+  ok 37 api\jsonplaceholder\tests\todos.spec.ts:65:9 › jsonplaceholder / todos › Positive-Functional › [TC_JSONPLACEHOLDER_TODOS_POST_001] Create a todo with valid details; the saved values match what was sent (1.8s)
+  ok 38 api\jsonplaceholder\tests\comments.spec.ts:268:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_GET_002] Searching comments with missing or invalid criteria is handled safely (validation rules are not documented) (882ms)
+  ok 41 api\jsonplaceholder\tests\todos.spec.ts:96:9 › jsonplaceholder / todos › Positive-Functional › [TC_JSONPLACEHOLDER_TODOS_ID_PUT_001] Update an existing todo (full and partial update) (3.4s)
+  ok 43 api\jsonplaceholder\tests\todos.spec.ts:159:9 › jsonplaceholder / todos › Positive-Functional › [TC_JSONPLACEHOLDER_TODOS_ID_DELETE_001] Delete a todo; deleting a todo that does not exist is rejected (1.8s)
+  ok 39 api\jsonplaceholder\tests\posts.spec.ts:315:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_ID_PUT_002] Updating a post with invalid details, or a post that does not exist, is handled safely (validation rules are not documented) (7.4s)
+  ok 45 api\jsonplaceholder\tests\posts.spec.ts:438:9 › jsonplaceholder / posts › Negative › [TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_002] List comments of one posts: missing or invalid input is handled safely (validation rules are not documented) (928ms)
+  ok 44 api\jsonplaceholder\tests\todos.spec.ts:182:9 › jsonplaceholder / todos › Positive-Functional › [TC_JSONPLACEHOLDER_TODOS_POST_003] Manage a todo end to end; as documented, changes are answered but not saved (3.1s)
+  ok 40 api\jsonplaceholder\tests\photos.spec.ts:361:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002] Updating a photo with invalid details, or a photo that does not exist, is handled safely (validation rules are not documented) (10.8s)
+  ok 46 api\jsonplaceholder\tests\posts.spec.ts:450:9 › jsonplaceholder / posts › Authorization › [TC_JSONPLACEHOLDER_POSTS_GET_002] Posts can be used without logging in (public API); responses expose no sensitive data (4.5s)
+  ok 47 api\jsonplaceholder\tests\todos.spec.ts:214:9 › jsonplaceholder / todos › Negative › [TC_JSONPLACEHOLDER_TODOS_POST_002] Creating a todo with missing or invalid details is handled safely (validation rules are not documented) (4.1s)
+  x  42 api\jsonplaceholder\tests\comments.spec.ts:278:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_POST_002] Creating a comment with missing or invalid details is handled safely (validation rules are not documented) (13.0s)
+  ok 49 api\jsonplaceholder\tests\users.spec.ts:11:9 › jsonplaceholder / users › Positive-Functional › [TC_JSONPLACEHOLDER_USERS_GET_001] Browse the list of users (1.8s)
+  ok 52 api\jsonplaceholder\tests\users.spec.ts:41:9 › jsonplaceholder / users › Positive-Functional › [TC_JSONPLACEHOLDER_USERS_ID_GET_001] View an user by its id; an unknown user is not found (3.3s)
+  ok 50 api\jsonplaceholder\tests\todos.spec.ts:282:9 › jsonplaceholder / todos › Negative › [TC_JSONPLACEHOLDER_TODOS_ID_PUT_002] Updating a todo with invalid details, or a todo that does not exist, is handled safely (validation rules are not documented) (7.0s)
+  ok 51 api\jsonplaceholder\tests\comments.spec.ts:278:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_POST_002] Creating a comment with missing or invalid details is handled safely (validation rules are not documented) (retry #1) (5.9s)
+  x  48 api\jsonplaceholder\tests\photos.spec.ts:556:9 › jsonplaceholder / photos › Authorization › [TC_JSONPLACEHOLDER_PHOTOS_GET_002] Photos can be used without logging in (public API); responses expose no sensitive data (9.7s)
+  ok 53 api\jsonplaceholder\tests\users.spec.ts:82:9 › jsonplaceholder / users › Positive-Functional › [TC_JSONPLACEHOLDER_USERS_POST_001] Create an user with valid details; the saved values match what was sent (4.7s)
+  ok 55 api\jsonplaceholder\tests\comments.spec.ts:373:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_POST_003] Creating a duplicate comment is handled safely (validation rules are not documented) (2.8s)
+  ok 54 api\jsonplaceholder\tests\todos.spec.ts:407:9 › jsonplaceholder / todos › Authorization › [TC_JSONPLACEHOLDER_TODOS_GET_002] Todos can be used without logging in (public API); responses expose no sensitive data (3.8s)
+  ok 56 api\jsonplaceholder\tests\photos.spec.ts:556:9 › jsonplaceholder / photos › Authorization › [TC_JSONPLACEHOLDER_PHOTOS_GET_002] Photos can be used without logging in (public API); responses expose no sensitive data (retry #1) (5.2s)
+  ok 57 api\jsonplaceholder\tests\users.spec.ts:121:9 › jsonplaceholder / users › Positive-Functional › [TC_JSONPLACEHOLDER_USERS_ID_PUT_001] Update an existing user (full and partial update) (5.1s)
+  ok 59 api\jsonplaceholder\tests\users.spec.ts:202:9 › jsonplaceholder / users › Positive-Functional › [TC_JSONPLACEHOLDER_USERS_ID_DELETE_001] Delete an user; deleting an user that does not exist is rejected (1.3s)
+  ok 60 api\jsonplaceholder\tests\users.spec.ts:225:9 › jsonplaceholder / users › Positive-Functional › [TC_JSONPLACEHOLDER_USERS_POST_004] Manage an user end to end; as documented, changes are answered but not saved (8.2s)
+  x  58 api\jsonplaceholder\tests\comments.spec.ts:385:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002] Updating a comment with invalid details, or a comment that does not exist, is handled safely (validation rules are not documented) (15.1s)
+  ok 62 api\jsonplaceholder\tests\comments.spec.ts:385:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002] Updating a comment with invalid details, or a comment that does not exist, is handled safely (validation rules are not documented) (retry #1) (9.1s)
+  ok 61 api\jsonplaceholder\tests\users.spec.ts:257:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_POST_002] Creating an user with missing or invalid details is handled safely (validation rules are not documented) (11.0s)
+  ok 64 api\jsonplaceholder\tests\users.spec.ts:433:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_POST_003] Creating a duplicate user is handled safely (validation rules are not documented) (1.8s)
+  ok 63 api\jsonplaceholder\tests\comments.spec.ts:560:9 › jsonplaceholder / comments › Authorization › [TC_JSONPLACEHOLDER_COMMENTS_GET_003] Comments can be used without logging in (public API); responses expose no sensitive data (3.9s)
+  ok 65 api\jsonplaceholder\tests\users.spec.ts:445:9 › jsonplaceholder / users › Negative › [TC_JSONPLACEHOLDER_USERS_ID_PUT_002] Updating an user with invalid details, or an user that does not exist, is handled safely (validation rules are not documented) (15.2s)
+  ok 66 api\jsonplaceholder\tests\users.spec.ts:740:9 › jsonplaceholder / users › Authorization › [TC_JSONPLACEHOLDER_USERS_GET_002] Users can be used without logging in (public API); responses expose no sensitive data (4.1s)
+
+
+  1) api\jsonplaceholder\tests\comments.spec.ts:11:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_GET_001] Browse comments and filter them by their attributes 
+
+    Error: 2 of 4 checks failed:
+    • [TC_JSONPLACEHOLDER_COMMENTS_GET_001.1] GET /comments with a valid request returns 200 and the required fields: Response took 10534 ms (limit 2000 ms)
+    • [TC_JSONPLACEHOLDER_COMMENTS_GET_001.3] GET /comments response matches the schema for every field of every array item (type, format, presence): Response took 3489 ms (limit 2000 ms)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (c:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\comments.spec.ts:49:23
+
+    Error Context: test-results\jsonplaceholder\comments-jsonplaceholder-c-c141b-er-them-by-their-attributes\error-context.md
+
+  2) api\jsonplaceholder\tests\comments.spec.ts:278:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_POST_002] Creating a comment with missing or invalid details is handled safely (validation rules are not documented) 
+
+    Error: 2 of 10 checks failed:
+    • [TC_JSONPLACEHOLDER_COMMENTS_POST_002.1] POST /comments without required field "postId" is rejected or stored exactly (rule undocumented), never a 5xx: Response took 4892 ms (limit 2000 ms)
+    • [TC_JSONPLACEHOLDER_COMMENTS_POST_002.8] POST /comments with wrong type for "email" (number instead of string) is rejected or stored exactly (rule undocumented), never a 5xx: Response took 2092 ms (limit 2000 ms)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 2
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (c:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\comments.spec.ts:370:23
+
+    Error Context: test-results\jsonplaceholder\comments-jsonplaceholder-c-81bbf-n-rules-are-not-documented-\error-context.md
+
+  3) api\jsonplaceholder\tests\comments.spec.ts:385:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002] Updating a comment with invalid details, or a comment that does not exist, is handled safely (validation rules are not documented) 
+
+    Error: 1 of 17 checks failed:
+    • [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.13] PATCH /comments/{id} with wrong type for "postId" (string instead of integer) is rejected or stored exactly (rule undocumented), never a 5xx: Response took 5078 ms (limit 2000 ms)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (c:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\comments.spec.ts:555:23
+
+    Error Context: test-results\jsonplaceholder\comments-jsonplaceholder-c-af3af-n-rules-are-not-documented-\error-context.md
+
+  4) api\jsonplaceholder\tests\photos.spec.ts:257:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_POST_002] Creating a photo with missing or invalid details is handled safely (validation rules are not documented) 
+
+    Error: 1 of 11 checks failed:
+    • [TC_JSONPLACEHOLDER_PHOTOS_POST_002.1] POST /photos without required field "albumId" is rejected or stored exactly (rule undocumented), never a 5xx: Response took 2702 ms (limit 2000 ms)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (c:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\photos.spec.ts:358:23
+
+    Error Context: test-results\jsonplaceholder\photos-jsonplaceholder-pho-32075-n-rules-are-not-documented-\error-context.md
+
+  5) api\jsonplaceholder\tests\photos.spec.ts:556:9 › jsonplaceholder / photos › Authorization › [TC_JSONPLACEHOLDER_PHOTOS_GET_002] Photos can be used without logging in (public API); responses expose no sensitive data 
+
+    Error: 1 of 8 checks failed:
+    • [TC_JSONPLACEHOLDER_PHOTOS_GET_002.1] Public GET /photos works without any token: Response took 3168 ms (limit 2000 ms)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (c:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\photos.spec.ts:629:23
+
+    Error Context: test-results\jsonplaceholder\photos-jsonplaceholder-pho-31477-es-expose-no-sensitive-data\error-context.md
+
+  6) api\jsonplaceholder\tests\posts.spec.ts:159:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001] Delete a post; deleting a post that does not exist is rejected 
+
+    Error: 1 of 2 checks failed:
+    • [TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001.1] DELETE /posts/{id} with a valid request returns 200/204 and the required fields: Response took 2299 ms (limit 2000 ms)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (c:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\posts.spec.ts:179:23
+
+    Error Context: test-results\jsonplaceholder\posts-jsonplaceholder-post-a5abf--does-not-exist-is-rejected\error-context.md
+
+  7) api\jsonplaceholder\tests\posts.spec.ts:212:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001] List comments of one posts 
+
+    Error: 1 of 3 checks failed:
+    • [TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001.1] GET /posts/{id}/comments with a valid request returns 200 and the required fields: Response took 4094 ms (limit 2000 ms)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+       at ..\..\..\shared\helpers\assertions.ts:136
+
+      134 | /** Fails the high-level test when any of its checks failed, listing every failed check. */
+      135 | export function expectNoFailures(failures: string[], total: number): void {
+    > 136 |   expect(failures.length, `${failures.length} of ${total} checks failed:\n• ${failures.join('\n• ')}`).toBe(0);
+          |                                                                                                        ^
+      137 | }
+      138 |
+      139 | /** Two responses carry the same JSON body. */
+        at expectNoFailures (c:\Users\BhawnaBothra\projects\API_Test_Agent\shared\helpers\assertions.ts:136:104)
+        at c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\tests\posts.spec.ts:242:23
+
+    Error Context: test-results\jsonplaceholder\posts-jsonplaceholder-post-c7d3c--List-comments-of-one-posts\error-context.md
+
+  7 flaky
+    api\jsonplaceholder\tests\comments.spec.ts:11:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_GET_001] Browse comments and filter them by their attributes 
+    api\jsonplaceholder\tests\comments.spec.ts:278:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_POST_002] Creating a comment with missing or invalid details is handled safely (validation rules are not documented) 
+    api\jsonplaceholder\tests\comments.spec.ts:385:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002] Updating a comment with invalid details, or a comment that does not exist, is handled safely (validation rules are not documented) 
+    api\jsonplaceholder\tests\photos.spec.ts:257:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_POST_002] Creating a photo with missing or invalid details is handled safely (validation rules are not documented) 
+    api\jsonplaceholder\tests\photos.spec.ts:556:9 › jsonplaceholder / photos › Authorization › [TC_JSONPLACEHOLDER_PHOTOS_GET_002] Photos can be used without logging in (public API); responses expose no sensitive data 
+    api\jsonplaceholder\tests\posts.spec.ts:159:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001] Delete a post; deleting a post that does not exist is rejected 
+    api\jsonplaceholder\tests\posts.spec.ts:212:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001] List comments of one posts 
+  52 passed (1.8m)
+
+[2026-11-11T16:53:26.265Z]     api\jsonplaceholder\tests\comments.spec.ts:11:9 › jsonplaceholder / comments › Positive-Functional › [TC_JSONPLACEHOLDER_COMMENTS_GET_001] Browse comments and filter them by their attributes 
+    api\jsonplaceholder\tests\comments.spec.ts:278:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_POST_002] Creating a comment with missing or invalid details is handled safely (validation rules are not documented) 
+    api\jsonplaceholder\tests\comments.spec.ts:385:9 › jsonplaceholder / comments › Negative › [TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002] Updating a comment with invalid details, or a comment that does not exist, is handled safely (validation rules are not documented) 
+    api\jsonplaceholder\tests\photos.spec.ts:257:9 › jsonplaceholder / photos › Negative › [TC_JSONPLACEHOLDER_PHOTOS_POST_002] Creating a photo with missing or invalid details is handled safely (validation rules are not documented) 
+    api\jsonplaceholder\tests\photos.spec.ts:556:9 › jsonplaceholder / photos › Authorization › [TC_JSONPLACEHOLDER_PHOTOS_GET_002] Photos can be used without logging in (public API); responses expose no sensitive data 
+    api\jsonplaceholder\tests\posts.spec.ts:159:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001] Delete a post; deleting a post that does not exist is rejected 
+    api\jsonplaceholder\tests\posts.spec.ts:212:9 › jsonplaceholder / posts › Positive-Functional › [TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_001] List comments of one posts 
+  52 passed (1.8m)
+[2026-11-11T16:53:26.272Z]     run done in 115.6 s
+[2026-11-11T16:53:26.274Z] --- [9] calibrate
+[2026-11-11T16:53:26.345Z] no new conventions to learn
+[2026-11-11T16:53:26.346Z]     calibrate done in 0.1 s
+[2026-11-11T16:53:26.348Z] --- [10] report
+[2026-11-11T16:53:26.626Z] triaged 7 failures into 1 root causes; summary -> c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\summary.html
+[2026-11-11T16:53:26.696Z] junit: 59 tests, 0 failures, 0 skipped -> c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\junit.xml
+[2026-11-11T16:53:26.895Z] run archived -> reports/history/20261111-165136Z/
+[2026-11-11T16:53:26.897Z]     report done in 0.5 s
+[2026-11-11T16:53:26.899Z] --- [11] drift
+[2026-11-11T16:53:27.128Z] spec drift: 6 items (0 fix API, 6 fix docs), 0 doc changes withheld for unclean evidence -> c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\spec-drift.json
+[2026-11-11T16:53:27.287Z]     drift done in 0.4 s
+[2026-11-11T16:53:27.290Z] --- [12] final
+[2026-11-11T16:53:27.531Z] ================ API TEST RUN COMPLETE ================
+[2026-11-11T16:53:27.534Z] API            : jsonplaceholder  (https://jsonplaceholder.typicode.com/)
+[2026-11-11T16:53:27.536Z] Test cases     : 59
+[2026-11-11T16:53:27.537Z] Spec changes   : spec unchanged - all groups reused from the previous design
+[2026-11-11T16:53:27.539Z] Results        : total 59 | passed 52 | failed 0 | skipped 0 | flaky 7
+[2026-11-11T16:53:27.541Z] Coverage       : 100% of tests executed | pass rate 100% of executed
+[2026-11-11T16:53:27.542Z] Root causes    : 1 distinct problems behind 7 failing tests
+[2026-11-11T16:53:27.544Z] Spec drift     : 6 items - 0 fix API, 6 fix docs -> c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\spec-drift.json
+[2026-11-11T16:53:27.545Z] qTest Excel    : c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\test-cases\jsonplaceholder_qtest_import.xlsx
+[2026-11-11T16:53:27.547Z] Summary report : c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\summary.html
+[2026-11-11T16:53:27.549Z] Playwright     : c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\html\index.html
+[2026-11-11T16:53:27.551Z] Triage         : c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\triage.json
+[2026-11-11T16:53:27.552Z] Run log        : c:\Users\BhawnaBothra\projects\API_Test_Agent\api\jsonplaceholder\reports\run-log.txt
+[2026-11-11T16:53:27.554Z] =======================================================
+[2026-11-11T16:53:27.556Z]     final done in 0.3 s

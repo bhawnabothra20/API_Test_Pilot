@@ -1,0 +1,20 @@
+{
+  "apiName": "jsonplaceholder",
+  "generatedAt": "2026-11-11T16:51:30.671Z",
+  "authType": "none",
+  "totalChecks": 332,
+  "runnableChecks": 332,
+  "credentials": [
+    {
+      "kind": "admin",
+      "neededBy": 0,
+      "configured": false,
+      "verified": "not-checked"
+    }
+  ],
+  "quota": {
+    "status": "ok",
+    "detail": "GET /posts -> 200, 3599999/3600000 requests left."
+  },
+  "warnings": []
+}

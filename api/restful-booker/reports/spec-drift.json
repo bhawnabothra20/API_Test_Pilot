@@ -1,0 +1,97 @@
+{
+  "apiName": "restful-booker",
+  "generatedAt": "2026-11-12T06:54:57.544Z",
+  "runStartedAt": "2026-11-12T06:50:02.396Z",
+  "specSource": "apidoc",
+  "patchable": false,
+  "totals": {
+    "items": 4,
+    "fixApi": 3,
+    "fixDocs": 1,
+    "patchOps": 0,
+    "withheld": 2
+  },
+  "items": [
+    {
+      "id": "D1",
+      "endpoint": "POST /booking",
+      "endpointId": "booking_POST",
+      "kind": "server-error",
+      "documented": "No 5xx response documented for client input",
+      "observed": "HTTP 500 in 9 responses",
+      "evidence": [
+        "TC_RESTFUL_BOOKER_BOOKING_POST_002"
+      ],
+      "checks": 9,
+      "confidence": "high",
+      "recommendation": "fix API",
+      "rationale": "A server error is never a contract to document: the API must handle this input (400/422 for invalid input, success for valid input)."
+    },
+    {
+      "id": "D2",
+      "endpoint": "PUT /booking/{id}",
+      "endpointId": "booking_id_PUT",
+      "kind": "server-error",
+      "documented": "No 5xx response documented for client input",
+      "observed": "HTTP 500 in 2 responses",
+      "evidence": [
+        "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002"
+      ],
+      "checks": 2,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "A server error is never a contract to document: the API must handle this input (400/422 for invalid input, success for valid input)."
+    },
+    {
+      "id": "D3",
+      "endpoint": "GET /booking",
+      "endpointId": "booking_GET",
+      "kind": "server-error",
+      "documented": "No 5xx response documented for client input",
+      "observed": "HTTP 500 in 1 response",
+      "evidence": [
+        "TC_RESTFUL_BOOKER_BOOKING_GET_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "A server error is never a contract to document: the API must handle this input (400/422 for invalid input, success for valid input)."
+    },
+    {
+      "id": "D4",
+      "endpoint": "DELETE /booking/{id}",
+      "endpointId": "booking_id_DELETE",
+      "kind": "undocumented-status",
+      "documented": "Not documented",
+      "observed": "HTTP 403 - calibrated convention (unauthenticated): assumed 401, observed 403 consistently",
+      "evidence": [
+        "TC_RESTFUL_BOOKER_BOOKING_POST_004.4",
+        "TC_RESTFUL_BOOKER_BOOKING_POST_004.5",
+        "TC_RESTFUL_BOOKER_BOOKING_POST_004.10",
+        "TC_RESTFUL_BOOKER_BOOKING_POST_004.11",
+        "TC_RESTFUL_BOOKER_BOOKING_POST_004.14",
+        "TC_RESTFUL_BOOKER_BOOKING_POST_004.15"
+      ],
+      "checks": 6,
+      "confidence": "high",
+      "recommendation": "fix docs",
+      "rationale": "The documentation is silent and the API consistently answers 403: document it."
+    }
+  ],
+  "withheld": [
+    {
+      "endpoint": "PATCH /booking/{id}",
+      "candidate": "document HTTP 403",
+      "reason": "endpoint accepted invalid input with 2xx"
+    },
+    {
+      "endpoint": "PUT /booking/{id}",
+      "candidate": "document HTTP 403",
+      "reason": "endpoint answered 5xx in this run"
+    }
+  ],
+  "confirmed": [],
+  "notes": [
+    "Spec source is apidoc: no OpenAPI document to patch; drift items only."
+  ]
+}

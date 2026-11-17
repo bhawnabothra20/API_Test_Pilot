@@ -1,0 +1,1327 @@
+{
+  "apiName": "petstore",
+  "envPrefix": "PETSTORE",
+  "title": "Swagger Petstore",
+  "sourceUrl": "https://petstore.swagger.io/v2/swagger.json",
+  "baseUrl": "https://petstore.swagger.io/v2",
+  "specSource": "swagger2",
+  "specFile": "spec/openapi.json",
+  "discoveredAt": "2026-11-11T16:38:15.850Z",
+  "auth": {
+    "type": "apiKey",
+    "unauthenticatedStatus": 401,
+    "forbiddenStatus": 403,
+    "statusDocumented": false,
+    "roles": [],
+    "notes": [
+      "Primary security scheme \"api_key\" (apiKey)."
+    ],
+    "headerName": "api_key",
+    "declaredSchemes": {
+      "api_key": "apiKey",
+      "petstore_auth": "oauth2"
+    }
+  },
+  "endpoints": [
+    {
+      "id": "pet_petId_uploadImage_POST",
+      "group": "pet",
+      "method": "POST",
+      "path": "/pet/{petId}/uploadImage",
+      "summary": "uploads an image",
+      "pathParams": [
+        {
+          "name": "petId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "description": "ID of pet to update"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestContentType": "multipart/form-data",
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "type": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "securitySchemes": [
+        "petstore_auth"
+      ]
+    },
+    {
+      "id": "pet_POST",
+      "group": "pet",
+      "method": "POST",
+      "path": "/pet",
+      "summary": "Add a new pet to the store",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 405,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "category": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": []
+            },
+            "name": {
+              "type": "string",
+              "example": "doggie"
+            },
+            "photoUrls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": []
+              }
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "available",
+                "pending",
+                "sold"
+              ],
+              "description": "pet status in the store"
+            }
+          },
+          "required": [
+            "name",
+            "photoUrls"
+          ]
+        }
+      },
+      "securitySchemes": [
+        "petstore_auth"
+      ]
+    },
+    {
+      "id": "pet_PUT",
+      "group": "pet",
+      "method": "PUT",
+      "path": "/pet",
+      "summary": "Update an existing pet",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "category": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": []
+            },
+            "name": {
+              "type": "string",
+              "example": "doggie"
+            },
+            "photoUrls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": []
+              }
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "available",
+                "pending",
+                "sold"
+              ],
+              "description": "pet status in the store"
+            }
+          },
+          "required": [
+            "name",
+            "photoUrls"
+          ]
+        }
+      },
+      "securitySchemes": [
+        "petstore_auth"
+      ]
+    },
+    {
+      "id": "pet_findByStatus_GET",
+      "group": "pet",
+      "method": "GET",
+      "path": "/pet/findByStatus",
+      "summary": "Finds Pets by status",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "status",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "available",
+                "pending",
+                "sold"
+              ]
+            },
+            "description": "Status values that need to be considered for filter"
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "category": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": []
+            },
+            "name": {
+              "type": "string",
+              "example": "doggie"
+            },
+            "photoUrls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": []
+              }
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "available",
+                "pending",
+                "sold"
+              ],
+              "description": "pet status in the store"
+            }
+          },
+          "required": [
+            "name",
+            "photoUrls"
+          ]
+        }
+      },
+      "securitySchemes": [
+        "petstore_auth"
+      ]
+    },
+    {
+      "id": "pet_findByTags_GET",
+      "group": "pet",
+      "method": "GET",
+      "path": "/pet/findByTags",
+      "summary": "Finds Pets by tags",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "tags",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tags to filter by"
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "category": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": []
+            },
+            "name": {
+              "type": "string",
+              "example": "doggie"
+            },
+            "photoUrls": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": []
+              }
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "available",
+                "pending",
+                "sold"
+              ],
+              "description": "pet status in the store"
+            }
+          },
+          "required": [
+            "name",
+            "photoUrls"
+          ]
+        }
+      },
+      "securitySchemes": [
+        "petstore_auth"
+      ]
+    },
+    {
+      "id": "pet_petId_GET",
+      "group": "pet",
+      "method": "GET",
+      "path": "/pet/{petId}",
+      "summary": "Find pet by ID",
+      "pathParams": [
+        {
+          "name": "petId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "description": "ID of pet to return"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "category": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "name": {
+            "type": "string",
+            "example": "doggie"
+          },
+          "photoUrls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": []
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "available",
+              "pending",
+              "sold"
+            ],
+            "description": "pet status in the store"
+          }
+        },
+        "required": [
+          "name",
+          "photoUrls"
+        ]
+      },
+      "securitySchemes": [
+        "api_key"
+      ]
+    },
+    {
+      "id": "pet_petId_POST",
+      "group": "pet",
+      "method": "POST",
+      "path": "/pet/{petId}",
+      "summary": "Updates a pet in the store with form data",
+      "pathParams": [
+        {
+          "name": "petId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "description": "ID of pet that needs to be updated"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 405,
+      "inferred": false,
+      "requestContentType": "application/x-www-form-urlencoded",
+      "securitySchemes": [
+        "petstore_auth"
+      ]
+    },
+    {
+      "id": "pet_petId_DELETE",
+      "group": "pet",
+      "method": "DELETE",
+      "path": "/pet/{petId}",
+      "summary": "Deletes a pet",
+      "pathParams": [
+        {
+          "name": "petId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "description": "Pet id to delete"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "securitySchemes": [
+        "petstore_auth"
+      ]
+    },
+    {
+      "id": "store_inventory_GET",
+      "group": "store",
+      "method": "GET",
+      "path": "/store/inventory",
+      "summary": "Returns pet inventories by status",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": true,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object"
+      },
+      "securitySchemes": [
+        "api_key"
+      ]
+    },
+    {
+      "id": "store_order_POST",
+      "group": "store",
+      "method": "POST",
+      "path": "/store/order",
+      "summary": "Place an order for a pet",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "petId": {
+              "type": "integer"
+            },
+            "quantity": {
+              "type": "integer"
+            },
+            "shipDate": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "placed",
+                "approved",
+                "delivered"
+              ],
+              "description": "Order Status"
+            },
+            "complete": {
+              "type": "boolean"
+            }
+          },
+          "required": []
+        }
+      },
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "petId": {
+            "type": "integer"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "shipDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "placed",
+              "approved",
+              "delivered"
+            ],
+            "description": "Order Status"
+          },
+          "complete": {
+            "type": "boolean"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "id": "store_order_orderId_GET",
+      "group": "store",
+      "method": "GET",
+      "path": "/store/order/{orderId}",
+      "summary": "Find purchase order by ID",
+      "pathParams": [
+        {
+          "name": "orderId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10,
+            "description": "ID of pet that needs to be fetched"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "petId": {
+            "type": "integer"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "shipDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "placed",
+              "approved",
+              "delivered"
+            ],
+            "description": "Order Status"
+          },
+          "complete": {
+            "type": "boolean"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "id": "store_order_orderId_DELETE",
+      "group": "store",
+      "method": "DELETE",
+      "path": "/store/order/{orderId}",
+      "summary": "Delete purchase order by ID",
+      "pathParams": [
+        {
+          "name": "orderId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "ID of the order that needs to be deleted"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "user_createWithList_POST",
+      "group": "user",
+      "method": "POST",
+      "path": "/user/createWithList",
+      "summary": "Creates list of users with given input array",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "username": {
+                "type": "string"
+              },
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "userStatus": {
+                "type": "integer",
+                "description": "User Status"
+              }
+            },
+            "required": []
+          }
+        }
+      }
+    },
+    {
+      "id": "user_username_GET",
+      "group": "user",
+      "method": "GET",
+      "path": "/user/{username}",
+      "summary": "Get user by user name",
+      "pathParams": [
+        {
+          "name": "username",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "The name that needs to be fetched. Use user1 for testing. "
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "username": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "userStatus": {
+            "type": "integer",
+            "description": "User Status"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "id": "user_username_PUT",
+      "group": "user",
+      "method": "PUT",
+      "path": "/user/{username}",
+      "summary": "Updated user",
+      "pathParams": [
+        {
+          "name": "username",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "name that need to be updated"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "username": {
+              "type": "string"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "userStatus": {
+              "type": "integer",
+              "description": "User Status"
+            }
+          },
+          "required": []
+        }
+      }
+    },
+    {
+      "id": "user_username_DELETE",
+      "group": "user",
+      "method": "DELETE",
+      "path": "/user/{username}",
+      "summary": "Delete user",
+      "pathParams": [
+        {
+          "name": "username",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "The name that needs to be deleted"
+          }
+        }
+      ],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "user_login_GET",
+      "group": "user",
+      "method": "GET",
+      "path": "/user/login",
+      "summary": "Logs user into the system",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "username",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "The user name for login"
+          }
+        },
+        {
+          "name": "password",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "The password for login in clear text"
+          }
+        }
+      ],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "responseSchema": {
+        "type": "string"
+      }
+    },
+    {
+      "id": "user_logout_GET",
+      "group": "user",
+      "method": "GET",
+      "path": "/user/logout",
+      "summary": "Logs out current logged in user session",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 200,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false
+    },
+    {
+      "id": "user_createWithArray_POST",
+      "group": "user",
+      "method": "POST",
+      "path": "/user/createWithArray",
+      "summary": "Creates list of users with given input array",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "username": {
+                "type": "string"
+              },
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "userStatus": {
+                "type": "integer",
+                "description": "User Status"
+              }
+            },
+            "required": []
+          }
+        }
+      }
+    },
+    {
+      "id": "user_POST",
+      "group": "user",
+      "method": "POST",
+      "path": "/user",
+      "summary": "Create user",
+      "pathParams": [],
+      "queryParams": [],
+      "requiredHeaders": {},
+      "successStatus": 201,
+      "responseContentType": "application/json",
+      "requiresAuth": false,
+      "adminOnly": false,
+      "isLogin": false,
+      "notFoundStatus": 404,
+      "badRequestStatus": 400,
+      "inferred": false,
+      "requestBody": {
+        "contentType": "application/json",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "username": {
+              "type": "string"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "userStatus": {
+              "type": "integer",
+              "description": "User Status"
+            }
+          },
+          "required": []
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "pet",
+      "collectionPath": "/pet",
+      "itemPath": "/pet/{petId}",
+      "idParam": "petId",
+      "idField": "id",
+      "createIdPath": "id",
+      "createEntityPath": "",
+      "persistsWrites": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "category": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "name": {
+            "type": "string",
+            "example": "doggie"
+          },
+          "photoUrls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": []
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "available",
+              "pending",
+              "sold"
+            ],
+            "description": "pet status in the store"
+          }
+        },
+        "required": [
+          "name",
+          "photoUrls"
+        ]
+      }
+    },
+    {
+      "name": "store",
+      "collectionPath": "/store/order",
+      "itemPath": "/store/order/{orderId}",
+      "idParam": "orderId",
+      "idField": "id",
+      "createIdPath": "id",
+      "createEntityPath": "",
+      "persistsWrites": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "petId": {
+            "type": "integer"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "shipDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "placed",
+              "approved",
+              "delivered"
+            ],
+            "description": "Order Status"
+          },
+          "complete": {
+            "type": "boolean"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "user",
+      "collectionPath": "/user",
+      "itemPath": "/user/{username}",
+      "idParam": "username",
+      "idField": "username",
+      "createIdPath": "username",
+      "createEntityPath": "",
+      "persistsWrites": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "username": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "userStatus": {
+            "type": "integer",
+            "description": "User Status"
+          }
+        },
+        "required": []
+      }
+    }
+  ],
+  "defaults": {
+    "responseTimeMs": 2000,
+    "stringMinLength": 1,
+    "stringMaxLength": 255,
+    "numberMin": 0,
+    "numberMax": 2147483647,
+    "arrayMaxItems": 100
+  },
+  "assumptions": [
+    "Spec found at https://petstore.swagger.io/v2/swagger.json (swagger2).",
+    "POST /pet: no 2xx response documented, assuming 201.",
+    "PUT /pet: no 2xx response documented, assuming 200.",
+    "POST /pet/{petId}: no 2xx response documented, assuming 201.",
+    "DELETE /pet/{petId}: no 2xx response documented, assuming 200.",
+    "DELETE /store/order/{orderId}: no 2xx response documented, assuming 200.",
+    "POST /user/createWithList: no 2xx response documented, assuming 201.",
+    "PUT /user/{username}: no 2xx response documented, assuming 200.",
+    "DELETE /user/{username}: no 2xx response documented, assuming 200.",
+    "GET /user/logout: no 2xx response documented, assuming 200.",
+    "POST /user/createWithArray: no 2xx response documented, assuming 201.",
+    "POST /user: no 2xx response documented, assuming 201.",
+    "OAuth2/OpenID scheme(s) petstore_auth declared but not used: the agent does not run OAuth flows; every protected endpoint is tested with \"api_key\".",
+    "Unauthenticated status not documented: expecting 401 for missing/invalid credentials (RFC 7235)."
+  ]
+}

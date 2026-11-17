@@ -1,0 +1,1168 @@
+{
+  "TC_REQRES_API_LOGIN_POST_001.1": {
+    "note": "valid credentials from .env",
+    "body": {
+      "email": "${env:USERNAME}",
+      "password": "${env:PASSWORD}"
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_001.1": {
+    "note": "valid request",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_001.2": {
+    "note": "schema validation",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_001.3": {
+    "note": "format/enum/range validation",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_001.4": {
+    "note": "echo exactness",
+    "body": {}
+  },
+  "TC_REQRES_API_USERS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_USERS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_USERS_POST_001.1": {
+    "note": "valid request",
+    "body": {}
+  },
+  "TC_REQRES_API_USERS_POST_001.2": {
+    "note": "schema validation",
+    "body": {}
+  },
+  "TC_REQRES_API_USERS_POST_001.3": {
+    "note": "format/enum/range validation",
+    "body": {}
+  },
+  "TC_REQRES_API_USERS_POST_001.4": {
+    "note": "echo exactness",
+    "body": {}
+  },
+  "TC_REQRES_API_USERS_ID_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_USERS_ID_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_USERS_ID_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_REQRES_API_USERS_ID_PUT_001.1": {
+    "note": "valid request",
+    "body": {}
+  },
+  "TC_REQRES_API_USERS_ID_PUT_001.2": {
+    "note": "schema validation",
+    "body": {}
+  },
+  "TC_REQRES_API_USERS_ID_PUT_001.3": {
+    "note": "format/enum/range validation",
+    "body": {}
+  },
+  "TC_REQRES_API_USERS_ID_PUT_001.4": {
+    "note": "echo exactness",
+    "body": {}
+  },
+  "TC_REQRES_API_USERS_ID_PATCH_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_USERS_ID_PATCH_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_USERS_ID_PATCH_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_REQRES_API_USERS_ID_DELETE_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_UNKNOWN_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_UNKNOWN_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_UNKNOWN_ID_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_UNKNOWN_ID_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_REGISTER_POST_002.1": {
+    "note": "valid request",
+    "body": {
+      "email": "asa_hauck37@example.com",
+      "password": "certe denego"
+    }
+  },
+  "TC_REQRES_API_REGISTER_POST_002.2": {
+    "note": "schema validation",
+    "body": {
+      "email": "germaine_funk@example.com",
+      "password": "degusto quis"
+    }
+  },
+  "TC_REQRES_API_REGISTER_POST_002.3": {
+    "note": "echo exactness",
+    "body": {
+      "email": "germaine_funk@example.com",
+      "password": "degusto quis"
+    }
+  },
+  "TC_REQRES_API_LOGOUT_POST_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_LOGOUT_POST_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_COLLECTIONS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_COLLECTIONS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_COLLECTIONS_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "name": "Rollin Schmeler",
+      "slug": "quo xiphias",
+      "schema": {},
+      "project_id": "volup denuo",
+      "visibility": "venio villa"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_POST_001.2": {
+    "note": "required fields only",
+    "body": {
+      "name": "Christelle Gutkowski III"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_POST_001.3": {
+    "note": "schema validation",
+    "body": {
+      "name": "Carmelo Collins Jr.",
+      "slug": "desidero aurum",
+      "schema": {},
+      "project_id": "strenuus admiratio",
+      "visibility": "minima clementia"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_POST_001.4": {
+    "note": "format/enum/range validation",
+    "body": {
+      "name": "Carmelo Collins Jr.",
+      "slug": "desidero aurum",
+      "schema": {},
+      "project_id": "strenuus admiratio",
+      "visibility": "minima clementia"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_POST_001.5": {
+    "note": "echo exactness",
+    "body": {
+      "name": "Carmelo Collins Jr.",
+      "slug": "desidero aurum",
+      "schema": {},
+      "project_id": "strenuus admiratio",
+      "visibility": "minima clementia"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_PUT_001.1": {
+    "note": "valid request",
+    "body": {
+      "name": "Billy Murazik",
+      "slug": "peccatus thymum",
+      "schema": {},
+      "visibility": "peior administratio"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_PUT_001.2": {
+    "note": "required fields only",
+    "body": {}
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_PUT_001.3": {
+    "note": "schema validation",
+    "body": {
+      "name": "Emil Heidenreich",
+      "slug": "curis textor",
+      "schema": {},
+      "visibility": "somniculosus curia"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_PUT_001.4": {
+    "note": "format/enum/range validation",
+    "body": {
+      "name": "Emil Heidenreich",
+      "slug": "curis textor",
+      "schema": {},
+      "visibility": "somniculosus curia"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_PUT_001.5": {
+    "note": "echo exactness",
+    "body": {
+      "name": "Emil Heidenreich",
+      "slug": "curis textor",
+      "schema": {},
+      "visibility": "somniculosus curia"
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_DELETE_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_POST_001.2": {
+    "note": "schema validation",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_POST_001.3": {
+    "note": "format/enum/range validation",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_POST_001.4": {
+    "note": "echo exactness",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_001.1": {
+    "note": "valid request",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_001.2": {
+    "note": "schema validation",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_001.3": {
+    "note": "format/enum/range validation",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_001.4": {
+    "note": "echo exactness",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_PATCH_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_PATCH_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_PATCH_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_RECORDID_DELETE_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_APPUSERS_LOGIN_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "email": "geovanni.lakin@example.com",
+      "project_id": "ulciscor thymbra",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_LOGIN_POST_001.2": {
+    "note": "required fields only",
+    "body": {
+      "email": "elva_runolfsdottir@example.com"
+    }
+  },
+  "TC_REQRES_API_APPUSERS_LOGIN_POST_001.3": {
+    "note": "schema validation",
+    "body": {
+      "email": "kraig_bartoletti67@example.com",
+      "project_id": "acquiro eum",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_LOGIN_POST_001.4": {
+    "note": "echo exactness",
+    "body": {
+      "email": "kraig_bartoletti67@example.com",
+      "project_id": "acquiro eum",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_VERIFY_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "token": "vesper suffoco"
+    }
+  },
+  "TC_REQRES_API_APPUSERS_VERIFY_POST_001.2": {
+    "note": "schema validation",
+    "body": {
+      "token": "damnatio patruus"
+    }
+  },
+  "TC_REQRES_API_APPUSERS_VERIFY_POST_001.3": {
+    "note": "echo exactness",
+    "body": {
+      "token": "damnatio patruus"
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ME_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_APPUSERS_ME_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_APPUSERS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_APPUSERS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_APPUSERS_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "email": "steven.bernhard@example.com",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_POST_001.2": {
+    "note": "required fields only",
+    "body": {
+      "email": "jacques.kuvalis-grant@example.com"
+    }
+  },
+  "TC_REQRES_API_APPUSERS_POST_001.3": {
+    "note": "schema validation",
+    "body": {
+      "email": "bob.prohaska@example.com",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_POST_001.4": {
+    "note": "format/enum/range validation",
+    "body": {
+      "email": "bob.prohaska@example.com",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_POST_001.5": {
+    "note": "echo exactness",
+    "body": {
+      "email": "bob.prohaska@example.com",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_APPUSERS_ID_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_APPUSERS_ID_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_REQRES_API_APPUSERS_ID_PUT_001.1": {
+    "note": "valid request",
+    "body": {
+      "email": "princess.bailey1@example.com",
+      "status": "available",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_PUT_001.2": {
+    "note": "required fields only",
+    "body": {}
+  },
+  "TC_REQRES_API_APPUSERS_ID_PUT_001.3": {
+    "note": "schema validation",
+    "body": {
+      "email": "bonita37@example.com",
+      "status": "available",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_PUT_001.4": {
+    "note": "format/enum/range validation",
+    "body": {
+      "email": "bonita37@example.com",
+      "status": "available",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_PUT_001.5": {
+    "note": "echo exactness",
+    "body": {
+      "email": "bonita37@example.com",
+      "status": "available",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_APPUSERS_ID_DELETE_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_APPUSERS_ID_DELETE_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_APPUSERS_ID_SESSIONS_SIMULATE_POST_001.1": {
+    "note": "valid request",
+    "body": {}
+  },
+  "TC_REQRES_API_APPUSERS_ID_SESSIONS_SIMULATE_POST_001.2": {
+    "note": "schema validation",
+    "body": {}
+  },
+  "TC_REQRES_API_APPUSERS_ID_SESSIONS_SIMULATE_POST_001.3": {
+    "note": "echo exactness",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_PROJECTID_APPUSERS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_PROJECTS_PROJECTID_APPUSERS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_PROJECTS_PROJECTID_APPUSERS_TOTAL_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_PROJECTS_PROJECTID_APPUSERS_TOTAL_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_CUSTOM_PATH_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_CUSTOM_PATH_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_CUSTOM_PATH_POST_001.1": {
+    "note": "valid request",
+    "body": {}
+  },
+  "TC_REQRES_API_CUSTOM_PATH_POST_001.2": {
+    "note": "schema validation",
+    "body": {}
+  },
+  "TC_REQRES_API_CUSTOM_PATH_POST_001.3": {
+    "note": "echo exactness",
+    "body": {}
+  },
+  "TC_REQRES_API_CUSTOM_PATH_PUT_001.1": {
+    "note": "valid request",
+    "body": {}
+  },
+  "TC_REQRES_API_CUSTOM_PATH_PUT_001.2": {
+    "note": "schema validation",
+    "body": {}
+  },
+  "TC_REQRES_API_CUSTOM_PATH_PUT_001.3": {
+    "note": "echo exactness",
+    "body": {}
+  },
+  "TC_REQRES_API_CUSTOM_PATH_PATCH_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_CUSTOM_PATH_PATCH_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_CUSTOM_PATH_DELETE_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_API_CUSTOM_PATH_DELETE_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.1": {
+    "note": "public endpoint, no token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.2": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.5": {
+    "note": "admin token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.8": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.11": {
+    "note": "admin token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.14": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.17": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.20": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.23": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.26": {
+    "note": "admin token",
+    "body": {
+      "email": "alicia_fay65@example.com",
+      "password": "provident minima"
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.29": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.32": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.35": {
+    "note": "admin token",
+    "body": {
+      "name": "Jamaal Leuschke",
+      "slug": "comis virga",
+      "schema": {},
+      "project_id": "eveniet angulus",
+      "visibility": "tergiversatio vinco"
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.38": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.41": {
+    "note": "admin token",
+    "body": {
+      "name": "Giovanny Franey",
+      "slug": "depromo minima",
+      "schema": {},
+      "visibility": "causa alias"
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.44": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.47": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.50": {
+    "note": "admin token",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.53": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.56": {
+    "note": "admin token",
+    "body": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.59": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.62": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.65": {
+    "note": "admin token",
+    "body": {
+      "email": "tommie75@example.com",
+      "project_id": "vox ubi",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.68": {
+    "note": "public endpoint, no token",
+    "body": {
+      "token": "thorax stillicidium"
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.69": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.72": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.75": {
+    "note": "admin token",
+    "body": {
+      "email": "raoul_buckridge@example.com",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.78": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.81": {
+    "note": "admin token",
+    "body": {
+      "email": "elta16@example.com",
+      "status": "available",
+      "metadata": {}
+    }
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.84": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.87": {
+    "note": "admin token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.90": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.93": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.96": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.99": {
+    "note": "admin token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.102": {
+    "note": "admin token",
+    "body": {}
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.105": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.108": {
+    "note": "admin token"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.111": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.112": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.113": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.114": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.115": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.116": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.117": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.118": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.119": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.120": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.121": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.122": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.123": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_API_PROJECTS_SANDBOX_POST_002.124": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_GET_001.1": {
+    "note": "valid request",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_GET_001.2": {
+    "note": "schema validation",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_GET_001.3": {
+    "note": "format/enum/range validation",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_POST_001.2": {
+    "note": "schema validation",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_POST_001.3": {
+    "note": "format/enum/range validation",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_POST_001.4": {
+    "note": "echo exactness",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_001.1": {
+    "note": "valid request",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_001.2": {
+    "note": "schema validation",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_001.3": {
+    "note": "format/enum/range validation",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_001.4": {
+    "note": "echo exactness",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_001.5": {
+    "note": "valid request",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_001.6": {
+    "note": "schema validation",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_PUT_001.7": {
+    "note": "format/enum/range validation",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_RECORDID_DELETE_001.1": {
+    "note": "valid request",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_POST_003": {
+    "note": "lifecycle",
+    "body": {
+      "data": {}
+    },
+    "updateBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_APP_ME_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_APP_COLLECTIONS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_APP_COLLECTIONS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_APP_COLLECTIONS_SLUG_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_REQRES_APP_ME_GET_002.1": {
+    "note": "admin token"
+  },
+  "TC_REQRES_APP_ME_GET_002.4": {
+    "note": "admin token"
+  },
+  "TC_REQRES_APP_ME_GET_002.7": {
+    "note": "admin token"
+  },
+  "TC_REQRES_APP_ME_GET_002.10": {
+    "note": "admin token"
+  },
+  "TC_REQRES_APP_ME_GET_002.13": {
+    "note": "admin token",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.16": {
+    "note": "admin token",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.19": {
+    "note": "admin token",
+    "body": {
+      "data": {}
+    },
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.22": {
+    "note": "admin token",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.25": {
+    "note": "admin token",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_APP_ME_GET_002.28": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_APP_ME_GET_002.29": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_APP_ME_GET_002.30": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_APP_ME_GET_002.31": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_APP_ME_GET_002.33": {
+    "note": "excessive data exposure",
+    "setupBody": {
+      "data": {}
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_LOGIN_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "email": "jamey75@example.com",
+      "password": "carpo temperantia"
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_LOGIN_POST_001.2": {
+    "note": "echo exactness",
+    "body": {
+      "email": "krystina.corkery87@example.com",
+      "password": "bonus abbas"
+    }
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_REQRES_AGENT_V1_USERS_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_USERS_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_AGENT_V1_USERS_ID_GET_001.1": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_USERS_ID_GET_001.2": {
+    "note": "schema validation"
+  },
+  "TC_REQRES_AGENT_V1_USERS_ID_GET_001.3": {
+    "note": "format/enum/range validation"
+  },
+  "TC_REQRES_AGENT_V1_AUTH_MFA_VERIFY_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "challenge_token": "ducimus damnatio",
+      "code": "cum coniuratio"
+    }
+  },
+  "TC_REQRES_AGENT_V1_AUTH_MFA_VERIFY_POST_001.2": {
+    "note": "echo exactness",
+    "body": {
+      "challenge_token": "decens via",
+      "code": "voluntarius subseco"
+    }
+  },
+  "TC_REQRES_AGENT_V1_ORDERS_GET_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_GET_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_POST_001.1": {
+    "note": "valid request",
+    "body": {
+      "name": "Geoffrey Koepp-Gerhold",
+      "steps": [
+        "tenuis praesentium"
+      ],
+      "loop": true,
+      "scope": "per-run"
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_POST_001.2": {
+    "note": "required fields only",
+    "body": {
+      "name": "Hanna Waters",
+      "steps": [
+        "constans cornu"
+      ]
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_POST_001.3": {
+    "note": "echo exactness",
+    "body": {
+      "name": "Shari Ward",
+      "steps": [
+        "quod repellendus"
+      ],
+      "loop": true,
+      "scope": "per-run"
+    }
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_NAME_GET_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_NAME_DELETE_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_CHAINS_NAME_STATE_DELETE_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_TRAJECTORIES_GET_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_TRAJECTORIES_DEMO_GET_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_TRAJECTORIES_RUN_ID_GET_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_TRAJECTORIES_RUN_ID_EXPORT_GET_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_TRAJECTORIES_A_DIFF_B_GET_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_SCENARIOS_GET_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_SCENARIOS_SCENARIO_GET_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.1": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.2": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.3": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.4": {
+    "note": "public endpoint, no token",
+    "body": {
+      "email": "kari85@example.com",
+      "password": "quasi temporibus"
+    }
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.5": {
+    "note": "public endpoint, no token",
+    "body": {
+      "challenge_token": "terra aurum",
+      "code": "carbo vespillo"
+    }
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.6": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.7": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.8": {
+    "note": "public endpoint, no token",
+    "body": {
+      "name": "Estell Rippin",
+      "steps": [
+        "crapula ascit"
+      ],
+      "loop": true,
+      "scope": "per-run"
+    }
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.9": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.10": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.11": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.12": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.13": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.14": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.15": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.16": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.17": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.18": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.19": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.20": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.21": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.22": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.23": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.24": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.25": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.26": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.27": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.28": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.29": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.30": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_AGENT_V1_HEALTH_GET_002.31": {
+    "note": "excessive data exposure"
+  },
+  "TC_REQRES_SIM_PAYMENTS_V1_GET_001": {
+    "note": "valid request"
+  },
+  "TC_REQRES_SIM_PAYMENTS_V1_GET_002.1": {
+    "note": "public endpoint, no token"
+  },
+  "TC_REQRES_SIM_PAYMENTS_V1_GET_002.2": {
+    "note": "excessive data exposure"
+  }
+}

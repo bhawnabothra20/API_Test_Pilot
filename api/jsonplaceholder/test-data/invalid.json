@@ -1,0 +1,2021 @@
+{
+  "TC_JSONPLACEHOLDER_POSTS_ID_GET_001.3": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_POST_002.1": {
+    "note": "missing userId",
+    "body": {
+      "title": "Absorbeo desidero aurum strenuus.",
+      "body": "Minima clementia absconditus. Tenax considero vaco spargo caterva vinculum creta creator."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_POST_002.2": {
+    "note": "missing title",
+    "body": {
+      "userId": 1,
+      "body": "Minima clementia absconditus. Tenax considero vaco spargo caterva vinculum creta creator."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_POST_002.3": {
+    "note": "missing body",
+    "body": {
+      "userId": 1,
+      "title": "Absorbeo desidero aurum strenuus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_POST_002.4": {
+    "note": "empty title",
+    "body": {
+      "userId": 1,
+      "title": "",
+      "body": "Minima clementia absconditus. Tenax considero vaco spargo caterva vinculum creta creator."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_POST_002.5": {
+    "note": "wrong type userId",
+    "body": {
+      "userId": "not-a-number",
+      "title": "Absorbeo desidero aurum strenuus.",
+      "body": "Minima clementia absconditus. Tenax considero vaco spargo caterva vinculum creta creator."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_POST_002.6": {
+    "note": "wrong type title",
+    "body": {
+      "userId": 1,
+      "title": 12345,
+      "body": "Minima clementia absconditus. Tenax considero vaco spargo caterva vinculum creta creator."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_POST_002.7": {
+    "note": "wrong type body",
+    "body": {
+      "userId": 1,
+      "title": "Absorbeo desidero aurum strenuus.",
+      "body": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "userId": 1,
+      "title": "Crepusculum tonsor utrimque absconditus.",
+      "body": "Auxilium cariosus sublime deputo terga inventore peior confero solio. Tempus denique beatus aegre clamo."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_002.2": {
+    "note": "missing userId",
+    "body": {
+      "title": "Pecco desidero crudelis terra.",
+      "body": "Dicta consectetur carbo paulatim ulciscor thymbra atavus. Coepi arceo sto tendo."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_002.3": {
+    "note": "missing title",
+    "body": {
+      "userId": 1,
+      "body": "Dicta consectetur carbo paulatim ulciscor thymbra atavus. Coepi arceo sto tendo."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_002.4": {
+    "note": "missing body",
+    "body": {
+      "userId": 1,
+      "title": "Pecco desidero crudelis terra."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_002.5": {
+    "note": "empty title",
+    "body": {
+      "userId": 1,
+      "title": "",
+      "body": "Dicta consectetur carbo paulatim ulciscor thymbra atavus. Coepi arceo sto tendo."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_002.6": {
+    "note": "wrong type userId",
+    "body": {
+      "userId": "not-a-number",
+      "title": "Pecco desidero crudelis terra.",
+      "body": "Dicta consectetur carbo paulatim ulciscor thymbra atavus. Coepi arceo sto tendo."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_002.7": {
+    "note": "wrong type title",
+    "body": {
+      "userId": 1,
+      "title": 12345,
+      "body": "Dicta consectetur carbo paulatim ulciscor thymbra atavus. Coepi arceo sto tendo."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_002.8": {
+    "note": "wrong type body",
+    "body": {
+      "userId": 1,
+      "title": "Pecco desidero crudelis terra.",
+      "body": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_002.9": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "title": "Damnatio patruus contra soluta."
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_002.10": {
+    "note": "wrong type userId",
+    "body": {
+      "title": "Thorax stillicidium tendo architecto.",
+      "userId": "not-a-number"
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_002.11": {
+    "note": "wrong type title",
+    "body": {
+      "title": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_PUT_002.12": {
+    "note": "wrong type body",
+    "body": {
+      "title": "Thorax stillicidium tendo architecto.",
+      "body": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_DELETE_001.2": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_JSONPLACEHOLDER_POSTS_ID_COMMENTS_GET_002": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_GET_002": {
+    "note": "wrong query type",
+    "query": {
+      "postId": "abc"
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_001.4": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_002.1": {
+    "note": "missing postId",
+    "body": {
+      "name": "Dr. Barry Kuvalis",
+      "email": "sam_rowe@example.com",
+      "body": "Decens via voluntarius subseco coruscus. Apparatus carus sint canonicus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_002.2": {
+    "note": "missing name",
+    "body": {
+      "postId": 1,
+      "email": "sam_rowe@example.com",
+      "body": "Decens via voluntarius subseco coruscus. Apparatus carus sint canonicus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_002.3": {
+    "note": "missing email",
+    "body": {
+      "postId": 1,
+      "name": "Dr. Barry Kuvalis",
+      "body": "Decens via voluntarius subseco coruscus. Apparatus carus sint canonicus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_002.4": {
+    "note": "missing body",
+    "body": {
+      "postId": 1,
+      "name": "Dr. Barry Kuvalis",
+      "email": "sam_rowe@example.com"
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_002.5": {
+    "note": "empty name",
+    "body": {
+      "postId": 1,
+      "name": "",
+      "email": "sam_rowe@example.com",
+      "body": "Decens via voluntarius subseco coruscus. Apparatus carus sint canonicus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_002.6": {
+    "note": "wrong type postId",
+    "body": {
+      "postId": "not-a-number",
+      "name": "Dr. Barry Kuvalis",
+      "email": "sam_rowe@example.com",
+      "body": "Decens via voluntarius subseco coruscus. Apparatus carus sint canonicus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_002.7": {
+    "note": "wrong type name",
+    "body": {
+      "postId": 1,
+      "name": 12345,
+      "email": "sam_rowe@example.com",
+      "body": "Decens via voluntarius subseco coruscus. Apparatus carus sint canonicus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_002.8": {
+    "note": "wrong type email",
+    "body": {
+      "postId": 1,
+      "name": "Dr. Barry Kuvalis",
+      "email": 12345,
+      "body": "Decens via voluntarius subseco coruscus. Apparatus carus sint canonicus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_002.9": {
+    "note": "wrong type body",
+    "body": {
+      "postId": 1,
+      "name": "Dr. Barry Kuvalis",
+      "email": "sam_rowe@example.com",
+      "body": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_002.10": {
+    "note": "invalid format email",
+    "body": {
+      "postId": 1,
+      "name": "Dr. Barry Kuvalis",
+      "email": "not-an-email",
+      "body": "Decens via voluntarius subseco coruscus. Apparatus carus sint canonicus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_POST_003": {
+    "note": "duplicate email",
+    "body": {
+      "postId": 1,
+      "name": "Dr. Barry Kuvalis",
+      "email": "sam_rowe@example.com",
+      "body": "Decens via voluntarius subseco coruscus. Apparatus carus sint canonicus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "postId": 1,
+      "name": "Kara Schmeler",
+      "email": "cassandra28@example.com",
+      "body": "Solio verbera quasi varietas tenetur coaegresco attero apud. Utilis ascisco optio accusamus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.2": {
+    "note": "missing postId",
+    "body": {
+      "name": "Myron Bins",
+      "email": "elisha_ryan14@example.com",
+      "body": "Animus tertius stabilis succurro cariosus vacuus cunctatio cupressus aduro. Cena thema vomica."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.3": {
+    "note": "missing name",
+    "body": {
+      "postId": 1,
+      "email": "elisha_ryan14@example.com",
+      "body": "Animus tertius stabilis succurro cariosus vacuus cunctatio cupressus aduro. Cena thema vomica."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.4": {
+    "note": "missing email",
+    "body": {
+      "postId": 1,
+      "name": "Myron Bins",
+      "body": "Animus tertius stabilis succurro cariosus vacuus cunctatio cupressus aduro. Cena thema vomica."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.5": {
+    "note": "missing body",
+    "body": {
+      "postId": 1,
+      "name": "Myron Bins",
+      "email": "elisha_ryan14@example.com"
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.6": {
+    "note": "empty name",
+    "body": {
+      "postId": 1,
+      "name": "",
+      "email": "elisha_ryan14@example.com",
+      "body": "Animus tertius stabilis succurro cariosus vacuus cunctatio cupressus aduro. Cena thema vomica."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.7": {
+    "note": "wrong type postId",
+    "body": {
+      "postId": "not-a-number",
+      "name": "Myron Bins",
+      "email": "elisha_ryan14@example.com",
+      "body": "Animus tertius stabilis succurro cariosus vacuus cunctatio cupressus aduro. Cena thema vomica."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.8": {
+    "note": "wrong type name",
+    "body": {
+      "postId": 1,
+      "name": 12345,
+      "email": "elisha_ryan14@example.com",
+      "body": "Animus tertius stabilis succurro cariosus vacuus cunctatio cupressus aduro. Cena thema vomica."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.9": {
+    "note": "wrong type email",
+    "body": {
+      "postId": 1,
+      "name": "Myron Bins",
+      "email": 12345,
+      "body": "Animus tertius stabilis succurro cariosus vacuus cunctatio cupressus aduro. Cena thema vomica."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.10": {
+    "note": "wrong type body",
+    "body": {
+      "postId": 1,
+      "name": "Myron Bins",
+      "email": "elisha_ryan14@example.com",
+      "body": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.11": {
+    "note": "invalid format email",
+    "body": {
+      "postId": 1,
+      "name": "Myron Bins",
+      "email": "not-an-email",
+      "body": "Animus tertius stabilis succurro cariosus vacuus cunctatio cupressus aduro. Cena thema vomica."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.12": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "name": "Desmond Windler"
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.13": {
+    "note": "wrong type postId",
+    "body": {
+      "name": "Everardo Beier",
+      "postId": "not-a-number"
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.14": {
+    "note": "wrong type name",
+    "body": {
+      "name": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.15": {
+    "note": "wrong type email",
+    "body": {
+      "name": "Everardo Beier",
+      "email": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.16": {
+    "note": "wrong type body",
+    "body": {
+      "name": "Everardo Beier",
+      "body": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_PUT_002.17": {
+    "note": "invalid format email",
+    "body": {
+      "postId": 1,
+      "name": "Chelsie Windler",
+      "email": "not-an-email",
+      "body": "Vitium cinis qui copia basium aegrotatio temptatio conor utique ipsa. Pecco adflicto eligendi ut despecto talis laudantium dedecor laudantium textus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_COMMENTS_ID_DELETE_001.2": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_001.3": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_POST_002.1": {
+    "note": "missing userId",
+    "body": {
+      "title": "Asporto tertius amitto vulticulus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_POST_002.2": {
+    "note": "missing title",
+    "body": {
+      "userId": 1
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_POST_002.3": {
+    "note": "empty title",
+    "body": {
+      "userId": 1,
+      "title": ""
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_POST_002.4": {
+    "note": "wrong type userId",
+    "body": {
+      "userId": "not-a-number",
+      "title": "Asporto tertius amitto vulticulus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_POST_002.5": {
+    "note": "wrong type title",
+    "body": {
+      "userId": 1,
+      "title": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "userId": 1,
+      "title": "Maiores aperte reiciendis arbor."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_002.2": {
+    "note": "missing userId",
+    "body": {
+      "title": "Approbo quasi tandem adsum."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_002.3": {
+    "note": "missing title",
+    "body": {
+      "userId": 1
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_002.4": {
+    "note": "empty title",
+    "body": {
+      "userId": 1,
+      "title": ""
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_002.5": {
+    "note": "wrong type userId",
+    "body": {
+      "userId": "not-a-number",
+      "title": "Approbo quasi tandem adsum."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_002.6": {
+    "note": "wrong type title",
+    "body": {
+      "userId": 1,
+      "title": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_002.7": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "title": "Annus ante comptus thorax."
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_002.8": {
+    "note": "wrong type userId",
+    "body": {
+      "title": "Desparatus certus in solium.",
+      "userId": "not-a-number"
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_PUT_002.9": {
+    "note": "wrong type title",
+    "body": {
+      "title": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_ALBUMS_ID_DELETE_001.2": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_001.4": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_002.1": {
+    "note": "missing albumId",
+    "body": {
+      "title": "Sopor utique balbus dedico.",
+      "url": "https://example.com/ee99aw1q",
+      "thumbnailUrl": "https://example.com/rfdpueej"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_002.2": {
+    "note": "missing title",
+    "body": {
+      "albumId": 1,
+      "url": "https://example.com/ee99aw1q",
+      "thumbnailUrl": "https://example.com/rfdpueej"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_002.3": {
+    "note": "missing url",
+    "body": {
+      "albumId": 1,
+      "title": "Sopor utique balbus dedico.",
+      "thumbnailUrl": "https://example.com/rfdpueej"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_002.4": {
+    "note": "missing thumbnailUrl",
+    "body": {
+      "albumId": 1,
+      "title": "Sopor utique balbus dedico.",
+      "url": "https://example.com/ee99aw1q"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_002.5": {
+    "note": "empty title",
+    "body": {
+      "albumId": 1,
+      "title": "",
+      "url": "https://example.com/ee99aw1q",
+      "thumbnailUrl": "https://example.com/rfdpueej"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_002.6": {
+    "note": "wrong type albumId",
+    "body": {
+      "albumId": "not-a-number",
+      "title": "Sopor utique balbus dedico.",
+      "url": "https://example.com/ee99aw1q",
+      "thumbnailUrl": "https://example.com/rfdpueej"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_002.7": {
+    "note": "wrong type title",
+    "body": {
+      "albumId": 1,
+      "title": 12345,
+      "url": "https://example.com/ee99aw1q",
+      "thumbnailUrl": "https://example.com/rfdpueej"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_002.8": {
+    "note": "wrong type url",
+    "body": {
+      "albumId": 1,
+      "title": "Sopor utique balbus dedico.",
+      "url": 12345,
+      "thumbnailUrl": "https://example.com/rfdpueej"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_002.9": {
+    "note": "wrong type thumbnailUrl",
+    "body": {
+      "albumId": 1,
+      "title": "Sopor utique balbus dedico.",
+      "url": "https://example.com/ee99aw1q",
+      "thumbnailUrl": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_002.10": {
+    "note": "invalid format url",
+    "body": {
+      "albumId": 1,
+      "title": "Sopor utique balbus dedico.",
+      "url": "ht!tp://not a url",
+      "thumbnailUrl": "https://example.com/rfdpueej"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_POST_002.11": {
+    "note": "invalid format thumbnailUrl",
+    "body": {
+      "albumId": 1,
+      "title": "Sopor utique balbus dedico.",
+      "url": "https://example.com/ee99aw1q",
+      "thumbnailUrl": "ht!tp://not a url"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "albumId": 1,
+      "title": "Verus adopto acidus dolores.",
+      "url": "https://example.com/v7mnawfb",
+      "thumbnailUrl": "https://example.com/qa8fbqmy"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.2": {
+    "note": "missing albumId",
+    "body": {
+      "title": "Dolore consuasor utroque talio.",
+      "url": "https://example.com/0jsonxlc",
+      "thumbnailUrl": "https://example.com/zpscufdo"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.3": {
+    "note": "missing title",
+    "body": {
+      "albumId": 1,
+      "url": "https://example.com/0jsonxlc",
+      "thumbnailUrl": "https://example.com/zpscufdo"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.4": {
+    "note": "missing url",
+    "body": {
+      "albumId": 1,
+      "title": "Dolore consuasor utroque talio.",
+      "thumbnailUrl": "https://example.com/zpscufdo"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.5": {
+    "note": "missing thumbnailUrl",
+    "body": {
+      "albumId": 1,
+      "title": "Dolore consuasor utroque talio.",
+      "url": "https://example.com/0jsonxlc"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.6": {
+    "note": "empty title",
+    "body": {
+      "albumId": 1,
+      "title": "",
+      "url": "https://example.com/0jsonxlc",
+      "thumbnailUrl": "https://example.com/zpscufdo"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.7": {
+    "note": "wrong type albumId",
+    "body": {
+      "albumId": "not-a-number",
+      "title": "Dolore consuasor utroque talio.",
+      "url": "https://example.com/0jsonxlc",
+      "thumbnailUrl": "https://example.com/zpscufdo"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.8": {
+    "note": "wrong type title",
+    "body": {
+      "albumId": 1,
+      "title": 12345,
+      "url": "https://example.com/0jsonxlc",
+      "thumbnailUrl": "https://example.com/zpscufdo"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.9": {
+    "note": "wrong type url",
+    "body": {
+      "albumId": 1,
+      "title": "Dolore consuasor utroque talio.",
+      "url": 12345,
+      "thumbnailUrl": "https://example.com/zpscufdo"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.10": {
+    "note": "wrong type thumbnailUrl",
+    "body": {
+      "albumId": 1,
+      "title": "Dolore consuasor utroque talio.",
+      "url": "https://example.com/0jsonxlc",
+      "thumbnailUrl": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.11": {
+    "note": "invalid format url",
+    "body": {
+      "albumId": 1,
+      "title": "Dolore consuasor utroque talio.",
+      "url": "ht!tp://not a url",
+      "thumbnailUrl": "https://example.com/zpscufdo"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.12": {
+    "note": "invalid format thumbnailUrl",
+    "body": {
+      "albumId": 1,
+      "title": "Dolore consuasor utroque talio.",
+      "url": "https://example.com/0jsonxlc",
+      "thumbnailUrl": "ht!tp://not a url"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.13": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "title": "Aegre talio tamquam celebrer."
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.14": {
+    "note": "wrong type albumId",
+    "body": {
+      "title": "Tertius fugiat ullus comis.",
+      "albumId": "not-a-number"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.15": {
+    "note": "wrong type title",
+    "body": {
+      "title": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.16": {
+    "note": "wrong type url",
+    "body": {
+      "title": "Tertius fugiat ullus comis.",
+      "url": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.17": {
+    "note": "wrong type thumbnailUrl",
+    "body": {
+      "title": "Tertius fugiat ullus comis.",
+      "thumbnailUrl": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.18": {
+    "note": "invalid format url",
+    "body": {
+      "albumId": 1,
+      "title": "Advoco demitto vinculum colligo.",
+      "url": "ht!tp://not a url",
+      "thumbnailUrl": "https://example.com/ywqc4hjj"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_PUT_002.19": {
+    "note": "invalid format thumbnailUrl",
+    "body": {
+      "albumId": 1,
+      "title": "Advoco demitto vinculum colligo.",
+      "url": "https://example.com/8c0gyb3h",
+      "thumbnailUrl": "ht!tp://not a url"
+    }
+  },
+  "TC_JSONPLACEHOLDER_PHOTOS_ID_DELETE_001.2": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_GET_001.3": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_POST_002.1": {
+    "note": "missing userId",
+    "body": {
+      "title": "Solio animadverto capto verus.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_POST_002.2": {
+    "note": "missing title",
+    "body": {
+      "userId": 1,
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_POST_002.3": {
+    "note": "missing completed",
+    "body": {
+      "userId": 1,
+      "title": "Solio animadverto capto verus."
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_POST_002.4": {
+    "note": "empty title",
+    "body": {
+      "userId": 1,
+      "title": "",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_POST_002.5": {
+    "note": "wrong type userId",
+    "body": {
+      "userId": "not-a-number",
+      "title": "Solio animadverto capto verus.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_POST_002.6": {
+    "note": "wrong type title",
+    "body": {
+      "userId": 1,
+      "title": 12345,
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_POST_002.7": {
+    "note": "wrong type completed",
+    "body": {
+      "userId": 1,
+      "title": "Solio animadverto capto verus.",
+      "completed": "not-a-boolean"
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "userId": 1,
+      "title": "Adopto laboriosam alii utilis.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_002.2": {
+    "note": "missing userId",
+    "body": {
+      "title": "Arma comburo cenaculum cenaculum.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_002.3": {
+    "note": "missing title",
+    "body": {
+      "userId": 1,
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_002.4": {
+    "note": "missing completed",
+    "body": {
+      "userId": 1,
+      "title": "Arma comburo cenaculum cenaculum."
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_002.5": {
+    "note": "empty title",
+    "body": {
+      "userId": 1,
+      "title": "",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_002.6": {
+    "note": "wrong type userId",
+    "body": {
+      "userId": "not-a-number",
+      "title": "Arma comburo cenaculum cenaculum.",
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_002.7": {
+    "note": "wrong type title",
+    "body": {
+      "userId": 1,
+      "title": 12345,
+      "completed": true
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_002.8": {
+    "note": "wrong type completed",
+    "body": {
+      "userId": 1,
+      "title": "Arma comburo cenaculum cenaculum.",
+      "completed": "not-a-boolean"
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_002.9": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "title": "Doloribus cohaero vigor debilito."
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_002.10": {
+    "note": "wrong type userId",
+    "body": {
+      "title": "Cupiditate avaritia sed adiuvo.",
+      "userId": "not-a-number"
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_002.11": {
+    "note": "wrong type title",
+    "body": {
+      "title": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_PUT_002.12": {
+    "note": "wrong type completed",
+    "body": {
+      "title": "Cupiditate avaritia sed adiuvo.",
+      "completed": "not-a-boolean"
+    }
+  },
+  "TC_JSONPLACEHOLDER_TODOS_ID_DELETE_001.2": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_GET_001.4": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.1": {
+    "note": "missing name",
+    "body": {
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.2": {
+    "note": "missing username",
+    "body": {
+      "name": "Roma Hand",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.3": {
+    "note": "missing email",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.4": {
+    "note": "missing address.street",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.5": {
+    "note": "missing address.suite",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.6": {
+    "note": "missing address.city",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.7": {
+    "note": "missing address.zipcode",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.8": {
+    "note": "missing address.geo.lat",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.9": {
+    "note": "missing address.geo.lng",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.10": {
+    "note": "missing phone",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.11": {
+    "note": "empty name",
+    "body": {
+      "name": "",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.12": {
+    "note": "wrong type name",
+    "body": {
+      "name": 12345,
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.13": {
+    "note": "wrong type username",
+    "body": {
+      "name": "Roma Hand",
+      "username": 12345,
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.14": {
+    "note": "wrong type email",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": 12345,
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.15": {
+    "note": "wrong type address",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": [
+        "array-instead-of-object"
+      ],
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.16": {
+    "note": "wrong type phone",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": 12345,
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.17": {
+    "note": "wrong type website",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": 12345,
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.18": {
+    "note": "wrong type company",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": [
+        "array-instead-of-object"
+      ]
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_002.19": {
+    "note": "invalid format email",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "not-an-email",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_POST_003": {
+    "note": "duplicate username",
+    "body": {
+      "name": "Roma Hand",
+      "username": "Gerhard_Kuhic",
+      "email": "lessie_erdman@example.com",
+      "address": {
+        "street": "Church Lane",
+        "suite": "Suite 100",
+        "city": "Dougfort",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Harrison Braun",
+        "catchPhrase": "Distributed tertiary circuit",
+        "bs": "Multi-tiered tangible throughput"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.1": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "name": "Alvin Turner",
+      "username": "DomenicoChamplin",
+      "email": "kristoffer45@example.com",
+      "address": {
+        "street": "Effie Forest",
+        "suite": "Suite 100",
+        "city": "Lake Coltonview",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Liam Orn",
+        "catchPhrase": "Seamless explicit frame",
+        "bs": "Expanded client-server success"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.2": {
+    "note": "missing name",
+    "body": {
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.3": {
+    "note": "missing username",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.4": {
+    "note": "missing email",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.5": {
+    "note": "missing address.street",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.6": {
+    "note": "missing address.suite",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.7": {
+    "note": "missing address.city",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.8": {
+    "note": "missing address.zipcode",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.9": {
+    "note": "missing address.geo.lat",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.10": {
+    "note": "missing address.geo.lng",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.11": {
+    "note": "missing phone",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.12": {
+    "note": "empty name",
+    "body": {
+      "name": "",
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.13": {
+    "note": "wrong type name",
+    "body": {
+      "name": 12345,
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.14": {
+    "note": "wrong type username",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": 12345,
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.15": {
+    "note": "wrong type email",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": 12345,
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.16": {
+    "note": "wrong type address",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": [
+        "array-instead-of-object"
+      ],
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.17": {
+    "note": "wrong type phone",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": 12345,
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.18": {
+    "note": "wrong type website",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": 12345,
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.19": {
+    "note": "wrong type company",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": "april_jones@example.com",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": [
+        "array-instead-of-object"
+      ]
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.20": {
+    "note": "invalid format email",
+    "body": {
+      "name": "Dr. Wilma Rath",
+      "username": "Alene41",
+      "email": "not-an-email",
+      "address": {
+        "street": "W 1st Street",
+        "suite": "Suite 100",
+        "city": "Brooklynmouth",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Stella Ondricka",
+        "catchPhrase": "Visionary holistic service-desk",
+        "bs": "Profit-focused content-based circuit"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.21": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    },
+    "body": {
+      "name": "Cristal Schinner"
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.22": {
+    "note": "wrong type name",
+    "body": {
+      "name": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.23": {
+    "note": "wrong type username",
+    "body": {
+      "name": "Jermey Thiel",
+      "username": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.24": {
+    "note": "wrong type email",
+    "body": {
+      "name": "Jermey Thiel",
+      "email": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.25": {
+    "note": "wrong type address",
+    "body": {
+      "name": "Jermey Thiel",
+      "address": [
+        "array-instead-of-object"
+      ]
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.26": {
+    "note": "wrong type phone",
+    "body": {
+      "name": "Jermey Thiel",
+      "phone": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.27": {
+    "note": "wrong type website",
+    "body": {
+      "name": "Jermey Thiel",
+      "website": 12345
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.28": {
+    "note": "wrong type company",
+    "body": {
+      "name": "Jermey Thiel",
+      "company": [
+        "array-instead-of-object"
+      ]
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_PUT_002.29": {
+    "note": "invalid format email",
+    "body": {
+      "name": "Mrs. Halle Kunde",
+      "username": "AmiyaDickens",
+      "email": "not-an-email",
+      "address": {
+        "street": "Walnut Close",
+        "suite": "Suite 100",
+        "city": "Lake Kendrick",
+        "zipcode": "12345-6789",
+        "geo": {
+          "lat": "12.3456",
+          "lng": "12.3456"
+        }
+      },
+      "phone": "1-555-0100",
+      "website": "example.com",
+      "company": {
+        "name": "Sonya Larson",
+        "catchPhrase": "Face to face incremental monitoring",
+        "bs": "Seamless 24/7 utilisation"
+      }
+    }
+  },
+  "TC_JSONPLACEHOLDER_USERS_ID_DELETE_001.2": {
+    "note": "non-existent id",
+    "pathParams": {
+      "id": 999999999
+    }
+  }
+}

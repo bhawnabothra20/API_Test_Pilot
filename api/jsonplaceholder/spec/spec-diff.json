@@ -1,0 +1,31 @@
+{
+  "apiName": "jsonplaceholder",
+  "generatedAt": "2026-11-11T16:51:20.713Z",
+  "previousDesignAt": "2026-11-11T13:51:09.236Z",
+  "mode": "incremental",
+  "reason": "only groups whose endpoints or resource changed are regenerated",
+  "endpoints": {
+    "added": [],
+    "removed": [],
+    "changed": [],
+    "unchanged": 37
+  },
+  "groups": {
+    "regenerated": [],
+    "unchanged": [
+      "posts",
+      "comments",
+      "albums",
+      "photos",
+      "todos",
+      "users"
+    ],
+    "removed": []
+  },
+  "checks": {
+    "added": [],
+    "removed": [],
+    "changed": [],
+    "kept": 906
+  }
+}

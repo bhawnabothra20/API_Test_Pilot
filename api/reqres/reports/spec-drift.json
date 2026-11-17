@@ -1,0 +1,643 @@
+{
+  "apiName": "reqres",
+  "generatedAt": "2026-11-11T15:43:03.443Z",
+  "runStartedAt": "2026-11-11T15:38:46.586Z",
+  "specSource": "openapi3",
+  "specFile": "spec/openapi.json",
+  "patchable": true,
+  "totals": {
+    "items": 32,
+    "fixApi": 31,
+    "fixDocs": 1,
+    "patchOps": 1,
+    "withheld": 21
+  },
+  "items": [
+    {
+      "id": "D1",
+      "endpoint": "POST /api/collections",
+      "endpointId": "api_collections_POST",
+      "kind": "status-mismatch",
+      "documented": "HTTP 400",
+      "observed": "HTTP 403 in 7 checks (e.g. POST /api/collections without required field \"name\" is rejected with 400)",
+      "evidence": [
+        "TC_REQRES_API_COLLECTIONS_POST_002.1",
+        "TC_REQRES_API_COLLECTIONS_POST_002.2",
+        "TC_REQRES_API_COLLECTIONS_POST_002.3",
+        "TC_REQRES_API_COLLECTIONS_POST_002.4",
+        "TC_REQRES_API_COLLECTIONS_POST_002.5",
+        "TC_REQRES_API_COLLECTIONS_POST_002.6",
+        "TC_REQRES_API_COLLECTIONS_POST_002.7"
+      ],
+      "checks": 7,
+      "confidence": "high",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D2",
+      "endpoint": "POST /api/collections",
+      "endpointId": "api_collections_POST",
+      "kind": "status-mismatch",
+      "documented": "HTTP 201",
+      "observed": "HTTP 403 in 5 checks (e.g. POST /api/collections with a valid request returns 201 and the required fields)",
+      "evidence": [
+        "TC_REQRES_API_COLLECTIONS_POST_001.1",
+        "TC_REQRES_API_COLLECTIONS_POST_001.2",
+        "TC_REQRES_API_COLLECTIONS_POST_001.3",
+        "TC_REQRES_API_COLLECTIONS_POST_001.4",
+        "TC_REQRES_API_COLLECTIONS_POST_001.5"
+      ],
+      "checks": 5,
+      "confidence": "high",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D3",
+      "endpoint": "POST /api/app-users",
+      "endpointId": "api_appusers_POST",
+      "kind": "status-mismatch",
+      "documented": "HTTP 200",
+      "observed": "HTTP 403 in 5 checks (e.g. POST /api/app-users with a valid request returns 200 and the required fields)",
+      "evidence": [
+        "TC_REQRES_API_APPUSERS_POST_001.1",
+        "TC_REQRES_API_APPUSERS_POST_001.2",
+        "TC_REQRES_API_APPUSERS_POST_001.3",
+        "TC_REQRES_API_APPUSERS_POST_001.4",
+        "TC_REQRES_API_APPUSERS_POST_001.5"
+      ],
+      "checks": 5,
+      "confidence": "high",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D4",
+      "endpoint": "POST /api/app-users",
+      "endpointId": "api_appusers_POST",
+      "kind": "status-mismatch",
+      "documented": "HTTP 400",
+      "observed": "HTTP 403 in 5 checks (e.g. POST /api/app-users without required field \"email\" is rejected with 400)",
+      "evidence": [
+        "TC_REQRES_API_APPUSERS_POST_002.1",
+        "TC_REQRES_API_APPUSERS_POST_002.2",
+        "TC_REQRES_API_APPUSERS_POST_002.3",
+        "TC_REQRES_API_APPUSERS_POST_002.4",
+        "TC_REQRES_API_APPUSERS_POST_002.5"
+      ],
+      "checks": 5,
+      "confidence": "high",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D5",
+      "endpoint": "POST /api/app-users/login",
+      "endpointId": "api_appusers_login_POST",
+      "kind": "status-mismatch",
+      "documented": "HTTP 200",
+      "observed": "HTTP 400 in 4 checks (e.g. POST /api/app-users/login with a valid request returns 200 and the required fields)",
+      "evidence": [
+        "TC_REQRES_API_APPUSERS_LOGIN_POST_001.1",
+        "TC_REQRES_API_APPUSERS_LOGIN_POST_001.2",
+        "TC_REQRES_API_APPUSERS_LOGIN_POST_001.3",
+        "TC_REQRES_API_APPUSERS_LOGIN_POST_001.4"
+      ],
+      "checks": 4,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D6",
+      "endpoint": "GET /app/me",
+      "endpointId": "app_me_GET",
+      "kind": "status-mismatch",
+      "documented": "HTTP 200",
+      "observed": "HTTP 401 in 4 checks (e.g. GET /app/me with a valid request returns 200 and the required fields)",
+      "evidence": [
+        "TC_REQRES_APP_ME_GET_001.1",
+        "TC_REQRES_APP_ME_GET_001.2",
+        "TC_REQRES_APP_ME_GET_002.1",
+        "TC_REQRES_APP_ME_GET_002.28"
+      ],
+      "checks": 4,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D7",
+      "endpoint": "GET /app/collections",
+      "endpointId": "app_collections_GET",
+      "kind": "status-mismatch",
+      "documented": "HTTP 200",
+      "observed": "HTTP 401 in 4 checks (e.g. GET /app/collections with a valid request returns 200 and the required fields)",
+      "evidence": [
+        "TC_REQRES_APP_COLLECTIONS_GET_001.1",
+        "TC_REQRES_APP_COLLECTIONS_GET_001.2",
+        "TC_REQRES_APP_ME_GET_002.4",
+        "TC_REQRES_APP_ME_GET_002.29"
+      ],
+      "checks": 4,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D8",
+      "endpoint": "POST /api/register",
+      "endpointId": "api_register_POST",
+      "kind": "status-mismatch",
+      "documented": "HTTP 200",
+      "observed": "HTTP 400 in 3 checks (e.g. POST /api/register with a valid request returns 200 and the required fields)",
+      "evidence": [
+        "TC_REQRES_API_REGISTER_POST_002.1",
+        "TC_REQRES_API_REGISTER_POST_002.2",
+        "TC_REQRES_API_REGISTER_POST_002.3"
+      ],
+      "checks": 3,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D9",
+      "endpoint": "POST /api/app-users/verify",
+      "endpointId": "api_appusers_verify_POST",
+      "kind": "status-mismatch",
+      "documented": "HTTP 200",
+      "observed": "HTTP 400 in 3 checks (e.g. POST /api/app-users/verify with a valid request returns 200 and the required fields)",
+      "evidence": [
+        "TC_REQRES_API_APPUSERS_VERIFY_POST_001.1",
+        "TC_REQRES_API_APPUSERS_VERIFY_POST_001.2",
+        "TC_REQRES_API_APPUSERS_VERIFY_POST_001.3"
+      ],
+      "checks": 3,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D10",
+      "endpoint": "GET /api/collections",
+      "endpointId": "api_collections_GET",
+      "kind": "status-mismatch",
+      "documented": "HTTP 200",
+      "observed": "HTTP 400 in 2 checks (e.g. GET /api/collections with a valid request returns 200 and the required fields)",
+      "evidence": [
+        "TC_REQRES_API_COLLECTIONS_GET_001.1",
+        "TC_REQRES_API_COLLECTIONS_GET_001.2"
+      ],
+      "checks": 2,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D11",
+      "endpoint": "GET /api/app-users/me",
+      "endpointId": "api_appusers_me_GET",
+      "kind": "status-mismatch",
+      "documented": "HTTP 200",
+      "observed": "HTTP 401 in 2 checks (e.g. GET /api/app-users/me with a valid request returns 200 and the required fields)",
+      "evidence": [
+        "TC_REQRES_API_APPUSERS_ME_GET_001.1",
+        "TC_REQRES_API_APPUSERS_ME_GET_001.2"
+      ],
+      "checks": 2,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D12",
+      "endpoint": "GET /api/app-users",
+      "endpointId": "api_appusers_GET",
+      "kind": "status-mismatch",
+      "documented": "HTTP 200",
+      "observed": "HTTP 403 in 2 checks (e.g. GET /api/app-users with a valid request returns 200 and the required fields)",
+      "evidence": [
+        "TC_REQRES_API_APPUSERS_GET_001.1",
+        "TC_REQRES_API_APPUSERS_GET_001.2"
+      ],
+      "checks": 2,
+      "confidence": "medium",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D13",
+      "endpoint": "POST /api/login",
+      "endpointId": "api_login_POST",
+      "kind": "status-mismatch",
+      "documented": "HTTP 200",
+      "observed": "HTTP 400 in 1 check (e.g. POST /api/login with valid credentials returns a token)",
+      "evidence": [
+        "TC_REQRES_API_LOGIN_POST_001.1"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D14",
+      "endpoint": "GET /api/collections/{slug}",
+      "endpointId": "api_collections_slug_GET",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 400 in 1 check (e.g. Get collection: missing or invalid input is rejected)",
+      "evidence": [
+        "TC_REQRES_API_COLLECTIONS_SLUG_GET_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D15",
+      "endpoint": "PUT /api/collections/{slug}",
+      "endpointId": "api_collections_slug_PUT",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. PUT /api/collections/{slug} with a non-existent slug returns 404)",
+      "evidence": [
+        "TC_REQRES_API_COLLECTIONS_SLUG_PUT_002.1"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D16",
+      "endpoint": "DELETE /api/collections/{slug}",
+      "endpointId": "api_collections_slug_DELETE",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. Delete collection: missing or invalid input is rejected)",
+      "evidence": [
+        "TC_REQRES_API_COLLECTIONS_SLUG_DELETE_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D17",
+      "endpoint": "GET /api/collections/{slug}/records",
+      "endpointId": "api_collections_slug_records_GET",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 400 in 1 check (e.g. GET /api/collections/{slug}/records with a non-existent slug returns 404)",
+      "evidence": [
+        "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_GET_002.1"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D18",
+      "endpoint": "POST /api/collections/{slug}/records",
+      "endpointId": "api_collections_slug_records_POST",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. POST /api/collections/{slug}/records with a non-existent slug returns 404)",
+      "evidence": [
+        "TC_REQRES_API_COLLECTIONS_SLUG_RECORDS_POST_002.1"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D19",
+      "endpoint": "GET /api/app-users/{id}",
+      "endpointId": "api_appusers_id_GET",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. Get app user: missing or invalid input is rejected)",
+      "evidence": [
+        "TC_REQRES_API_APPUSERS_ID_GET_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D20",
+      "endpoint": "PUT /api/app-users/{id}",
+      "endpointId": "api_appusers_id_PUT",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. PUT /api/app-users/{id} with a non-existent id returns 404)",
+      "evidence": [
+        "TC_REQRES_API_APPUSERS_ID_PUT_002.1"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D21",
+      "endpoint": "DELETE /api/app-users/{id}",
+      "endpointId": "api_appusers_id_DELETE",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. Delete app user: missing or invalid input is rejected)",
+      "evidence": [
+        "TC_REQRES_API_APPUSERS_ID_DELETE_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D22",
+      "endpoint": "POST /api/app-users/{id}/sessions/simulate",
+      "endpointId": "api_appusers_id_sessions_simulate_POST",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. Simulate app user session: missing or invalid input is rejected)",
+      "evidence": [
+        "TC_REQRES_API_APPUSERS_ID_SESSIONS_SIMULATE_POST_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D23",
+      "endpoint": "GET /api/projects/{projectId}/app-users",
+      "endpointId": "api_projects_projectId_appusers_GET",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. List project app users: missing or invalid input is rejected)",
+      "evidence": [
+        "TC_REQRES_API_PROJECTS_PROJECTID_APPUSERS_GET_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D24",
+      "endpoint": "GET /api/projects/{projectId}/app-users/total",
+      "endpointId": "api_projects_projectId_appusers_total_GET",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. App users total: missing or invalid input is rejected)",
+      "evidence": [
+        "TC_REQRES_API_PROJECTS_PROJECTID_APPUSERS_TOTAL_GET_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D25",
+      "endpoint": "POST /api/custom/{path}",
+      "endpointId": "api_custom_path_POST",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. Execute custom endpoint: missing or invalid input is rejected (POST /api/custom/{path}))",
+      "evidence": [
+        "TC_REQRES_API_CUSTOM_PATH_POST_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D26",
+      "endpoint": "PUT /api/custom/{path}",
+      "endpointId": "api_custom_path_PUT",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. Execute custom endpoint: missing or invalid input is rejected (PUT /api/custom/{path}))",
+      "evidence": [
+        "TC_REQRES_API_CUSTOM_PATH_PUT_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D27",
+      "endpoint": "PATCH /api/custom/{path}",
+      "endpointId": "api_custom_path_PATCH",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. Execute custom endpoint: missing or invalid input is rejected (PATCH /api/custom/{path}))",
+      "evidence": [
+        "TC_REQRES_API_CUSTOM_PATH_PATCH_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D28",
+      "endpoint": "DELETE /api/custom/{path}",
+      "endpointId": "api_custom_path_DELETE",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 403 in 1 check (e.g. Execute custom endpoint: missing or invalid input is rejected (DELETE /api/custom/{path}))",
+      "evidence": [
+        "TC_REQRES_API_CUSTOM_PATH_DELETE_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D29",
+      "endpoint": "GET /app/collections/{slug}/records",
+      "endpointId": "app_collections_slug_records_GET",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 401 in 1 check (e.g. Searching records with missing or invalid criteria is rejected)",
+      "evidence": [
+        "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_GET_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D30",
+      "endpoint": "POST /app/collections/{slug}/records",
+      "endpointId": "app_collections_slug_records_POST",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 401 in 1 check (e.g. POST /app/collections/{slug}/records with a non-existent slug returns 404)",
+      "evidence": [
+        "TC_REQRES_APP_COLLECTIONS_SLUG_RECORDS_POST_002.1"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D31",
+      "endpoint": "GET /app/collections/{slug}",
+      "endpointId": "app_collections_slug_GET",
+      "kind": "status-mismatch",
+      "documented": "HTTP 404",
+      "observed": "HTTP 401 in 1 check (e.g. Get collection (app user): missing or invalid input is rejected)",
+      "evidence": [
+        "TC_REQRES_APP_COLLECTIONS_SLUG_GET_002"
+      ],
+      "checks": 1,
+      "confidence": "low",
+      "recommendation": "fix API",
+      "rationale": "The documentation states a different status for this case; documented behaviour wins."
+    },
+    {
+      "id": "D32",
+      "endpoint": "GET /api/unknown",
+      "endpointId": "api_unknown_GET",
+      "kind": "undocumented-field",
+      "documented": "Field \"_meta\" is not in the documented response schema",
+      "observed": "Present in all 2 successful responses (type object)",
+      "evidence": [
+        "TC_REQRES_API_UNKNOWN_GET_001"
+      ],
+      "checks": 2,
+      "confidence": "medium",
+      "recommendation": "fix docs",
+      "rationale": "The documentation is silent about a field the API consistently returns: document it (or remove it from the response if it is not meant to be public).",
+      "patchOps": [
+        0
+      ]
+    }
+  ],
+  "withheld": [
+    {
+      "endpoint": "GET /api/collections",
+      "candidate": "document HTTP 400",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "POST /api/collections",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "GET /api/app-users",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "POST /api/app-users",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "GET /api/collections/{slug}",
+      "candidate": "document HTTP 400",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "PUT /api/collections/{slug}",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "DELETE /api/collections/{slug}",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "POST /api/collections/{slug}/records",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "GET /api/app-users/{id}",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "PUT /api/app-users/{id}",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "DELETE /api/app-users/{id}",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "POST /api/app-users/{id}/sessions/simulate",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "GET /api/projects/{projectId}/app-users",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "GET /api/projects/{projectId}/app-users/total",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "POST /api/custom/{path}",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "PUT /api/custom/{path}",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "PATCH /api/custom/{path}",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "DELETE /api/custom/{path}",
+      "candidate": "document HTTP 403",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "GET /app/collections/{slug}/records",
+      "candidate": "document HTTP 401",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "POST /app/collections/{slug}/records",
+      "candidate": "document HTTP 401",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    },
+    {
+      "endpoint": "GET /app/collections/{slug}",
+      "candidate": "document HTTP 401",
+      "reason": "contradicts a documented status (see status-mismatch)"
+    }
+  ],
+  "confirmed": [],
+  "notes": []
+}

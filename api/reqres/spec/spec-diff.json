@@ -1,0 +1,29 @@
+{
+  "apiName": "reqres",
+  "generatedAt": "2026-11-11T15:38:37.735Z",
+  "previousDesignAt": "2026-11-11T15:30:54.751Z",
+  "mode": "incremental",
+  "reason": "only groups whose endpoints or resource changed are regenerated",
+  "endpoints": {
+    "added": [],
+    "removed": [],
+    "changed": [],
+    "unchanged": 67
+  },
+  "groups": {
+    "regenerated": [],
+    "unchanged": [
+      "api",
+      "app",
+      "agent",
+      "sim"
+    ],
+    "removed": []
+  },
+  "checks": {
+    "added": [],
+    "removed": [],
+    "changed": [],
+    "kept": 1251
+  }
+}

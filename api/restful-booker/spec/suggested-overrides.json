@@ -1,0 +1,38 @@
+{
+  "note": "These endpoints accepted invalid input (2xx) in 3+ validation checks while no validation rule is documented. This is NOT applied automatically. If your team confirms the endpoints are not meant to validate input, copy \"noValidation\" into spec/contract-overrides.json; checks then require safe handling (no 5xx, no leaks) instead of a 4xx. Otherwise these are validation gaps to raise with the API owners.",
+  "noValidation": [
+    "booking_POST",
+    "booking_id_PATCH",
+    "booking_id_PUT"
+  ],
+  "evidence": {
+    "booking_POST": [
+      "TC_RESTFUL_BOOKER_BOOKING_POST_002.7",
+      "TC_RESTFUL_BOOKER_BOOKING_POST_002.8",
+      "TC_RESTFUL_BOOKER_BOOKING_POST_002.11",
+      "TC_RESTFUL_BOOKER_BOOKING_POST_002.12",
+      "TC_RESTFUL_BOOKER_BOOKING_POST_002.14",
+      "TC_RESTFUL_BOOKER_BOOKING_POST_002.15",
+      "TC_RESTFUL_BOOKER_BOOKING_POST_002.16"
+    ],
+    "booking_id_PATCH": [
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.2",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.3",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.4",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.5",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.6",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.7",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.8",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.9"
+    ],
+    "booking_id_PUT": [
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.17",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.18",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.21",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.22",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.24",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.25",
+      "TC_RESTFUL_BOOKER_BOOKING_ID_PATCH_002.26"
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "apiName": "jsonplaceholder",
+  "updatedAt": "2026-11-06T13:56:02.217Z",
+  "conventions": [
+    {
+      "kind": "unknownId",
+      "endpointId": "posts_id_GET",
+      "assumed": [
+        404,
+        400
+      ],
+      "observed": 404,
+      "checks": [
+        "TC_JSONPLACEHOLDER_POSTS_ID_GET_004.1",
+        "TC_JSONPLACEHOLDER_POSTS_ID_GET_004.2",
+        "TC_JSONPLACEHOLDER_POSTS_ID_GET_006.1",
+        "TC_JSONPLACEHOLDER_POSTS_ID_GET_006.2",
+        "TC_JSONPLACEHOLDER_POSTS_ID_GET_006.3",
+        "TC_JSONPLACEHOLDER_POSTS_ID_GET_006.4"
+      ],
+      "learnedAt": "2026-11-06T13:56:02.216Z"
+    },
+    {
+      "kind": "unknownId",
+      "endpointId": "comments_id_GET",
+      "assumed": [
+        404,
+        400
+      ],
+      "observed": 404,
+      "checks": [
+        "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_004.1",
+        "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_004.2",
+        "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_006.1",
+        "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_006.2",
+        "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_006.3",
+        "TC_JSONPLACEHOLDER_COMMENTS_ID_GET_006.4"
+      ],
+      "learnedAt": "2026-11-06T13:56:02.217Z"
+    },
+    {
+      "kind": "unknownId",
+      "endpointId": "albums_id_GET",
+      "assumed": [
+        404,
+        400
+      ],
+      "observed": 404,
+      "checks": [
+        "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_004.1",
+        "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_004.2",
+        "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_006.1",
+        "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_006.2",
+        "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_006.3",
+        "TC_JSONPLACEHOLDER_ALBUMS_ID_GET_006.4"
+      ],
+      "learnedAt": "2026-11-06T13:56:02.217Z"
+    },
+    {
+      "kind": "unknownId",
+      "endpointId": "photos_id_GET",
+      "assumed": [
+        404,
+        400
+      ],
+      "observed": 404,
+      "checks": [
+        "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_004.1",
+        "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_004.2",
+        "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_006.1",
+        "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_006.2",
+        "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_006.3",
+        "TC_JSONPLACEHOLDER_PHOTOS_ID_GET_006.4"
+      ],
+      "learnedAt": "2026-11-06T13:56:02.217Z"
+    },
+    {
+      "kind": "unknownId",
+      "endpointId": "todos_id_GET",
+      "assumed": [
+        404,
+        400
+      ],
+      "observed": 404,
+      "checks": [
+        "TC_JSONPLACEHOLDER_TODOS_ID_GET_004.1",
+        "TC_JSONPLACEHOLDER_TODOS_ID_GET_004.2",
+        "TC_JSONPLACEHOLDER_TODOS_ID_GET_006.1",
+        "TC_JSONPLACEHOLDER_TODOS_ID_GET_006.2",
+        "TC_JSONPLACEHOLDER_TODOS_ID_GET_006.3",
+        "TC_JSONPLACEHOLDER_TODOS_ID_GET_006.4"
+      ],
+      "learnedAt": "2026-11-06T13:56:02.217Z"
+    },
+    {
+      "kind": "unknownId",
+      "endpointId": "users_id_GET",
+      "assumed": [
+        404,
+        400
+      ],
+      "observed": 404,
+      "checks": [
+        "TC_JSONPLACEHOLDER_USERS_ID_GET_004.1",
+        "TC_JSONPLACEHOLDER_USERS_ID_GET_004.2",
+        "TC_JSONPLACEHOLDER_USERS_ID_GET_006.1",
+        "TC_JSONPLACEHOLDER_USERS_ID_GET_006.2",
+        "TC_JSONPLACEHOLDER_USERS_ID_GET_006.3",
+        "TC_JSONPLACEHOLDER_USERS_ID_GET_006.4"
+      ],
+      "learnedAt": "2026-11-06T13:56:02.217Z"
+    }
+  ]
+}
