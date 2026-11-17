@@ -1,5 +1,4 @@
-# API Testing Agent
-
+# API Test Pilot
 Give it the URL of an API. It writes the test cases, writes the automation, runs it and builds the reports. One command, no manual steps in between.
 
 Built with [Claude Code](https://claude.com/claude-code), [Playwright](https://playwright.dev/) and TypeScript.
