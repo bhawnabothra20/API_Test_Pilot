@@ -27,3 +27,15 @@ api/*/spec/design-cache.json
 # verbatim copies of downloaded specs (re-fetched by discovery; may contain documented demo credentials)
 api/*/spec/api_data.json
 api/*/spec/openapi.json
+
+ALLOWED_HOSTS=petstore.swagger.io,restful-booker.herokuapp.com,jsonplaceholder.typicode.com,reqres.in
+RESPONSE_TIME_MS=2000
+POLITE_DELAY_MS=150
+PW_WORKERS=4
+
+# Publicly documented demo credentials of the practice API
+# (https://restful-booker.herokuapp.com/apidoc/index.html). Not client data.
+RESTFUL_BOOKER_USERNAME=admin
+RESTFUL_BOOKER_PASSWORD=password123
+REQRES_API_KEY=reqres_2bb867c5845c4077bbb146920506cfd5
+PETSTORE_API_KEY=special-key
