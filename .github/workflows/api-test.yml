@@ -89,11 +89,29 @@ jobs:
     name: ${{ matrix.name }}
     env:
       ALLOWED_HOSTS: ${{ vars.ALLOWED_HOSTS || 'petstore.swagger.io,restful-booker.herokuapp.com,jsonplaceholder.typicode.com,reqres.in' }}
+
       CI_MIN_COVERAGE: ${{ vars.CI_MIN_COVERAGE || '80' }}
+
       RESPONSE_TIME_MS: ${{ vars.RESPONSE_TIME_MS || '2000' }}
+
       POLITE_DELAY_MS: ${{ vars.POLITE_DELAY_MS || '150' }}
+
       PW_WORKERS: ${{ vars.PW_WORKERS || '4' }}
+
       PW_RETRIES: ${{ vars.PW_RETRIES || '1' }}
+
+  # API Credentials
+      REQRES_API_KEY: ${{ secrets.REQRES_API_KEY }}
+
+  # Optional alias if API Test Pilot looks for admin credentials
+      REQRES_ADMIN_TOKEN: ${{ secrets.REQRES_API_KEY }}
+
+      RESTFUL_BOOKER_USERNAME: ${{ secrets.RESTFUL_BOOKER_USERNAME }}
+
+      RESTFUL_BOOKER_PASSWORD: ${{ secrets.RESTFUL_BOOKER_PASSWORD }}
+
+      PETSTORE_API_KEY: ${{ secrets.PETSTORE_API_KEY }}
+      
     steps:
       - uses: actions/checkout@v4
 
@@ -193,3 +211,15 @@ jobs:
             *) echo "::error::${{ matrix.name }}: pipeline error (exit $code) - see run-log.txt in the artifact" ;;
           esac
           exit "$code"
+env:
+  ALLOWED_HOSTS: petstore.swagger.io,restful-booker.herokuapp.com,jsonplaceholder.typicode.com,reqres.in
+  RESPONSE_TIME_MS: 2000
+  POLITE_DELAY_MS: 150
+  PW_WORKERS: 4
+
+  REQRES_API_KEY: ${{ secrets.REQRES_API_KEY }}
+
+  RESTFUL_BOOKER_USERNAME: ${{ secrets.RESTFUL_BOOKER_USERNAME }}
+  RESTFUL_BOOKER_PASSWORD: ${{ secrets.RESTFUL_BOOKER_PASSWORD }}
+
+  PETSTORE_API_KEY: ${{ secrets.PETSTORE_API_KEY }}
